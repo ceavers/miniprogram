@@ -1,0 +1,99 @@
+<!--warehouse/pages/storage_list/storage_list.wxml-->
+<!-- 此页面废弃 -->
+<view class="container">
+  <view class="storage-box">
+    <view class="storage-item-box">
+      <view class="item-text">仓库 <text class="point">*</text></view>
+      <view class="item-content">
+        <view>总仓</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">入库时间</view>
+      <view class="item-content">
+        <view>2019/07/01</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">来货单位</view>
+      <view class="item-content">
+        <input value="环球中心"></input>
+      </view>
+    </view>
+    <view class="storage-item-box note-box">
+      <view class="item-text note-text">备注</view>
+      <view class="item-content">
+        <textarea class="note-area" value="按时出库"></textarea>
+      </view>
+    </view>
+  </view>
+  <view class="storage-box">
+    <view class="storage-item-box pd-20">
+      <view class="choose-goods" catchtap="toAddGoods">
+        <image src="../../images/add.png" class="choose-icon"></image>
+        <view class="icon-text">选商品</view>
+      </view>
+      <view class="scan-box">
+        <image src="../../images/scan.png" class="scan-icon"></image>
+        <view class="icon-text">扫条码</view>
+      </view>
+    </view>
+  </view>
+  <view class="storage-box">
+    <view class="storage-item-box" style="height:148rpx;">
+      <image class="delete-icon" src="../../images/delete.png"></image>
+      <view class="goods-info">
+        <image class="goods-img" src="../../images/goods2.png"></image>
+        <view class="goods-des">
+          <view class="goods-name">碎花连衣裙</view>
+          <view class="repertory">50.00</view>
+          <view class="price">小计  1款10件</view>
+        </view>
+      </view>
+    </view>
+    <view class="storage-item-box goods-prop">
+      <view class="property-one">白色</view>
+      <view class="property-two">S</view>
+      <view class="add-sub-box">
+        <image class="add-sub-icon" src="../../images/subtract.png"></image>
+        <view class="goods-number">10</view>
+        <image class="add-sub-icon" src="../../images/add.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="storage-box">
+    <view class="storage-item-box" style="height:148rpx;">
+      <image class="delete-icon" src="../../images/delete.png"></image>
+      <view class="goods-info">
+        <image class="goods-img" src="../../images/goods2.png"></image>
+        <view class="goods-des">
+          <view class="goods-name">碎花连衣裙</view>
+          <view class="repertory">50.00</view>
+          <view class="price">小计  1款10件</view>
+        </view>
+      </view>
+    </view>
+    <view class="storage-item-box goods-prop">
+      <view class="property-one">白色</view>
+      <view class="property-two">S</view>
+      <view class="add-sub-box">
+        <image class="add-sub-icon" src="../../images/subtract.png"></image>
+        <view class="goods-number">10</view>
+        <image class="add-sub-icon" src="../../images/add.png"></image>
+      </view>
+    </view>
+    <view class="storage-item-box goods-prop">
+      <view class="property-one">白色</view>
+      <view class="property-two">S</view>
+      <view class="add-sub-box">
+        <image class="add-sub-icon" src="../../images/subtract.png"></image>
+        <view class="goods-number">10</view>
+        <image class="add-sub-icon" src="../../images/add.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="create-btn" catchtap="createInOkPage">创建入库单</view>
+</view>
+

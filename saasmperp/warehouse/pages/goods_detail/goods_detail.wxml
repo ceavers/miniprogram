@@ -1,0 +1,14 @@
+<!--warehouse/pages/goods_detail/goods_detail.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="text">日期</view>
+    <view class="text">销售数量</view>
+  </view>
+  <view class="item-box" wx:for="{{salesData}}" wx:key="index" catchtap="toSalesDetailPage" data-id="{{index}}">
+    <view class="text">{{item.date}}</view>
+    <view class="icon-box">
+      <view class="text">{{item.selling_count}}</view>
+      <text class="iconfont icon-return"></text>
+    </view>
+  </view>
+</view>

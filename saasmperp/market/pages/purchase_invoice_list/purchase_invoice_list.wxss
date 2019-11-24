@@ -1,0 +1,173 @@
+.head{
+  height: 88rpx;
+  background: #D9D9D9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.searchImg{
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 20rpx;
+  margin-right: 17rpx;
+}
+
+.search-boxs{
+  height: 88rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14rpx 30rpx;
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+.search-boxs > view{
+  background: #62AC4B;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  height: 100%;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+  color: #fff;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+.search-boxs .cancel{
+  
+  position: absolute;
+  right: 30rpx;
+  top: 24rpx;
+  font-size: 26rpx;
+  color: #323232;
+}
+
+.zhanwei2{
+  height: 80rpx;
+  width: 100%;
+}
+.screenImg{
+  height: 40rpx;
+  width: 36rpx;
+}
+.input-box{
+  width: 500rpx;
+  font-size: 26rpx;
+}
+.search-box{
+  width: 630rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30rpx;
+  border-radius: 4rpx;
+}
+.middle{
+  width: 100%;
+  height: 119rpx;
+  line-height: 119rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #323232;
+}
+.content{
+  
+  font-weight: 500;
+}
+.order-time{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #999999;
+  padding-left: 30rpx;
+}
+.order-detail{
+  background: #fff;
+  color: #323232;
+}
+.detial-head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border-bottom: solid 1rpx #f6f6f6;
+}
+.detial-head span{
+  margin-right: 40rpx;
+}
+.detail-tui{
+  color: #FF3B30;
+}
+.detail-middle{
+  height: 148rpx;
+  border-bottom: solid 1rpx #f6f6f6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.commodity-img-box{
+  margin-left: 30rpx;
+  
+}
+.commodity-img{
+  display:inline-block;
+  width:104rpx;
+  height:100rpx;
+  background: #D9D9D9;
+  
+}
+.detail-bottom{
+  height: 88rpx;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1rpx #f6f6f6;
+}
+.detail-bottom span{
+  margin-right: 37rpx;
+}
+.hr{
+  background: #f6f6f6;
+}
+.icon-go{
+  width: 35rpx;
+  height: 35rpx;
+}
+.hr{
+  height: 20rpx;
+}
+.bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 88rpx;
+  font-size: 28rpx;
+  color: #424242;
+  font-weight: 500;
+  background: #fff;
+}
+.add-aut{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+.content{
+  margin-bottom: 60rpx;
+}

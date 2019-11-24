@@ -1,0 +1,13 @@
+<!--流水详情-->
+<view class="water-detail">
+  <view class="header">流水详情</view>
+  <view class="body">
+    <InputWrap cinputName="流水类型"><view>{{ waterDetail.get_type }}</view></InputWrap>
+    <InputWrap cinputName="发生金额"><view>{{ waterDetail.already_pay_money }}</view></InputWrap>
+    <InputWrap cinputName="发生时间"><view>{{ waterDetail.date }}</view></InputWrap>
+    <InputWrap cinputName="资金账户" inputStyle="margin-bottom: 40rpx;"><view>{{ waterDetail.account_type }}</view></InputWrap>
+    <InputWrap cinputName="经手人"><view>{{ waterDetail.handlers }}</view></InputWrap>
+    <InputWrap cinputName="相关单号">{{ waterDetail.water_id }}</InputWrap>
+    <InputWrap cinputName="备注说明">{{ waterDetail.note }}</InputWrap>
+  </view>
+</view>

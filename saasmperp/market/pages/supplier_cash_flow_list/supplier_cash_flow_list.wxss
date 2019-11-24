@@ -1,0 +1,38 @@
+/* market/pages/cash_flow_list/cash_flow_list.wxss */
+.cash-flow{
+  height: 100vh;
+  background-color: #f6f6f6;
+  color: #323232;
+  font-size: 28rpx;
+}
+.header{
+  padding-top: 50rpx;
+  height: 50rpx;
+  font-weight: bold;
+  text-align: center;
+  font-size: 32rpx;
+}
+.cash-flow-time{
+  padding-left: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.cash-flow-detail{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rpx;
+  padding: 25rpx 30rpx 26rpx;
+  background-color: #fff;
+}
+.cash-flow-detail-mes-option{
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+}
+.cash-flow-detail-mes-zhanghu{
+  color: #999999;
+  font-size: 24rpx;
+}
+.cash-flow-detail-money{
+  color: #62AC4B;
+  font-size: 26rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "v-modal": "/components/pay_type/pay_type",
+    "picker": "../../../components/picker/picker",
+    "confige": "../../../components/confige/confige",
+    "xiaolei": "../../compontes/xiaolei/xiaolei"
+  },
+  "navigationBarTitleText": "记支出"
+}

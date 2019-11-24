@@ -1,0 +1,21 @@
+<view class="head">修改其他应收</view>
+<view class="returnedInformation">
+  <text class="phone">应收名称</text>
+  <input type="text" value="单据应收款"></input>
+</view>
+<view class="returnedInformation">
+  <text class="phone1">应该收金额</text>
+  <input type="text" value="70.00"></input>
+</view>
+<view class="returnedInformation">
+  <text class="phone2">经手人</text>
+  <input type="text" value="销售员小王"></input>
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <textarea value="大客户，单子多大客户，单子多大客户，单子多大客户，单子多大客户，单子多大客户，单子多大客户，单子多大客户，单子多" auto-height></textarea>
+</view>
+<view class="floor">
+<view class="floor-left">删除</view>
+<view class="floor-right">保存</view>
+</view>

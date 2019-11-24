@@ -1,0 +1,20 @@
+<!--components/select/select.wxml-->
+<view class="modal-mask {{imageMask?'back':''}}" wx:if='{{show}}' catchtap="cancal">
+  <view class='modal-content'>
+    <view  class="main-content {{imageMask?'maheight':''}}">
+      <view class="wrapper">
+        <radio-group class="wrapper">
+          <label class="item-box" 
+          wx:for="{{selectData}}" 
+          wx:key="index" 
+          data-stock-name="{{item.depo_name}}"
+          data-stock-id="{{item.depo_id}}"
+          catchtap="select">
+            <text class="text">{{item.depo_name}}</text>
+            <radio value="{{item.depo_id}}" checked="{{item.checked}}"/>
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
+</view>

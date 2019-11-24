@@ -1,0 +1,33 @@
+<!--report/pages/sale_news/sale_news.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="{{choice == 'd'? 'header-hover':''}}" bindtap="bindChoice" data-choiceid="d">日报</view>
+    <view class="{{choice == 'm' ? 'header-hover':''}}" bindtap="bindChoice" data-choiceid="m">月报</view>
+    <view class="{{choice == 'q' ? 'header-hover':''}}" bindtap="bindChoice" data-choiceid="q">季报</view>
+  </view>
+  <view class="sale-Total">
+    <view wx:if="{{choice == 'd'}}" class="sale-title">本月销售</view>
+    <view wx:if="{{choice != 'd'}}" class="sale-title">本年销售</view>
+    <view class="sale-content">
+      <text>{{totalList.total}}</text>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" bindtap="toSaleNewsInfo">
+      <view>
+        <view class="line-content">
+          <view>{{item.date}}</view>
+          <view class="scale">{{item.rate}}%</view>
+          <view>{{item.sale_gross1}}</view>
+        </view>
+        <view class="Total">
+          <view class="line" animation="{{ item.anmiate }}"></view>
+        </view>
+      </view>
+      <view>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+    
+  </view>
+</view>

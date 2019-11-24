@@ -1,0 +1,5 @@
+<template  name="yk_public_register">
+ <view class="login_bottom" bindtap="register">
+     <text>没有账号？</text>马上注册开通
+  </view>
+</template>

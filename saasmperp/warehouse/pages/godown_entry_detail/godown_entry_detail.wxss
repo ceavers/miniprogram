@@ -1,0 +1,116 @@
+/* warehouse/pages/godown_entry_detail/godown_entry_detail.wxss */
+.title{
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  margin:50rpx 0 40rpx;
+  text-align: center;
+}
+.goods-info-box{
+  height: 148rpx;
+  padding: 30rpx;
+  background: #fff;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+.goods-img-box{
+  display: flex;
+  align-items: center;
+}
+.goods-img{
+  height: 88rpx;
+  width: 88rpx;
+  margin:0 28rpx 0 10rpx;
+}
+.icon-return{
+  color:#D9D9D9;
+  font-size: 38rpx;
+}
+.goods-type{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.goods-name{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin:8rpx 0;
+}
+.goods-prop{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.storage-box{
+  margin-top:40rpx;
+}
+.storage-item-box{
+  height: 88rpx;
+  background:#fff;
+  border-bottom: 1px solid #f6f6f6;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.storage-item-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.storage-item-content{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  width: 440rpx;
+}
+.input{
+  font-weight: 400
+}
+.storage-note-box{
+  padding: 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  min-height: 120rpx;
+  box-sizing: border-box;
+}
+.storage-note-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.storage-note-content{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  width: 440rpx;
+}
+.btn-box{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.delete-btn,.save-btn{
+  width: 50%;
+  font-size:28rpx;
+  font-weight:500;
+  text-align: center;
+  height: 100%;
+  line-height: 88rpx;
+}
+.delete-btn{
+  background: #C7C7C7;
+  color:#323232;
+}
+.save-btn{
+  background: #62AC4B;
+  color:#FFFFFF;
+}

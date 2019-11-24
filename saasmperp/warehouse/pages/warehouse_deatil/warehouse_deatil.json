@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "modal":"/components/modal/modal"
+  },
+  "navigationBarTitleText": "仓库列表"
+}

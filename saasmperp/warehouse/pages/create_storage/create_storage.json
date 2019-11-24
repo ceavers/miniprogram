@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "department": "/components/popup_up/popup_up"
+  },
+  "navigationBarTitleText": "仓库列表"
+}

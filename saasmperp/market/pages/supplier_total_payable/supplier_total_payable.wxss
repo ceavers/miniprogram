@@ -1,0 +1,36 @@
+/* market/pages/order_receivable_list/order_receivable_list.wxss */
+.order-receivable-list{
+  height: 100vh;
+  background-color: #f6f6f6;
+  color: #323232;
+  font-size: 28rpx;
+}
+.header{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.order-receivable-list-item-time{
+  padding-left: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.order-receivable-list-item-detail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.order-receivable-list-item-detail-money{
+  display: flex;
+  align-items: center;
+}
+.order-receivable-list-item-detail-money image{
+  width: 36rpx;
+  height: 36rpx;
+}

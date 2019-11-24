@@ -1,0 +1,11 @@
+<view class="index_box">
+ <view class="index_title_box">
+  <view class="index_img">
+    <image src="../../images/touxiang.png"></image>
+  </view>
+  <view class="index_title_t">客户</view>
+  <view class="index_title_wenzi">对客户应收款、历史销售价进行管理</view>    
+ </view>
+  <button class="index_button" bindtap="index_button">马上新建</button> 
+
+</view>

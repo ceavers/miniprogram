@@ -1,0 +1,118 @@
+.transfer-detail-wrapper{
+  height: 100vh;
+  background: #f6f6f6;
+}
+
+.transfer-detail-wrapper-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14rpx 30rpx;
+  box-sizing: border-box;
+  background: #d9d9d9;
+  font-size: 26rpx;
+  height: 88rpx;
+}
+
+.transfer-detail-wrapper-header > view:nth-child(1){
+  background: #62AC4B;
+  border-radius: 4rpx;
+  color: #fff;
+  height: 100%;
+  width: 340rpx;
+  text-align: center;
+  line-height: 60rpx;
+
+}
+
+.transfer-detail-wrapper-con image{
+  width: 35rpx;
+  height: 35rpx;
+
+}
+
+.floew{
+  height: 10rpx;
+  width: 100%;
+}
+
+
+.transfer-detail-wrapper-con >view:nth-child(1){
+  color: #999;
+  font-size: 24rpx;
+  padding-left: 30rpx;
+  padding-top: 35rpx;
+  padding-bottom: 23rpx;
+  box-sizing: border-box;
+}
+
+.transfer-detail-wrapper-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 14rpx 30rpx;
+  box-sizing: border-box;
+  align-items: center;
+  height: 88rpx;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(2),.transfer-detail-wrapper-item >view:nth-child(1) > view{
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(1){
+  font-size: 24rpx;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(1) text:nth-child(1){
+  color: #999;
+  margin-right: 29rpx;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(1) text:nth-child(2){
+  color: #323232;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(2) image{
+  margin-left: 16rpx;
+}
+
+.transfer-detail-wrapper-item >view:nth-child(2) view{
+  color: #62AC4B;
+  font-size: 28rpx;
+}
+
+.transfer-detail-wrapper-footer{
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 28rpx;
+  color: #424242;
+
+}
+
+.transfer-detail-wrapper-footer image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.transfer-detail-wrapper-footer view{
+  margin-left: 10rpx;
+}

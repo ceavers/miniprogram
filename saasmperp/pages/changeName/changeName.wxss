@@ -1,0 +1,23 @@
+/* pages/changeName/changeName.wxss */
+.change-name{
+  width: 100%;
+  box-sizing: border-box;
+  height: 88rpx;
+  background: #fff;
+  font-size:28rpx;
+  /* font-weight:500; */
+  /* color:rgba(153,153,153,1); */
+  padding:0 30rpx;
+}
+.save-btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin:40rpx auto;
+  line-height: 88rpx;
+  text-align: center;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}

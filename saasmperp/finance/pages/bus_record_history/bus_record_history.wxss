@@ -1,0 +1,280 @@
+.record-history-box{
+  background: #f6f6f6;
+  height: 100vh;
+}
+
+.search-box{
+  height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 34rpx;
+  box-sizing: border-box;
+  background: #d9d9d9;
+
+}
+
+.search-box > view:nth-child(1){
+  height: 60rpx;
+  border-radius: 4rpx;
+  padding-left: 20rpx;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  width: calc(100% - 60rpx);
+background: #fff;
+}
+
+.search-box view image{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.search-box > image{
+  width: 36rpx;
+  height: 40rpx;
+}
+
+.search-box input{
+  border: none;
+  outline: none;
+  width: calc(100% - 80rpx);
+  padding-left: 18rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+.record-header{
+  text-align: center;
+  padding-top: 50rpx;
+  height: 81rpx;
+  font-size: 32rpx;
+  color: #323232;
+  box-sizing: border-box;
+}
+
+.positive{
+  color: #62AC4B
+}
+
+.negative{
+  color: #FF3B30;
+}
+
+.record-desc > view:nth-child(1){
+  font-size: 24rpx;
+  color: #999;
+  height: 80rpx;
+  padding-top: 39rpx;
+  padding-bottom: 23rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+
+.record-item{
+  display: flex;
+  justify-content: space-between;
+  padding:14rpx 30rpx 12rpx 30rpx;
+  background: #fff;
+  box-sizing: border-box;
+  align-items: center;
+  border-bottom: 1px solid #f7f7f7;
+  height: 88rpx;
+
+}
+
+.record-item > view:nth-child(1){
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.record-item > view:nth-child(1) view:nth-child(1){
+  font-size: 28rpx;
+  color: #323232;
+}
+
+.record-item > view:nth-child(1) view:nth-child(2){
+  font-size: 22rpx;
+  color: #999;
+}
+
+.record-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #424242;
+
+}
+
+.record-footer image{
+  margin-right: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.record-footer view{
+  margin-left: 10rpx;
+}
+
+
+.create-record-history{
+  background: #f6f6f6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-record-history image{
+  width: 140rpx;
+  height: 110rpx;
+  margin-top: 236rpx;
+  margin-bottom: 80rpx;
+}
+
+.create-record-history button{
+  width: 200rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  background: #62AC4B;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+}
+
+/* 筛选弹框样式 */
+.selectCateModal{
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff !important;
+
+}
+
+.showFir{
+  visibility: visible;
+  transform: translateY(0);
+  opacity: 1;
+  transition: all .3s;
+}
+
+
+.hiddenFir{
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all .3s
+}
+
+.selectCateModal > view:nth-child(1){
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #323232;
+  font-weight: bold;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+
+}
+
+.select-container{
+  display: flex;
+  justify-content: flex-start;
+  height: calc(100% - 176rpx);
+  width: 100%;
+
+}
+
+.selectFirCate{
+  width: 38%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 134rpx;
+
+}
+
+
+.selectFirCate > view,.selectSecCate > view{
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #323232;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.selectSecCate{
+  width: 62%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  padding-bottom: 134rpx;
+
+}
+
+.selectSecCate > view{
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+
+.selectSecCate > view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-container{
+
+  height: 88rpx;
+  box-sizing: border-box;
+}
+
+
+.icon-container icon{
+  transform: translateY(6rpx);
+}
+
+.select-footer{
+  height: 88rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  align-items: center;
+  font-size: 28rpx;
+  color: #62AC4B;
+  background: #fff;
+}
+
+.select-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 99999;
+}
+
+.choosed-fir-cate{
+  background: #f2f2f2;
+}

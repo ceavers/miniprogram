@@ -1,0 +1,30 @@
+<view class="yufu_pay">
+  <view class="yufu_title">付预付款</view>
+  <view class="yufu_content_box">
+    <view class="yufu_name_title">供应商名称</view>
+    <view class="yufu_name_wenzi">测试供应商</view>
+  </view>
+  <view class="yufu_content_box yufu_content_box1">
+    <view class="yufu_name_title">付款金额</view>
+    <view class="yufu_name_wenzi1">128</view>
+  </view>
+  <view class="yufu_content_box yufu_content_box2" bindtap="yufu_btn">
+    <view class="yufu_name_box">
+      <view class="yufu_name_title">付款账户</view>
+      <view class="yufu_name_wenzi1">
+        <text>{{cp_type}}</text>
+        <text> （00.00）</text>
+      </view>
+    </view>
+    <image src="../../images/jiantou2.png"></image>
+  </view>
+  <view class="yufu_content_box yufu_content_box2 yufu_content_box3">
+    <view class="yufu_name_title">备注</view>
+    <textarea class="yufu_name_wenzi2"></textarea>
+  </view>
+  <button class="yufu_button" bindtap="yufu_button">确认付款</button>
+  <view>
+    <pay_type shadow="{{shadow}}" bindradioChange="radioChange" items="{{items}}"></pay_type>
+  </view>
+  <view class="shadow" wx:if="{{shadow}}"></view>
+</view>

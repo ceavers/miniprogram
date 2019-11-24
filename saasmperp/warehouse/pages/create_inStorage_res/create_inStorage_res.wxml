@@ -1,0 +1,52 @@
+<!--warehouse/pages/create_inStorage_res/create_inStorage_res.wxml-->
+<view class="container">
+  <view class="res-box">
+    <view class="icon-box">
+      <image src="/warehouse/images/success.png" class="res-icon"></image>
+    </view>
+    <view class="res-text">创建成功</view>
+  </view>
+  <view class="check-godown-entry" catchtap="toGodownEntryPage" wx:if="{{type==0}}">
+    <view class="icon-box">
+      <image src="/warehouse/images/outStorage.png" class="in-icon"></image>
+    </view>
+    <view class="check-text">查看出库单</view>
+  </view>
+  <view class="check-godown-entry" catchtap="toGodownEntryPage" wx:elif="{{type==1}}">
+    <view class="icon-box">
+      <image src="/warehouse/images/inStorage.png" class="in-icon"></image>
+    </view>
+    <view class="check-text">查看入库单</view>
+  </view>
+  <view class="check-godown-entry" catchtap="toGodownEntryPage" wx:elif="{{type==2}}">
+    <view class="icon-box">
+      <image src="/warehouse/images/allot.png" class="in-icon"></image>
+    </view>
+    <view class="check-text">查看调拨单</view>
+  </view>
+  <view class="check-godown-entry" catchtap="toCheckList" wx:elif="{{type==3}}">
+    <view class="icon-box">
+      <image src="/warehouse/images/check.png" class="in-icon" style="margin-left: 16rpx;"></image>
+    </view>
+    <view class="check-text">查看盘点单</view>
+  </view>
+  <view class="action-box" catchtap="continueCreate">
+    <view class="icon-box">
+      <image src="/warehouse/images/edit.png" class="edit-icon"></image>
+    </view>
+    <view class="action-text">继续开单</view>
+  </view>
+  <view class="action-box">
+    <view class="icon-box">
+      <image src="/warehouse/images/share.png" class="share-icon"></image>
+    </view>
+    <view class="action-text">发送单据</view>
+  </view>
+  <view class="action-box">
+    <view class="icon-box">
+      <image src="/warehouse/images/print.png" class="print-icon"></image>
+    </view>
+    <view class="action-text">蓝牙打印</view>
+  </view>
+</view>
+

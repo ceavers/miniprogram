@@ -1,0 +1,51 @@
+/* finance/pages/index/index.wxss */
+.index_img{
+  width: 98rpx;
+  height: 144rpx;
+  margin: auto;
+  margin-top: 236rpx;
+}
+.index_img image{
+  width: 100%;
+  height: 100%;
+}
+.index_box{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.index_title_box{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.index_title_t{
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  line-height:138rpx;
+  text-align: center;
+  margin-top: 46rpx;
+}
+.index_title_wenzi{
+  font-size:28rpx;
+font-weight:500;
+color:rgba(153,153,153,1);
+line-height:40rpx;
+text-align: center;
+margin-top: 29rpx;
+}
+.index_button{
+  width:200rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin: auto;
+  margin-top: 122rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 88rpx;
+}
+

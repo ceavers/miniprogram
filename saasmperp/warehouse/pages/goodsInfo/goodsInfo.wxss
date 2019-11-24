@@ -1,0 +1,101 @@
+/* warehouse/pages/goodsInfo/goodsInfo.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.container-header{
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+}
+.choice-box{
+  height:148rpx;
+  background:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 148rpx;
+  margin-bottom: 40rpx;
+}
+.choice-img{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.choice-img>image{
+  width: 38rpx;
+  height: 32rpx;
+  margin-right: 18rpx;
+  vertical-align: middle;
+}
+.choice-img>text{
+  vertical-align: middle;
+  color: #999;
+  font-size: 28rpx;
+}
+.goods-img-box{
+  height: 448rpx;
+  padding: 10rpx;
+}
+.box{
+  margin-top: 40rpx;
+}
+.box-line{
+  height: 88rpx;
+  padding: 0 32rpx;
+  background: #fff;
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+}
+.box-line:last-child{
+  margin: 0;
+}
+.line-title{
+  width: 228rpx;
+}
+.line-content{
+  width: calc(100% - 228rpx);
+  line-height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.box-name{
+  margin: 0;
+}
+.goods-name-box{
+  height: 116rpx;
+  justify-content: space-between;
+}
+.goods-name>view:last-child{
+  font-size: 24rpx;
+}
+.icon-return{
+  color: #D9D9D9;
+  display: flex;
+}
+.btn-box{
+  height: 240rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 133rpx;
+}
+.btn-box>view>image{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25rpx;
+}
+.edit-btn>image{
+  width: 50rpx;
+  height: 54rpx;
+}
+.share-btn>image{
+ width: 56rpx;
+ height: 48rpx; 
+}
+.delete-btn>image{
+  width: 40rpx;
+  height: 50rpx;
+}

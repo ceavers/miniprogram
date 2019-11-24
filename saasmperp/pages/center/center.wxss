@@ -1,0 +1,124 @@
+/* pages/center/center.wxss */
+.info-wrap{
+  height: 252rpx;
+  background: #62AC4B;
+  display: flex;
+  align-items: center;
+}
+.info-box{
+  height: 170rpx;
+  padding:0 30rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatar-box{
+  display: flex;
+  align-items: center;
+}
+.avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-left: 20rpx;
+  margin-right: 22rpx;
+  box-shadow: 2rpx 6rpx 6px 0px #58A342;
+}
+.name{
+  font-size:34rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.vip-box{
+  display: inline-block;
+  background: #FFC500;
+  height: 36rpx;
+  width: 60rpx;
+  border-radius: 36rpx;
+  margin-left: 30rpx;
+  text-align: center;
+  line-height: 36rpx;
+  /* padding: 0 4rpx; */
+  vertical-align: middle;
+
+}
+.vip-grade{
+  color:#fff;
+  font-size: 18rpx;
+  margin-left: -6rpx;
+}
+.icon-vip{
+  font-size: 28rpx;
+  color:#fff;
+}
+.info-setting{
+  font-size: 36rpx;
+  color: #fff;
+}
+.account-position{
+  font-size:24rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.account{
+  padding: 12rpx 0;
+}
+.advertising{
+  height: 180rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.advert{
+  width: 680rpx;
+  height: 116rpx;
+  border-radius: 116rpx;
+  box-shadow: 2rpx 6rpx 6px 0px #E9E9E9;
+}
+.manage-wrap{
+  overflow: hidden;
+  overflow-y: auto;
+  height: calc(100% - 520rpx);
+}
+.manage-box{
+  background: #fff;
+  margin:20rpx 0;
+}
+.manage-item{
+  height: 88rpx;
+  padding: 0 44rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-box{
+  display: flex;
+  align-items: center;
+}
+.manage-item-des{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin-left: 20rpx;
+}
+.item-back{
+  color:#D9D9D9;
+  font-size: 28rpx;
+}
+.guide-box{
+  background: #fff;
+}
+.exit{
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  width: 100%;
+}

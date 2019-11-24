@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "InputWrap": "../../components/inputWrap1/inputWrap1"
+  }
+}

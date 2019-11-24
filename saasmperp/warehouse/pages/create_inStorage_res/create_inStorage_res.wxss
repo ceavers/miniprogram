@@ -1,0 +1,69 @@
+/* warehouse/pages/create_inStorage_res/create_inStorage_res.wxss */
+.res-box{
+  height: 208rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-box{
+  width:86rpx;
+  display: flex;
+  align-items: center;
+}
+.res-icon{
+  width: 46rpx;
+  height: 46rpx;
+}
+.res-text{
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+}
+.check-godown-entry{
+  width:690rpx;
+  height:88rpx;
+  border:1px solid rgba(98,172,75,1);
+  border-radius:88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 82rpx;
+}
+.in-icon{
+  height: 42rpx;
+  width: 42rpx;
+}
+.check-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(98,172,75,1);
+}
+.action-box{
+  width:690rpx;
+  height:88rpx;
+  border:1px solid rgba(85,85,85,1);
+  border-radius:8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+}
+.action-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(85,85,85,1);
+}
+.edit-icon{
+  width:38rpx;
+  height: 46rpx;
+}
+.share-icon{
+  width: 48rpx;
+  height: 42rpx;
+}
+.print-icon{
+  width: 48rpx;
+  height: 48rpx;
+}

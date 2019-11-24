@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "category":"/components/category/category",
+    "filter": "/warehouse/components/filter/filter",
+    "add-goods": "/components/add_goods/add_goods",
+    "detailPopup": "/components/popup_up/popup_up"
+  },
+  "navigationBarTitleText": "商品"
+}

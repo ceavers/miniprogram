@@ -1,0 +1,216 @@
+.add-account-box{
+  height: 100vh;
+  background: #f6f6f6;
+}
+
+.add-account-box > view:nth-child(1){
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #323232;
+  font-size: 32rpx;
+}
+
+.confirm-btn{
+  margin: 0 auto;
+  background: #62ac4b;
+  border-radius: 8rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  width: calc(100% - 60rpx);
+}
+
+.add-account-container1 > view,.add-account-container2 > view{
+  display: flex;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1px solid #f7f7f7;
+  background: #fff;
+}
+
+.account-remark textarea{
+  font-size: 28rpx;
+  color: #323232;
+}
+
+.add-account-container1 image{
+  width: 35rpx;
+  height: 35rpx;
+  
+}
+
+.modal-text{
+  width: 485rpx;
+  font-size: 28rpx;
+  color: #323232;
+}
+
+.add-account-container1 > view >view:nth-child(1),.add-account-container2 > view >view:nth-child(1){
+  font-size: 28rpx;
+  color: #666;
+  width: 170rpx;
+}
+
+.add-account-container2{
+  margin-top: 20rpx;
+  margin-bottom: 80rpx;
+}
+
+.add-account-container2 input,.add-account-container1 > view > input{
+  font-size: 28rpx;
+  color: #323232;
+  border: none;
+  outline: none;
+  width: calc(100% - 230rpx);
+}
+
+.with-star{
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.with-star view:nth-child(2){
+  transform: translateY(4rpx);
+  margin-left: 10rpx;
+  color:#FF6B63;
+}
+
+.account-remark{
+  height: 120rpx !important;
+  line-height: 20rpx !important;
+  
+
+}
+
+.account-remark textarea{
+  height: 120rpx;
+  width: calc(100% - 230rpx);
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 选择公共部门弹框 */
+.public-sector-mask{
+  position: fixed;
+  z-index: 999999;
+  background: rgba(0,0,0,.4);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.active{
+  border:2px solid #62AC4B !important;
+}
+
+.public-sector-modal{
+  width: 100%;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  background: #fff;
+}
+
+.showPub{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .3s;
+}
+
+.hiddenPub{
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all .3s;
+}
+
+.public-sector-modal-header{
+  display: flex;
+  justify-content: space-between;
+  height: 126rpx;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  line-height: 126rpx;
+  align-items: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.public-sector-modal-header >view:nth-child(1),.public-sector-modal-header image{
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.public-sector-modal-container{
+  padding: 76rpx 15rpx 60rpx 15rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+}
+
+.public-sector-modal-container > view{
+  width: 160rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 1px solid #999;
+  margin-bottom: 40rpx;
+}
+
+.mgRight{
+  margin-right: 85rpx;
+}
+
+.public-sector-modal-footer{
+  height: 116rpx;
+  padding-top: 30rpx;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 28rpx;
+  color: #323232;
+}
+
+/* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

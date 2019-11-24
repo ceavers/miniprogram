@@ -1,0 +1,11 @@
+<!--warehouse/pages/statistics/statistics.wxml-->
+<view class="container">
+  <view class="title">{{statistics.category_name}}</view>
+  <view class="content-item" wx:for="{{statistics.subclasses}}" wx:key="index">
+    <view>
+      <view class="goods-name">{{item.subclass_name}}</view>
+      <text space="emsp" class="storage-sum">库存数 {{item.stock}}</text>
+    </view>
+    <view class="number">{{item.money}}</view>
+  </view>
+</view>

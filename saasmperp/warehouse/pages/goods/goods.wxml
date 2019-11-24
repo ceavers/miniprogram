@@ -1,0 +1,99 @@
+<!--warehouse/pages/goods/goods.wxml-->
+<view class="container">
+  <view class="search-wrap">
+    <view class="category" catchtap="categoryShow">
+      <view class="text">{{categoryName}}</view>
+      <text class="iconfont icon-return"></text>
+    </view>
+    <view class="search-box">
+      <image class="search-icon" src="/images/search.png"></image>
+      <input class="input" placeholder="品名/货号/品牌" bindconfirm="searchRepertory"></input>
+    </view>
+    <image class="filter-icon" src="/images/shaixuan.png" catchtap="filterShow"></image>
+  </view>
+  <scroll-view wx:if="{{no_goods}}" scroll-y class="res-box">
+    <view style="height:1rpx"></view>
+    <view class="category-box {{index==0?'mt-30':''}}" wx:for="{{goodsData}}" wx:key="index">
+      <view class="category-name">{{item.category_name}}</view>
+      <view>
+        <view class="res-item" wx:for="{{item.data}}" wx:for-item="goodsData" wx:key="index" data-goods-id="{{goodsData.product_id}}" catchtap="detailShow">
+          <view class="goods-info">
+            <image class="goods-img" src="{{goodsData.pic_url}}"></image>
+            <view class="goods-des">
+              <view class="goods-name">{{goodsData.product_name}}</view>
+              <view class="repertory">库存  {{goodsData.stock}}</view>
+              <view class="price">{{goodsData.price}}</view>
+            </view>
+          </view>
+          <text class="iconfont icon-return"></text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{!no_goods}}" class="no-res-box">
+    <image src="../../images/no-goods.png"></image>
+    <view class="no-goods-title">商品</view>
+    <view class="no-goods-content">对商品价格 、库存进行管理</view>
+    <view class="no-goods-add" catchtap="createGoods">马上新建</view>
+  </view>
+  <view class="scan {{!no_goods ? 'scan-bottom' : ''}}" catchtap="scan">
+    <text class="iconfont icon-saomiao1"></text>
+  </view>
+  <view wx:if="{{no_goods}}" class="add-btn" catchtap="createGoods">
+    <image src="/images/add-employ.png" class="add"></image>
+    <text>新增商品</text>
+  </view>
+</view>
+<category show="{{categoryShow}}" goodsData="{{categoryData}}" bind:setType="getType"></category>
+<filter show="{{filterShow}}" filterData="{{filterData}}" bind:setFilterItem="getFilterItem"></filter>
+<detailPopup show="{{detailShow}}">
+  <view class="detail-box">
+    <view class="goods-popup-info">
+      <view class="close-box">
+        <image src="../../images/close.png" class="detail-close" catchtap="detailClose"></image>
+      </view>
+      <view class="goods-img-wrap">
+        <image class="goods-img" src="../../images/goods2.png"></image>
+        <view class="goods-img-box">
+          <view class="popup-goods-name">{{goodsDetail.product_name}}</view>
+          <view class="popup-goods-des">{{goodsDetail.product_code}}</view>
+          <view class="popup-kc">
+            <text space="emsp">库存 {{goodsDetail.stock}}</text>
+            <view catchtap="toStockDetailPage" data-goods-id="{{goodsDetail.product_id}}">库存详情<text class="iconfont icon-return popup-back"></text></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="popup-detail-box">
+      <text class="detail-sale-price detail-text" space="emsp">售价 {{goodsDetail.selling_price}} </text>
+      <text class="detail-purchase-price detail-text" space="emsp">进价 {{goodsDetail.buying_price}}</text>
+      <text class="detail-goods-des detail-text" space="emsp">描述 {{goodsDetail.note}}</text>
+      <view class="detail-goods-icon detail-text">
+        <view catchtap="toGoodsDetailPage" data-goods-id="{{goodsDetail.product_id}}">产品详情<text class="iconfont icon-return popup-back"></text></view>
+      </view>
+    </view>
+    <view class="popup-icon-box">
+      <view wx:if="{{modulesId==2}}" catchtap="outputStorage">
+        <image src="/images/kc-out.png" class="popup-icon"></image>
+        <view class="popup-icon-text">出库</view>
+      </view>
+      <view wx:if="{{modulesId==2}}" catchtap="putInStorage">
+        <image src="/images/kc-in.png" class="popup-icon"></image>
+        <view class="popup-icon-text">入库</view>
+      </view>
+      <view wx:if="{{modulesId==1}}" catchtap="toSale">
+        <image src="/images/market-ticket.png" class="popup-icon"></image>
+        <view class="popup-icon-text">销售</view>
+      </view>
+      <view wx:if="{{modulesId==1}}" catchtap="toPurchase">
+        <image src="/images/market-purchase.png" class="popup-icon"></image>
+        <view class="popup-icon-text">采购</view>
+      </view>
+      <view>
+        <image src="/images/common-share.png" class="popup-icon"></image>
+        <view class="popup-icon-text">分享</view>
+      </view>
+    </view>
+  </view>
+</detailPopup>
+<add-goods show="{{inStorageShow}}" bind:addGoodsComplete="addGoodsComplete" goodsStock="{{goodsStock}}"></add-goods>

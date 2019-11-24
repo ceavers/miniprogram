@@ -1,0 +1,352 @@
+/* market/pages/order_select/order_select.wxss */
+page{
+  padding-bottom: 88rpx;
+  height: calc(100vh - 88rpx);
+}
+button{
+  padding: 0;
+  border-radius: 0;
+  background-color: rgba(246,246,246,1);
+  line-height: 94rpx;
+  font-size: 24rpx;
+  color: #323232;
+}
+button::after{
+  border-radius: none;
+}
+.order{
+  display: flex;
+  flex-flow: column;
+  overflow: auto;
+  height: calc(100vh - 88rpx);
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.set-up{
+  padding: 8rpx 31rpx 0 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: right;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.body{
+  flex: 1;
+}
+.mes-box{
+  display: flex;
+  align-items: center;
+  padding: 0 31rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+
+.mes-box-input{
+  flex: 1;
+  text-align: center;
+}
+.select-customer{
+  display: flex;
+  align-items: center;
+}
+.select-customer image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.select-thing{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.select-thing-border{
+  height: 50rpx;
+  border-right: 1rpx solid #999999;
+}
+.select-thing image{
+  margin-right: 31rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.choose-goods{
+  height: calc(100% - 88rpx - 40rpx - 88rpx);
+}
+.goods-item{
+  margin-top: 20rpx;
+}
+.goods-detail{
+  display: flex;
+  align-items: center;
+  padding: 24rpx 30rpx;
+  background-color: #fff;
+}
+.goods-detail-mes{
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+  height: 100%;
+  font-size: 24rpx;
+}
+.goods-image{
+  width: 104rpx;
+  height: 100rpx;
+}
+.goods-num{
+  display: flex;
+  align-items: center;
+  margin-top: 2rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.goods-type{
+  flex: 1;
+}
+.goods-type text:nth-child(1){
+  margin-left: 33rpx;
+}
+.goods-type text:nth-child(2){
+  margin-left: 70rpx;
+}
+.choose-goods-num{
+  flex: 1;
+  display: flex;
+}
+.choose-goods-num image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.choose-goods-num text{
+  width: 140rpx;
+  text-align: center;
+}
+.footer{ 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 88rpx;
+  background-color: #62AC4B;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+}
+.money,.settlement{
+  flex: 1;
+}
+.settlement{
+  display: flex;
+}
+.money{
+  padding-right: 0;
+  background-color: #C7C7C7;
+  text-align: left;
+  color: #323232;
+}
+.money text{
+  margin-left: 50rpx;
+}
+.discount{
+  width: 112rpx;
+  background-color: #FDD04F;
+}
+.settlement-btn{
+  flex: 1;
+}
+.modal{
+  display: flex;
+  flex-flow: column;
+  width:540rpx;
+  height:300rpx;
+  background:rgba(246,246,246,1);
+  border-radius:12rpx;
+  font-size: 28rpx;
+  color: #323232;
+}
+.modal-title{
+  padding-top: 30rpx;
+  text-align: center;
+}
+.modal-input{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rx;
+}
+.modal2 .modal-input{
+  align-items: flex-start;
+}
+.modal-input input{
+  width:420rpx;
+  height:60rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 4rpx 12rpx 0rpx rgba(0, 0, 0, 0.1);
+  font-size: 28rx;
+}
+.modal-footer{
+  display: flex;
+  height: 94rpx;
+  border-top: 1rpx solid #D9D9D9;
+  text-align: center;
+  line-height: 94rpx;
+  font-size: 24rpx;
+}
+.modal-border{
+  border-left: 1rpx solid #D9D9D9;
+}
+.cancel,.confirm{
+  flex: 1;
+}
+
+/* warehouse/pages/stock_removal/stock_removal.wxss */
+.storage-box{
+  margin-top:40rpx;
+}
+.storage-item-box{
+  height: 88rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom:1px solid #F6F6F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.choose-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.pd-20>view{
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scan-icon{
+  height: 30rpx;
+  width: 30rpx;
+}
+.icon-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-left: 30rpx;
+}
+
+.goods-info{
+  display: flex;
+}
+.goods-des{
+  margin-left: 30rpx;
+}
+.goods-img{
+  width: 104rpx;
+  height: 104rpx;
+}
+.goods-name{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.repertory{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin:4rpx 0;
+}
+.price{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.delete-icon{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right:30rpx;
+  top:30rpx;
+}
+.add-sub-icon{
+  width: 40rpx;
+  height: 40rpx
+}
+.goods-prop{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  justify-content: flex-start;
+}
+.add-sub-box{
+  display: flex;
+  width: 220rpx;
+  justify-content: space-between;
+}
+.property-one{
+  width: 130rpx;
+}
+.property-two{
+  width: 220rpx;
+}
+.mt-20{
+  margin-top:20rpx;
+}
+
+.goods-number{
+  max-width: 130rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nowrap{
+  overflow: hidden;
+}
+.create-btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 88rpx;
+  margin:80rpx auto;
+}
+.pd-20{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.scan-box{
+  border-left: 1px solid rgba(153,153,153,1);
+}
+/* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}
+

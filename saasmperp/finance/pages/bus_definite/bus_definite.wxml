@@ -1,0 +1,33 @@
+<view class='definite-box'>
+  <view>业务单据</view>
+  <navigator hover-class='none' url='/finance/pages/bus_revenue/bus_revenue'>
+    <view class='definite-container first-container'>
+      <view>
+        <view class='icon1'></view>
+        <view>收支记账</view>
+      </view>
+
+      <image src='../../images/jiantou2.png'></image>
+    </view>
+  </navigator>
+  <navigator hover-class='none' url='/finance/pages/bus_loan_list/bus_loan_list'>
+    <view class='definite-container'>
+      <view>
+        <view class='icon2'></view>
+        <view>借入借出</view>
+      </view>
+
+      <image src='../../images/jiantou2.png'></image>
+    </view>
+  </navigator>
+  <navigator hover-class='none' url='/finance/pages/bus_transfer_list/bus_transfer_list'>
+    <view class='definite-container'>
+      <view>
+        <view class='icon3'></view>
+        <view>账户转账</view>
+      </view>
+
+      <image src='../../images/jiantou2.png'></image>
+    </view>
+  </navigator>
+</view>

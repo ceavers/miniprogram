@@ -1,0 +1,37 @@
+<!--历史订单-->
+<view class="history-order">
+  <view class="search-box">
+    <view class="search-wrap">
+      <image class="search-image" src="/images/search.png"></image>
+      <input placeholder="单号/客户名" value="{{ screenInput }}" bindinput="screenInput"></input>
+    </view>
+    <image class="screen-image" src="/market/images/screen.png" bindtap="showScreen"></image>
+  </view>
+  <view class="header">历史订单</view>
+  <scroll-view class="body" scroll-y>
+    <view class="history-order-item" wx:for="{{ historicalOrderList }}" wx:for-index="key" wx:for-item="value" wx:key="{{ key }}" bindtap="gotoDetail" data-id="1234" data-orderId="0">
+      <view class="history-order-item-title">{{ key }}</view>
+      <view class="history-order-item-detail" wx:for="{{ value }}" wx:key="{{ index }}">
+        <view class="history-order-item-detail-name">{{ item.user_name }}  {{ item.order_id }}</view>
+        <view class="history-order-item-detail-imagewrap">
+          <image src="{{ item.product_image }}"></image>
+        </view>
+        <view class="history-order-item-detail-num-wrap" catchtap="showBottomModal">
+          <view class="">
+            <text class="history-order-item-detail-num">共{{ item.count }}件</text>
+            <text>总计：{{ item.total_money }}</text>
+          </view>
+          <image src="../../images/jiantou.png"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<ScreenModal
+  showScreen="{{ showScreen }}" 
+  selectClassificationIList="{{ firstClassificationList }}"
+  screenOptionList="{{ firstClassificationList[0] ? firstClassificationList[0].condition.condition_second : [] }}"
+  selectedScreenList="{{ selectedScreenList }}"
+  bindconfirmScreen="getScreenMes"
+></ScreenModal>
+<BottomModal bindtap="getEventName" show="{{ showBottomModal }}" modalList="{{ bottomModalList }}"></BottomModal>

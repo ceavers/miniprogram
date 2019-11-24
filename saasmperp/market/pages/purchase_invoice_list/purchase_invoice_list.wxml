@@ -1,0 +1,50 @@
+<view class="head" wx:if='{{!isSelect && !isSearch}}'>
+  <view class="search-box">
+    <image class="searchImg" src="../../../images/search.png" catchtap='searchInvoiceLists'></image>
+    <input class="input-box" placeholder="单号/供应商名" bindinput='searchInvoiceList'></input>
+  </view>
+  <image class="screenImg" src="../../../images/shaixuan.png" catchtap="filterShow"></image>
+</view>
+<view class='search-boxs' wx:if='{{isSelect}}'>
+  <view>{{choiceFilter}}</view>
+  <text bindtap='cancelSelect' class='cancel'>取消</text>
+</view>
+<view class='search-boxs' wx:if='{{isSearch}}'>
+  <view>{{choiceSearch}}</view>
+  <text class='cancel' bindtap='cancelSearch'>取消</text>
+</view>
+<view class='zhanwei2' wx:if='{{isSelect || isSearch}}'></view>
+<view class="middle" wx:if='{{!isSelect && !isSearch}}'>采购单列表</view>
+<view class="content" wx:for='{{purchaseInvoiceList}}' wx:key='index'>
+  <view class="order-time">{{item.date}}</view>
+  <view class="order-detail" wx:for='{{item.invoiceList}}' wx:key='index' wx:for-item='itemA'  bindtap="cancel" data-type='{{itemA.order_is_return}}' data-index='{{index}}'>
+    <view class="detial-head">
+      <view>
+        <span>{{itemA.supplier_name}}</span>
+        <span>({{itemA.order_id}})</span>
+      </view>
+      <view class="detail-tui" wx:if='{{itemA.order_is_return == 1 }}'>退</view>
+    </view>
+    <view class="detail-middle">
+      <view class="commodity-img-box" wx:for='{{itemA.product_img_list}}' wx:key='index' wx:for-item='itemB'>
+        <image class="commodity-img" src="{{itemB.product_img}}"></image>
+      </view>
+    </view>
+    <view class="detail-bottom">
+      <view>
+        <span>共{{itemA.count}}件</span>
+        <span>总计： {{itemA.total_sale}}</span>
+      </view>
+      <image class="icon-go" src="../../images/jiantou.png"></image>
+    </view>
+    <view class="hr"></view>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="hr"></view>
+<view class="hr"></view>
+<!-- <view class="bottom" bindtap="showAddModel">
+  <image class="add-aut" src='../../../images/add-employ.png'></image>新增采购单
+</view> -->
+<bottomView show="{{ showAddModel }}" modalList="{{ addList }}"></bottomView>
+<filter show="{{filterShow}}" filterData="{{filterData}}" bind:confirm='confirmfilter'></filter>

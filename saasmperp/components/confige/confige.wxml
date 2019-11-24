@@ -1,0 +1,34 @@
+<view class="contaner" wx:if="{{shadow1}}">
+    <view class="contaner_title">
+     <view class="contaner_btn">
+       <view class="xianjin" wx:if='{{showAccount}}'>现金账户{{sum1}}</view>
+       <view class="beizhu" catchtap="{{showText}}">{{textArr}}</view>
+     </view>
+       <view class="shuzi">{{sum}}</view>
+    </view>
+    <view class="contaner_content">
+      <view class="content_1">
+        <view bindtap="seven">{{seven}}</view>
+        <view bindtap="four">{{four}}</view>
+        <view bindtap="one">{{one}}</view>
+        <view bindtap="remove">C</view>
+      </view>
+      <view class="content_1">
+        <view bindtap="eight">{{eight}}</view>
+        <view bindtap="five">{{five}}</view>
+        <view bindtap="two">{{two}}</view>
+        <view bindtap="zero">{{zero}}</view>
+      </view>
+      <view class="content_1">
+        <view bindtap="nine">{{nine}}</view>
+        <view bindtap="six">{{six}}</view>
+        <view bindtap="three">{{three}}</view>
+        <view bindtap="dian">{{dian}}</view>
+      </view>
+      <view class="content_1">
+        <view bindtap="day">{{starttime}}</view>
+        <view bindtap="remove1">X</view>
+        <view class="comit" bindtap="comit">完成</view>
+      </view>
+    </view>
+  </view>

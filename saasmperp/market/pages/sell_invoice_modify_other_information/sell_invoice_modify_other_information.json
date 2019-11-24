@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "BlockModal": "/market/components/blackModal/blackModal"
+  },
+  "navigationBarTitleText": "订单信息"
+}

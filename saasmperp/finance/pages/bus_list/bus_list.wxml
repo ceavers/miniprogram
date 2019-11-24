@@ -1,0 +1,86 @@
+<view class="bus_list">
+  <view class="bkp_title">
+    <view class="input_box">
+      <view class="input_img">
+        <image src="../../../images/sousuo.png"></image>
+      </view>
+      <input class="bkp_input" placeholder="供号应商名/手机号" placeholder-style="color:rgba(153,153,153,1)" bindinput="bkp_input"></input>
+    </view>
+  </view>
+  <view class="bus_title">供应商列表</view>
+  <view class="bus_list_bg">
+    <view class="bus_list_box" bindtap="showModal" wx:for="{{itmes}}" wx:key="index" data-id="{{item.payable_id}}">
+      <view class="bus_touxiang">
+        <image src="{{item.supplier.sup_headpic}}"></image>
+        <view class="bus_wenzi">
+          <view>{{item.supplier.sup_name}}</view>
+          <view>应付{{item.payable_sum}}</view>
+        </view>
+      </view>
+      <view class="next">
+        <image src="../../images/jiantou2.png"></image>
+      </view>
+    </view>
+  </view>
+
+
+
+
+  <view class="shadow" wx:if="{{shadow}}"></view>
+  <view class="bottom_kuang_box" wx:if="{{shadow}}">
+    <view class="remove" bindtap="remove">
+      <image src="../../images/remov.png"></image>
+    </view>
+    <view class="bottom_kuang_title">
+      <view class="bottom_image">
+        <image src="{{sup_headpic}}"></image>
+      </view>
+      <view class="bottom_wenzi" data-id="{{sup_no}}">
+        <view>{{sup_name}}</view>
+        <view>{{payable_name}} {{payable_sum}}</view>
+      </view>
+    </view>
+    <view class="line1"></view>
+    <view class="bottom_wenzi_1">
+      <view>预付金额 {{pre_payable_sum}}</view>
+      <view>详细地址 {{sup_address}}</view>
+      <view>联系信息 {{contact_name}}{{contact_tel}}</view>
+    </view>
+    <view class="regiht" bindtap="regiht">
+      <view>供应商详情</view>
+      <view class="regiht_img">
+        <image src="../../images/jiantou2.png"></image>
+      </view>
+    </view>
+    <view class="line1"></view>
+    <view class="bottom_img">
+      <view>
+        <image src="../../images/caigou.png"></image>
+        <view class="bottom_img_wenzi">采购</view>
+      </view>
+      <view bindtap="fukuan">
+        <image src="../../images/fukuan2.png"></image>
+        <view class="bottom_img_wenzi">付款</view>
+      </view>
+      <view>
+        <image src="../../images/fenxiang.png"></image>
+        <view class="bottom_img_wenzi">分享</view>
+      </view>
+    </view>
+  </view>
+  <view class="payment" wx:if="{{shadow1}}">
+    <view class="payment_wenzi">付款</view>
+    <view class="payment_content">
+      <view class="payment_caigou" bindtap="caigou">
+        <image src="../../images/caigou.png"></image>
+        <view>采购应付款</view>
+      </view>
+      <view class="payment_yufu" bindtap="payment_yufu">
+        <image src="../../images/fukuan2.png"></image>
+        <view>预付付款</view>
+      </view>
+    </view>
+    <view class="payment_btn" bindtap="payment_btn">取消</view>
+  </view>
+  <view class="shadow1" wx:if="{{shadow1}}"></view>
+</view>

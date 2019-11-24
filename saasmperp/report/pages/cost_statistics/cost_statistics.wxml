@@ -1,0 +1,45 @@
+<!--report/pages/cost_statistics/cost_statistics.wxml-->
+<view class="container">
+  <view class="choose-box">
+    <view class="curr-month {{index==0?'choose':''}}" catchtap="chooseMouth" data-index="0">本月</view>
+    <view class="last-month {{index==1?'choose':''}}" catchtap="chooseMouth" data-index="1">上月</view>
+    <view class="all-year {{index==2?'choose':''}}" catchtap="chooseMouth" data-index="2">全年</view>
+  </view>
+  <view wx:if="{{index!=2}}">
+    <view class="chart-box">
+      <ec-canvas id="chart-pie" canvas-id="mychart-pei" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view class="item-box-m" catchtap="toDeatil" data-index="{{index}}" wx:for="{{feeData}}" wx:key="index">
+      <view>{{item.cast_item_name}}</view>
+      <view class="pr">{{item.cast_rate}}%</view>
+      <view class="num-box">
+        <view>{{item.cast_gross_p}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{index==2}}">
+    <view class="year-fee" catchtap="toDetailTotal">
+      <view>今年费用</view>
+      <view class="num-box">
+        <view>{{monthlyData.this_year_cost}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="item-box" catchtap="toDetailTotal" wx:for="{{monthlyData.month_list}}" wx:key="index" data-index="{{item.month}}">
+      <view class="content">
+        <view class="text-box">
+          <view>{{item.month}}</view>
+          <view class="pr" style="margin-left:54rpx;">{{item.rate}}%</view>
+          <view>{{item.rate}}</view>
+        </view>
+        <view class="progress-box">
+          <view class="out-box">
+            <view class="inner-box" animation="{{item.anmiate}}"></view>
+          </view>
+        </view>
+      </view>
+      <text class="iconfont icon-return"></text>
+    </view>
+  </view>
+</view>

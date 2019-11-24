@@ -1,0 +1,83 @@
+<view class='loan-detail-box2'>
+  <view class="loan-detail-header">{{loanDeatil.loan_type == 0 ? '借入明细':'借出明细'}}</view>
+  <view class="loan-detail-container1">
+    <view>
+      <view>{{loanDeatil.loan_type == 0 ? '债权人':'借款人'}}</view>
+      <view>{{loanDeatil.loaner_name}}</view>
+    </view>
+    <view>
+      <view>{{loanDeatil.loan_type == 0 ? '借入金额':'借出金额'}}</view>
+      <view>{{loanDeatil.loan_sum}}</view>
+    </view>
+    <view>
+      <view>{{loanDeatil.loan_type == 0 ? '借入账户':'借出账户'}}</view>
+      <view>{{loanDeatil.account.account_name}}</view>
+    </view>
+    <view>
+      <view>{{loanDeatil.loan_type == 0 ? '借入时间':'借出时间'}}</view>
+      <view>{{loanDeatil.record_time}}</view>
+    </view>
+    <view class="beizhu">
+      <view>备注</view>
+      <view>{{loanDeatil.note}}</view>
+    </view>
+  </view>
+  <view class="loan-detail-container2">
+    <view>
+      <view>等待归还</view>
+      <view class="rollout">{{loanDeatil.wait_return_sum}}</view>
+    </view>
+    <navigator hover-class="none" url="/finance/pages/bus_turnover/bus_turnover?account_id={{loanDeatil.account.account_id}}">
+    <view class="watch-loan">
+      <view>查看流水</view>
+      <image src="../../images/jiantou2.png"></image>
+      </view>
+      </navigator>
+   </view>
+
+
+    <view class="icon-container">
+      <view bindtap='showAddCateModal'>
+        <image src="../../images/loan1.png"></image>
+        <view>修改备注</view>
+      </view>
+      <view bindtap='showAddCateModal2'>
+        <image src="../../images/loan2.png"></image>
+        <view>{{loanDeatil.loan_type == 0 ? '归还欠款':'收回借款'}}</view>
+      </view>
+      <view  bindtap='showDelModal'>
+        <image src="../../images/loan3.png"></image>
+        <view>删除</view>
+      </view>
+    </view>
+
+    
+     <!-- 删除弹框 -->
+  <del-modal shadow='{{shadow}}' bind:close='closeDelModal' bind:delData='delData'></del-modal>
+
+  <!-- 修改备注弹框 -->
+  <view class="add-cate-modal" wx:if='{{showAddCateModal}}'>
+    <view class='add-cate-modal-header'>备注</view>
+    <view>
+      <input type='text' value='{{loanDeatil.note}}' bindinput='updateBeizhu'></input>
+    </view>
+    <view>
+      <view bindtap='closeCateModal2'>取消</view>
+      <view bindtap='confirmUpdateBeizhu'>确定</view>
+    </view>
+  </view>
+  <view class='add-cate-modal-mask' wx:if='{{showAddCateModal}}' bindtap='closeCateModal2'></view>
+
+  <!-- 处理欠款弹框 -->
+  <view class="add-cate-modal" wx:if='{{showAddCateModal2}}'>
+    <view class='add-cate-modal-header'>{{loanDeatil.loan_type == 0 ? '输入归还金额':'输入收回金额'}}</view>
+    <view>
+      <input type='text' value='{{inputMoney}}' bindinput='updateMoney'></input>
+    </view>
+    <view>
+      <view bindtap='closeCateModal6'>取消</view>
+      <view bindtap='confirmInputMoney'>确定</view>
+    </view>
+  </view>
+  <view class='add-cate-modal-mask' wx:if='{{showAddCateModal2}}' bindtap='closeCateModal6'></view>
+  </view>

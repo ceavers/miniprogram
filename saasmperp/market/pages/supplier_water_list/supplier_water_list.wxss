@@ -1,0 +1,32 @@
+/* market/pages/advance_charge_pipeline_list/advance_charge_pipeline_list.wxss */
+.pipeline-list{
+  background-color: #f6f6f6;
+  color: #323232;
+  font-size: 26rpx;
+} 
+.header{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.pipeline-item-title{
+  padding-left: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.pipeline-item-body-detail{
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx 30rpx 26rpx;
+  background-color: #fff;
+  font-weight: 500;
+}
+.money{
+  margin-bottom: 10rpx;
+  color: #62AC4B;
+}
+.operation{
+  font-size: 24rpx;
+}

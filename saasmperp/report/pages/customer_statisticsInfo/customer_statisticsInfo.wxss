@@ -1,0 +1,61 @@
+/* report/pages/customer_statisticsInfo/customer_statisticsInfo.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.header{
+  height: 120rpx;
+  line-height: 138rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+.box-line{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 32rpx;
+  background: #fff;
+  margin-bottom: 1px;
+  display: flex;
+}
+.box-line:last-child{
+  margin: 0;
+}
+.line-title{
+  width: 188rpx;
+}
+.box:last-child{
+  margin-top: 10px;
+}
+.progress-bar{
+  height: 120rpx;
+  background: #fff;
+  padding: 0 32rpx;
+  margin-bottom: 1px;
+}
+.progress-bar:last-child{
+  margin: 0;
+}
+.progress-bar>view:first-child{
+  height: 26rpx;
+  line-height: 26rpx;
+  padding-top:22rpx; 
+  display: flex;
+  justify-content:space-between;
+}
+.total{
+  height: 8rpx;
+  margin: 34rpx 45rpx 0 45rpx;
+  background: #F0F0F0;
+  position: relative;
+}
+.line{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rpx;
+  height:8rpx;
+  background:#F0F0F0;
+  border-radius:4rpx; 
+  animation: line 1s 1;
+  animation-fill-mode: forwards;
+}

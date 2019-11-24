@@ -1,0 +1,32 @@
+<form bindsubmit="createOrder">
+  <view class="head">物流费用</view>
+  <view class="returnedInformation">
+    <text class="phone">费用金额</text>
+    <input name="money" type="text" value="{{ money }}"></input>
+  </view>
+  <view class="otherInformation1" bindtap="showAccountListModal">
+    <view class="inputbox">
+      <text class="sellperson">付款账户</text>
+      <text>{{ account.account_name }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="otherInformation1" bindtap="selectDate">
+    <view>
+      <text class="wuliu">付款时间</text>
+      <text>{{ dateObj.date }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="returnInformation">
+    <text class="count">计入应收，由买家承担</text>
+    <switch name="moneyType" checked="{{  }}"></switch>
+  </view>
+  <view>
+    <button class="button" form-type="submit">确认修改</button>
+  </view>
+</form>
+<!-- 业务时间选择 -->
+<PickerModal show="{{ showSelectDateModal }}" bindsetTime="confirmDate"></PickerModal>
+<!-- 付款账户 -->
+<BlockModal show="{{ showAccountListModal }}" optionList="{{ accountList }}" bindtap="getAccount"></BlockModal>

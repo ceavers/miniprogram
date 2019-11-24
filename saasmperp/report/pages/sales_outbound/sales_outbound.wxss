@@ -1,0 +1,53 @@
+/* report/pages/sales_outbound/sales_outbound.wxss */
+.choose-box{
+  width: 520rpx;
+  height: 72rpx;
+  margin:40rpx auto;
+  margin-top:50rpx;
+  display: flex;
+  border-radius: 16rpx;
+}
+.item-box{
+  height: 88rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  border-bottom: 1px solid #f6f6f6;
+  background: #fff;
+}
+.icon-return{
+  color:#D9D9D9;
+  font-size: 36rpx;
+  top:2rpx;
+  position: relative;
+  margin-left: 20rpx;
+}
+.choose-box>view{
+  width: 50%;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:1px solid rgba(199,199,204,1);
+  background: #fff;
+}
+.curr{
+  border-right: none!important;
+  border-radius:16rpx 0px 0px 16rpx;
+}
+.last{
+  border-radius:0px 16rpx 16rpx 0px;
+}
+.choose-box>.choose{
+  background: #ACD1A0;
+  color:#fff;
+}
+.mr-r{
+  margin-right: 10rpx;
+}

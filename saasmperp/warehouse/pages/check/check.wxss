@@ -1,0 +1,207 @@
+/* warehouse/pages/check/check.wxss */
+.history{
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  margin:46rpx 0 20rpx 0;
+  text-align: right;
+  padding: 0 30rpx;
+}
+.stock-box{
+  height: 88rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #f6f6f6;
+}
+.stock-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.point{
+  color:#FF3B30;
+}
+.stock-name-box{
+  width: 450rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stock-name{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.icon-return{
+  color:#D9D9D9;
+}
+.storage-box{
+  margin-top:40rpx;
+}
+.storage-item-box{
+  height: 88rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom:1px solid #F6F6F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.choose-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.pd-20>view{
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scan-icon{
+  height: 30rpx;
+  width: 30rpx;
+}
+.icon-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  margin-left: 30rpx;
+}
+.create-btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 88rpx;
+  margin:80rpx auto;
+}
+.pd-20{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.scan-box{
+  border-left: 1px solid rgba(153,153,153,1);
+}
+.note-box{
+  height: 120rpx;
+}
+.item-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.note-text{
+  position: relative;
+  top:-20rpx;
+}
+.item-content{
+  width: 450rpx;
+  font-size:28rpx;
+  color:rgba(50,50,50,1);
+  display: flex;
+  justify-content: space-between;
+}
+.note-area{
+  height: 64rpx;
+}
+
+.goods-info{
+  display: flex;
+}
+.goods-des{
+  margin-left: 30rpx;
+}
+.goods-img{
+  width: 104rpx;
+  height: 104rpx;
+}
+.goods-name{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.repertory{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin:4rpx 0;
+}
+.price{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.delete-icon{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right:30rpx;
+  top:30rpx;
+}
+.add-sub-icon{
+  width: 40rpx;
+  height: 40rpx
+}
+.goods-prop{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  justify-content: flex-start;
+}
+.add-sub-box{
+  display: flex;
+  width: 220rpx;
+  justify-content: space-between;
+}
+.property-one{
+  width: 130rpx;
+}
+.property-two{
+  width: 220rpx;
+}
+.mt-20{
+  margin-top:20rpx;
+}
+.goods-number{
+  max-width: 130rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nowrap{
+  overflow: hidden;
+}
+
+/* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

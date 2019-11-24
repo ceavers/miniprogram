@@ -1,0 +1,38 @@
+<form bindsubmit="confirmReceipt">
+  <view class="head">销售收款</view>
+  <view class="returnedInformation">
+    <text class="phone">订单金额</text>
+    <text>{{ orderMes.total_money }}（优惠{{ orderMes.preferential_money }}）</text>
+  </view>
+  <view class="returnedInformation">
+    <text class="phone">已收金额</text>
+    <text>{{ orderMes.preferential_money }}</text>
+  </view>
+  <view class="returnInformation">
+    <text class="phone">收款金额</text>
+    <input name="money"></input>
+  </view>
+  <view class="otherInformation1" bindtap="showAccountListModal">
+    <view>
+      <text class="wuliu">资金账户</text>
+      <text>{{ account.account_name }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="otherInformation1" bindtap="selectDate">
+    <view>
+      <text class="wuliu">收款时间</text>
+      <text>{{ dateObj.date }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="remarkInformation">
+    <text class="remark">备注</text>
+    <textarea name="remark"></textarea>
+  </view>
+  <view><button class="button" form-type="submit">确认收款</button></view>
+</form>
+<!-- 业务时间选择 -->
+<PickerModal show="{{ showSelectDateModal }}" bindsetTime="confirmDate"></PickerModal>
+<!-- 付款账户 -->
+<BlockModal show="{{ showAccountListModal }}" optionList="{{ accountList }}" bindtap="getAccount"></BlockModal>

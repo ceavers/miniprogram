@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "BottomModal": "/components/bottomModal/bottomModal",
+    "ScreenModal": "/market/components/screen/screen"
+  },
+  "navigationBarTitleText": "客户信息"
+}

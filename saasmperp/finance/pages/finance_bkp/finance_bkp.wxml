@@ -1,0 +1,89 @@
+<view class="bkp_box">
+  <view class="bkp_title">
+    <view class="input_box">
+      <view class="input_img">
+        <image src="../../../images/sousuo.png"></image>
+      </view>
+      <input class="bkp_input" bindinput="bkp_input" placeholder="客户名/手机号" placeholder-style="color:rgba(153,153,153,1)"></input>
+    </view>
+    <view class="bkp_img" bindtap="bkp_img">
+      <image src="../../../images/shaixuan.png"></image>
+    </view>
+  </view>
+  <view class="bkp_title_t">客户应收列表</view>
+  <view class="kehu_list" wx:for="{{items}}" wx:key="index">
+    <view class="kehu_type">{{item.custcat_name}}</view>
+    <view class="kehu_list_box" bindtap="bkpXQ" wx:for="{{item.receivables}}" wx:key="index" data-id="{{item.receivable_id}}"> 
+      <view class="kehu_ziliao">
+        <view class="kehu_touxiang">
+          <image src="{{item.customer.customer_headpic}}"></image>
+        </view>
+        <view class="kehu_list_wenzi">
+          <view class="kehu_name">{{item.customer.customer_name}}</view>
+          <view class="kehu_bkp">应收 {{item.receivable_sum}}</view>
+        </view>
+      </view>
+      <view class="kehu_jiantou">
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </view>
+  </view>
+    <view class="shadow" wx:if="{{shadow}}"></view>
+  <view class="bottom_kuang_box" wx:if="{{shadow}}">
+    <view class="remove" bindtap="remove">
+      <image src="../../images/remov.png"></image>
+    </view>
+    <view class="bottom_kuang_title">
+      <view class="bottom_image">
+        <image src="{{customer_headpic}}"></image>
+      </view>
+      <view class="bottom_wenzi" data-id="{{customer_id}}">
+        <view>{{customer_name}}</view>
+        <view>{{receivable_name}} {{pre_receivable_sum}}</view>
+      </view>
+    </view>
+    <view class="line1"></view>
+    <view class="bottom_wenzi_1">
+      <view>预付金额 {{receivable_sum}}</view>
+      <view>详细地址 {{customer_address}}</view>
+      <view>联系信息 {{head_people}}{{customer_mobile}}</view>
+    </view>
+    <view class="regiht" bindtap="regiht">
+      <view>供应商详情</view>
+      <view class="regiht_img">
+        <image src="../../images/jiantou2.png"></image>
+      </view>
+    </view>
+    <view class="line1"></view>
+    <view class="bottom_img">
+      <view>
+        <image src="../../images/caigou.png"></image>
+        <view class="bottom_img_wenzi">采购</view>
+      </view>
+      <view bindtap="fukuan">
+        <image src="../../images/fukuan2.png"></image>
+        <view class="bottom_img_wenzi">付款</view>
+      </view>
+      <view>
+        <image src="../../images/fenxiang.png"></image>
+        <view class="bottom_img_wenzi">分享</view>
+      </view>
+    </view>
+  </view>
+  <view class="payment" wx:if="{{shadow1}}">
+    <view class="payment_wenzi">付款</view>
+    <view class="payment_content">
+      <view class="payment_caigou" bindtap="caigou">
+        <image src="../../images/caigou.png"></image>
+        <view>采购应付款</view>
+      </view>
+      <view class="payment_yufu" bindtap="payment_yufu">
+        <image src="../../images/fukuan2.png"></image>
+        <view>预付付款</view>
+      </view>
+    </view>
+    <view class="payment_btn" bindtap="payment_btn">取消</view>
+  </view>
+    <filter1 show="{{show}}" filterData="{{filterData}}" bindselectFilterItem="selectFilterItem" bindselectFilterClass="selectFilterClass" bindsetFilterItem="setFilterItem"></filter1>
+    <view class="shadow1" wx:if="{{shadow1}}"></view>
+</view>

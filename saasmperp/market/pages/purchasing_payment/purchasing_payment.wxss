@@ -1,0 +1,13 @@
+/* market/pages/sales_receivables/sales_receivables.wxss */
+.sales-receivables{
+  height: 100vh;
+  background-color: #F6F6F6; 
+}
+.header{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #323232;
+}

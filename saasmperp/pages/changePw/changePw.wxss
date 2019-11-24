@@ -1,0 +1,41 @@
+/* pages/changePw/changePw.wxss */
+.input-box{
+  background: #fff;
+  display: flex;
+  border-bottom:1px solid #F6F6F6;
+  padding: 0 32rpx;
+  height:88rpx;
+  align-items: center;
+}
+.input-item{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: inline-block;
+  width: 170rpx;
+}
+.mark{
+  color: #FF3B30;
+  margin-left: 8rpx;
+}
+.input-des{
+  font-size:28rpx;
+  margin-left:26rpx;
+  width: 480rpx;
+}
+.save-btn{
+  width: 690rpx;
+  height: 88rpx;
+  background:rgba(98,172,75,1);
+  opacity:0.5;
+  border-radius:8rpx;
+  margin:50rpx auto;
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 88rpx;
+}
+.canclick{
+  opacity: 1;
+} 

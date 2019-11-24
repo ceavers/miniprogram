@@ -1,0 +1,36 @@
+<view class='turnover-detail-box'>
+  <view class="turnover-detail-header">流水详情</view>
+  <view class="turnover-detail-container1">
+    <view>
+      <view>流水类型</view>
+      <view>{{journalDetail.journal_name}}</view>
+    </view>
+    <view>
+      <view>发生金额</view>
+      <view>{{journalDetail.inout.inout_num}}</view>
+    </view>
+    <view>
+      <view>发生时间</view>
+      <view>{{journalDetail.record_time}}</view>
+    </view>
+    <view>
+      <view>资金账户</view>
+      <view>{{journalDetail.account.account_name}}</view>
+    </view>
+  </view>
+  <view class="turnover-detail-container2">
+    <view>
+      <view>经手人</view>
+      <view>{{journalDetail.user.user_name}}</view>
+    </view>
+    <view>
+      <view>相关单号</view>
+      <view class="order-sn">{{journalDetail.voucher_num}}</view>
+    </view>
+    
+  </view>
+  <view class="beizhu">
+      <view>备注</view>
+      <view>{{journalDetail.note}}</view>
+    </view>
+</view>

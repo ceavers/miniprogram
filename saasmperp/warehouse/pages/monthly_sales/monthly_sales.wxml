@@ -1,0 +1,33 @@
+<!--warehouse/pages/monthly_sales/monthly_sales.wxml-->
+<view class="container">
+  <scroll-view scroll-y class='bus-purchase-history-box'>
+    <view style="height:50rpx;"></view>
+    <view class="bus-purchase-history-item" wx:for="{{salesData}}" wx:key="{{index}}">
+      <view class="bus-purchase-history-item-header">
+        <view class="time">{{item.month}}</view>
+        <view class="money">{{item.amount2}}</view>
+      </view>
+      <view class="bus-purchase-history-item-body">
+        <view class="line" animation="{{ item.anmiate }}"></view>
+      </view>
+    </view>
+    <!-- <view class="bus-purchase-history-item">
+      <view class="bus-purchase-history-item-header">
+        <view class="time">上月</view>
+        <view class="money">70.01万</view>
+      </view>
+      <view class="bus-purchase-history-item-body">
+        <view class="line" animation="{{ lineAni }}"></view>
+      </view>
+    </view>
+    <view class="bus-purchase-history-item">
+      <view class="bus-purchase-history-item-header">
+        <view class="time">5月</view>
+        <view class="money">70.01万</view>
+      </view>
+      <view class="bus-purchase-history-item-body">
+        <view class="line" animation="{{ lineAni }}"></view>
+      </view>
+    </view> -->
+  </scroll-view>
+</view>

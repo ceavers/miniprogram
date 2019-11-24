@@ -1,0 +1,98 @@
+<view class='record-history-box' wx:if='{{hasRecordhistory}}'>
+  <view class='search-box'>
+    <view>
+      <navigator hover-class='none' url='/finance/pages/bus_query/bus_query'>
+        <image src='../../images/bus-search.png'></image>
+      </navigator>
+      <input type='text' placeholder='品名/货号/品牌'></input>
+    </view>
+    <image src='../../images/shaixuan.png' bindtap='showSelctModal'></image>
+  </view>
+  <view class='record-header'>
+    <view>收支记账</view>
+
+  </view>
+  <view class='record-desc'>
+    <view>2019-07-07</view>
+
+    <view class='record-item'>
+      <view>
+        <view>销售公关-业务提成</view>
+        <view>日期</view>
+      </view>
+      <view class="{{recordMoney[0] > 0 ? 'positive':'negative' }}">
+        {{recordMoney[0]}}
+      </view>
+    </view>
+    <view class='record-item'>
+      <view>
+        <view>工资奖金-基本工资</view>
+        <view>现金账户</view>
+      </view>
+      <view class="{{recordMoney[1] > 0 ? 'positive':'negative' }}">
+        +{{recordMoney[1]}}
+      </view>
+    </view>
+
+  </view>
+  <view class='record-desc'>
+    <view>2019-08-07</view>
+
+    <view class='record-item'>
+      <view>
+        <view>销售公关-业务提成</view>
+        <view>日期</view>
+      </view>
+      <view class="{{recordMoney[0] > 0 ? 'positive':'negative' }}">
+        {{recordMoney[0]}}
+      </view>
+    </view>
+
+  </view>
+  <view class='record-footer'>
+    <image src='../../images/bus-add.png' bindtap='showModal'></image>
+    <view bindtap='showModal'>新增</view>
+  </view>
+  <!-- 筛选弹框 -->
+  <view class='select-mask' wx:if='{{showSelctModal}}' bindtap='closeSelectModal'></view>
+  <view class="selectCateModal {{showSelctModal ? 'showFir':'hiddenFir'}}">
+    <view>筛选</view>
+
+    <view class='select-container'>
+      <view class='selectFirCate'>
+        <view wx:for='{{selectFirCate}}' data-index='{{index}}' wx:key='{{index}}' bindtap='choiceSecSelect' class="{{index == choiceSelectIndex ? 'choosed-fir-cate':''}}">{{item}}</view>
+      </view>
+      <view class='selectSecCate'>
+        <view bindtap='cancelCondition'>
+          <view>不限</view>
+          <view class='icon-container' wx:if='{{false}}'>
+            <icon type='success_no_circle' size='16'></icon>
+          </view>
+        </view>
+
+        <view wx:for='{{selectSecCate[choiceSelectIndex]}}' wx:key='{{index}}' data-catename='{{item}}' bindtap='choiceCondition'>
+          <view>{{item}}</view>
+          <view class='icon-container' wx:if='{{false}}'>
+            <icon type='success_no_circle' size='16'></icon>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view class='select-footer'>
+      <view bindtap='closeSelectModal'>取消</view>
+      <view>确定</view>
+    </view>
+  </view>
+  <add-modal showmodal='{{showmodal}}' bindtap='close' modalTitle='{{modalTitle}}' modalContent='{{modalContent}}'></add-modal>
+
+</view>
+<view wx:else class='create-record-history'>
+
+  <image src='../../images/addHistory.png'></image>
+  <view style='color:#323232;font-size:32rpx;'>记收支</view>
+  <view style='color:#999;font-size:28rpx;margin-top:29rpx;'>随时随地录入费用开支</view>
+  <view style='color:#999;font-size:28rpx;margin-bottom:80rpx;margin-top:8rpx;'>赚多赚少，一清二楚</view>
+  <button>马上创建</button>
+
+</view>

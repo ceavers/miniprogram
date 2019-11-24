@@ -1,0 +1,22 @@
+<!--新建采购订单成功-->
+<view class="create-success">
+  <view class="title"><image src="/market/images/success.png"></image><text>创建成功</text></view>
+  <view class="body">
+    <view class="order-detail" bindtap="gotoOrder">
+      <image src="/images/market-ticket.png" class="op-image"></image>
+      <text>查看采购单</text>
+    </view>
+    <view class="order-operation" bindtap="addOrder">
+      <image src="/market/images/market-edit.png" class="op-image"></image>
+      <text>继续开单</text>
+    </view>
+    <view class="order-operation">
+      <image src="/market/images/market-share.png" class="op-image"></image>
+      <text>发送单据</text>
+    </view>
+    <view class="order-operation">
+      <image src="/market/images/printing.png" class="op-image"></image>
+      <text>蓝牙打印</text>
+    </view>
+  </view>
+</view>

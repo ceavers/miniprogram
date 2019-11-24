@@ -1,0 +1,80 @@
+.add-modal{
+  width: calc(100% - 60rpx);
+  height: 360rpx;
+  position: fixed;
+  bottom: 0;
+  margin-left: 30rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  z-index: 999999999;
+  background: #fff;
+}
+
+.showFir{
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s;
+  transform: translateY(0);
+}
+
+.hiddenFir{
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+  transform: translateY(100%);
+}
+
+.cancel{
+  height: 88rpx;
+  background: #f2f2f2;
+  color: #666;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.add-modal > view:nth-child(1){
+  font-size: 28rpx;
+  color: #323232;
+  text-align: center;
+margin-bottom: 38rpx;
+margin-top: 30rpx;
+}
+
+.modal-content{
+  padding: 0 141rpx 59rpx 141rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content > view navigator{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal-content > view image{
+  margin-bottom: 40rpx;
+  width: 56rpx;
+  height: 56rpx;
+
+}
+
+.modal-content > view view{
+  font-size: 24rpx;
+  color: #323232;
+}
+
+
+.mask{
+  position: fixed;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 99999999;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}

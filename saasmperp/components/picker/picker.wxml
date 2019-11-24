@@ -1,0 +1,33 @@
+<!--warehouse/components/picker/picker.wxml-->
+<view class="weui-demo-dialog {{show ? 'weui-demo-dialog_show' : ''}}">
+  <view class="weui-mask" catchtap="cancel"></view>
+  <view class="weui-half-screen-dialog"> 
+    <view class="weui-half-screen-dialog__bd">
+      <view class="btn-box">
+        <view class="cancel" catchtap="cancel">取消</view>
+        <view class="complete" catchtap="complete">完成</view>
+      </view>
+      <picker-view class="picker-box" 
+      indicator-class="select-box"
+      value="{{value}}" 
+      bindchange="bindChange">
+        <picker-view-column class="year">
+          <view wx:for="{{years}}" 
+          wx:key="index" 
+          style="line-height: 60rpx">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column class="mouth">
+          <view wx:for="{{months}}" 
+          wx:key="index" 
+          style="line-height: 60rpx">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column class="day">
+          <view wx:for="{{days}}" 
+          wx:key="index" 
+          style="line-height: 60rpx">{{item}}日</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</view>
+

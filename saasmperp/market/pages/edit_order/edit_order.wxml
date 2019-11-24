@@ -1,0 +1,35 @@
+<!--修改订单-->
+<view class="edit-order">
+  <view class="title">修改送货信息</view>
+  <form bindsubmit="editOrder">
+    <view class="order-box" style="margin-bottom: 40rpx;">
+      <view class="order-box-title">客户名称</view>
+      <view class="order-box-body">{{ user.user_name }}</view>
+    </view>
+    <view class="order-box" style="margin-bottom: 40rpx;" bindtap="showDeliveryModal">
+      <view class="order-box-title">发货方式</view>
+      <view class="order-box-body">{{ delivery.typeName }}</view>
+      <image src="/market/images/jiantou.png"></image>
+    </view>
+    <view class="order-box">
+      <view class="order-box-title">提货人</view>
+      <input class="order-box-body" value="{{ user.contact }}" name="man"></input>
+    </view>
+    <view class="order-box">
+      <view class="order-box-title">联系电话</view>
+      <input class="order-box-body" value="{{ user.phone }}" name="phone"></input>
+    </view>
+    <view class="order-box">
+      <view class="order-box-title">送货地址</view>
+      <input class="order-box-body" value="{{ user.address }}" name="address"></input>
+    </view>
+    <view class="save-btn">
+      <button form-type="submit">确认修改</button>
+    </view>
+  </form>
+</view>
+<BlackModal
+  show="{{ showDeliveryModal }}"
+  optionList="{{ deliveryList }}"
+  bindtap="getDeliveryType"
+></BlackModal>

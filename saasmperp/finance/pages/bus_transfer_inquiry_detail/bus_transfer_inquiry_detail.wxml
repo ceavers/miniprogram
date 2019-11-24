@@ -1,0 +1,99 @@
+<view class='transfer-detail-wrapper'>
+  <view class='transfer-detail-wrapper-header'>
+    <view>
+      开始日期：2019-01-16
+    </view>
+    <view>取消</view>
+  </view>
+  <view class='floew'></view>
+  <view class='transfer-detail-wrapper-con'>
+    <view>2019-07-07</view>
+    <view class='transfer-detail-wrapper-item'>
+      <view>
+        <view>
+          <text>出：</text>
+          <text>现金账户</text>
+        </view>
+        <view>
+          <text>入：</text>
+          <text>银行卡</text>
+        </view>
+      </view>
+      
+
+      <view>
+        <view>10.00</view>
+        <image src='../../images/jiantou2.png'></image>
+      </view>
+
+
+    </view>
+    <view class='transfer-detail-wrapper-item'>
+      <view>
+        <view>
+          <text>出：</text>
+          <text>现金账户</text>
+        </view>
+        <view>
+          <text>入：</text>
+          <text>银行卡</text>
+        </view>
+      </view>
+      
+
+      <view>
+        <view>10.00</view>
+        <image src='../../images/jiantou2.png'></image>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='transfer-detail-wrapper-con'>
+    <view>2019-07-07</view>
+    <view class='transfer-detail-wrapper-item'>
+      <view>
+        <view>
+          <text>出：</text>
+          <text>现金账户</text>
+        </view>
+        <view>
+          <text>入：</text>
+          <text>银行卡</text>
+        </view>
+      </view>
+      
+
+      <view>
+        <view>10.00</view>
+        <image src='../../images/jiantou2.png'></image>
+      </view>
+
+
+    </view>
+    <view class='transfer-detail-wrapper-item'>
+      <view>
+        <view>
+          <text>出：</text>
+          <text>现金账户</text>
+        </view>
+        <view>
+          <text>入：</text>
+          <text>银行卡</text>
+        </view>
+      </view>
+      
+
+      <view>
+        <view>10.00</view>
+        <image src='../../images/jiantou2.png'></image>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='transfer-detail-wrapper-footer'>
+    <image src='../../images/add-aut.png'></image>
+    <view>新增</view>
+  </view>
+</view>

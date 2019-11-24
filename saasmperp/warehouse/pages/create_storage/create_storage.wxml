@@ -1,0 +1,60 @@
+<!--warehouse/pages/create_storage/create_storage.wxml-->
+<view class="container">
+  <view class="history">
+    <view catchtap="toHistory">历史</view>
+  </view>
+  <view class="title">新建仓库</view>
+  <form bindsubmit="formSubmit">
+  <view class="storage-box">
+    <view class="storage-item-box">
+      <view class="item-text">仓库名称<text class="point">*</text></view>
+      <view class="item-content">
+        <input name="depo_name" value=""></input>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">绑定部门</view>
+      <view class="item-content" catchtap="selectDepartment">
+        <view class="name-box">{{departmentName}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="storage-item-box" style="margin-top:40rpx;">
+      <view class="item-text">负责人</view>
+      <view class="item-content">
+        <input name="leader" value=""></input>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">地址</view>
+      <view class="item-content">
+        <input name="addr" value=""></input>
+      </view>
+    </view>
+    <view class="storage-item-box note-box">
+      <view class="item-text note-text">描述</view>
+      <view class="item-content">
+        <textarea name="content" wx:if="{{!penetrate}}" bindinput="getNote" class="note-area" value="{{note}}"></textarea>
+        <view wx:elif="{{penetrate}}" class="note-area nowrap">{{note}}</view>
+      </view>
+    </view>
+  </view>
+  <button class="create-btn" form-type="submit">确认新建</button>
+  </form>
+</view>
+<department show="{{isShow}}" bind:popupcCancle="cancel">
+  <view class="popup-box">
+    <view class="popup-title">绑定部门<image src="/warehouse/images/close-back.png" class="close-btn" catchtap="closePopup"></image></view>
+    <view class="content">
+      <view 
+      class="department-name {{item.checked?'choose-de':''}}" 
+      wx:for="{{departData}}" 
+      wx:key="index" 
+      data-id="{{item.department_id}}"
+      catchtap="selectDepart">{{item.department_name}}</view>
+    </view>
+    <view class="choose-btn">
+      <view class="choose-text" catchtap="chooseOk">选好了</view>
+    </view>
+  </view>
+</department>

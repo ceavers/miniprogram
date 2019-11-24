@@ -1,0 +1,17 @@
+<!--input组件-->
+<view class="input-wrap" wx:if="{{ inputType == 'inputNormal' }}" style="{{ inputStyle }}">
+  <view class="input-name">{{ cinputName }}</view>
+  <slot></slot>
+</view>
+<view class="input-wrap" wx:if="{{ inputType == 'inputSelect' }}" style="{{ inputStyle }}">
+  <view class="input-name">{{ cinputName }}</view>
+  <slot></slot>
+  <image class="input-jiantou" src="../../images/jiantou.png"></image>
+</view>
+<view class="input-remark-wrap" wx:if="{{ inputType == 'inputRemark' }}" style="{{ inputStyle }}">
+  <view class="input-name">{{ cinputName }}</view>
+  <slot></slot>
+</view>
+<view class="btn" wx:if="{{ inputType == 'inputButton' }}" style="{{ inputStyle }}">
+  <slot></slot>
+</view>

@@ -1,0 +1,45 @@
+/* market/pages/sales_bill_setting/sales_bill_setting.wxss */
+.setting{
+  height: 100vh;
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.title{
+  padding: 12rpx 0 0 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.mes-box{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 32rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.mes-box-name{
+  width: 236rpx;
+}
+.mes-box-detail,.mes-box-body{
+  flex: 1;
+}
+.mes-box-body{
+  text-align: right;
+}
+.mes-box-body switch{
+  zoom: .8;
+}
+.btn{
+  margin-top: 80rpx;
+}
+.btn button{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+}

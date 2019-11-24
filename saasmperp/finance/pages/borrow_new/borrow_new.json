@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pay_type": "../../../components/pay_type/pay_type",
+    "picker": "../../../components/picker/picker"
+  },
+  "navigationBarTitleText": "借入借出"
+}

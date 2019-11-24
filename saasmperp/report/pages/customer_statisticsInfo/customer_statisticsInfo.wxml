@@ -1,0 +1,34 @@
+<!--report/pages/customer_statisticsInfo/customer_statisticsInfo.wxml-->
+<view class="container">
+  <view class="header">客户销售</view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">客户名称</view>
+      <view class="line-content">{{recordList.customer_name}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">销售数量</view>
+      <view class="line-content">{{recordList.sale_num}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">销售金额</view>
+      <view class="line-content">{{recordList.sale_gross}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">毛利润</view>
+      <view class="line-content">{{recordList.sale_gross_profit}}</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">历史销售统计</view>
+    <view class="progress-bar" wx:for="{{historyList}}" wx:key="{{index}}">
+      <view>
+        <view>{{item.date}}</view>
+        <view>{{item.sale_gross}}</view>
+      </view>
+      <view class="total">
+        <view class="line" animation="{{ item.anmiate }}"></view>
+      </view>
+    </view>
+  </view>
+</view>

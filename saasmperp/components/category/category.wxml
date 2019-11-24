@@ -1,0 +1,21 @@
+<!--components/category/category.wxml-->
+<view class="weui-demo-dialog {{show ? 'weui-demo-dialog_show' : ''}}">
+  <view class="weui-mask" bindtap="cancle"></view>
+  <view class="weui-half-screen-dialog"> 
+    <view class="weui-half-screen-dialog__bd">
+      <view class="popup-box">
+        <view class="popup-title">商品类别</view>
+        <view class="content">
+          <view class="content-item {{index==selectIndex?'choose':''}} {{(index+1)%3==0?'mr-0':''}}" 
+          wx:for="{{goodsData}}" 
+          wx:key="index"
+          data-index="{{index}}"
+          data-id="{{item.category_id}}"
+          catchtap="selectType"
+          >{{item.category_name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

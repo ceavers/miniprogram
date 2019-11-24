@@ -1,0 +1,145 @@
+/* pages/permissionSetting/permissionSetting.wxss */
+.role-box{
+  background: #fff;
+  display: flex;
+  border-bottom:1px solid #F6F6F6;
+  padding: 0 30rpx;
+}
+.role-item{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+  display: inline-block;
+  width: 138rpx;
+}
+.mark{
+  color: #FF3B30;
+  margin-left: 8rpx;
+}
+.role-des{
+  font-size:28rpx;
+}
+input.role-des{
+  width: 500rpx;
+  margin-left: 34rpx;
+}
+textarea.role-des{
+  height: 80rpx;
+  margin-top:35rpx; 
+  margin-left: 56rpx;
+}
+.setting-title{
+  height: 88rpx;
+  margin-top:50rpx;
+  padding: 0 30rpx;
+  line-height: 88rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  background: #fff;
+  border-bottom:1px solid #F6F6F6;
+}
+.btn-box{
+  height: 88rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+.reset,.save{
+  width: 50%;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(66,66,66,1);
+  background: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}
+.save{
+  color:#fff;
+  background: #62AC4B;
+}
+.settig-box{
+  height: calc(100% - 440rpx);
+  display: flex;
+}
+.left-box{
+  width: 300rpx;
+  overflow-y: auto;
+}
+.right-box{
+  width:calc(100% - 300rpx);
+  border-left:1px solid #F6F6F6; 
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.hierarchy-one{
+  height: 88rpx;
+  background: #fff;
+  border-bottom:1px solid #F6F6F6; 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.hierarchy-two{
+  height: 88rpx;
+  background: #fff;
+  border-bottom:1px solid #F6F6F6; 
+  padding-left: 30rpx;
+  padding-right: 58rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hierarchy-three{
+  height: 88rpx;
+  background: #fff;
+  border-bottom:1px solid #F6F6F6; 
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.circle{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #C7C7CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-gou{
+  color:#fff;
+  font-size: 28rpx;
+}
+.settig-des{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.icon-return{
+  color:#D9D9D9;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.icon-box{
+  display: flex;
+}
+.arraw{
+  margin-right: 40rpx;
+  transform: rotate(90deg);
+}
+.hierarchy-three .settig-des{
+  margin-left: 30rpx;
+}
+.left-arrow{
+  transform: rotate(180deg);
+  color: #62AC4B;
+}
+.up-arrow{
+  transform: rotate(-90deg);
+  color: #62AC4B;
+}
+.choose{
+  background: #62AC4B;
+}

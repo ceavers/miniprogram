@@ -1,0 +1,60 @@
+<view class='loan-query-box'>
+  <view class='loan-query-header'>
+    借入借出查询
+  </view>
+  <view class='loan-query-container1'>
+    <view>
+
+      <view style='color:#666;'>借入借出</view>
+      <view bindtap='showIncomeModal'>{{incomeContent}}</view>
+
+      <image src='../../images/jiantou2.png' bindtap='showIncomeModal'></image>
+    </view>
+    <view>
+      <view style='color:#666;'>借贷人</view>
+      <input type='text' bindinput='loannerName' value='{{loanner_name}}'></input>
+    </view>
+    <view>
+
+      <view style='color:#666;'>账户</view>
+      <view bindtap='showAccountModal'>{{accountContent}}</view>
+
+      <image src='../../images/jiantou2.png' bindtap='showAccountModal'></image>
+    </view>
+
+  </view>
+  <view class='loan-query-container2'>
+    <view>
+      <view style='color:#666;'>流水号</view>
+      <input type='number' placeholder='请输入要查询的流水号' bindinput='turnalSn' value='{{turnal_sn}}'></input>
+    </view>
+    <view>
+      <view style='color:#666;'>开始日期</view>
+      <view bindtap='showPicker'>{{startDate}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPicker'></image>
+    </view>
+    <view>
+      <view style='color:#666;'>结束日期</view>
+      <view bindtap='showPicker2'>{{endDate}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPicker2'></image>
+    </view>
+  </view>
+
+  <view class='btn-group'>
+
+    <view class='btn1' bindtap='queryTransferInquiry'>
+      查询
+    </view>
+    <view class='btn2' bindtap='clearContent'>清空</view>
+  </view>
+
+  <!-- 开始日期弹框 -->
+  <timePicker show='{{showPicker}}' bind:setTime='setTime' bind:cancel='cancel'></timePicker>
+  <!-- 结束日期弹框 -->
+  <timePicker2 show='{{showPicker2}}' bind:setTime='setTime2' bind:cancel='cancel2'></timePicker2>
+
+  <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeModal' wx:if='{{selectModal == 1 }}' bind:radioChange='choiceContent'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items2}}' bind:close='closeModal' wx:if='{{selectModal == 2}}' bind:radioChange='choiceContent'></acc-modal>
+
+
+</view>

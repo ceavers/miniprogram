@@ -1,0 +1,61 @@
+<view class="fin_com_box">
+ <view class="fin_com_title">财务自定义</view>
+   <!-- <navigator role='navigator' hover-class='none' url="/finance/pages/bus_income_record/bus_income_record"> -->
+   <view class="fin_com_list1">
+     <view class="fin_com_list1_img">
+       <image src="../../images/feiyong@2x.png"></image>
+       <view class="fin_com_list1_wenzi">记收入</view>
+     </view>
+      <switch  type="switch"></switch>
+   </view>
+   <!-- </navigator> -->
+    <view class="fin_com_list1">
+     <view class="fin_com_list1_img">
+       <image src="../../images/caiwu@2x.png"></image>
+       <view class="fin_com_list1_wenzi">记支出</view>
+     </view>
+      <switch  type="switch"></switch>
+   </view>
+    <view class="fin_com_list1">
+     <view class="fin_com_list1_img">
+       <image src="../../images/Card@2x.png"></image>
+       <view class="fin_com_list1_wenzi">账户</view>
+     </view>
+      <switch  type="switch"></switch>
+   </view>
+    <view class="fin_com_list1 fin_com_list2">
+     <view class="fin_com_list1_img">
+       <image src="../../images/shoukuanji@2x.png"></image>
+       <view class="fin_com_list1_wenzi">应收款</view>
+     </view>
+      <switch  type="switch"></switch>
+    </view>
+    <view class="fin_com_list1">
+     <view class="fin_com_list1_img">
+       <image src="../../images/fukuan@2x.png"></image>
+       <view class="fin_com_list1_wenzi">应付款</view>
+     </view>
+      <switch  type="switch"></switch>
+    </view>
+    <view class="fin_com_list1">
+     <view class="fin_com_list1_img">
+       <image src="../../images/chongliuliang@2x.png"></image>
+       <view class="fin_com_list1_wenzi">转账</view>
+     </view>
+      <switch  type="switch"></switch>
+    </view>
+    <view class="fin_com_list1 fin_com_list2">
+     <view class="fin_com_list1_img">
+       <image src="../../images/key.png"></image>
+       <view class="fin_com_list1_wenzi">借入借出</view>
+     </view>
+      <switch  type="switch"></switch>
+    </view>
+    <view class="fin_com_list1">
+     <view class="fin_com_list1_img">
+       <image src="../../images/gudingzichan-normal@2x.png"></image>
+       <view class="fin_com_list1_wenzi">固定资产</view>
+     </view>
+      <switch  type="switch"></switch>
+    </view>
+</view>

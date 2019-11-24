@@ -1,0 +1,15 @@
+<!--采购开单设置-->
+<view class="setting">
+  <view class="title">税</view>
+  <form bindsubmit="saveSetting">
+    <view class="mes-box">
+      <view class="mes-box-name">启用税金</view>
+      <view class="mes-box-body"><switch name="enablingTaxes" checked></switch></view>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-name">税率</view>
+      <view class="mes-box-detail">17%</view>
+    </view>
+    <view class="btn"><button form-type="submit">确认修改</button></view>
+  </form>
+</view>

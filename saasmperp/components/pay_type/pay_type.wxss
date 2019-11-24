@@ -1,0 +1,23 @@
+.radio_box{
+  display: flex;
+  justify-content: space-between;
+}
+.radio-group{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999999;
+  position: fixed;
+  height: 736rpx;
+}
+
+.pay_mask{
+  background: rgba(0,0,0,.4);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+
+}

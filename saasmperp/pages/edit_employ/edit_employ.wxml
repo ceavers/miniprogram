@@ -1,0 +1,74 @@
+<!--编辑员工-->
+<view class="add-employ">
+  <form id="addEmployForm" bindsubmit="formSubmit">
+    <view class="input-wrap">
+      <view class="input-title">账号<text>*</text></view>
+      <input placeholder="请输入账号" name="account" value="cg153"></input>
+    </view>
+    <view class="input-wrap" style="margin-bottom: 20rpx;">
+      <view class="input-title">姓名<text>*</text></view>
+      <input placeholder="请输入姓名" name="name" value="李军"></input>
+    </view>
+    <view class="input-wrap">
+      <view class="input-title">手机号<text>*</text></view>
+      <input placeholder="请输入手机号" type="number" name="mobile" maxlength="11" value="15832352387"></input>
+    </view>
+    <view class="input-wrap">
+      <view class="input-title">密码<text>*</text></view>
+      <input placeholder="请输入密码" password  name="password" value="1512356dd"></input>
+      <view class="reset-pwd" bindtap="resetPwd">重置员工密码</view>
+    </view>
+    <view class="input-wrap">
+      <view class="input-title">邮箱<text>*</text></view>
+      <input placeholder="请输入邮箱" name="email" value="25369954@qq.com"></input>
+    </view>
+    <view class="input-wrap1 border-top">
+      <view class="input-title">是否停用该用户</view>
+      <switch name="available" checked></switch>
+    </view>
+    <view class="input-wrap1" catchtap="toPartmentPage">
+      <view class="input-title">所属部门</view>
+      <text>{{departName}}</text>
+      <text class="iconfont icon-return"></text>
+    </view>
+    <view class="input-wrap2 border-top">
+      <view class="input-title">备注</view>
+      <input style="height:68rpx" name="remark" value="负责仓库管理，库存盘点，库存调拨"></input>
+    </view>
+    <view class="input-wrap3">
+      <view class="input-wrap3-title">所属角色</view>
+      <radio-group class="radio-group" name="role_id">
+        <label class="radio">
+          <radio value="0" checked/>采购员
+        </label>
+        <label class="radio">
+          <radio value="1"/>销售员
+        </label>
+        <label class="radio">
+          <radio value="2"/>仓库管理员
+        </label>
+        <label class="radio">
+          <radio value="3"/>报表员
+        </label>
+        <label class="radio">
+          <radio value="4"/>财务
+        </label>
+      </radio-group>
+    </view>
+    <view class="btn-wrap">
+      <button class="del-btn" wx:if="{{ type == 'edit' }}">删除</button>
+      <button class="save-btn edit-save" form-type="submit">保存</button>
+    </view>
+  </form>
+</view>
+<modalView show="{{ showModal }}">
+  <view class="reset-pwd-box">
+    <view class="modal-title">重置密码</view>
+    <view class="pwd-box"><input placeholder="请输入新密码" placeholder-style="color: #999999;"></input></view>
+    <view class="reset-pwd-btn-wrap">
+      <view class="cancel" bindtap="closeModal">取消</view>
+      <view class="confirm" bindtap="confirm">确认</view>
+    </view>
+  </view>
+</modalView>
+

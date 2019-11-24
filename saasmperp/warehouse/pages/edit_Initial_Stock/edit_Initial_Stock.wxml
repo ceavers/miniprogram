@@ -1,0 +1,16 @@
+<!--warehouse/pages/edit_Initial_Stock/edit_Initial_Stock.wxml-->
+<view class="container">
+  <view class="header">设置库存</view>
+  <view class="box" wx:for="{{warehouseList}}" wx:key="" wx:for-item="warehouseItem">
+    <view class="box-title">{{warehouseItem.depo_name}}</view>
+    <view class="box-line" wx:for="{{colorList}}" wx:key="" wx:for-item="colorItem">
+      <view class="line-title">{{colorItem.color}}</view>
+      <view class="line-content" wx:for="{{sizeList}}" wx:key="">
+        <view style="width:264rpx;"></view>
+        <text class="size-title">{{item.size}}</text>
+        <input type="text" value="" bindinput="getInput" data-depo_id="{{warehouseItem.depo_id}}" data-size="{{item.size_id}}" data-color="{{colorItem.color_id}}" placeholder="输入库存数"></input>
+      </view>
+    </view>
+  </view>
+  <view class="btn" bindtap="submit">确认修改</view>
+</view>

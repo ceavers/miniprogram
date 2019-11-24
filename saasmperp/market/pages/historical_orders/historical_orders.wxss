@@ -1,0 +1,89 @@
+/* market/pages/historical_orders/historical_orders.wxss */
+.history-order{
+  height: 100vh;
+  background-color: #f6f6f6;
+  color: #323232;
+  font-size: 28rpx;
+}
+.search-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #D9D9D9;
+}
+.search-wrap{
+  position: relative;
+}
+.search-image{
+  position: absolute;
+  z-index: 66;
+  left: 20rpx;
+  top: 12rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.screen-image{
+  width: 36rpx;
+  height: 40rpx;
+}
+.search-wrap input{
+  padding-left: 70rpx; 
+  width:540rpx;
+  height:60rpx;
+  background:rgba(255,255,255,1);
+  border-radius:4rpx;
+}
+.header{
+  padding-top: 50rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.body{
+  height: calc(100vh - 92rpx - 88rpx);
+}
+.history-order-item-title{
+  padding-left: 31rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+.history-order-item-detail{
+  margin-bottom: 20rpx;
+}
+.history-order-item .history-order-item-detail:last-child{
+  margin-bottom: 0;
+}
+.history-order-item-detail-name{
+  padding-left: 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+  line-height: 88rpx;
+}
+.history-order-item-detail-imagewrap{
+  margin: 2rpx 0;
+  padding: 26rpx 30rpx;
+  background-color: #fff; 
+}
+.history-order-item-detail-imagewrap image{
+  height: 104rpx;
+  width: 104rpx;
+}
+.history-order-item-detail-num-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.history-order-item-detail-num{
+  margin-right: 37rpx;
+}
+.history-order-item-detail-num-wrap image{
+  width: 36rpx;
+  height: 36rpx;
+}

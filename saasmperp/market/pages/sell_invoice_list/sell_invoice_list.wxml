@@ -1,0 +1,41 @@
+<view class="head">
+  <view class="search-box">
+    <image class="searchImg" src="../../../images/search.png"></image>
+    <input class="input-box" placeholder="单号/客户名"></input>
+  </view>
+  <image class="screenImg" src="../../../images/shaixuan.png" catchtap="filterShow"></image>
+</view>
+<view class="middle">销售单列表</view>
+<view class="content" wx:for='{{sellInvoiceList}}' wx:key='index'>
+  <view class="order-time">{{item.date}}</view>
+  <view class="order-detail" wx:for='{{item.invoiceList}}' wx:for-item='itemA' wx:key='index' bindtap="gotoDetail" data-type="{{ itemA.order_is_return }}" data-id="{{ itemA.order_id }}">
+    <view class="detial-head">
+      <view>
+        <span>{{itemA.user_name}}</span>
+        <span>{{itemA.order_id}}</span>
+      </view>
+      <view class="detail-tui" wx:if="{{ itemA.order_is_return == 0 }}">退</view>
+    </view>
+    <view class="detail-middle">
+      <view class="commodity-img-box" wx:for='{{itemA.product_img_list}}' wx:key='index' wx:for-item='itemB'>
+        <image class="commodity-img" src="{{itemB.product_img}}"></image>
+      </view>
+    </view>
+    <view class="detail-bottom">
+      <view>
+        <span>共{{itemA.count}}件</span>
+        <span>总计： {{itemA.total_money}}</span>
+      </view>
+      <image class="icon-go" src="../../images/jiantou.png"></image>
+    </view>
+    <view class="hr"></view>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="hr"></view>
+<view class="hr"></view>
+<view class="bottom" bindtap="showAddModel">
+  <image class="add-aut" src='../../../images/add-employ.png'></image>新增销售单
+</view>
+<bottomView show="{{ showAddModel }}" modalList="{{ addList }}"></bottomView>
+<filter show="{{filterShow}}" filterData="{{filterData}}"></filter>

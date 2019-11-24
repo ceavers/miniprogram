@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "modalView": "../../components/modal/modal"
+  },
+  "navigationBarTitleText": "新增员工"
+}

@@ -1,0 +1,43 @@
+/* market/pages/edit_order/edit_order.wxss */
+.edit-order{
+  height: 100vh;
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.title{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.order-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.order-box-body{
+  flex: 1;
+}
+.order-box-title{
+  width: 210rpx;
+}
+.order-box image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.save-btn button{
+  margin-top: 80rpx;
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #fff;
+}

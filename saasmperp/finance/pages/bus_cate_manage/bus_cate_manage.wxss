@@ -1,0 +1,149 @@
+.cate-manage-box{
+  background: #f6f6f6;
+}
+
+.left-view{
+  background: #fff !important;
+}
+
+.cate-manage-header{
+  height: 120rpx;
+  padding-top: 46rpx;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 32rpx;
+  color: #323232;
+}
+
+.cate-manage-container{
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #323232;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  border-bottom: 1px solid #f7f7f7;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.cate-manage-footer{
+  height: 88rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  
+}
+
+.cate-manage-footer > view:nth-child(1){
+  background: #62AC4B;
+  height: 100%;
+  width: 50%;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.cate-manage-footer > view:nth-child(2){
+  background: #fff;
+  height: 100%;
+  width: 50%;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #323232;
+  text-align: center;
+}
+
+.cate-manage-container image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+/* 添加类别弹框 */
+.add-cate-modal{
+  position: fixed;
+  z-index: 99999999;
+  background: #f2f2f2;
+  width: 520rpx;
+  border-radius: 16rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.add-cate-modal-mask{
+  position: fixed;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999999;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.add-cate-modal-header{
+  font-size: 28rpx;
+  color: #323232;
+  text-align: center;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  padding-top: 46rpx;
+  padding-bottom: 39rpx;
+  box-sizing: border-box;
+  height: 116rpx;
+}
+
+.add-cate-modal > view:nth-child(2){
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+
+}
+
+.add-cate-modal input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+  outline: none;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.add-cate-modal > view:nth-child(3){
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #62AC4B;
+  font-size: 28rpx;
+  border-top: 1px solid #ccc;
+  margin-top: 58rpx;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+
+.add-cate-modal > view:nth-child(3) view{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.add-cate-modal > view:nth-child(3) view:nth-child(1){
+  border-right: 1px solid #ccc;
+}
+
+

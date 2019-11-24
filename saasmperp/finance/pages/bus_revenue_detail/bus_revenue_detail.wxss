@@ -1,0 +1,86 @@
+.revenue_detail-box{
+  height: 100vh;
+  background: #f6f6f6;
+}
+
+.revenue_detail-header{
+  height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #323232;
+  padding-top: 46rpx;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+}
+
+.revenue_detail-container >view{
+  background: #fff;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 28rpx;
+  color: #323232;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  height: 88rpx;
+}
+
+.revenue_detail-container >view view:nth-child(1){
+  width: 170rpx;
+}
+
+.revenue_detail-container >view view:nth-child(2){
+  width: calc(100% - 230rpx);
+}
+
+.beizhu{
+  height: auto;
+  min-height: 88rpx;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #323232;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  margin-top: 20rpx;
+  width: 100%;
+}
+
+.beizhu view:nth-child(1){
+  width: 170rpx;
+}
+
+.beizhu view:nth-child(2){
+  width: calc(100% - 230rpx);
+  height: 100%;
+}
+
+.icon-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100rpx;
+  padding-left: 167rpx;
+  padding-right: 167rpx;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 24rpx;
+  color: #424242;
+}
+
+.icon-box image{
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 40rpx;
+}
+
+.icon-box > view{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}

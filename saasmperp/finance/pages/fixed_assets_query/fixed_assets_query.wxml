@@ -1,0 +1,79 @@
+<view class='fixex-assets-query-box'>
+  <view class='fixex-assets-query-header'>固定资产查询</view>
+  <view class='fixex-assets-query-conatiner' >
+    <view>
+      <view>资产名称</view>
+      <input type='text' bindinput='fixedName' value='{{fixedName}}'></input>
+    </view>
+    <view>
+      <view>序列号</view>
+      <input type='text' bindinput='fixedSn' value='{{fixedSn}}'></input>
+    </view>
+    <view>
+      <view>资产类别</view>
+      <view bindtap='showCateModal'>{{choiceCateContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showCateModal'></image>
+    </view>
+    <view class='zhanwei'></view>
+    <view>
+      <view>录入人</view>
+      <view bindtap='showIncomeModal'>{{incomeContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showIncomeModal'></image>
+    </view>
+    <view>
+      <view>管理员</view>
+      <view bindtap='showAccountModal'>{{accountContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showAccountModal'></image>
+    </view>
+    <view>
+      <view>使用人</view>
+      <view bindtap='showPersonModal'>{{personContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPersonModal'></image>
+    </view>
+
+  </view>
+  <view class='btn-group'>
+      <view class='btn1' bindtap='queryFixedAssets'>查询</view>
+      <view class='btn2' bindtap='clearFixedAssets'>清空</view>
+    </view>
+  <!-- 请选择的弹框 -->
+    <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeModal' wx:if='{{selectModal == 1 }}' bind:radioChange='choiceContent' bind:getRecorderId='getRecorderId'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items2}}' bind:close='closeModal' wx:if='{{selectModal == 2}}' bind:radioChange='choiceContent'  bind:getAdministratorId='getAdministratorId'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items3}}' bind:close='closeModal' wx:if='{{selectModal == 3}}' bind:radioChange='choiceContent' bind:getId='getId'></acc-modal>
+
+  <!-- 类别选择弹框 -->
+  <view class="category-modal {{showCateModal ? 'showCate':'hiddenCate'}}" wx:if='{{showCateModal}}'>
+    <image src='../../images/close-cate-modal.png' bindtap='closeCateModal'></image>
+    <view class='category-modal-header'>类别选择</view>
+    <view class='category-modal-content'>
+      <view wx:for='{{cateData}}' wx:key='{{index}}' class="{{(index + 1) % 3 != 0 ? 'mgRight':''}}" bindtap='choiceCateContent' data-catetext='{{item.fixedcat_name}}' data-id='{{item.fixedcat_id}}'>
+        {{item.fixedcat_name}}
+      </view>
+    </view>
+    <view class='category-modal-footer'>
+      <view bindtap='showAddCateModal'>新增类别</view>
+
+      <!-- 跳转到管理分类页面 -->
+      <view>
+      <navigator hover-class='none' url='/finance/pages/bus_cate_manage/bus_cate_manage'>
+      管理
+      </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='category-modal-mask' wx:if='{{showCateModal}}' bindtap='closeCateModal'></view>
+
+
+<!-- 新增分类弹框 -->
+  <view class="add-cate-modal" wx:if='{{showAddCateModal}}'>
+    <view class='add-cate-modal-header'>新增类别</view>
+    <view>
+      <input type='text'></input>
+    </view>
+    <view>
+      <view bindtap='closeCateModal2'>取消</view>
+      <view>确定</view>
+    </view>
+  </view>
+  <view class='add-cate-modal-mask' wx:if='{{showAddCateModal}}' bindtap='closeCateModal2'></view>
+</view>

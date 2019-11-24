@@ -1,0 +1,8 @@
+/* market/pages/water_details/water_details.wxss */
+.header{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}

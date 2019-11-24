@@ -1,0 +1,49 @@
+<view class='revenue_detail-box'>
+  <view class='revenue_detail-header'>{{inoutDeatil.inout_type == 0 ? '收入':'支出'}}</view>
+  <view class='revenue_detail-container'>
+    <view>
+      <view>金额</view>
+      <view>{{inoutDeatil.inout_num}}</view>
+    </view>
+    <view>
+      <view>类别</view>
+      <view>{{inoutDeatil.inout_name}}</view>
+    </view>
+    <view>
+      <view>账户</view>
+      <view>{{inoutDeatil.account.account_name}}</view>
+    </view>
+    <view>
+      <view>时间</view>
+      <view>{{inoutDeatil.record_time}}</view>
+    </view>
+  </view>
+  <view class='beizhu'>
+    <view>备注</view>
+    <view>{{inoutDeatil.note}}</view>
+  </view>
+
+  <view class='icon-box'>
+    <view wx:if='{{inoutDeatil.inout_type == 1}}'>
+      <navigator hover-class='none' url="/finance/pages/expenditure/expenditure?inoutDeatil={{inoutDeatil}}">
+     
+      <image src='../../images/account-detail3.png'></image>
+      <view>修改</view>
+      </navigator>
+      
+    </view>
+    <view  wx:if='{{inoutDeatil.inout_type == 0}}'>
+ <navigator hover-class='none' url="/finance/pages/income/income?inoutDeatil={{inoutDeatil}}">
+  <image src='../../images/account-detail3.png'></image>
+      <view>修改</view>
+ </navigator>
+    </view>
+    <view bindtap='showDelModal'>
+      <image src='../../images/account-detail1.png'></image>
+      <view>删除</view>
+    </view>
+  </view>
+
+  <!-- 删除弹框 -->
+  <del-modal shadow='{{shadow}}' bind:close='closeDelModal' bind:delData='delData'></del-modal>
+</view>

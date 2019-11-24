@@ -1,0 +1,26 @@
+<!--部门列表-->
+<view class="add-department">
+  <view class="tips">向左滑动选项可以编辑</view>
+  <scroll-view class="main">
+    <view class="touch-item {{ index == domIndex ? directionClass : ''}}" 
+      data-index="{{index}}" 
+      bindtouchstart="touchstart" 
+      bindtouchmove="touchmove" 
+      bindtouchend="touchend"
+      wx:for="{{items}}" 
+      wx:key="{{ index }}"
+    >
+        <view class="edit">编辑</view>
+        <view class='content' bindtap='chooseDepart' data-name="{{item.dept_name}}" data-id="{{ item.dept_no }}" data-index="{{index}}">
+          <view class="message-wrap1">
+            <view class="name">{{ item.dept_name }}</view>
+          </view>
+          <text class="iconfont icon-return"></text>
+        </view>
+        <view class="del" style="color: #fff;background: #C7C7CC;" catchtap="edit" data-id="{{ item.dept_no }}" data-index="{{index}}">编辑</view>
+    </view>
+  </scroll-view>
+  <view class="footer" bindtap="gotoAdddepartment">
+    <image class="add-employ" src="/images/add-employ.png"></image>新增部门
+  </view>
+</view>

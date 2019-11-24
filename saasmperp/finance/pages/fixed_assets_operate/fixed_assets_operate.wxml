@@ -1,0 +1,17 @@
+<view class='fixed-assets-operate-box'>
+  <view class='fixed-assets-operate-header'>{{operateType == 1? '资产移交':'资产闲置'}}</view>
+  <view class='fixed-assets-operate-container' wx:if='{{operateType == 1}}'>
+    <view>使用人</view>
+    <view bindtap='showIncomeModal'>{{incomeContent}}</view>
+  </view>
+  <view class='fixed-assets-operate-container' wx:if='{{operateType == 2}}'>
+    <view>资产管理员</view>
+    <view bindtap='showAccountModal'>{{accountContent}}</view>
+    
+  </view>
+  <view class='confirm'  bindtap='confirmFixedAssets'>确认修改</view>
+
+   <!-- 请选择的弹框 -->
+    <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeModal' wx:if='{{selectModal == 1 }}' bind:radioChange='choiceContent' bind:getId='getId'></acc-modal>
+    <acc-modal shadow='{{shadow}}' items='{{items2}}' bind:close='closeModal' wx:if='{{selectModal == 2}}' bind:radioChange='choiceContent' bind:getAdministratorId='getAdministratorId'></acc-modal>
+</view>

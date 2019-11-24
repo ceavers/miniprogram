@@ -1,0 +1,16 @@
+<view class="add-modal {{showmodal ? 'showFir':'hiddenFir'}}">
+  <view>{{modalTitle}}</view>
+  <view class='modal-content'>
+  
+    <view wx:for='{{modalContent}}' wx:key='{{index}}'>
+    <navigator hover-class='none' url="{{item.navUrl}}">
+      <image src='{{item.src}}'></image>
+      
+        <view>{{item.content}}</view>
+      </navigator>
+    </view>
+    
+  </view>
+  <view class='cancel' bindtap='closeModal'>取消</view>
+</view>
+<view class='mask' wx:if='{{showmodal}}' bindtap='closeModal'></view>

@@ -1,0 +1,17 @@
+<!--report/pages/library_statistics_detail/library_statistics_detail.wxml-->
+<view class="container">
+  <view class="title">入库统计明细</view>
+  <view class="item-box">
+    <view class="item-text">商品名称</view>
+    <view class="item-content">{{recordList.product_name}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">入库数量</view>
+    <view class="item-content">{{recordList.depo_num}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">入库金额</view>
+    <view class="item-content">{{recordList.depo_gross}}</view>
+  </view>
+</view>
+

@@ -1,0 +1,25 @@
+/* report/pages/hot_goodsInfo/hot_goodsInfo.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.header{
+  height: 119rpx;
+  text-align: center;
+  line-height: 138rpx;
+  font-size: 32rpx;
+}
+.box-line{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  padding: 0 32rpx;
+  margin-bottom:1px;
+  display: flex;
+}
+.box-line:last-child{
+  margin: 0;
+}
+.line-title{
+  width: 220rpx;
+}

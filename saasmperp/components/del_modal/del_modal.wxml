@@ -1,0 +1,9 @@
+<view class='del-modal' wx:if='{{shadow}}'>
+  <view class='del-modal-title'>确认</view>
+  <view class='del-modal-content'>删除后数据将不能回复，请确认是否继续？</view>
+  <view class='del-modal-footer'>
+    <view bindtap='closeModal'>取消</view>
+    <view bindtap='confirmDel'>确认</view>
+  </view>
+</view>
+<view class='del-modal-mask' wx:if='{{shadow}}' bindtap='closeModal'></view>

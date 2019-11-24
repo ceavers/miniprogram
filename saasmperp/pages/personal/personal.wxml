@@ -1,0 +1,54 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+  <view class="avatar-box">
+    <view class="item-box">
+      <view class="item-des">头像</view>
+      <view class="item-content" catchtap="changeAvatar">
+        <image src="{{userInfo.avatar}}" class="avatar"></image>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="item-box">
+      <view class="item-des">名字</view>
+      <view class="item-content" catchtap="changeName">
+        <text class="item-value">{{userInfo.name}}</text>
+        <text class="iconfont icon-return" style="margin-top:6rpx;"></text>
+      </view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="item-box">
+      <view class="item-des">性别</view>
+      <view class="item-content" catchtap="changeSex">
+        <view class="item-value">{{userInfo.gender==2?'女':'男'}}</view>
+        <text class="iconfont icon-return" style="margin-top:8rpx;"></text>
+      </view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="item-box">
+      <view class="item-des">电话</view>
+      <view class="item-content" catchtap="changePhone">
+        <view class="item-value">{{userInfo.tel}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </view>
+  <view class="weui-demo-dialog {{isShow ? 'weui-demo-dialog_show' : ''}}">
+    <view class="weui-mask" bindtap="cancle"></view>
+    <view class="weui-half-screen-dialog"> 
+      <view class="weui-half-screen-dialog__bd">
+        <view class="choose-btn-box">
+          <view class="choose-btn" catchtap="cancle">取消</view>
+          <view class="choose-btn" catchtap="changeGender">完成</view>
+        </view>
+        <view class="choose-item-box">
+          <view class="choose-item {{sex==0||sex==1?'choose':''}}" data-sex='1' catchtap="chooseSex">男</view>
+          <view class="choose-item {{sex==2?'choose':''}}" data-sex='2' catchtap="chooseSex">女</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

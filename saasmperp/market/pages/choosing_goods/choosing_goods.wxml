@@ -1,0 +1,65 @@
+<!--选择商品-->
+<view class="container">
+  <view class="search-wrap">
+    <view class="category" catchtap="categoryShow">
+      <view class="text">类别</view>
+      <text class="iconfont icon-return"></text>
+    </view>
+    <view class="search-box">
+      <image class="search-icon" src="/images/search.png"></image>
+      <input class="input" placeholder="品名/货号/品牌" bindconfirm="searchRepertory"></input>
+    </view>
+    <image class="filter-icon" src="/warehouse/images/out-add2.png" catchtap="createGoods"></image>
+  </view>
+  <scroll-view scroll-y class="res-box">
+    <view style="height:1rpx"></view>
+    <view class="category-box {{index==0?'mt-30':''}}" wx:for="{{goodsData}}" wx:key="index">
+      <view class="category-name">{{item.category_name}}</view>
+      <view>
+        <view class="res-item" wx:for="{{item.data}}" wx:for-item="goodsData" wx:key="index" data-goods-id="{{goodsData.product_id}}" catchtap="storageShow">
+          <view class="goods-info">
+            <image class="goods-img" src="{{goodsData.pic_url}}"></image>
+            <view class="goods-des">
+              <view class="goods-name">{{goodsData.product_name}}</view>
+              <view class="repertory">库存  {{goodsData.stock}}</view>
+              <view class="price">{{goodsData.price}}</view>
+            </view>
+          </view>
+          <text class="iconfont icon-return" wx:if="{{!goodsData.checked}}"></text>
+          <text class="iconfont icon-gou" wx:if="{{goodsData.checked}}"></text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="scan" catchtap="scan">
+    <text class="iconfont icon-saomiao1"></text>
+  </view>
+  <view class="complete-btn-box" wx:if="{{type==0}}">
+    <view class="goods-number-box">
+      <view class="in-number">出库数量 {{total}}</view>
+      <view class="total">总价 {{totalPrice}}</view>
+    </view>
+    <view class="complete-btn" catchtap="complete">完成</view>
+  </view>
+  <view class="complete-btn-box" wx:elif="{{type==1}}">
+    <view class="goods-number-box">
+      <view class="in-number">入库数量 {{total}}</view>
+      <view class="total">总价 {{totalPrice}}</view>
+    </view>
+    <view class="complete-btn" catchtap="complete">完成</view>
+  </view>
+  <view class="complete-btn-box" wx:elif="{{type==2}}">
+    <view class="goods-number-box">
+      <view class="in-number">调拨总数 {{total}}</view>
+    </view>
+    <view class="complete-btn" catchtap="complete">完成</view>
+  </view>
+  <view class="complete-btn-box" wx:elif="{{type==3}}">
+    <view class="goods-number-box">
+      <view class="in-number">盘点总数 {{total}}</view>
+    </view>
+    <view class="complete-btn" catchtap="complete">完成</view>
+  </view>
+</view>
+<category show="{{categoryShow}}" goodsData="{{categoryData}}" bind:setType="getType"></category>
+<add-goods show="{{inStorageShow}}" bind:addGoodsComplete="addGoodsComplete" goodsStock="{{goodsStock}}"></add-goods>

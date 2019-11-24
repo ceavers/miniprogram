@@ -1,0 +1,56 @@
+/* pages/more/more.wxss */
+.container{
+  background: #E1E1E1;
+  padding-top:28rpx;
+}
+.item-box{
+  height: 874rpx;
+  width: 660rpx;
+  background:#fff;
+  border-radius:8rpx;
+  margin:40rpx auto;
+  margin-top:0;
+  overflow: hidden;
+  position: relative;
+}
+.image{
+  width: 154rpx;
+  height: 180rpx;
+  margin:90rpx auto;
+  margin-bottom:40rpx;
+  display: block;
+}
+.title{
+  font-size:30rpx;
+  font-weight:bold;
+  color:rgba(0,0,0,1);
+  text-align: center;
+  margin-bottom:60rpx;
+}
+.des{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(0,0,0,1);
+  width:504rpx;
+  margin:40rpx auto;
+  margin-top:0;
+}
+.use-btn{
+  width:340rpx;
+  height:70rpx;
+  border:1px solid rgba(98,172,75,1);
+  border-radius:36rpx;
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(98,172,75,1);
+  text-align: center;
+  line-height: 70rpx;
+  position: absolute;
+  bottom:106rpx;
+  left:50%;
+  margin-left:-170rpx;
+}
+.block-btn{
+  border:1px solid rgba(255,62,89,1);
+  color:rgba(255,62,89,1);
+}

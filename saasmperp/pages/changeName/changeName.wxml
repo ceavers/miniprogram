@@ -1,0 +1,11 @@
+<!--pages/changeName/changeName.wxml-->
+<view class="container">
+  <view wx:if="{{!fromPage}}">
+    <input placeholder="请输入您的名字" class="change-name" value="{{name}}" bindinput="getName"></input>
+    <view class="save-btn" catchtap="changeName">保存</view>
+  </view>
+  <view wx:if="{{fromPage}}">
+    <input placeholder="请输入您的新手机号码" maxlength='11' class="change-name" value="{{phone}}" bindinput="getPhone"></input>
+    <view class="save-btn" style="margin-top:50rpx" catchtap="changePhone">完成</view>
+  </view>
+</view>

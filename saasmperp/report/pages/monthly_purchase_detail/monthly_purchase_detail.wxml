@@ -1,0 +1,16 @@
+<!--report/pages/monthly_purchase_detail/monthly_purchase_detail.wxml-->
+<view class="container">
+  <view class="title">入库详情</view>
+  <view class="item-box">
+    <view class="item-text">日期</view>
+    <view class="item-content">{{recordList.date}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">入库数量</view>
+    <view class="item-content">{{recordList.num}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">入库金额</view>
+    <view class="item-content">{{recordList.money}}</view>
+  </view>
+</view>

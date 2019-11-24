@@ -1,0 +1,33 @@
+<form bindsubmit="confirmEdit">
+  <view class="head">发货方式</view>
+  <view class="otherInformation1" bindtap="chooseShipStyle">
+    <view>
+      <text class="wuliu">发货方式</text>
+      <text>{{ shipStyle.value }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="returnInformation">
+    <text class="phone1">收货人</text>
+    <input type="text" name="contact" value="{{ orderMes.contact }}"></input>
+  </view>
+  <view class="returnedInformation">
+    <text class="phone">联系电话</text>
+    <input type="text" name="phone" value="{{ orderMes.phone }}"></input>
+  </view>
+  <view class="remarkInformation">
+    <text class="remark">送货地址</text>
+    <textarea value="{{ orderMes.address }}" name="address" auto-height></textarea>
+  </view>
+  <view>
+    <button class="button" form-type="submit">确认修改</button>
+  </view>
+</form>
+<view class="chooseStyleModel" wx:if='{{isShooseStyleModel}}'>
+  <radio-group bindchange='chooseStyle'>
+    <view class="style-content" wx:for='{{shipStyleList}}' wx:key='index'>
+      <text>{{item.value}}</text>
+      <radio value="{{ index }}" checked="{{item.checked}}"></radio>
+    </view>
+  </radio-group>
+</view>

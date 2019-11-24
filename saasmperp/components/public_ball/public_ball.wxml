@@ -1,0 +1,15 @@
+<template  name="yk_public_ball">
+  <view class="logo_box">
+    <image src="../../images/logo.png"></image>
+  </view>
+  <view class="password_text">进销存小程序</view>
+  <view class="one_public ball">1</view>
+  <view class="one_public line"></view>
+  <view class="two_public ball ball_2">2</view>
+  <view class="two_public line line_2"></view>
+  <view class="ball_1_left"></view>
+  <view class="ball_1_right"></view>
+  <view class="ball_2_left"></view>
+  <view class="ball_2_right"></view>
+</template >
+  

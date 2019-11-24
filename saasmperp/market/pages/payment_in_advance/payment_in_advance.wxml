@@ -1,0 +1,16 @@
+<!--收预付款-->
+<view class="advance-charge">
+    <view class="header">收预付款</view>
+    <form id="advanceChargeForm" class="advance-charge-form" bindsubmit="getAdvanceCharge">
+      <InputWrap cinputName="客户名称" inputStyle="margin-bottom:40rpx;"><view>{{ customerName }}</view></InputWrap>
+      <InputWrap cinputName="预付金额"><input name="advanceAmount"></input></InputWrap>
+      <InputWrap cinputName="收款账户" inputType='inputSelect'><view style="flex: 1;" bindtap="showSelectAccountModal">{{ accountName }}</view></InputWrap>
+      <InputWrap cinputName="备注" inputType="inputRemark" inputStyle="margin-bottom:81rpx;"><textarea name="remark"></textarea></InputWrap>
+      <InputWrap inputType="inputButton"><button form-type="submit">确认收款</button></InputWrap>
+    </form>
+</view>
+<BlackModal
+  show="{{ show }}"
+  optionList="{{ accountList }}"
+  bindtap="selectAccountType"
+></BlackModal>

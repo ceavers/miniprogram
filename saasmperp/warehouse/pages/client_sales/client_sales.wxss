@@ -1,0 +1,21 @@
+/* warehouse/pages/client_sales/client_sales.wxss */
+.header{
+  padding:0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  margin:50rpx 0 20rpx 0;
+}
+.text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.item-box{
+  height: 88rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom:1px solid #f6f6f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

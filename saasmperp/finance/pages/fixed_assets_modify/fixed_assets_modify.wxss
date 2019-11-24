@@ -1,0 +1,344 @@
+.fixed-modify-box{
+  background: #f6f6f6;
+}
+
+.fixed-modify-box > view:nth-child(1){
+  height: 120rpx;
+  font-size: 32rpx;
+  color: #323232;
+  text-align: center;
+  padding-bottom: 40rpx;
+  padding-top: 46rpx;
+  box-sizing: border-box;
+
+}
+
+
+.add-fixed-assets-image-box{
+  display: flex;
+  padding: 32rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  flex-wrap: wrap;
+  margin-bottom: 40rpx;
+
+}
+
+.add-fixed-assets-image-box image{
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 32rpx;
+  margin-bottom: 32rpx;
+}
+
+.pickerdate{
+  line-height: 88rpx;
+  font-size: 28rpx;
+  width: calc(100% - 264rpx);
+}
+
+.right-view{
+  width: calc(100% - 264rpx);
+}
+
+.fixed-modify-container > view{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f7f7f7;
+  font-size: 28rpx;
+  color: #323232;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  position: relative;
+  height: 88rpx;
+
+}
+
+.fixed-modify-container > view image{
+  position: absolute;
+  top: 26rpx;
+  right: 30rpx;
+  width: 35rpx;
+  height: 35rpx;
+
+}
+
+.fixed-modify-container > view view:nth-child(1){
+  width: 234rpx;
+}
+
+.fixed-modify-container > view input{
+  width: calc(100% - 294rpx);
+  outline: none;
+  border: none;
+  font-size: 28rpx;
+  color: #323232;
+
+}
+
+.beizhu{
+  height: 120rpx !important;
+  padding: 20rpx 30rpx !important;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #323232;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.beizhu view{
+  width: 234rpx;
+
+}
+
+.beizhu input{
+  width: calc(100% - 294rpx);
+  border: none;
+  outline: none;
+  font-size: 28rpx;
+  color: #323232;
+}
+
+.zhanwei{
+  background: #f6f6f6 !important;
+  height: 40rpx !important;
+  width: 100%;
+  
+}
+
+.assets-modify-footer{
+  margin-top: 80rpx;
+  margin-bottom: 220rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 88rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.assets-modify-footer view{
+  background: #62AC4B;
+  border-radius: 8rpx;
+  height: 100%;
+  line-height: 88rpx;
+  width: 100%;
+  text-align: center;
+}
+
+textarea{
+  height: 100%;
+  width: calc(100% - 294rpx);
+  font-size: 28rpx;
+  color: #323232;
+}
+
+/* 选择类别弹框 */
+.category-modal{
+  position: fixed;
+  z-index: 999999;
+  background: #fff;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.category-modal image{
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+
+}
+
+.hiddenCate{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: all .3s;
+}
+
+.showCate{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all .3s;
+}
+
+.category-modal-mask{
+  z-index: 99999;
+  background: rgba(0,0,0,.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.category-modal-header{
+  font-size: 32rpx;
+  color: #323232;
+  text-align: center;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  padding-bottom: 50rpx;
+  padding-top: 40rpx;
+}
+
+.category-modal-content{
+  padding: 70rpx 15rpx 30rpx 15rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.category-modal-content > view{
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  box-sizing: border-box;
+  height: 60rpx;
+  border: 1px solid #999;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-right: 60rpx;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+  color: #323232;
+}
+
+.category-modal-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  height: 116rpx;
+
+}
+
+.category-modal-footer > view:nth-child(1){
+  color: #323232;
+}
+
+.category-modal-footer > view:nth-child(2){
+  color: #62AC4B;
+}
+
+/* 添加类别弹框 */
+.add-cate-modal{
+  position: fixed;
+  z-index: 99999999;
+  background: #f2f2f2;
+  width: 520rpx;
+  border-radius: 16rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.add-cate-modal-mask{
+  position: fixed;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999999;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.add-cate-modal-header{
+  font-size: 28rpx;
+  color: #323232;
+  text-align: center;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  padding-top: 46rpx;
+  padding-bottom: 39rpx;
+  box-sizing: border-box;
+  height: 116rpx;
+}
+
+.add-cate-modal > view:nth-child(2){
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+
+}
+
+.add-cate-modal input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+  outline: none;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.add-cate-modal > view:nth-child(3){
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #62AC4B;
+  font-size: 28rpx;
+  border-top: 1px solid #ccc;
+  margin-top: 58rpx;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+}
+
+.add-cate-modal > view:nth-child(3) view{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.add-cate-modal > view:nth-child(3) view:nth-child(1){
+  border-right: 1px solid #ccc;
+}
+
+
+ /* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

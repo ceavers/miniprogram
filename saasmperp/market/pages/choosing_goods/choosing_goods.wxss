@@ -1,0 +1,142 @@
+/* warehouse/pages/inStorage_add_goods/inStorage_add_goods.wxss */
+.search-wrap{
+  height: 88rpx;
+  background: #C7C7C7;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category{
+  display: flex;
+}
+.text{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.category .icon-return{
+  transform: rotate(90deg);
+  font-size: 28rpx;
+  color:#555;
+  margin-left: 4rpx;
+}
+.search-box{
+  width: 522rpx;
+  height: 60rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+}
+.search-icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin:0 20rpx;
+}
+.filter-icon{
+  width: 36rpx;
+  height: 36rpx;
+}
+.input{
+  font-size:26rpx;
+  width:440rpx;
+}
+.complete-btn-box{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom:0;
+  height: 88rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(66,66,66,1);
+}
+.add{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+.res-box{
+  height: calc(100% - 176rpx);
+  box-sizing: border-box;
+}
+.category-name{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  padding: 0 40rpx;
+}
+.mt-30{
+  margin-top:30rpx;
+}
+.res-item{
+  padding:0 30rpx 0 40rpx;
+  background: #fff;
+  height: 148rpx;
+  margin-bottom:20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.res-item .icon-return{
+  color:#D9D9D9;
+}
+.goods-info{
+  display: flex;
+}
+.goods-des{
+  margin-left: 30rpx;
+}
+.goods-img{
+  width: 104rpx;
+  height: 104rpx;
+  margin:0 20rpx;
+}
+.goods-name{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.repertory{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin:4rpx 0;
+}
+.price{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.goods-number-box{
+  width: calc(100% - 262rpx);
+  background: #C7C7C7;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.complete-btn{
+  background: #62AC4B;
+  width: 262rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+}
+.in-number{
+  margin-left: 30rpx;
+}
+.total{
+  margin-left: 30rpx;
+}
+.icon-gou{
+  color:#62AC4B;
+}

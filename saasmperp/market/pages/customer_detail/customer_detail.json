@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ModalView": "/components/modal/modal",
+    "BottomModal": "/components/bottomModal/bottomModal"
+  },
+  "navigationBarTitleText": "客户列表"
+}

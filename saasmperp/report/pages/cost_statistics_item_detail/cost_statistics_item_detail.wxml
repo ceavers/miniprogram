@@ -1,0 +1,17 @@
+<!--report/pages/cost_statistics_item_detail/cost_statistics_item_detail.wxml-->
+<view class="container">
+  <view class="title">工资奖金</view>
+  <view class="res-box">
+    <view class="item-box" wx:for="{{itemList}}" wx:key="index">
+      <view>
+        <view>{{item.name}}</view>
+        <view class="pr">{{item.rate}}%</view>
+      </view>
+      <view>{{item.money_p}}</view>
+    </view>
+  </view>
+  <view class="bottom-box">
+    <view>合计</view>
+    <view>{{total}}</view>
+  </view>
+</view>

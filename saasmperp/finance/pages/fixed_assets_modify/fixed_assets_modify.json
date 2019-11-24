@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/pay_type/pay_type",
+    "del_modal":"/components/del_modal/del_modal",
+    "timePicker": "/components/picker/picker",
+    "timePicker2": "/components/picker/picker"
+  },
+  "navigationBarTitleText": "固定资产"
+}

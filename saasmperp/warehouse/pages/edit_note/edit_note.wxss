@@ -1,0 +1,37 @@
+/* warehouse/pages/edit_note/edit_note.wxss */
+.title{
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  margin:50rpx 0 40rpx 0;
+  text-align: center;
+}
+.note-box{
+  padding: 30rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.note-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.note{
+  width: 486rpx;
+  min-height: 60rpx;
+  font-size:28rpx;
+  color:rgba(50,50,50,1);
+}
+.btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin:80rpx auto;
+  text-align: center;
+  line-height: 88rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}

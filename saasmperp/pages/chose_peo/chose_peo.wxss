@@ -1,0 +1,31 @@
+.chose_peo_title_box{
+  width:640rpx;
+  height:120rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius:14rpx;
+  display: flex;
+  margin: auto;
+  margin-top: 172rpx;
+  line-height: 120rpx;
+}
+.chose_img{
+   width: 90rpx;
+   height: 90rpx;
+   border-radius: 50%;
+   margin-left: 92rpx;
+   margin-top: 16rpx;
+}
+.chose_img image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.chose_text{
+  margin-left: 104rpx;
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.chose_box{
+  margin-top: 50rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "select": "/warehouse/components/select/select/",
+    "picker": "/components/picker/picker/",
+    "calculator": "/components/calculator/calculator"
+  },
+  "navigationBarTitleText": "商品列表"
+}

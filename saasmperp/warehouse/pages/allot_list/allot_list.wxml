@@ -1,0 +1,39 @@
+<!--warehouse/pages/allot_list/allot_list.wxml-->
+<view class="container">
+  <view class="search-wrap">
+    <view class="search-box">
+      <image class="search-icon" src="/images/search.png"></image>
+      <input class="input" placeholder="单号/仓库名" bindconfirm="searchList"></input>
+    </view>
+    <image class="filter-icon" src="/images/shaixuan.png" catchtap="filterShow"></image>
+  </view>
+  <view class="list-title">库存调拨列表</view>
+  <scroll-view scroll-y class="res-box">
+    <view class="item-box" wx:for="{{allotList}}" wx:key="index">
+      <view class="item-date">{{item.time}}</view>
+      <view class="item-wrap" wx:for="{{item.results}}" wx:for-item="resItem" wx:key="index">
+        <view class="storage-name">
+          <view>{{resItem.from_depo_name}}</view>
+          <image src="/warehouse/images/arrow-r.png" class="arrow"></image>
+          <view>{{resItem.to_depo_name}}</view>
+        </view>
+        <view class="goods-info">
+          <view class="goods-img-box" wx:for="{{resItem.pic_urls}}" wx:for-item="picItem" wx:key="index">
+            <image src="{{picItem}}" mode="aspectFit" class="goods-img"></image>
+          </view>
+        </view>
+        <view class="goods-total-box" catchtap="toDetailPage" data-id="{{resItem.order_id}}">
+          <view class="goods-total">
+            <view class="number">共{{resItem.amount}}件</view>
+          </view>
+          <text class="iconfont icon-return"></text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bottom-btn-box" catchtap="toCreateInvoices">
+    <image src="/warehouse/images/out-add.png" class="bottom-btn-icon"></image>
+    <view class="bottom-text">创建调拨单</view>
+  </view>
+</view>
+<filter show="{{filterShow}}" filterData="{{filterData}}" bind:setFilterItem="getFilterItem"></filter>

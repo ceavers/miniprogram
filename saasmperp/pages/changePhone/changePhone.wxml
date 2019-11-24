@@ -1,0 +1,6 @@
+<!--pages/changePhone/changePhone.wxml-->
+<view class="container">
+  <image src="/images/change-phone.png" class="phone"></image>
+  <view class="des">您的手机号码为{{tel}}</view>
+  <view class="change-btn" catchtap="changePhone">更换手机号</view>
+</view>

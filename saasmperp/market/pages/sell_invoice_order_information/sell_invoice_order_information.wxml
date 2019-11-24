@@ -1,0 +1,31 @@
+<view class='head'>商品明细</view>
+<view class="goods">
+  <view class="goodsInformation">
+    <image class="goodsImg" src="{{ goods.product_img }}"></image>
+    <view>
+      <view class="sizeL">{{ goods.product_name }}</view>
+      <view class="sizeM">{{ goods.goods_number }}</view>
+      <view class="sizeM">{{ goods.product_color }}, {{ goods.product_size }}</view>
+    </view>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+
+</view>
+<form bindsubmit="confirmEdit">
+  <view class="price">
+    <text class="price-left">价格</text>
+    <input name="price" class="input-box" value="{{ goods.product_price }}"></input>
+  </view>
+  <view class="amount">
+    <text class="amount-left">数量</text>
+    <input name="count" type="number" value="{{ goods.product_count }}"></input>
+  </view>
+  <view class="remark">
+    <text class="remark-left">备注</text>
+    <textarea name="note" value="{{ goods.product_name }}"></textarea>
+  </view>
+  <view class="floor">
+    <view class="floor-left" bindtap="del">删除</view>
+    <button form-type="submit" class="floor-right">保存</button>
+  </view>
+</form>

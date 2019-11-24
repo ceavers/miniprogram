@@ -1,0 +1,33 @@
+<!--部门信息-->
+<view class="department-mes">
+  <view class="department-mes-body">
+    <view class="department-mes-item" bindtap="gotoEditDepartment">
+      <view class="department-mes-item-title">部门信息</view>
+      <view class="department-mes-item-body" data-id="{{departmentInfo.depatment.id}}">
+        <text>{{departmentInfo.dept_name}}</text>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="department-mes-item" wx:if="{{staffs.length}}">
+      <view class="department-mes-item-title">拥有{{staffs.length}}名员工</view>
+      <view class="department-mes-item-body" wx:for="{{staffs}}" wx:key="index">
+        <text>{{item.user_name}}</text>
+      </view>
+    </view>
+    <view class="department-mes-item" wx:if="{{depots.length}}">
+      <view class="department-mes-item-title">拥有{{depots.length}}个仓库</view>
+      <view class="department-mes-item-body" wx:for="{{depots}}" wx:key="index">
+        <text>{{item.depot_name}}</text>
+      </view>
+    </view>
+    <view class="department-mes-item" wx:if="{{settleAccounts.length}}">
+      <view class="department-mes-item-title">拥有{{settleAccounts.length}}个结算账户</view>
+      <view class="department-mes-item-body" wx:for="{{settleAccounts}}" wx:key="index">
+        <text>{{item.account_name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="manage" bindtap="gotoEmploy">员工管理</view>
+  </view>
+</view>

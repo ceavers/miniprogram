@@ -1,0 +1,48 @@
+/* pages/department_mes/department_mes.wxss */
+.department-mes{
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  background-color: #F6F6F6;
+}
+.department-mes-body{
+  flex: 1;
+}
+.department-mes-item-title{
+  height: 53rpx;
+  padding-left: 32rpx;
+  line-height: 53rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+.department-mes-item-body{
+  position: relative;
+  padding-left: 32rpx;
+  height: 88rpx;
+  background-color: #fff;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  border-bottom:1px solid #F6F6F6;
+}
+.icon-return{
+  position: absolute;
+  top: 50%;
+  right: 32rpx;
+  margin-top: -44rpx;
+  font-size: 28rpx;
+  color: #D9D9D9; 
+}
+.manage{
+  display: inline-block;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  font-weight:bold;
+  font-size: 28rpx;
+}

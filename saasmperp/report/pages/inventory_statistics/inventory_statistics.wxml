@@ -1,0 +1,23 @@
+<!--report/pages/inventory_statistics/inventory_statistics.wxml-->
+<view class="container">  
+  <view class="title">商品库存排名</view>
+  <view class="item-box" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" catchtap="toDetailPage">
+    <view class="content">
+      <view class="text-box">
+        <view>{{item.depo_name}}</view>
+        <view style="margin-left:60rpx">{{item.scale}}%</view>
+        <view>{{item.depo_money}}</view>
+      </view>
+      <view class="chart-box">
+        <view class="out-box">
+          <view class="inner-box" animation="{{ item.anmiate }}"></view>
+        </view>
+      </view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+  <view class="total-box">
+    <view>库存总额</view>
+    <view class="mr-r">{{stock_total}}</view>
+  </view>
+</view>

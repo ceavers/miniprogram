@@ -1,0 +1,73 @@
+<view class="com_type">
+  <view class="public_hang">
+
+    <view class="public_type" bindtap="ck_type" data-id="0" data-text="{{item[0]}}" >
+      <image src="../../images/computer.png"></image>
+      <view>{{item[0]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="1" data-text="{{item[1]}}">
+      <image src="../../images/camare.png"></image>
+      <view>{{item[1]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="2" data-text="{{item[2]}}">
+      <image src="../../images/zhuangxiu.png"></image>
+      <view>{{item[2]}}</view>
+    </view>
+  </view>
+  <view class="public_hang publci_hang2">
+    <view class="public_type" bindtap="ck_type" data-id="3" data-text="{{item[3]}}">
+      <image src="../../images/yifu.png"></image>
+      <view>{{item[3]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="4" data-text="{{item[4]}}">
+      <image src="../../images/binggan.png"></image>
+      <view>{{item[4]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="5" data-text="{{item[5]}}">
+      <image src="../../images/hezi.png"></image>
+      <view>{{item[5]}}</view>
+    </view>
+  </view>
+  <view class="public_hang publci_hang2">
+    <view class="public_type" bindtap="ck_type" data-id="6" data-text="{{item[6]}}">
+      <image src="../../images/zuanshi.png"></image>
+      <view>{{item[6]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="7" data-text="{{item[7]}}">
+      <image src="../../images/jingzi.png"></image>
+      <view>{{item[7]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="8" data-text="{{item[8]}}">
+      <image src="../../images/wazi.png"></image>
+      <view>{{item[8]}}</view>
+    </view>
+  </view>
+  <view class="public_hang publci_hang2">
+    <view class="public_type" bindtap="ck_type" data-id="9" data-text="{{item[9]}}">
+      <image src="../../images/zhong.png"></image>
+      <view>{{item[9]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="10" data-text="{{item[10]}}">
+      <image src="../../images/sun.png"></image>
+      <view>{{item[10]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="11" data-text="{{item[11]}}">
+      <image src="../../images/niuyouguo.png"></image>
+      <view>{{item[11]}}</view>
+    </view>
+  </view>
+   <view class="public_hang publci_hang2">
+    <view class="public_type" bindtap="ck_type" data-id="12" data-text="{{item[12]}}">
+      <image src="../../images/car.png"></image>
+      <view>{{item[12]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="13" data-text="{{item[13]}}">
+      <image src="../../images/wujin.png"></image>
+      <view>{{item[13]}}</view>
+    </view>
+    <view class="public_type" bindtap="ck_type" data-id="14" data-text="{{item[14]}}">
+      <image src="../../images/Bread.png"></image>
+      <view>{{item[14]}}</view>
+    </view>
+  </view>
+</view>

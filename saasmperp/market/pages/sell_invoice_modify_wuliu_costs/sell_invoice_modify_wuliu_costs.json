@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "PickerModal": "/components/picker/picker",
+    "BlockModal": "/market/components/blackModal/blackModal"
+  },
+  "navigationBarTitleText": "订单信息"
+}

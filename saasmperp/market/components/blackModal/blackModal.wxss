@@ -1,0 +1,26 @@
+/* market/components/blackModal/blackModal.wxss */
+.black-modal-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 41rpx;
+  width: 418rpx;
+  height: 88rpx;
+  background:rgba(68,68,68,1);
+  font-size: 28rpx;
+  color: #fff;
+}
+.black-modal-item:last-child{
+  margin-bottom: 0;
+}
+.selected{
+  height: 30rpx;
+  width: 30rpx;
+}
+.select{
+  width:28rpx;
+  height:28rpx;
+  border:2rpx solid rgba(255,255,255,1);
+  border-radius:50%;
+}

@@ -1,0 +1,25 @@
+<view class="login_box">
+  <view class="title_banner">
+    <image src="../../images/banner.png"></image>
+    <view class="logo_box">
+     <image src="../../images/logo.png"></image>
+    </view>
+  </view>
+  <view class="input_box">
+    <view class="input_public username_box">
+      <image src="../../images/username_icon.png"></image>
+      <input class="username_input" placeholder="请输入账号"  bindinput="username" type="number"  ></input>
+    </view>
+    <view class="input_public password_box">
+      <image src="../../images/password.png"></image>
+      <input password="true" class="password_input" placeholder="请输入密码" bindinput='password'></input>
+    </view>
+    <view class="type_login">
+     <view bindtap="login_phone">短信验证码登录</view>
+     <view bindtap="remove">忘记密码</view>
+    </view>
+      <button disabled="{{disabled}}" class="login_btn"  bindtap="loginInfo">登录</button>
+  </view>
+  <import src ="../../components/public_register/public_register.wxml"></import>
+  <template is="yk_public_register"></template>
+</view>

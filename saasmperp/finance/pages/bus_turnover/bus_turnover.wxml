@@ -1,0 +1,22 @@
+<view class='turnover-box'>
+  <view class="turnover-box-search">
+    <view>
+      <image src="../../images/search.png"></image>
+      <input type="text" placeholder="单号查询"></input>
+    </view>
+  </view>
+  <view class="turnover-box-title">借贷流水列表</view>
+  <view class="turnover-container {{index == journalList.length - 1 ? 'mgBottom':''}}" wx:for='{{journalList}}' wx:key='{{index}}'>
+    <view>{{item.record_time}}</view>
+    <navigator hover-class="none" url="/finance/pages/bus_turnover_detail/bus_turnover_detail?journal_id={{item.journal_id}}">
+      <view class="turnover-box-item">
+        <view>
+          <view>{{item.journal_name}}</view>
+          <view>{{item.account.account_name}}</view>
+          <view>{{item.voucher_num}}</view>
+        </view>
+        <view class="{{item.inout.inout_num > 0 ? 'greText':'redText'}}">{{item.inout.inout_num > 0 ? '+':'-'}}{{item.inout.inout_num}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

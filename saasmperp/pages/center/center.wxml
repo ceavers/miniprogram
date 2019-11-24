@@ -1,0 +1,75 @@
+<!--pages/center/center.wxml-->
+<view class="container">
+  <view class="info-wrap">
+    <view class="info-box">
+      <view class="avatar-box">
+        <image src="{{userInfo.avatar}}" class="avatar"></image>
+        <view class="info-content">
+          <view class="name-box">
+            <text class="name">{{userInfo.name}}</text>
+            <text class="vip-box">
+              <text class="iconfont icon-vip">
+                <text class="vip-grade">1</text>
+              </text>
+            </text>
+          </view>
+          <view class="account-position account">进销存账号：{{userInfo.account}}</view>
+          <view class="account-position">职位：{{userInfo.role.name}}</view>
+        </view>  
+      </view>
+      <text class="iconfont icon-return info-setting" catchtap="toPersonalPage"></text>
+    </view>
+  </view>
+  <view class="advertising">
+    <image src="/images/advert.png" class="advert"></image>
+  </view>
+  <view class="manage-wrap">
+  <view class="manage-box">
+    <view class="manage-item" catchtap="toChangePwPage">
+      <view class="item-box">
+        <image src="/images/account.png" style="width:40rpx;height:40rpx"></image>
+        <view class="manage-item-des">账户与安全</view>
+      </view>
+      <text class="iconfont icon-return item-back"></text>
+    </view>
+    <view class="manage-item" style="border:1px solid #F6F6F6" catchtap="toAuthorityPage">
+      <view class="item-box">
+        <image src="/images/user.png" style="width:38rpx;height:44rpx"></image>
+        <view class="manage-item-des">角色权限</view>
+      </view>
+      <text class="iconfont icon-return item-back"></text>
+    </view>
+    <view class="manage-item" catchtap="toManagePage">
+      <view class="item-box">
+        <image src="/images/manage.png" style="width:42rpx;height:42rpx"></image>
+        <view class="manage-item-des">员工管理</view>
+      </view>
+      <text class="iconfont icon-return item-back"></text>
+    </view>
+    <view class="manage-item" catchtap="toMorePage">
+      <view class="item-box">
+        <image src="/images/more.png" style="width:42rpx;height:42rpx"></image>
+        <view class="manage-item-des">更多模块</view>
+      </view>
+      <text class="iconfont icon-return item-back"></text>
+    </view>
+  </view>
+  <view class="guide-box">
+    <view class="manage-item">
+      <view class="item-box">
+        <image src="/images/document.png" style="width:36rpx;height:44rpx"></image>
+        <view class="manage-item-des">关于进销存</view>
+      </view>
+      <text class="iconfont icon-return item-back"></text>
+    </view>
+    <!-- <view class="manage-item" style="border-top:1rpx solid #F6F6F6">
+      <view class="item-box">
+        <image src="/images/guide.png" style="width:38rpx;height:36rpx"></image>
+        <view class="manage-item-des">快速上手</view>
+      </view>
+      <text class="iconfont icon-return item-back"></text> 
+    </view> -->
+  </view>
+  </view>
+</view>
+<view class="exit" catchtap="exit">退出登录</view>

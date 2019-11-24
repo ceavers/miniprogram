@@ -1,0 +1,17 @@
+<!--report/pages/sales_outbound_report_detail/sales_outbound_report_detail.wxml-->
+<view class="container">
+  <view class="title">出库详情</view>
+  <view class="item-box">
+    <view class="item-text">日期</view>
+    <view class="item-content">{{recordList.date}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">出库数量</view>
+    <view class="item-content">{{recordList.num}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">出库金额</view>
+    <view class="item-content">{{recordList.money}}</view>
+  </view>
+</view>
+

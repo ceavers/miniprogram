@@ -1,0 +1,67 @@
+<!--销售单-->
+<view class="order">
+  <view class="history" bindtap="gotoHistory">历史</view>
+  <view class="customer-box" bindtap="gotoSelectUser">
+    <view class="customer">客户</view>
+    <view class="customer-name">{{ customerName }}</view>
+    <image src="/market/images/jiantou.png"></image>
+  </view>
+  <view class="business-document">
+    <view class="select-business-document" bindtap="showPhotoModal" wx:if="{{ !imageList.length }}">
+      <image src="/market/images/photo.png"></image>
+      <text>业务单据</text>
+    </view>
+    <image class="business-image" 
+      wx:for="{{ imageList }}" 
+      wx:key="{{ index }}" 
+      src="{{ item }}" 
+      data-index="{{ index }}" 
+      bindtap="previewImage"
+    ></image>
+    <view class="add-image" wx:if="{{ imageList.length }}" bindtap="showPhotoModal">+</view>
+  </view>
+  <view class="money-wrap" wx:if="{{ imageList.length }}" bindtap="showCalculator">
+    <view class="money">金额</view>
+    <view class="money-num">{{ totalMoney }}</view>
+    <image src="/market/images/jiantou.png"></image>
+  </view>
+  <view class="next-btn" bindtap="nextStep"><text>下一步</text></view>
+</view>
+<!-- 图片选择方式 -->
+<BottomModal show="{{ showPhotoModal }}"  modalList="{{ photoModalList }}" isWidth="true" bindtap="getEventName"></BottomModal>
+<!-- 图片预览 -->
+<ModalView show="{{ previewImage }}" imageMask="true">
+  <swiper indicator-dots="true"
+    indicator-color="RGBA(217, 217, 217, 1)"
+    indicator-active-color="RGBA(98, 172, 75, 1)"
+    current="{{ previewImageIndex }}"
+    class="preview-swiper"
+    catchtap="closePreview"
+    bindchange="selectSwiperImageIndex"
+  >
+    <block wx:for="{{imageList}}" wx:key="{{ index }}">
+      <swiper-item data-index="{{ index }}">
+        <image catchtap="returnFalse" src="{{item}}" class="slide-image" width="100%" height="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="del-image" bindtap="delImage" src="/market/images/del-image.png"></image>
+</ModalView>
+<!-- 删除图片 -->
+<ModalView show="{{ delImageFlag }}">
+  <view class="del-modal">
+    <view class="del-image-btn" bindtap="delImageConfirm">删除图片</view>
+    <view class="del-image-cancel" bindtap="delImageCancel">取消</view>
+  </view>
+</ModalView>
+<!-- 结算商品总价值 -->
+<!-- 计算器 -->
+<Calculator 
+  show="{{ showCalculator }}" 
+  goodsImage="{{ goodsImage }}"
+  showCalculatorModal="{{ showCalculatorModal }}"
+  bindcancel="cancelAdd"
+  bindsetResult="confirmAdd"
+></Calculator>
+
+

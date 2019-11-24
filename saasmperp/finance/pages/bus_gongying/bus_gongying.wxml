@@ -1,0 +1,16 @@
+<view class="bus_gongying">
+ <view class="bkp_title">
+    <view class="input_box">
+      <view class="input_img">
+         <image src="../../../images/sousuo.png"></image>
+      </view>
+      <input class="bkp_input" placeholder="供号应商名/手机号" placeholder-style="color:rgba(153,153,153,1)"></input>
+    </view>
+  </view>
+   <view class="bus_gongying_img">
+    <image src="../../images/gys.png"></image>
+   </view>
+   <view class="bus_title">供应商</view>
+   <view class="bus_wenzi">对供应商进行管理、采购价进行管理</view>
+   <button class="bus_button" bindtap="bus_button">马上新建</button>
+</view>

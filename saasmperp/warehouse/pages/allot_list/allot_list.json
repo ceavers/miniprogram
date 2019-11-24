@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "filter": "/warehouse/components/filter/filter"
+  },
+  "navigationBarTitleText": "进销存单据"
+}

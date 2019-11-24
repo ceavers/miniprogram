@@ -1,0 +1,8 @@
+<form bindsubmit="editRemark">
+  <view class="head">修改备注</view>
+  <view class="remarkInformation">
+    <text class="remark">备注</text>
+    <textarea name="remark" value="{{ remark }}" auto-height></textarea>
+  </view>
+  <view><button class="button" form-type="submit">确认修改</button></view>
+</form>

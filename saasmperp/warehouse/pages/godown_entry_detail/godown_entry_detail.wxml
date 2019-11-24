@@ -1,0 +1,91 @@
+<!--warehouse/pages/godown_entry_detail/godown_entry_detail.wxml-->
+<view class="container">
+  <view class="title">商品明细</view>
+  <view class="goods-info-box" data-goods-id="{{goodsInfo.product_id}}" catchtap="toGoodsDetailPage">
+    <view class="goods-img-box">
+      <image src="{{goodsInfo.pic_url}}" class="goods-img"></image>
+      <view>
+        <view class="goods-type">{{goodsInfo.product_name}}</view>
+        <view class="goods-name">{{goodsInfo.product_code}}</view>
+        <view class="goods-prop">{{goodsInfo.sku_detail}}</view>
+      </view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+  <view class="storage-box" wx:if="{{type==0}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">单位</view>
+      <view class="storage-item-content">{{outInSingleInfo.sup_unit}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">价格</view>
+      <view class="storage-item-content">{{outInSingleInfo.price}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">出库数量</view>
+      <view class="storage-item-content">{{outInSingleInfo.amount}}</view>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content">{{outInSingleInfo.note}}</view>
+    </view>
+  </view>
+  <view class="storage-box" wx:elif="{{type==1}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">单位</view>
+      <view class="storage-item-content">{{outInSingleInfo.sup_unit}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">价格</view>
+      <view class="storage-item-content">{{outInSingleInfo.price}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">入库数量</view>
+      <view class="storage-item-content">{{outInSingleInfo.amount}}</view>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content">{{outInSingleInfo.note}}</view>
+    </view>
+  </view>
+  <view class="storage-box" wx:elif="{{type==2}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">单位</view>
+      <view class="storage-item-content">{{allotSingleInfo.sup_unit}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">数量</view>
+      <view class="storage-item-content">{{allotSingleInfo.amount}}</view>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content">{{allotSingleInfo.note}}</view>
+    </view>
+  </view>
+  <view class="storage-box" wx:elif="{{type==3}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">单位</view>
+      <view class="storage-item-content">{{checkSingleInfo.sup_unit}}</view>
+      <!-- <input wx:elif="{{state==0}}" bindinput="getSupunit" class="storage-item-content" value="{{checkSingleInfo.sup_unit}}"></input> -->
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">账面数量</view>
+      <view wx:if="{{state==1}}" class="storage-item-content">{{checkSingleInfo.depo_amount}}</view>
+      <input wx:elif="{{state==0}}" type="number" bindinput="getDepoAmount" class="storage-item-content input" value="{{checkSingleInfo.depo_amount}}"></input>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">盘点数量</view>
+      <view wx:if="{{state==1}}" class="storage-item-content">{{checkSingleInfo.order_amount}}</view>
+      <input wx:elif="{{state==0}}" type="number" bindinput="getOrderAmount" class="storage-item-content input" value="{{checkSingleInfo.order_amount}}"></input>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view wx:if="{{state==1}}" class="storage-note-content">{{checkSingleInfo.note}}</view>
+      <textarea style="height:70rpx" wx:elif="{{state==0}}" bindinput="getNote" class="storage-item-content input" value="{{checkSingleInfo.note}}"></textarea>
+    </view>
+  </view>
+  <view class="btn-box" wx:if="{{type==2||type==3}}">
+    <view class="delete-btn" catchtap="delete">删除</view>
+    <view class="save-btn" catchtap="save">保存</view>
+  </view>
+</view>

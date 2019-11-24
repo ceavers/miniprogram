@@ -1,0 +1,32 @@
+<view class="head">采购付款</view>
+<view class="returnedInformation">
+  <text class="phone">采购金额</text>
+  <text>50.00（优惠10.00）</text>
+</view>
+<view class="returnedInformation">
+  <text class="phone">已付金额</text>
+  <text>0.00</text>
+</view>
+<view class="returnInformation">
+  <text class="phone">付款金额</text>
+  <text>50.00</text>
+</view>
+<view class="otherInformation1">
+  <view>
+    <text class="wuliu">付款账号</text>
+    <text>李总预付款（90.00）</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="otherInformation1">
+  <view>
+    <text class="wuliu">付款时间</text>
+    <text>2019-07-18</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <text>大客户，单子多</text>
+</view>
+<view><button class="button">确认付款</button></view>

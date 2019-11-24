@@ -1,0 +1,32 @@
+<!-- 筛选弹窗 -->
+<ModalView show="{{ showScreen }}">
+  <view class="screen-modal">
+    <view class="srceen-header">
+      <text>筛选</text>
+      <text class="select-screen" wx:for="{{ oldSelectedScreenList }}" wx:key="{{ index }}" wx:if="{{ item.name }}">{{ item.name }}</text>
+    </view>
+    <view class="screen-body">
+      <view class="screen-option">
+        <view wx:for="{{ selectClassificationIList }}" wx:key="{{ index }}"
+          class="{{ selectFirstClassificationIndex == index ? 'select-i' : '' }}" 
+          data-id="{{ item.condition_id }}" 
+          data-index="{{ index }}"
+          bindtap="selectClassificationI"
+        >{{ item.condition_name }}</view>
+      </view>
+      <scroll-view class="screen-option-body" scroll-y>
+        <view class="screen-option-body-option" wx:for="{{ screenOptionList }}" 
+          wx:key="{{ item.condition_second_id }}" data-id="{{ item.condition_second_id }}" data-index="{{ index }}" data-name="{{ item.condition_second_name }}"
+          bindtap="selectClassificationII"
+        >
+          <text>{{ item.condition_second_name }}</text>
+          <image wx:if="{{ item.condition_second_id == selectedScreenList[selectFirstClassificationIndex].select_second_type_id }}" src="../../images/select.png"></image>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="screen-footer">
+      <view class="screen-cancel" bindtap="cancelScreen">取消</view>
+      <view class="screen-confirm" bindtap="confirmScreen">确认</view>
+    </view>
+  </view> 
+</ModalView>

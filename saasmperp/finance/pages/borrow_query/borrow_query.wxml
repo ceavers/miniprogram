@@ -1,0 +1,45 @@
+  <view class="borrow_query">
+  <view class="borrow_title">借入借出查询</view>
+  <view class="borrow_content1" bindtap="type">
+    <view class="borrow_content1_type">
+      <text>类型</text>
+      <text class="borrow_content1_text" >{{cp_type}}</text>
+    </view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+  <view class="borrow_content2">
+    <view class="borrow_content2_title">借贷人</view>
+    <input value="{{inputdata}}" bindinput="loaner_name" ></input>
+  </view>
+  <view class="borrow_content1" bindtap="bus_type">
+    <view class="borrow_content1_type">
+      <text>账户</text>
+      <text class="borrow_content1_text">{{bus_type}}</text>
+    </view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+  <view class="borrow_content2 borrow_content3">
+    <view class="borrow_content2_title">流水号</view>
+    <input value="{{inputdata1}}" bindinput="journal_id"></input>
+  </view>
+  <view class="borrow_content1 borrow_content3" bindtap="starttime">
+    <view class="borrow_content1_type">
+      <text>开始日期</text>
+      <text class="borrow_content1_text borrow_content2_text">{{startTime}}</text>
+    </view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+  <view class="borrow_content1 borrow_content3" bindtap="endtime">
+    <view class="borrow_content1_type">
+      <text>结束日期</text>
+      <text class="borrow_content1_text borrow_content2_text">{{endtime}}</text>
+    </view>
+    <image src="../../images/jiantou.png"></image>
+  </view>
+   <pay_type shadow="{{shadow}}" bindradioChange="radioChange"  bindindexInfo="indexInfo" items="{{items}}" ></pay_type>
+   <pay_type1 shadow="{{shadow1}}" bindradioChange="radioChange1" bindindexInfo="indexInfo1" items="{{items1}}"></pay_type1>
+   <view class="sumbit" bindtap="submit">查询</view>
+   <view class="remove" bindtap="remove">清空</view>
+   <picker show="{{show}}" bindsetTime="setTime"></picker>
+   <picker1 show="{{show1}}" bindsetTime="setTime1"></picker1>
+</view>

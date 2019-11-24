@@ -1,0 +1,21 @@
+<!--warehouse/pages/storages/storages.wxml-->
+<view class="container">
+  <view class="title">仓库列表</view>
+  <scroll-view class="res-box" scroll-y>
+    <view class="res-item-box" wx:for="{{storageList}}" wx:key="index" data-depo-id="{{item.depo_id}}" catchtap="toStorageDetail">
+      <view class="img-box">
+        <image src="{{item.depo_pic_url||deStriImg}}" class="img"></image>
+        <view>
+          <view class="name">{{item.depo_name}}</view>
+          <text space="emsp" class="number str-n">库存数量 {{item.depo_stock}}</text>
+          <text space="emsp" class="number">库存金额 {{item.depo_money}}</text>
+        </view>
+      </view>
+      <text class="iconfont icon-return"></text>
+    </view>
+  </scroll-view>
+  <view class="add-btn" catchtap="toCreateStorage">
+    <image src="/images/add-employ.png" class="add"></image>
+    <text>新增仓库</text>
+  </view>
+</view>

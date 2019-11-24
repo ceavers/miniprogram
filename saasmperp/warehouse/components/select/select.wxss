@@ -1,0 +1,102 @@
+/* components/select/select.wxss */
+.modal-mask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 99999999;
+}
+.back{
+  background-color: rgba(0,0,0,1);
+}
+
+/*遮罩内容*/
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+}
+/*中间内容*/
+.main-content{
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden; 
+  max-height: 80vh; /* 内容高度最高80vh 以免内容太多溢出*/
+}
+.maheight{
+  max-height: 100vh;
+  height: 100vh;
+}
+/*底部按钮*/
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.cancel-btn, .confirm-btn{
+  flex: 1;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.confirm-btn {
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,96,34,1);
+}
+.wrapper{
+  width: 500rpx;
+  max-height: 720rpx;
+  overflow-y: auto;
+}
+.item-box{
+  height: 90rpx;
+  background: #444444;
+  padding: 0 40rpx;
+  border-top:1px solid #999999;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-box:nth-child(1){
+  border-top:none;
+}
+.text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+/* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

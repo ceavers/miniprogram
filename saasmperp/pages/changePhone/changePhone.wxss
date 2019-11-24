@@ -1,0 +1,26 @@
+/* pages/changePhone/changePhone.wxss */
+.phone{
+  display: block;
+  width: 120rpx;
+  height: 210rpx;
+  margin:94rpx auto;
+  margin-bottom: 48rpx;
+}
+.des{
+  font-size:30rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  text-align: center;
+}
+.change-btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin:70rpx auto;
+  line-height: 88rpx;
+  text-align: center;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}

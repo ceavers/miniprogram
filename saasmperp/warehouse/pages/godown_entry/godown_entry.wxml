@@ -1,0 +1,193 @@
+<!--warehouse/pages/godown_entry/godown_entry.wxml-->
+<view class="container">
+  <view class="order-wrapper">
+    <view class="order-title">{{typeData[type].title}}</view>
+    <view class="order-code" wx:if="{{type!=2}}">订单号：{{orderCode}}</view>
+    <view class="order-code" wx:if="{{type==2}}">单号：{{orderCode}}</view>
+    <view class="status-box">
+      <image src="/warehouse/images/arrow.png" class="arrow"></image>
+      <view class="order-status">{{typeData[type].state}}</view>
+    </view>
+  </view>
+  <!-- 入库 -->
+  <view class="storage-box storage-box-b" wx:if="{{type==1}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">入库仓库</view>
+      <view class="storage-item-content">{{outInBillDetail.depo_name}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">仓库人员</view>
+      <view class="storage-item-content">{{outInBillDetail.depo_manager}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">创建时间</view>
+      <view class="storage-item-content">{{outInBillDetail.time}}</view>
+    </view>
+  </view>
+  <view class="storage-box storage-box-b" wx:elif="{{type==0}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">出库仓库</view>
+      <view class="storage-item-content">{{outInBillDetail.depo_name}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">仓库人员</view>
+      <view class="storage-item-content">{{outInBillDetail.depo_manager}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">创建时间</view>
+      <view class="storage-item-content">{{outInBillDetail.time}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">收货单位</view>
+      <view class="storage-item-content">{{outInBillDetail.source_part}}</view>
+    </view>
+  </view>
+  <view class="storage-box storage-box-b" wx:elif="{{type==2}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">调出仓库</view>
+      <view class="storage-item-content">{{allotBillDetail.from_depo_name}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">调入仓库</view>
+      <view class="storage-item-content">{{allotBillDetail.to_depo_name}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">创建时间</view>
+      <view class="storage-item-content">{{allotBillDetail.time}}</view>
+    </view>
+  </view>
+  <block wx:for="{{units}}" wx:key="index">
+    <view class="goods-info-box" 
+    catchtap="toDetail" 
+    wx:for="{{item.skus_info}}" 
+    wx:for-item="skuItem" 
+    wx:key="index"
+    data-code="{{skuItem.sku_code}}"
+    >
+      <view class="goods-img-box">
+        <image src="{{item.pic_url}}" class="goods-img"></image>
+        <view>
+          <view class="goods-name">{{item.product_name}}</view>
+          <view class="goods-prop">{{item.product_code}}({{skuItem.sku_detail}})</view>
+        </view>
+      </view>
+      <view class="goods-img-box">
+        <view>
+          <view class="goods-name align-r" wx:if="{{type!=2}}">{{item.price}}</view> 
+          <view class="goods-prop align-r" wx:if="{{type!=2}}">×{{skuItem.amount}}</view>
+          <view class="goods-prop align-r" wx:if="{{type==2}}" style="margin-top:36rpx;">×{{skuItem.amount}}</view>
+        </view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </block>
+  <view class="storage-box storage-box-t" wx:if="{{type==1}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">入库数量</view>
+      <view class="storage-item-content">{{outInBillDetail.total_amount}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">入库金额</view>
+      <view class="storage-item-content">{{outInBillDetail.total_money}}</view>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content" catchtap="toEditNote">{{note}}<text class="iconfont icon-return edit-note-icon"></text></view>
+    </view>
+  </view>
+  <view class="storage-box storage-box-t" wx:elif="{{type==0}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">出库数量</view>
+      <view class="storage-item-content">{{outInBillDetail.total_amount}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">出库金额</view>
+      <view class="storage-item-content">{{outInBillDetail.total_money}}</view>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content" catchtap="toEditNote">{{note}}<text class="iconfont icon-return edit-note-icon"></text></view>
+    </view>
+  </view>
+  <view class="storage-box storage-box-t" wx:elif="{{type==2}}">
+    <view class="storage-item-box">
+      <view class="storage-item-text">调库执行</view>
+      <view class="storage-item-content">{{allotBillDetail.manager}}</view>
+    </view>
+    <view class="storage-note-box">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content" catchtap="toEditNote">{{note}}<text class="iconfont icon-return edit-note-icon"></text></view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-wrap" catchtap="godownEntry" wx:if="{{type==1}}">
+      <image src="/images/kc-in.png" class="popup-icon"></image>
+      <view class="popup-icon-text">入库</view>
+    </view>
+    <view class="icon-wrap" catchtap="godownEntry" wx:if="{{type==0}}">
+      <image src="/images/kc-out.png" class="popup-icon"></image>
+      <view class="popup-icon-text">出库</view>
+    </view>
+    <view class="icon-wrap" catchtap="godownEntry" wx:if="{{type==2}}">
+      <image src="/images/kc-allot.png" class="popup-icon"></image>
+      <view class="popup-icon-text">调拨</view>
+    </view>
+    <view class="icon-wrap">
+      <image src="/images/common-share.png" class="popup-icon"></image>
+      <view class="popup-icon-text">分享</view>
+    </view>
+    <view class="icon-wrap" catchtap="moreAction">
+      <image src="/warehouse/images/more-action.png" class="popup-icon"></image>
+      <view class="popup-icon-text">更多操作</view>
+    </view>
+  </view>
+</view>
+<action show="{{actionShow}}">
+  <view class="action-box">
+    <view class="action-btn" catchtap="cancelAction">取消</view>
+    <view class="action-btn" catchtap="inAction">{{typeData[type].btnText}}</view>
+  </view>
+</action>
+<modal show="{{modalShow}}">
+  <view class="modal-box">
+    <view class="modal-title">提示</view>
+    <view class="modal-body">{{typeData[type].toastText}}</view>
+    <view class="modal-comfirm" catchtap="comfirm">确定</view>
+  </view>
+</modal>
+<action show="{{moreActionShow}}">
+  <view class="more-action-box">
+    <view class="more-action-wrap">
+      <view class="more-action-title">更多操作</view>
+      <view class="more-action-body">
+        <view class="more-action-icon-box">
+          <image src="/warehouse/images/p-copy.png" class="more-action-icon" catchtap="copyOrder"></image>
+          <view class="more-action-icon-text" catchtap="copyOrder">复制订单</view>
+        </view>
+        <view class="more-action-icon-box">
+          <image src="/warehouse/images/p-add.png" class="more-action-icon" catchtap="addGoods"></image>
+          <view class="more-action-icon-text" catchtap="addGoods">添加商品</view>
+        </view>
+        <view class="more-action-icon-box">
+          <image src="/warehouse/images/p-print.png" class="more-action-icon"></image>
+          <view class="more-action-icon-text">蓝牙打印</view>
+        </view>
+        <view class="more-action-icon-box" style="margin-top:40rpx;">
+          <image src="/warehouse/images/p-delete.png" class="more-action-icon" catchtap="deleteList"></image>
+          <view class="more-action-icon-text" catchtap="deleteList">删除</view>
+        </view>
+      </view>
+    </view>
+    <view class="more-action-cancel" catchtap="moreActionCancel">取消</view>
+  </view>
+</action>
+<modal show="{{deleteShow}}">
+  <view class="modal-box1">
+    <view class="modal-title1">确认</view>
+    <view class="modal-body1">删除后数据将不能恢复，请确认是否继续？</view>
+    <view class="modal-footer1">
+      <view class="cancel-btn1" catchtap="delCancel">取消</view>
+      <view class="comfirm-btn1" catchtap="delComfirm">确定</view>
+    </view>
+  </view>
+</modal>

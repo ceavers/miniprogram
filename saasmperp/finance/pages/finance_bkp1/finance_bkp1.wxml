@@ -1,0 +1,72 @@
+<view class="bkp_box">
+ <view class="bkp_title">
+    <view class="input_box">
+      <view class="input_img">
+         <image src="../../../images/sousuo.png"></image>
+      </view>
+      <input class="bkp_input" placeholder="供号应商名/手机号" placeholder-style="color:rgba(153,153,153,1)"></input>
+    </view>
+  </view>
+  <view class="bkp_title_t">供应商应付列表</view>
+  <view class="kehu_list" bindtap="showModal">
+    <view class="kehu_list_box">
+    <view class="kehu_ziliao">
+      <view class="kehu_touxiang">
+        <image src="../../images/touxiang.png"></image>
+      </view>
+      <view class="kehu_list_wenzi">
+         <view class="kehu_name">唐总</view>
+         <view class="kehu_bkp">应付 100.00</view>
+      </view>
+    </view>
+      <view class="kehu_jiantou">
+           <image src="../../images/jiantou.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="shadow" wx:if="{{shadow}}"></view>
+  <view class="bottom_kuang_box" wx:if="{{shadow}}">
+    <view class="remove" bindtap="remove">
+      <image src="../../images/remov.png"></image>
+    </view>
+    <view class="bottom_kuang_title">
+       <view class="bottom_image">
+         <image src="../../images/touxiang1.png"></image>
+       </view>
+       <view class="bottom_wenzi">
+         <view>测试供应商</view>
+         <view>采购应付 100.00</view>
+         <view>初期欠款 10000</view>
+       </view>
+    </view>
+    <view class="line1"></view>
+    <view class="bottom_wenzi_1">
+      <view>预付金额 100.00</view>
+      <view>详细地址 50.00</view>
+      <view>联系信息 小王18538763565</view>
+    </view>
+    <view class="regiht" bindtap="regiht">
+       <view>供应商详情</view>
+       <view class="regiht_img">
+       <image src="../../images/jiantou2.png"></image>
+       </view>
+    </view>
+    <view class="line1"></view>
+    <view class="bottom_img">
+       <view>
+        <image src="../../images/caigou.png"></image>
+        <view class="bottom_img_wenzi">采购</view>
+       </view>
+       <view>
+        <image src="../../images/fukuan2.png"></image>
+        <view class="bottom_img_wenzi">付款</view>
+       </view>
+       <view>
+         <image src="../../images/fenxiang.png"></image>
+        <view class="bottom_img_wenzi">分享</view>
+       </view>
+    </view>
+  </view>
+  
+</view>
+

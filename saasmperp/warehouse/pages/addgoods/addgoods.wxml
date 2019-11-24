@@ -1,0 +1,230 @@
+<!--warehouse/pages/addgoods/addgoods.wxml-->
+<view class="container {{isRoll? 'hidden':''}}">
+  <view wx:if="{{state=='1'}}" class="container-header">新建商品</view>
+  <view wx:if="{{state=='3'}}" class="container-header">修改商品</view>
+  <view wx:if="{{havaPic}}" class="goods-img" bindtap="choiceImg">
+    <view class="choice-img">
+      <image src="../../images/Choice-img.png"></image>
+      <text>商品图片</text>
+    </view>
+  </view>
+  <view class="goods-img" wx:else>
+    <view class="img-box">
+      <view wx:for="{{imgList}}" wx:key="index">
+        <image src="{{item}}" data-index="{{index}}" data-url="{{item}}" bindtap="previewImage"></image>
+      </view>
+      <view class="add-img" bindtap="choiceImg">+</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">
+      品名<text class="Star">*</text>
+      </view>
+      <view class="line-content">
+        <input type="text" value="{{goods_name}}" bindinput="getGoodsName"></input>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+      类别
+      </view>
+      <view class="line-content" bindtap="choiceCategory">
+        <input type="text" value="{{category}}" placeholder="选择类别" disabled></input>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+      售价
+      </view>
+      <view class="line-content">
+        <input type="number" value="{{selling_price}}" bindinput="getSellingPrice"></input>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+      进价
+      </view>
+      <view class="line-content">
+        <input type="number" value="{{buying_price}}" bindinput="getBuyingPrice" placeholder="计算销售毛利"></input>
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">
+      颜色
+      </view>
+      <view class="line-content" bindtap="choiceColorShow" data-Type="color">
+        <input type="text" value="{{color}}" disabled placeholder="选择颜色"></input>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+      尺码
+      </view>
+      <view class="line-content" bindtap="choiceColorShow" data-Type="size">
+        <input type="text" value="{{size}}" disabled placeholder="选择尺码"></input>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">
+      货号
+      </view>
+      <view class="line-content">
+        <input type="text" value="{{product_code}}" bindinput="getProductCode" placeholder=""></input>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+      条码
+      </view>
+      <view class="line-content">
+        <input wx:if="{{state=='1'}}" type="text" value="{{sweepCode}}" placeholder="输入或扫码"></input>
+        <input wx:if="{{state=='3' && unit_barcode_active=='0'}}" type="text" value="{{sweepCode}}" placeholder="输入或扫码"></input>
+        <input wx:if="{{state=='3' && unit_barcode_active=='1'}}" type="text" value="{{sweepCode}}" bindtap="toBarCode" placeholder="输入或扫码" disabled></input>
+        <icon class="iconfont icon-saomiao1" bindtap="sweepCode"></icon>
+      </view>
+    </view>
+    <view wx:if="{{state=='1'}}" class="box-line">
+      <view class="line-title">
+      启用单品条码
+      </view>
+      <view class="line-content only-one" bindtap="toBarCode">
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{state=='1'}}" class="box">
+    <view class="box-line">
+      <view class="line-title">
+      设置初始库存
+      </view>
+      <view class="line-content only-one" bindtap="toEditInitialStock">
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line textarea">
+      <view class="line-title">描述</view>
+      <view class="line-content">
+        <textarea wx:if="{{!isRoll}}" bindinput="textareaValue" value="{{textRealVal}}"></textarea>
+        <text class="rich-text" wx:else>{{textRealVal}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button wx:if="{{state=='1'}}" bindtap="addBtn">确认新建</button>
+    <button wx:if="{{state=='3'}}" bindtap="editBtn">确认修改</button>
+  </view>
+
+  <!-- 选择图片来源 弹窗 -->
+  <popup show="{{imgShow}}" bind:popupcCancle="popCancle">
+    <view class="img-title">选择操作</view>
+    <view class="img-contetn">
+      <view class="camera" bindtap="camera">
+        <image src="../../images/camera.png"></image>
+        <text>拍照</text>
+      </view>
+      <view class="album" bindtap="album">
+        <image src="../../images/album.png"></image>
+        <text>相册</text>
+      </view>
+    </view>
+    <button class="img-btn" bindtap="closeImg">取消</button>
+  </popup>
+
+  <!-- 图片预览 弹窗 -->
+  <modal show="{{previewModal}}" imageMask="{{true}}">
+    <view class="preview-box">
+      <swiper class="previewImage" indicator-dots="true" indicator-color="#fff" indicator-active-color="#62AC4B" current="{{currentID}}" bindchange="getImgId" duration="500">
+      <block wx:for="{{imgList}}"  wx:key="">
+        <swiper-item>
+          <image bindtap="closeModal" mode="aspectFit" class="swiper-img" src="{{item}}"></image>
+        </swiper-item>
+        </block>
+      </swiper>
+      <image class="del-img" src="../../images/delete-img.png" bindtap="openDelPop"></image>
+      <popup show="{{delPop}}"  bind:popupcCancle="previewCancle">
+        <view class="del-box">
+          <button class="del-Preview" bindtap="delImg">删除图片</button>
+          <button class="cancel" bindtap="cancel">取消</button>
+        </view>
+      </popup>
+    </view>
+  </modal>
+
+  <!-- 类别 弹窗 -->
+  <popup show="{{categoryShow}}" bind:popupcCancle="popCancle">
+    <view class="category-colseBtn">
+      <image src="../../images/close.png" bindtap="closeCategory"></image>
+    </view>
+    <view class="category-title"><text>类别选择</text></view>
+    <view class="category-content">
+      <view class="category {{index==categoryIndex?'category-hover':''}}" wx:for="{{categoryList}}" wx:key="" bindtap="choiceCategoryInfo" data-Id="{{index}}" data-cateId="{{item.category_id}}">{{item.category_name}}</view>
+    </view>
+    <view class="category-modify">
+      <view bindtap="toEditCategory">管理</view>
+      <view bindtap="openAddCategory"  data-Type="category">新增类别</view>
+    </view>
+  </popup>
+
+  <!-- 子类别 弹窗 -->
+  <modal show="{{categoryInfoShow}}">
+    <view style="position: relative;">
+      <view class="colse-categoryInfo" bindtap="colseCategoryInfo">+</view>
+      <view wx:for="{{categoryInfoList}}" wx:key="" class="categoryInfo {{index==categoryInfoIdx?'categoryInfo-hover':''}}" bindtap="categoryInfoIndex" data-Id="{{index}}">{{item.class_name}}</view>
+    </view>
+  </modal>
+
+  <!-- 新增类别 弹窗 -->
+  <modal show="{{addCategoryShow}}">
+    <view class="addcategory-box">
+      <view class="addcategory-title">{{addCategoryTitle}}</view>
+      <view class="addcategory-input">
+        <input type="text" bindinput="addCategoryInput" value="{{addCategoryInput}}"></input>
+      </view>
+      <view class="addcategory-btn">
+        <view bindtap="closeAddCategory">取消</view>
+        <view bindtap="addcategory">确定</view>
+      </view>
+    </view>
+  </modal>
+
+  <!-- 颜色/尺码 弹窗 -->
+  <popup show="{{colorShow}}" bind:popupcCancle="popCancle">
+    <view class="color-colseBtn">
+      <image src="../../images/close.png" bindtap="closeColor"></image>
+    </view>
+    <view class="color-title"><text wx:if="{{colorShowType=='color'}}">颜色选择</text><text wx:if="{{colorShowType=='size'}}">尺码选择</text><text>长按删除</text></view>
+    <view class="color-content">
+      <view wx:if="{{colorShowType=='color'}}" class="color {{item.state?'color-hover':''}}" wx:for="{{colorList}}" wx:key="" bindtap="choiceColor" bindlongtap="delColor" data-index="{{index}}" data-Id="{{item.color_id}}">{{item.color}}</view>
+      <view wx:if="{{colorShowType=='size'}}" class="color {{item.state?'color-hover':''}}" wx:for="{{sizeList}}" wx:key="" bindtap="choiceColor" bindlongtap="delColor" data-index="{{index}}"  data-Id="{{item.size_id}}">{{item.size}}</view>
+      <view wx:if="{{colorShowType=='color'}}" class="color add-color" bindtap="openAddCategory" data-Type="color">新增</view>
+      <view wx:if="{{colorShowType=='size'}}" class="color add-color" bindtap="openAddCategory" data-Type="size">新增</view>
+    </view>
+    <view class="color-btn">
+      <view wx:if="{{colorShowType=='color'}}" bindtap="colorSubmit">确认</view>
+      <view wx:if="{{colorShowType=='size'}}" bindtap="colorSubmit">确认</view>
+    </view>
+  </popup>
+
+  <!-- 颜色/尺码长按 删除确认 弹窗 -->
+   <modal show="{{dialogShow}}">
+    <view class="dialog-box">
+      <view class="box-title">确认</view>
+      <view wx:if="{{colorShowType=='color'}}"class="box-content">是否删除 {{color}} ?</view>
+      <view wx:if="{{colorShowType=='size'}}" class="box-content">是否删除 {{size}} ?</view>
+      <view class="box-btn">
+        <view bindtap="box_CloseBtn">取消</view>
+        <view bindtap="box_ConfirmBtn">确定</view>
+      </view>
+    </view>
+  </modal>
+</view>

@@ -1,0 +1,65 @@
+/* market/components/bottomModal/bottomModal.wxss */
+.bottom-modal{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -360rpx;
+  left: 30rpx;
+  width: 690rpx;
+  border-radius:16rpx 16rpx 0px 0px;
+  background-color: #fff;
+  color: #323232;
+  font-size: 28rpx;
+  animation: showbottommodal .5s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes showbottommodal{
+  from { bottom: -360rpx; }
+  to { bottom: 0; }
+}
+.bottom-modal-header{
+  margin: 30rpx 0 38rpx;
+  font-weight:500;
+}
+.bottom-modal-body1,.bottom-modal-body2{
+  flex: 1;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  font-size: 24rpx;
+
+}
+.bottom-modal-body2{
+  padding: 0 71rpx;
+}
+.bottom-modal-navigator{
+  /* margin: 0 100rpx; */
+}
+.bottom-modal-item{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 58rpx;
+  width: 180rpx;
+  font-size: 24rpx;
+}
+.bottom-modal-item image{
+  margin-bottom: 39rpx;
+  width: 48rpx;
+  height: 56rpx;
+}
+/* .bottom-modal-item text{
+  width: 150rpx;
+} */
+.empty-box{
+  width: 180rpx;
+  height: 10rpx;
+}
+.bottom-modal-footer{
+  height:88rpx;
+  background-color:rgba(242,242,242,1);
+  line-height: 88rpx;
+  color: #666666;
+}

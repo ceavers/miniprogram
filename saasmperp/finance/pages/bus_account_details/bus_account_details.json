@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/add_record_history/add_record_history",
+    "del-modal":"/components/del_modal/del_modal"
+  },
+  "navigationBarTitleText": "账户"
+}

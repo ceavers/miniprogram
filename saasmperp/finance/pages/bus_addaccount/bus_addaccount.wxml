@@ -1,0 +1,75 @@
+<view class='add-account-box'>
+  <view>{{accountType == 1 ? '新建账户':'修改账户'}}</view>
+  <view class='add-account-container1'>
+    <view>
+      <view class='with-star'>
+        <view>账户名称</view>
+        <view>*</view>
+      </view>
+      <input type='text' bindinput='addAccountName' value="{{accountType == 1 ? addAccountName:accountDetail.account_name}}"></input>
+    </view>
+    <view>
+      <view class='with-star'>
+        <view>账户余额</view>
+
+        <view>*</view>
+      </view>
+      <input type='number' value="{{accountType == 1 ? addAccountSum:accountDetail.account_sum}}" bindinput='addAccountSum'></input>
+    </view>
+    <view>
+    
+      <view>账户类型</view>
+      
+      <view class='modal-text' bindtap='showPayModal'>{{accountType == 1 ? choiceAccountTypeName:modifyType}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPayModal'></image>
+    </view>
+
+    <view>
+      <view>绑定部门</view>
+      <view class="modal-text" bindtap='showPublicSectorModal' >{{accountType == 1 ? choiceBranch:modifySectorName}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPublicSectorModal'></image>
+    </view>
+
+  </view>
+
+  <view class='add-account-container2'>
+    <view>
+      <view>账号</view>
+      <input type='text' value="{{accountType == 1 ? accountNum:accountDetail.account_num}}" bindinput='accountNum'></input>
+    </view>
+  
+    <view>
+      <view>开户人</view>
+      <input type='text' value="{{accountType == 1 ? accountPeo:accountDetail.account_holder}}" bindinput='accountPeo'></input>
+    </view>
+
+    <view class='account-remark'>
+      <view>备注</view>
+      <textarea value="{{accountType == 1 ? accountNote:accountDetail.note}}" bindinput='accountNote'></textarea>
+    </view>
+  </view>
+
+  
+  <!-- 公共部门弹框 --> 
+  <view class="public-sector-modal {{showPublicSectorModal ? 'showPub':'hiddenPub'}}">
+    <view class='public-sector-modal-header'>
+      <view></view>
+      <view>绑定部门</view>
+      <image src='../../images/close-cate-modal.png' bindtap='closePublicSectorModal'></image>
+    </view>
+    <view class='public-sector-modal-container'>
+      <view wx:for='{{sectorData}}' wx:key='{{index}}' class="'mgRight' {{index == choiceSectorIndex ? 'active':''}}" bindtap='choiceSector' data-name='{{item.dept_name}}' data-id='{{item.dept_no}}' data-index='{{index}}'> {{item.dept_name}}</view>
+    
+    </view>
+
+    <view class='public-sector-modal-footer' bindtap='confirmChoiceSector'>
+      选好了
+    </view>
+  </view>
+  <view class='public-sector-mask' wx:if='{{showPublicSectorModal}}' bindtap='closePublicSectorModal'></view>
+
+  <view class='confirm-btn' bindtap='confirmAccount'>{{accountType == 1 ? '确认新建':'确认修改'}}</view>
+
+  <v-modal shadow='{{shadow}}' items='{{items}}' bind:close='closeAccModal' bind:radioChange='choiceContent'></v-modal>
+  
+</view>

@@ -1,0 +1,28 @@
+<!--report/pages/customer_statistics/customer_statistics.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="{{choice == 1 ? 'header-hover':''}}" bindtap="bindChoice" data-choiceid= '1' >本月</view>
+    <view class="{{choice == 2 ? 'header-hover':''}}" bindtap="bindChoice" data-choiceid= '2'>上月</view>
+    <view class="{{choice == 3 ? 'header-hover':''}}" bindtap="bindChoice" data-choiceid= '3'>本年</view>
+  </view>
+  <scroll-view class="content">
+    <view class="box-line">
+      <view class="line-title">客户</view>
+      <view class="line-tail">销售金额</view>
+    </view>
+    <view class="box">
+      <view class="box-line" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" bindtap="toCustomerStatisticsInfo">
+        <view class="line-title">{{item.customer_name}}</view>
+        <view class="line-content">{{item.sale_rate}}%</view>
+        <view class="line-tail">
+          <text>{{item.sale_gross}}</text>
+          <icon class="iconfont icon-return"></icon>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bottom box-line">
+    <view class="line-title">合计收入</view>
+    <view class="line-tail">{{total_sale}}</view>
+  </view>
+</view>

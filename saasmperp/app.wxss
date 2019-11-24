@@ -1,0 +1,32 @@
+/**app.wxss**/
+@import "/icon/icon.wxss";
+@import "components/public_ball/public_ball.wxss";
+@import "components/public_register/public_register.wxss";
+
+page{
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6
+}
+.container{
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6;
+  overflow-y: auto;
+}
+.scan{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: #62AC4B;
+  position: fixed;
+  right:30rpx;
+  bottom: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-saomiao1{
+  color:#fff;
+  font-size:36rpx;
+}

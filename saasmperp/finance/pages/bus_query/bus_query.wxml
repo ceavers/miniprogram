@@ -1,0 +1,40 @@
+<view class='bus-query-box'>
+  
+  <view class='bus-query-header'>收支查询</view>
+  <view class='bus-query-container1'>
+    <view>
+      <view>收入支出</view>
+      <view bindtap='choicePayType'>请选择</view>
+    </view>
+    <view>
+      <view>账户</view>
+      <view bindtap='choiceAccount'>请选择</view>
+    </view>
+  </view>
+   <view class='bus-query-container2'>
+    <view>
+      <view>经手人</view>
+      <view bindtap='choicePerson'>请选择</view>
+    </view>
+    <view>
+      <view>开始日期</view>
+      <picker class='pickerdate' mode='date' start='1990-01-01' end='2050-12-31' value='{{startDate}}' fields='day' bindchange='changeStartDate'>
+      {{startDate}}
+      </picker>
+    </view>
+    <view>
+      <view>结束日期</view>
+      <picker class='pickerdate' mode='date' start='1990-01-01' end='2050-12-31' value='{{endDate}}' fields='day' bindchange='changeEndDate'>
+      {{endDate}}
+      </picker>
+    </view>
+  </view>
+  <view class='btn-group'>
+    <view class='btn1' bindtap='queryIncomeAndExpenses'>查询</view>
+    <view class='btn2'>清空</view>
+  </view>
+  <v-modal items='{{items}}' shadow='{{shadow}}'></v-modal>
+
+ 
+  
+</view>

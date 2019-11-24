@@ -1,0 +1,108 @@
+<view class='modify-pur-box'>
+  <view class='head'>{{purchaseInvoiceDetail.order_is_return == 0 ? '修改采购单':'修改采购退货单'}}</view>
+  <view class='modify-pur-wrapper'>
+    <view>
+      <view>供应商名 <text style='color:red;'>*</text></view>
+      <view>{{purchaseInvoiceDetail.supplier_name}}</view>
+    </view>
+    <view>
+      <view>联系人</view>
+      <input value='{{purchaseInvoiceDetail.contact}}' bindinput='modifyPhone'></input>
+    </view>
+    <view>
+      <view>交货地址</view>
+      <input value='{{purchaseInvoiceDetail.adress}}' bindinput='modifyAddress'></input>
+    </view>
+    <view class='beizhu'>
+      <view>备注</view>
+      <textarea value='{{purchaseInvoiceDetail.note}}' bindinput='modifyNote'></textarea>
+    </view>
+    
+  </view>
+  
+
+  <view class="goodsInformation {{index == 0 ? 'mgTop':''}}" bindtap="toPurchaseOrderInformation" wx:for='{{purchaseInvoiceDetail.product_img_list}}' wx:key='{{index}}' data-index='{{index}}'>
+
+  <view class="goodsContent">
+    <image class="goodsImg" src="{{item.product_img}}"></image>
+    <view class="goodsContent-left">
+      <view class="sizeL">{{item.product_name}}</view>
+      <view class="sizeM">{{item.product_note}}</view>
+    </view>
+  </view>
+
+  <view class="goodsContent">
+    <view class="goodsContent-right">
+      <view class="sizeL">{{item.product_price}}</view>
+      <view class="sizeM">×{{item.product_count}}</view>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+
+</view>
+
+  <view class='pic1' bindtap='toAddGood'>添加商品</view>
+  <view class='pic2'>单据图片</view>
+  <view class='image-box'>
+    
+    <image class="business-image" 
+      wx:for="{{ imageList }}" 
+      wx:key="{{ index }}" 
+      src="{{ item }}" 
+      data-index="{{ index }}" 
+      bindtap="previewImage"
+    ></image>
+    <image src='../../images/add1.png' bindtap='showAddImgModel'></image>
+  </view>
+  <view class='pur-money' bindtap='showAddCateModal'>
+    <view>采购金额</view>
+    <view>{{refundMoney}}</view>
+    <image src='../../images/jiantou.png'></image>
+  </view>
+
+  <view class='confirm-modify'>
+    <view bindtap='confirmModify'>确认修改</view>
+  </view>
+
+  <!-- 新增分类弹框 -->
+  <view class="add-cate-modal" wx:if='{{showAddCateModal}}'>
+    <view class='add-cate-modal-header'>优惠抹零</view>
+    <view>采购单原价：<text style='color:red;'>{{purchaseInvoiceDetail.refund_money}}</text></view>
+    <view>
+      <input type='number' bindinput='updatePrice' placeholder='抹零后价格'></input>
+    </view>
+    <view>
+      <view bindtap='closeCateModal2'>取消</view>
+      <view bindtap='modifyPurPrice'>确定</view>
+    </view>
+  </view>
+  <view class='add-cate-modal-mask' wx:if='{{showAddCateModal}}' bindtap='closeCateModal2'></view>
+<!-- 上传图片弹框 -->
+  <bottomView show="{{ showAddImgModel }}" modalList="{{ addImgList }}" isWidth="true" bindtap="getEventName"></bottomView>
+
+  <!-- 图片预览 -->
+<ModalView show="{{ previewImage }}" imageMask="true">
+  <swiper indicator-dots="true"
+    indicator-color="RGBA(217, 217, 217, 1)"
+    indicator-active-color="RGBA(98, 172, 75, 1)"
+    current="{{ previewImageIndex }}"
+    class="preview-swiper"
+    catchtap="closePreview"
+    bindchange="selectSwiperImageIndex"
+  >
+    <block wx:for="{{imageList}}" wx:key="{{ index }}">
+      <swiper-item data-index="{{ index }}">
+        <image catchtap="returnFalse" src="{{item}}" class="slide-image" width="100%" height="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="del-image" bindtap="delImage" src="/market/images/del-image.png"></image>
+</ModalView>
+<!-- 删除图片 -->
+<ModalView show="{{ delImageFlag }}">
+  <view class="del-modal">
+    <view class="del-image-btn" bindtap="delImageConfirm">删除图片</view>
+    <view class="del-image-cancel" bindtap="delImageCancel">取消</view>
+  </view>
+</ModalView>
+</view>

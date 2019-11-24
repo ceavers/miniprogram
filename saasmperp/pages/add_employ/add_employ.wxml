@@ -1,0 +1,61 @@
+<!--添加员工-->
+<view class="add-employ">
+  <form id="addEmployForm" bindsubmit="formSubmit">
+    <view class="input-wrap">
+      <view class="input-title">账号<text>*</text></view>
+      <input placeholder="请输入账号" name="account"></input>
+    </view>
+    <view class="input-wrap" style="margin-bottom: 20rpx;">
+      <view class="input-title">姓名<text>*</text></view>
+      <input placeholder="请输入姓名" name="name"></input>
+    </view>
+    <view class="input-wrap">
+      <view class="input-title">密码<text>*</text></view>
+      <input placeholder="请输入密码" name="password"  password></input>
+    </view>
+    <view class="input-wrap">
+      <view class="input-title">确认密码<text>*</text></view>
+      <input placeholder="请输入确认密码" name="repassword" password></input>
+    </view>
+    <view class="input-wrap">
+      <view class="input-title">邮箱<text>*</text></view>
+      <input placeholder="请输入邮箱" name="email"></input>
+    </view>
+    <view class="input-wrap1 border-top">
+      <view class="input-title">是否停用该用户</view>
+      <switch checked  name="available"></switch>
+    </view>
+    <view class="input-wrap1" catchtap="toPartmentPage">
+      <view class="input-title">所属部门</view>
+      <text>{{departName}}</text>
+      <text class="iconfont icon-return"></text>
+    </view>
+    <view class="input-wrap2 border-top">
+      <view class="input-title">备注</view>
+      <textarea style="height:68rpx" name="remark"></textarea>
+    </view>
+    <view class="input-wrap3">
+      <view class="input-wrap3-title">所属角色</view>
+      <radio-group class="radio-group" name="role_id">
+        <label class="radio">
+          <radio value="0" checked/>采购员
+        </label>
+        <label class="radio">
+          <radio value="1"/>销售员
+        </label>
+        <label class="radio">
+          <radio value="2"/>仓库管理员
+        </label>
+        <label class="radio">
+          <radio value="3"/>报表员
+        </label>
+        <label class="radio">
+          <radio value="4"/>财务
+        </label>
+      </radio-group>
+    </view>
+    <view class="btn-wrap">
+      <button class="save-btn" form-type="submit">保存</button>
+    </view>
+  </form>
+</view>

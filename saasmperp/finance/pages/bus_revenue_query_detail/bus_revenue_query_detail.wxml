@@ -1,0 +1,31 @@
+<view class='revenue-query-detail-box'>
+  <view class='transfer-detail-wrapper-header'>
+    <view>
+      开始日期：2019-01-16
+    </view>
+    <view bindtap='backToRevenue'>
+       取消  
+    </view>
+  </view>
+  <view class='zhnwei'></view>
+  <view class="revenue-query-detail-container {{index == inoutList.length - 1 ? 'mgBottom':''}}" wx:for='{{inoutList}}' wx:key='{{index}}'>
+    <view>{{item.record_time}}</view>
+    <navigator hover-class="none' url='/finance/pages/bus_revenue_detail/bus_revenue_detail?account_id={{item.account_id}}">
+      <view class='revenue-query-detail-item'>
+        <view>
+          <view>{{item.inout_name}}</view>
+          <view>{{item.account_name}}</view>
+        </view>
+        <view class="{{item.inout_num > 0 ? 'greText':'redText'}}">{{item.inout_num}}</view>
+      </view>
+    </navigator>
+    
+  </view>
+  <view class='icon-box'>
+    <image src='../../images/add-aut.png'></image>
+    <view bindtap='showmodal'>新增</view>
+  </view>
+
+  <!-- 新增收支记账弹框 -->
+  <add-modal showmodal='{{showmodal}}' modalContent='{{modalContent}}' modalTitle='{{modalTitle}}' bind:close='closeAddModal'></add-modal>
+</view>

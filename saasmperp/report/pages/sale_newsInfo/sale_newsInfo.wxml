@@ -1,0 +1,29 @@
+<!--report/pages/sale_newsInfo/sale_newsInfo.wxml-->
+<view class="container">
+  <view class="header">
+  {{record.date}}销售额
+  </view>
+  <view class="ring">
+    <ec-canvas id="echart-ring" ec="{{ echart_ring }}"></ec-canvas>
+  </view>
+
+  <view class="box-line title-line">
+      <view class="line-title">{{record.date}}销售</view>
+      <view class="line-scale">{{record.rate}}%</view>
+      <view class="line-content">{{record.total_sale_gross}}</view>
+    </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">总销售额</view>
+      <view class="line-content">{{record.total_gross}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">销售总额</view>
+      <view class="line-content">{{record.sale_gross}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">出库金额</view>
+      <view class="line-content">{{record.outbound_gross}}</view>
+    </view>
+  </view>
+</view>

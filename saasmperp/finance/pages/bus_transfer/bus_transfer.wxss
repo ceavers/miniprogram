@@ -1,0 +1,77 @@
+.transfer-box{
+  height: 100vh;
+  background: #f6f6f6;
+
+}
+
+.transfer-container{
+  position: relative;
+  margin-top: 50rpx;
+  width: 100%;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing:border-box;
+}
+
+.transfer-container > view image{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.transfer-container > image{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+}
+
+.transfer-container > view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #fff; 
+  border-radius: 8rpx;
+  width: 100%;
+  height: 88rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+
+}
+
+.transfer-container > view:nth-child(1){
+  background: #62AC4B;
+  margin-bottom: 40rpx;
+}
+
+.transfer-container > view:nth-child(3){
+  background: #FDD04F;
+}
+
+/* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

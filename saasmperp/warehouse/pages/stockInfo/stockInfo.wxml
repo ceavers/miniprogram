@@ -1,0 +1,57 @@
+<!--warehouse/pages/stockInfo/stockInfo.wxml-->
+<view class="container">
+  <view class="goods-img">
+    <image src="{{depo_pic_url}}"></image>
+    <view>{{product_name}}库存</view>
+  </view>
+  <view class="goods-info">
+    <view class="goods-name">
+      <view class="box-name">品名</view>
+      <view class="box-content">{{product_name}}</view>
+    </view>
+    <view class="goods-id">
+      <view class="box-name">货号</view>
+      <view class="box-content">{{product_code}}</view>
+    </view>
+    <view class="goods-num">
+      <view class="box-name">总库存数</view>
+      <view class="box-content">{{total_stock}}</view>
+    </view>
+  </view>
+  <view class="switch">
+    显示合并库存
+    <switch bindchange="switchChange"></switch>
+  </view>
+  <view wx:if="{{!state}}" class="Stock" wx:for="{{stockList}}" wx:key="{{index}}" wx:for-index="listIndex">
+    <view class="Stock-title">{{item.depo_name}}</view>
+    <view class="Stock-box">
+        <view class="Stock-line" wx:for="{{item.results}}" wx:key="{{index}}" wx:for-item="colorItem" wx:for-index="colorIndex">
+          <view class="Stock-color">{{colorItem.color}}</view>
+          <view class="Stock-content" wx:for="{{colorItem.results}}" wx:key="{{index}}" wx:for-item="sizeItem" wx:for-index="sizeIndex">
+            <view class="Stock-size">{{sizeItem.size}}</view>
+            <view class="Stock-num">
+              <text>{{sizeItem.stock}}</text>
+              <image src="../../images/modify-icon.png" catchtap="calculatorShow" data-list-index="{{listIndex}}" data-list-id="{{item.depo_id}}" data-color-index="{{colorIndex}}" data-size-index="{{sizeIndex}}" data-code="{{sizeItem.sku_code}}"></image>
+            </view>
+          </view>
+            
+        </view>
+    </view>
+  </view>
+  <view wx:if="{{state}}" class="Stock">
+    <view class="Stock-title">总库存</view>
+    <view class="Stock-box">
+        <view class="Stock-line" wx:for="{{totalStockList}}" wx:key="{{index}}">
+          <view class="Stock-color">{{item.color}}</view>
+          <view class="Stock-content" wx:for="{{item.results}}"wx:key="{{index}}" wx:for-item="totalsizeItem">
+            <view class="Stock-size total-size">{{totalsizeItem.size}}</view>
+            <view class="Stock-num total-num">
+              <text>{{totalsizeItem.stock}}</text>
+              <!-- <image src="../../images/modify-icon.png"></image> -->
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>
+<calculator show="{{calculatorShow}}" bind:setResult="getResult"></calculator>

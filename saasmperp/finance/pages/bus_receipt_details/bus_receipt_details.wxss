@@ -1,0 +1,71 @@
+.beijing{
+  position: fixed;
+  background: #F6F6F6;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  bottom: 0;
+
+}
+
+.bus-receipt-details-header{
+  width: 100%;
+  height: 88rpx;
+  padding-top: 50rpx;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 9;
+  font-size: 32rpx;
+  color: #323232;
+}
+
+.bus-receipt-details-container{
+  position: relative;
+  z-index: 9;
+  background: #ffffff;
+  font-size: 26rpx;
+}
+
+.bus-receipt-details-con-item{
+   width: 100%;
+   
+}
+   
+   
+   .bus-receipt-details-con-item-header{
+     height: 84rpx;
+      text-align: left;
+     background: #F6F6F6;
+     padding-left: 30rpx;
+   padding-right: 30rpx;
+   box-sizing: border-box;
+   line-height: 84rpx;
+   }
+
+.bus-receipt-details-con-item-desc{
+  border-bottom: 1px solid #f7f7f7;
+  padding-top: 26rpx;
+  padding-bottom: 26rpx;
+  box-sizing: border-box;
+}  
+
+.bus-receipt-details-con-item-desc > view:nth-child(1){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+   padding-right: 30rpx;
+   box-sizing: border-box;
+} 
+
+.bus-receipt-details-con-item-desc > view:nth-child(2){
+  text-align: left;
+  padding-left: 30rpx;
+   padding-right: 30rpx;
+   box-sizing: border-box;
+   margin-top: 20rpx;
+}
+
+

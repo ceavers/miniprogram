@@ -1,0 +1,102 @@
+.caigou_pay{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.caigou_title{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  line-height:138rpx;
+  text-align: center;
+}
+.caigou_content1{
+  display: flex;
+  width: 100%;
+  height: 88rpx;
+  background:rgba(255,255,255,1);
+  line-height: 88rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  overflow: hidden;
+}
+.bus_name{
+  margin-left: 30rpx;
+}
+.caigou_content2{
+  margin-top: 1px;
+  justify-content: space-between;
+}
+.caigou_content2 image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-top: 28rpx;
+  margin-right: 32rpx;
+}
+.cp_bus{
+  margin-left: 96rpx;
+}
+.cp_bus1{
+  margin-left: 126rpx;
+}
+.caigou_box{
+  display: flex;
+}
+.caigou_content3{
+  margin-top: 40rpx;
+}
+.caigou_content1 textarea{
+  height: 100%;
+  line-height: 30rpx;
+}
+.caigou_content4{
+  height: 120rpx;
+}
+.caigou_button{
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin-top: 80rpx;
+}
+.radio_box{
+  width: 500rpx;
+  height: 90rpx;
+  display: flex;
+  line-height: 90rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background:rgba(68,68,68,1);
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  border-bottom: 1px solid gray;
+}
+.radio_value{
+  margin-left: 40rpx;
+}
+.radio_checked{
+  margin-right: 40rpx;
+}
+.radio-group{
+  width: 500rpx;
+  height: auto;
+  position: absolute;
+  left: 124rpx;
+  top: 30%;
+  z-index: 99;
+}
+.shadow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  background-color: black;
+  opacity: 0.4
+}

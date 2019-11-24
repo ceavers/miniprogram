@@ -1,0 +1,52 @@
+.bus-pay-details-box{
+  background: #f6f6f6;
+}
+
+.bus-pay-details-header{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #323232;
+
+}
+
+.bus-pay-details-container{
+  background: #fff;
+  font-size: 28rpx;
+  color: #323232;
+}
+
+.bus-pay-details-container > view,.bus-pay-details-info > view{
+  display: flex;
+  height: 88rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.bus-pay-details-container > view view:nth-child(1){
+  width: 31%;
+}
+
+.bus-pay-details-container > view view:nth-child(2){
+  width: calc(69% - 60rpx);
+}
+
+.bus-pay-details-info > view view:nth-child(1){
+  width: 31%;
+}
+
+.bus-pay-details-info > view view:nth-child(2){
+  width: calc(69% - 60rpx);
+}
+
+.bus-pay-details-info{
+  margin-top: 40rpx;
+  background: #fff;
+  font-size: 28rpx;
+  color: #323232;
+}

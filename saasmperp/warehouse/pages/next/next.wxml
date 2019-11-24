@@ -1,0 +1,75 @@
+<!--warehouse/pages/next/next.wxml-->
+<view class="container">
+  <view class="storage-box">
+    <view class="storage-item-box">
+      <view class="item-text">{{type==1?'入库时间':'出库时间'}}</view>
+      <view class="item-content" catchtap="selectTime">
+        <view>{{time}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">{{type==1?'来货单位':'收货单位'}}</view>
+      <view class="item-content">
+        <input value="{{target}}" bindinput="getInputValue"></input>
+      </view>
+    </view>
+    <view class="storage-item-box note-box">
+      <view class="item-text note-text">备注</view>
+      <view class="item-content">
+        <textarea wx:if="{{!penetrateShow}}" class="note-area" value="{{note}}" bindinput="getNote"></textarea>
+        <view wx:if="{{penetrateShow}}" class="note-area nowrap">{{note}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="photo-box" catchtap="selectCamera" wx:if="{{!imgList.length}}">
+    <image src="/warehouse/images/Choice-img.png" class="icon-img"></image>
+    <view class="icon-text">业务单据</view>
+  </view>
+  <view class="goods-img" wx:if="{{imgList.length}}">
+    <view class="img-box">
+      <view wx:for="{{imgList}}" wx:key="index">
+        <image src="{{item}}" data-index="{{index}}" data-url="{{item}}" bindtap="previewImage"></image>
+      </view>
+      <view class="add-img" bindtap="selectCamera">+</view>
+    </view>
+  </view>
+  <view class="btn-box">
+    <view class="back-btn" catchtap="back">返回修改</view>
+    <view class="comfirm-btn" catchtap="confirmCreate">确认创建</view>
+  </view>
+</view>
+<popup show="{{imgShow}}" bind:popupcCancle="cancel">
+  <view class="img-title">选择操作</view>
+  <view class="img-contetn">
+    <view class="camera" catchtap="selectImgByPhoto">
+      <image src="../../images/camera.png"></image>
+      <text>拍照</text>
+    </view>
+    <view class="album" catchtap="selectImgByAlbum">
+      <image src="../../images/album.png"></image>
+      <text>相册</text>
+    </view>
+  </view>
+  <button class="img-btn" bindtap="closeCameraPopup">取消</button>
+</popup>
+<picker show="{{selectTimeShow}}" bind:setTime="getTime" bind:cancel="cancel"></picker>
+<!-- 图片预览 弹窗 -->
+<modal show="{{previewModal}}" imageMask="{{true}}">
+  <view class="preview-box">
+    <swiper class="previewImage" indicator-dots="true" indicator-color="#fff" indicator-active-color="#62AC4B" current="{{currentID}}" bindchange="getImgId" duration="500">
+    <block wx:for="{{imgList}}"  wx:key="">
+      <swiper-item>
+        <image bindtap="closeModal" mode="aspectFit" class="swiper-img" src="{{item}}"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+    <image class="del-img" src="../../images/delete-img.png" bindtap="openDelPop"></image>
+    <popup show="{{delPop}}"  bind:popupcCancle="previewCancle">
+      <view class="del-box">
+        <button class="del-Preview" bindtap="delImg">删除图片</button>
+        <button class="cancel" bindtap="cancelPreview">取消</button>
+      </view>
+    </popup>
+  </view>
+</modal>

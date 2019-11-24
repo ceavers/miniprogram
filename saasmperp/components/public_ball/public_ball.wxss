@@ -1,0 +1,132 @@
+.logo_box {
+  width: 120rpx;
+  height: 120rpx;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 69rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 30px 0px rgba(157, 187, 158, 0.2);
+}
+
+.logo_box image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.password_text {
+  text-align: center;
+  font-size: 32rpx;
+  color: rgba(50, 50, 50, 1);
+  margin-top: 30rpx;
+  font-weight: bold;
+}
+
+.ball {
+  width: 56rpx;
+  height: 56rpx;
+  background: linear-gradient(120deg, rgba(116, 189, 76, 1), rgba(98, 172, 75, 1));
+  border-radius: 50%;
+  position: absolute;
+  top: 287rpx;
+  left: 170rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 56rpx;
+}
+
+.line {
+  width: 149rpx;
+  height: 1px;
+  background: rgba(98, 172, 75, 1);
+  position: absolute;
+  top: 315rpx;
+  left: 226rpx;
+}
+
+.ball_2 {
+  left: 524rpx;
+}
+
+.line_2 {
+  left: 374rpx;
+}
+
+.ball_1_left {
+  width: 16rpx;
+  height: 16rpx;
+  background: linear-gradient(120deg, rgba(182, 210, 85, 1), rgba(160, 210, 85, 1));
+  opacity: 0.4;
+  border-radius: 50%;
+  position: absolute;
+  top: 272rpx;
+  left: 68rpx;
+  animation: ball3 8s linear  infinite alternate;
+}
+
+.ball_1_right {
+  width: 16rpx;
+  height: 16rpx;
+  background: linear-gradient(120deg, rgba(182, 210, 85, 1), rgba(160, 210, 85, 1));
+  opacity: 0.4;
+  border-radius: 50%;
+  position: absolute;
+  top: 272rpx;
+  right: 68rpx;
+   animation: ball4 8s linear  infinite alternate;
+}
+
+.ball_2_left {
+  width: 32rpx;
+  height: 32rpx;
+  background: linear-gradient(120deg, rgba(160, 210, 85, 1), rgba(116, 189, 76, 1));
+  opacity: 0.7;
+  border-radius: 50%;
+  position: absolute;
+  top: 332rpx;
+  left: 108rpx;
+  animation: ball1 8s linear  infinite alternate;
+}
+
+.ball_2_right {
+  width: 32rpx;
+  height: 32rpx;
+  background: linear-gradient(120deg, rgba(160, 210, 85, 1), rgba(116, 189, 76, 1));
+  opacity: 0.7;
+  border-radius: 50%;
+  position: absolute;
+  top: 332rpx;
+  right: 108rpx;
+  animation: ball2 8s linear  infinite alternate;
+}
+@keyframes ball1{
+  0%{top: 332rpx;left: 108rpx;opacity: 1}
+  30%{top: 320rpx;left: 80rpx;opacity: 0.5}
+  60%{top: 342rpx;left: 128rpx;opacity: 0.8}
+  90%{top: 320rpx;left: 80rpx;opacity: 0.5}
+  100%{top: 332rpx;left: 108rpx;opacity: 1}
+}
+@keyframes ball2{
+   0%{top: 332rpx;right: 108rpx;opacity: 1}
+  30%{top: 320rpx;right: 80rpx;opacity: 0.5}
+  60%{top: 342rpx;right: 128rpx;opacity: 0.8}
+  90%{top: 320rpx;right: 80rpx;opacity: 0.5}
+  100%{top: 332rpx;right: 108rpx;opacity: 1}
+}
+@keyframes ball3{
+  0%{top: 272rpx;left: 68rpx;opacity: 1}
+  30%{top: 252rpx;left: 58rpx;opacity: 0.5}
+  60%{top: 292rpx;left: 78rpx;opacity: 0.8}
+  90%{top: 252rpx;left: 58rpx;opacity: 0.5}
+  100%{top: 272rpx;left: 68rpx;opacity: 1}
+}
+@keyframes ball4{
+  0%{top: 272rpx;right: 68rpx;opacity: 1}
+  30%{top: 252rpx;right: 58rpx;opacity: 0.5}
+  60%{top: 292rpx;right: 78rpx;opacity: 0.8}
+  90%{top: 252rpx;right: 58rpx;opacity: 0.5}
+  100%{top: 272rpx;right: 68rpx;opacity: 1}
+}

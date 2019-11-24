@@ -1,0 +1,256 @@
+/* warehouse/pages/goods/goods.wxss */
+.search-wrap{
+  height: 88rpx;
+  background: #C7C7C7;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.category{
+  display: flex;
+}
+.text{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  max-width: 110rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mt-30{
+  margin-top:30rpx;
+}
+.category .icon-return{
+  transform: rotate(90deg);
+  font-size: 28rpx;
+  color:#555;
+  margin-left: 4rpx;
+}
+.search-box{
+  width: 522rpx;
+  height: 60rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin:0 20rpx 0 14rpx;
+}
+.search-icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin:0 20rpx;
+}
+.filter-icon{
+  width: 36rpx;
+  height: 40rpx;
+}
+.input{
+  font-size:26rpx;
+  max-width:440rpx;
+  width: calc(100% - 76rpx);
+}
+.add-btn{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom:0;
+  height: 88rpx;
+  background: #fff;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(66,66,66,1);
+}
+.add{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+.res-box{
+  height: calc(100% - 176rpx);
+  box-sizing: border-box;
+}
+.category-name{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  padding: 0 40rpx;
+}
+.res-item{
+  padding:0 30rpx 0 40rpx;
+  background: #fff;
+  height: 148rpx;
+  margin-bottom:20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.res-item .icon-return{
+  color:#D9D9D9;
+}
+.goods-info{
+  display: flex;
+}
+.goods-des{
+  margin-left: 30rpx;
+}
+.goods-img{
+  width: 104rpx;
+  height: 104rpx;
+  margin:0 20rpx;
+}
+.goods-name{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.repertory{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin:4rpx 0;
+}
+.price{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.detail-box{
+  height: 714rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.goods-popup-info{
+  height: 190rpx;
+  border-bottom:1px solid rgba(217,217,217,1);
+  overflow: hidden;
+}
+.close-box{
+  height: 44rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.goods-img-wrap{
+  height: 96rpx;
+  display: flex;
+  align-items: flex-start;
+  margin-top:10rpx;
+}
+.popup-kc{
+  display: flex;
+  justify-content: space-between;
+  width: 540rpx;
+  align-items: center;
+}
+.popup-goods-name{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.popup-goods-des{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin:4rpx 0;
+  width: 540rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.popup-kc{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.detail-close{
+  width:44rpx;
+  height: 44rpx;
+}
+.popup-detail-box{
+  height: 260rpx;
+  border-bottom:1px solid rgba(217,217,217,1);
+  padding:40rpx 30rpx;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+.popup-back{
+  color:#D9D9D9;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  position: relative;
+  top: 4rpx;
+} 
+.detail-text{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  padding-bottom: 18rpx;
+  display: block;
+}
+.detail-goods-des{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 500rpx;
+}
+.detail-goods-icon{
+  display: flex;
+  justify-content: flex-end;
+}
+.popup-icon{
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 26rpx;
+}
+.popup-icon-text{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  text-align: center;
+}
+.popup-icon-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 228rpx;
+}
+
+.no-res-box{
+  height: calc(100% - 88rpx);
+  box-sizing: border-box;
+  text-align: center;
+}
+.scan-bottom{
+  bottom:88rpx;
+}
+.no-res-box>image{
+  width: 130rpx;
+  height: 140rpx;
+  margin: 148rpx 0 50rpx 0;
+}
+.no-goods-title{
+  font-size: 32rpx;
+  color: #323232;
+}
+.no-goods-content{
+  font-size: 28rpx;
+  color: #999;
+  margin: 28rpx 0 100rpx 0;
+}
+.no-goods-add{
+  width: 200rpx;
+  height: 88rpx;
+  background: #62AC4B;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 28rpx;
+  margin: 0 auto;
+  border-radius: 8rpx;
+}

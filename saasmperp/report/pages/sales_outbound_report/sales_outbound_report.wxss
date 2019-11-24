@@ -1,0 +1,94 @@
+/* report/pages/sales_outbound_report/sales_outbound_report.wxss */
+.choose-box{
+  margin:40rpx auto;
+  margin-top:34rpx;
+  display: flex;
+  width: 516rpx;
+}
+.choose-box>view{
+  width:172rpx;
+  height: 72rpx;
+  background: #fff;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border:1px solid rgba(199,199,204,1);
+}
+.curr-month{
+  border-right: none!important;
+  border-radius:16rpx 0px 0px 16rpx;
+}
+.all-year{
+  border-left: none!important;
+  border-radius:0px 16rpx 16rpx 0px;
+}
+.choose-box>.choose{
+  background: #ACD1A0;
+  color:#fff;
+}
+.total{
+  height: 88rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.item-box{
+  height: 120rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f6f6f6;
+}
+.icon-return{
+  color:#D9D9D9;
+  font-size: 36rpx;
+}
+.item-box:nth-child(1){
+  margin-top:20rpx;
+}
+.content{
+  width: 640rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  height: 66rpx;
+}
+.text-box{
+  width: 100%;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: flex;
+  justify-content: space-between;
+}
+.chart-box{
+  display: flex;
+  justify-content: flex-end;
+}
+.out-box{
+  background: #F0F0F0;
+  height: 8rpx;
+  border-radius: 8rpx;
+  width: 600rpx;
+  position: relative;
+}
+.inner-box{
+  background: #F0F0F0;
+  height: 8rpx;
+  border-radius: 8rpx;
+  width: 0;
+}

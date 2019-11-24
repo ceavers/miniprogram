@@ -1,0 +1,22 @@
+<!--新建订单-->
+<view class="new-order">
+  <view class="history"></view>
+  <form class="body" bindsubmit="createOrder">
+    <view class="form-body">
+      <view class="order-box" bindtap="selectDate">
+        <view class="order-box-title">业务时间</view>
+        <view class="order-box-body">{{ dateObj.date }}</view>
+        <image src="/market/images/jiantou.png"></image>
+      </view>
+      <view class="order-box" style="margin-bottom: 40rpx;">
+        <view class="order-box-title">备注</view>
+        <input class="order-box-body" value="" name="remark"></input>
+      </view>
+    </view>
+    <view class="form-footer">
+      <button class="confirm"  form-type="submit">确认修改</button>
+    </view>
+  </form> 
+</view>
+<!-- 业务时间选择 -->
+<PickerModal show="{{ showSelectDateModal }}" bindsetTime="confirmDate"></PickerModal>

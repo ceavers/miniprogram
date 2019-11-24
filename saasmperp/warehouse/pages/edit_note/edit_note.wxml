@@ -1,0 +1,9 @@
+<!--warehouse/pages/edit_note/edit_note.wxml-->
+<view class="container">
+  <view class="title">修改备注</view>
+  <view class="note-box">
+    <view class="note-text">备注</view>
+    <textarea class="note" bindinput="getNote" auto-height></textarea>
+  </view>
+  <view class="btn" catchtap="comfirm">确认修改</view>
+</view>

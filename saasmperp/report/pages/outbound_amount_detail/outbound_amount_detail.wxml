@@ -1,0 +1,17 @@
+<!--report/pages/outbound_amount_detail/outbound_amount_detail.wxml-->
+<view class="container">
+  <view class="title">出库明细</view>
+  <view class="item-box">
+    <view class="item-text">日期</view>
+    <view class="item-content">{{detail.date_quarter}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">出库数量</view>
+    <view class="item-content">{{detail.outbound_num}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">出库金额</view>
+    <view class="item-content">{{detail.outbound_gross}}</view>
+  </view>
+</view>
+

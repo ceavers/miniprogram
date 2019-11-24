@@ -1,0 +1,34 @@
+/* market/pages/product_sales/product_sales.wxss */
+.product-sales{
+  height: 100vh;
+  background-color: #F6F6F6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 32rpx 0;
+  height: 88rpx;
+}
+.body{
+  height: calc(100vh - 100rpx);
+}
+.product-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 32rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.product-item-num {
+  display: flex;
+  align-items: center;
+}
+.product-item image {
+  width: 36rpx;
+  height: 36rpx;
+}

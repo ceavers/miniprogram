@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "select": "/warehouse/components/select/select/",
+    "calculator": "/components/calculator/calculator"
+  },
+  "navigationBarTitleText": "仓库管理"
+}

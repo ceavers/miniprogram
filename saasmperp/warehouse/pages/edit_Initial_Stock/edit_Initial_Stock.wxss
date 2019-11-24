@@ -1,0 +1,62 @@
+/* warehouse/pages/edit_Initial_Stock/edit_Initial_Stock.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.header{
+  height: 78rpx;
+  text-align: center;
+  line-height: 124rpx;
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+}
+.box-title{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 32rpx;
+}
+.box-line{
+  /* height: 88rpx; */
+  line-height: 88rpx;
+  /* background-color: #fff; */
+  margin-bottom: 1px;
+  /* padding: 0 32rpx; */
+  /* display: flex; */
+  /* align-items: center; */
+  position: relative;
+}
+.box-line:last-child{
+  margin: 0;
+}
+.line-title{
+  position: absolute;
+  width: 230rpx;
+  padding-left: 32rpx;
+}
+.line-content{
+  /* width: 200rpx; */
+  width: calc(100% - 32rpx);
+  padding-right:32rpx; 
+  background: #fff;
+  margin-bottom:1px; 
+  display: flex;
+  align-items: center;
+}
+.line-content:last-child{
+  margin: 0;
+}
+.size-title{
+  display: block;
+  width: 180rpx;
+}
+.btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin: 80rpx auto 90rpx auto;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+}

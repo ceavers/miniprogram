@@ -1,0 +1,31 @@
+<view class='capital-elow-box'>
+  <view class="search-box" wx:if='{{!isQuery}}'>
+    <view>
+      <image src="../../images/search.png" bindtap='queryElow'></image>
+      <input type="text" placeholder="资金流水单号" bindinput='queryNo'></input>
+    </view>
+  </view>
+  <view class='search-header' wx:if='{{isQuery}}'>
+    <view>{{queryNo}}</view>
+    <view bindtap='cancelQuery'>取消</view>
+  </view>
+  <view class='zhanwei2' wx:if='{{isQuery}}'></view>
+  <view class="capital-elow-header" wx:if='{{!isQuery}}'>资金流水</view>
+  <view class="capital-elow-container {{index == journalList.length -1 ? 'mgBottom':''}}" wx:for='{{journalList}}' wx:key='{{index}}'>
+    <view>{{item.record_time}}</view>
+    <navigator hover-class="none" url="/finance/pages/bus_capital_detail/bus_capital_detail?journal_id={{item.journal_id}}">
+      <view class="capital-elow-item">
+        <view>
+          <view>{{item.journal_type.journal_type_name}}</view>
+          <view>{{item.account.account_name}}</view>
+          <view>{{item.voucher_no}}</view>
+        </view>
+        <view class="{{item.inout.inout_type == 1 ? 'greText':'redText'}}">{{item.inout.inout_type == 1 ? '+':'-'}}{{item.inout.inout_num}}
+        </view>
+      </view>
+
+    </navigator>
+
+  </view>
+
+</view>

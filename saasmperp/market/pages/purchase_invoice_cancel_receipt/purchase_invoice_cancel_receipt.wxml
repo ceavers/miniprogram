@@ -1,0 +1,38 @@
+<view class="head">{{purType == 1 ? '采购付款':'采购收款'}}</view>
+<view class="returnedInformation">
+  <text class="phone">{{purType == 1 ? '采购金额':'退货金额'}}</text>
+  <text>{{purchaseDetails.refund_money}}</text>
+</view>
+<view class="returnedInformation">
+  <text class="phone">{{purType == 1 ? '已付金额':'已退金额'}}</text>
+  <text>{{purchaseDetails.already_refund_money}}</text>
+</view>
+<view class="returnInformation">
+  <text class="phone2">{{purType == 1 ? '付款金额':'收款金额'}} <text style='color:red;'>*</text></text>
+  <input value='{{(purchaseDetails.refund_money * 100 - purchaseDetails.already_refund_money * 100) / 100}}' bindinput='inputMoney'></input>
+</view>
+<view class="otherInformation1" bindtap='showModal'>
+  <view>
+    <text class="wuliu">{{purType == 1 ? '付款账户':'收款账户'}}</text>
+    <text>{{choiceAccountName}}</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+
+
+<view class="otherInformation1"  bindchange='changeStartDate'>
+      <view class="wuliu">{{purType == 1 ? '付款时间':'收款时间'}}</view>
+      <picker class='pickerdate' mode='date' start='1990-01-01' end='2050-12-31' value='{{startDate}}' fields='day' bindchange='changeStartDate'>
+        {{startDate}}
+        <image class="icon-go" src='../../images/jiantou.png'></image>
+      </picker>
+
+    </view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <textarea bindinput='inputNote'></textarea>
+</view>
+<view><button class="button" bindtap='comfirmCollect'>{{purType == 1 ? '确认付款':'确认收款'}}</button></view>
+
+<!-- 选择账户的弹框 -->
+<v-modal shadow='{{shadow}}' bind:close='closeModal' items='{{items}}' bind:radioChange='radioChange'></v-modal>

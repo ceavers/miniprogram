@@ -1,0 +1,44 @@
+<!--客户类型管理-->
+<view class="manage-type">
+  <view class="header">客户类别</view>
+  <scroll-view class="main">
+    <view class="type-mes" 
+      wx:for="{{ typeListChange }}" 
+      wx:key="{{ index }}"
+    >
+      <image data-type="{{ item.user_category }}" data-id="{{ item.user_category_id }}"
+        bindtap="delThisType" 
+        wx:if="{{ delModal }}" 
+        src="../../images/reduce.png">
+      </image>
+      <view>{{ item.user_category }}</view>
+    </view>
+  </scroll-view>
+  <view class="footer">
+    <view wx:if="{{ delModal }}"></view>
+    <view wx:if="{{ !delModal }}" bindtap="addType">新增</view>
+    <view bindtap="del" wx:if="{{ !delModal }}">删除</view>
+    <view bindtap="confirm" wx:if="{{ delModal }}">确认</view>
+  </view>
+</view>
+<modalView show="{{ confirmDel }}">
+  <view class="confirm-del">
+    <view class="modal-title">确认</view>
+    <view class="tips">是否确认删除？</view>
+    <view class="btn">
+      <view class="cancel" bindtap="cancel">取消</view>
+      <view class="confirm-btn" bindtap="confirmDel">确认</view>
+    </view>
+  </view>
+</modalView>
+<modalView show="{{ showAddTypeModal }}">
+  <view class="add-type-modal">
+    <view class="modal-title">新增类别</view>
+    <input value="{{ typeValue }}" bindinput="typeValue"></input>
+    <view class="btn">
+      <view class="cancel" bindtap="cancel">取消</view>
+      <view class="confirm" bindtap="confirmAdd">确认</view>
+    </view>
+  </view>
+</modalView>
+

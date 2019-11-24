@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-swiper": "../../components/My-swiper/my-swiper"
+  },
+  "navigationBarTitleText": "商品列表"
+}

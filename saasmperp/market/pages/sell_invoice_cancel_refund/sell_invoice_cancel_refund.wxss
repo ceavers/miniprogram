@@ -1,0 +1,91 @@
+.head{
+  width: 100%;
+  height: 119rpx;
+  line-height: 119rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #323232;
+}
+.returnInformation{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  margin-top: 40rpx;
+  border-bottom: solid 1rpx #f6f6f6;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+}
+.returnedInformation{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  border-bottom: solid 1rpx #f6f6f6;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+}
+.refundMoney{
+  margin-left: 30rpx;
+  margin-right: 97rpx;
+}
+.phone{
+  margin-left: 30rpx;
+  margin-right: 125rpx;
+}
+.otherInformation1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border-bottom: solid 1rpx #f6f6f6;
+  height: 88rpx;
+  background: #fff;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+}
+.wuliu{
+  margin-right: 124rpx;
+}
+.remarkInformation{
+  background: #fff;
+  border-bottom: solid 1rpx #f6f6f6;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+  padding-top: 25rpx;
+  padding-left: 30rpx;
+  padding-bottom: 25rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: row;
+  
+}
+.remarkInformation text{
+  line-height: 40rpx;
+}
+.remark{
+  margin-right: 181rpx;
+  white-space:nowrap;
+}
+.icon-go{
+  width: 35rpx;
+  height: 35rpx;
+}
+.button{
+  width: 690rpx;
+  height: 88rpx;
+  background: #62AC4B;
+  border-radius:8rpx;
+  line-height: 88rpx;
+  text-align: centr;
+  margin-left: 30rpx;
+  margin-top: 80rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color: #fff;
+}

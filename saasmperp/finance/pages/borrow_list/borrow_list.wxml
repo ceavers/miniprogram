@@ -1,0 +1,38 @@
+<view class="borrow_list">
+  <view class="shadow" wx:if="{{show1}}"></view>
+  <view class="borrow_list_title" wx:if="{{!sxTrue}}">
+    <view class="borrow_input" bindtap="submit">
+      <image src="../../../images/sousuo.png" class="borrow_input_img"></image>
+      <view>收支查询</view>
+    </view>
+    <image bindtap="shadow" class="shaixuan" src="../../../images/shaixuan.png"></image>
+  </view>
+  <view class="borrow_list_title1" wx:if="{{sxTrue}}">
+    <view class="borrow_input1">
+     <view  wx:if="{{sTime}}">开始时间:{{starttime}}</view>
+     <view  wx:if="{{sigetype}}">类型:{{type==0?"借入":"借出"}}</view>
+    <view wx:if="{{nick_name}}">借贷人:{{nickname}}</view>
+    </view>
+   <view class="exit" bindtap="exit">取消</view>
+  </view>
+  <view class="borrow_title">借入借出列表</view>
+  <view class="borrow_content_box">
+    <view class="borrow_content" wx:for="{{items}}" wx:key="index" data-id="{{item.loan_id}}" bindtap="loanDe">
+      <view class="borrow_content_time">{{item.record_time}}</view>
+      <view class="borrow_content_content">
+        <view class="borrow_content_xiangqing">
+          <view class="leibie">{{item.loan_type=="0"?'借出':'借入'}}</view>
+          <view class="nikename">{{item.loaner_name}}</view>
+        </view>
+        <view class="jine">{{item.loan_sum}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="borrow_btn" bindtap="new_borrow">
+    <filter show="{{show}}" filterData="{{filterData}}" bindselectFilterItem="selectFilterItem" bindselectFilterClass="selectFilterClass" bindcomfirm="comfirm"></filter>
+    <image src="../../../images/add-employ.png"></image>
+    <text>新增</text>
+  </view>
+  <tanchuang show="{{show1}}" bindjiechu="jiechu" bindquxiao="quxiao" bindjieru="jieru"></tanchuang>
+</view>

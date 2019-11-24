@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "InputWrap": "../../components/inputWrap1/inputWrap1",
+    "BlackModal": "/market/components/blackModal/blackModal"
+  }
+}

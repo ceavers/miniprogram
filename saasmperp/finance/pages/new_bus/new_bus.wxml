@@ -1,0 +1,35 @@
+<view class="new_bus">
+  <view class="new_bus_title">新建供应商</view>
+  <view class="new_bus_content1">
+    <view><text>供应商名称</text><text class="xing">*</text></view>
+    <input placeholder="名称"></input>
+  </view>
+   <view class="new_bus_content1 new_bus_content2">
+    <view><text>联系人</text></view>
+    <input placeholder="名称"></input>
+  </view>
+   <view class="new_bus_content1 new_bus_content2">
+    <view><text>手机号</text></view>
+    <input placeholder="电话号码"></input>
+  </view>
+   <view class="new_bus_content1 new_bus_content2 new_bus_content3">
+    <view><text>地址</text></view>
+    <input placeholder="地址"></input>
+  </view>
+  <view class="new_bus_touxiang_title">头像</view>
+  <view class="new_bus_touxiangbox">
+   <image class="touxiang" src="{{photoUrl}}"></image>
+    <view class="add_img" bindtap='changeAvatar'>
+      <image src="../../images/add.png"></image>
+    </view>
+  </view>
+  <view class="new_bus_content1 new_bus_content2 new_bus_content4">
+    <view><text>初期欠款</text></view>
+    <input placeholder="金额"></input>
+  </view>
+  <view class="new_bus_content5 new_bus_content1 new_bus_content2">
+    <view>描述</view>
+    <textarea ></textarea> 
+  </view>
+  <button class="bottom_btn">确认新建</button>
+</view>

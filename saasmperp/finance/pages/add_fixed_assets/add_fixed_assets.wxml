@@ -1,0 +1,148 @@
+<view class='add-fixed-assets-box'>
+  <view class='add-fixed-assets-header'>新增固定资产</view>
+  <view class='add-fixed-assets-image-box'>
+    <image class="business-image" 
+      wx:for="{{ imageList }}" 
+      wx:key="{{ index }}" 
+      src="{{ item }}" 
+      data-index="{{ index }}" 
+      bindtap="previewImage"
+    ></image>
+    <image src='../../images/add.png' bindtap='showAddImgModel'></image>
+  </view>
+  <view class='add-fixed-assets-container'>
+    <view>
+      <view>资产名称 <text style='color:#FF3B30;'>*</text></view>
+      <input type='text' bindinput='fixedName'></input>
+    </view>
+    <view>
+      <view>资产类别</view>
+      <view bindtap='showCateModal' class='rightView'>{{choiceCateContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showCateModal'></image>
+    </view>
+
+    <view>
+      <view>规格描述</view>
+      <input type='text' bindinput='fixedDescription'></input>
+    </view>
+    <view>
+      <view>序列号</view>
+      <input type='text' bindinput='fixedSn'></input>
+    </view>
+    <view class='zhanwei'></view>
+    <view>
+      <view>购买时间</view>
+
+      <view bindtap='showPicker'>{{startDate}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPicker'></image>
+
+
+    </view>
+    <view>
+      <view>资产价格</view>
+      <input type='number' bindinput='fixedPrice'></input>
+    </view>
+    <view>
+      <view>折旧期限（月）</view>
+      <input type='number' bindinput='fixedDepreciation'></input>
+    </view>
+    <view>
+      <view>资产残值</view>
+      <input type='number' bindinput='fixedSalvage'></input>
+    </view>
+    <view>
+      <view>初期折旧</view>
+      <input type='number' bindinput='initialDepreciation '></input>
+    </view>
+    <view class='zhanwei'></view>
+    <view> 
+      <view>使用人</view>
+      <view bindtap='showIncomeModal' class='rightView'>{{incomeContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showIncomeModal'></image>
+    </view>
+    <view>
+      <view>管理员</view>
+      <view bindtap='showAccountModal' class='rightView'>{{accountContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showAccountModal'></image>
+    </view>
+    <view class='beizhu'>
+      <view>备注</view>
+      <textarea bindinput='fixedNote'></textarea>
+    </view>
+  </view>
+
+  <view class='confirm-btn' bindtap='confirmAddFixed'>确认新建</view>
+
+  <!-- 上传图片弹框 -->
+  <bottomView show="{{ showAddImgModel }}" modalList="{{ addImgList }}" isWidth="true" bindtap="getEventName"></bottomView>
+
+  <!-- 图片预览 -->
+<ModalView show="{{ previewImage }}" imageMask="true">
+  <swiper indicator-dots="true"
+    indicator-color="RGBA(217, 217, 217, 1)"
+    indicator-active-color="RGBA(98, 172, 75, 1)"
+    current="{{ previewImageIndex }}"
+    class="preview-swiper"
+    catchtap="closePreview"
+    bindchange="selectSwiperImageIndex"
+  >
+    <block wx:for="{{imageList}}" wx:key="{{ index }}">
+      <swiper-item data-index="{{ index }}">
+        <image catchtap="returnFalse" src="{{item}}" class="slide-image" width="100%" height="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="del-image" bindtap="delImage" src="/finance/images/del-image.png"></image>
+</ModalView>
+<!-- 删除图片 -->
+<ModalView show="{{ delImageFlag }}">
+  <view class="del-modal">
+    <view class="del-image-btn" bindtap="delImageConfirm">删除图片</view>
+    <view class="del-image-cancel" bindtap="delImageCancel">取消</view>
+  </view>
+</ModalView>
+
+  <!-- 购买时间弹框 -->
+  <timePicker show='{{showPicker}}' bind:setTime='setTime' bind:cancel='cancel'></timePicker>
+  <!-- 选择内容弹框 -->
+  <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeModal' wx:if='{{selectModal == 1 }}' bind:radioChange='choiceContent'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items2}}' bind:close='closeModal' wx:if='{{selectModal == 2}}' bind:radioChange='choiceContent'></acc-modal>
+
+
+   <!-- 类别选择弹框 -->
+  <view class="category-modal {{showCateModal ? 'showCate':'hiddenCate'}}" wx:if='{{showCateModal}}'>
+    <image src='../../images/close-cate-modal.png' bindtap='closeCateModal'></image>
+    <view class='category-modal-header'>类别选择</view>
+    <view class='category-modal-content'>
+      <view wx:for='{{cateData}}' wx:key='{{index}}' class="{{(index + 1) % 3 != 0 ? 'mgRight':''}}" bindtap='choiceCateContent' data-catetext='{{item.fixedcat_name}}' data-id='{{item.fixedcat_id}}'>
+        {{item.fixedcat_name}}
+      </view>
+    </view>
+    <view class='category-modal-footer'>
+      <view bindtap='showAddCateModal'>新增类别</view>
+
+      <!-- 跳转到管理分类页面 -->
+      <view>
+      <navigator hover-class='none' url='/finance/pages/bus_cate_manage/bus_cate_manage'>
+      管理
+      </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='category-modal-mask' wx:if='{{showCateModal}}' bindtap='closeCateModal'></view>
+
+
+<!-- 新增分类弹框 -->
+  <view class="add-cate-modal" wx:if='{{showAddCateModal}}'>
+    <view class='add-cate-modal-header'>新增类别</view>
+    <view>
+      <input type='text' bindinput='updateCate'></input>
+    </view>
+    <view>
+      <view bindtap='closeCateModal2'>取消</view>
+      <view bindtap='addCategory'>确定</view>
+    </view>
+  </view>
+  <view class='add-cate-modal-mask' wx:if='{{showAddCateModal}}' bindtap='closeCateModal2'></view>
+   
+</view>

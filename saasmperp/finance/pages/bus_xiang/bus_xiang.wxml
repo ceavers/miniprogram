@@ -1,0 +1,93 @@
+<view class="bus_xiang_box">
+  <view class="bus_xiang_tiitle">
+    <view class="bus_xiang_img">
+      <image src="../../images/touxiang1.png"></image>
+    </view>
+    <view class="bus_xiang_wenzi">测试供应商</view>
+  </view>
+  <view class="bus_xiang_content">
+    <view class="bus_type">联系人</view>
+    <view class="bus_name">田斌</view>
+  </view>
+  <view class="bus_xiang_content bus_xiang_content1">
+    <view class="bus_type">手机号</view>
+    <view class="bus_name">17289930937</view>
+  </view>
+  <view class="bus_xiang_content bus_xiang_content1">
+    <view class="bus_type">地址</view>
+  </view>
+  
+  <navigator role="navigator" hover-class = "none" url="/finance/pages/bus_receipt_details/bus_receipt_details"
+  >
+    <view class="bus_xiang_content bus_xiang_content2">
+      <view>
+        
+        <view class="bus_type" >预付款</view>
+        
+        <view class="bus_name bus_name1">10000.00</view>
+      </view>
+      <view class="bus_image">
+        <image src="../../images/jiantou2.png"></image>
+      </view>
+    </view>
+  </navigator>
+  <view class="bus_xiang_content bus_xiang_content1 ">
+    <view class="bus_type">期初欠款</view>
+    <view class="bus_name4">1000000.00</view>
+  </view>
+ <navigator role="navigator" url="/finance/pages/bus_purchasing_ist/bus_purchasing_ist" hover-class='none'>
+  <view class="bus_xiang_content bus_xiang_content2 bus_xiang_content3">
+    <view>
+     
+        <view class="bus_type">应付总额</view>
+      
+      <view class="bus_name bus_name1 bus_name8">80.00</view>
+    </view>
+    <view class="bus_image">
+      <image src="../../images/jiantou2.png"></image>
+    </view>
+  </view>
+</navigator>
+  <view class="bus_xiang_content bus_xiang_content1">
+    <view class="bus_type">备注</view>
+    <view class="bus_name9">好</view>
+  </view>
+  <navigator role="navigator" hover-class='none' url='/finance/pages/bus_purchase_history/bus_purchase_history'>
+  <view class="bus_xiang_content bus_xiang_content2">
+    <view>
+      <view class="bus_type">历史采购统计</view>
+      <view class="bus_name bus_name6">1000000</view>
+    </view>
+    <view class="bus_image">
+      <image src="../../images/jiantou2.png"></image>
+    </view>
+  </view>
+  </navigator>
+  <navigator role="navigator" hover-class='none' url="/finance/pages/bus_pay_history/bus_pay_history">
+    <view class="bus_xiang_content bus_xiang_content2 bus_xiang_content8">
+      <view>
+        <view class="bus_type">付款纪律</view>
+      </view>
+      <view class="bus_image">
+        <image src="../../images/jiantou2.png"></image>
+      </view>
+    </view>
+  </navigator>
+    <view class="bottom_img">
+       <view>
+       <navigator hover-class = "none" url="/finance/pages/bus_change_gongying/bus_change_gongying" role="navigator">
+        <image src="../../images/caigou2.png"></image>
+        </navigator>
+        <view class="bottom_img_wenzi">修改</view>
+  
+       </view>
+       <view>
+        <image src="../../images/fukuan2.png"></image>
+        <view class="bottom_img_wenzi">付款</view>
+       </view>
+       <view>
+         <image src="../../images/fenxiang2.png"></image>
+        <view class="bottom_img_wenzi">删除</view>
+       </view>
+    </view>
+</view>

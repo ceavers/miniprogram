@@ -1,0 +1,136 @@
+/* warehouse/pages/create_storage/create_storage.wxss */
+.history{
+  padding: 0 30rpx;
+  font-size:24rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  margin-top:40rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.title{
+  text-align: center;
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  margin:18rpx 0 30rpx 0;
+}
+.storage-item-box{
+  height: 88rpx;
+  padding: 0 30rpx;
+  background: #fff;
+  border-bottom:1px solid #F6F6F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.item-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.point{
+  color:#FF3B30;
+}
+.item-content{
+  width: 450rpx;
+  font-size:28rpx;
+  color:rgba(50,50,50,1);
+  display: flex;
+  justify-content: space-between;
+}
+.storage-item-box .icon-return{
+  color:#D9D9D9;
+}
+.note-box{
+  height: 120rpx;
+}
+.item-content input{
+  width: 400rpx;
+}
+.note-area{
+  height: 64rpx;
+}
+.note-text{
+  position: relative;
+  top:-20rpx;
+}
+.create-btn{
+  width:690rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 88rpx;
+  margin:80rpx auto;
+}
+.popup-box{
+  padding: 30rpx;
+}
+.close-btn{
+  height: 38rpx;
+  width: 38rpx;
+  position: absolute;
+  right: 30rpx;
+}
+.popup-title{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #D9D9D9;
+  padding-bottom: 40rpx;
+}
+.content{
+  height: 196rpx;
+  border-bottom: 1px solid #D9D9D9;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.choose-btn{
+  height: 116rpx;
+  display: flex;
+  justify-content: center;
+}
+.choose-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin-top:30rpx;
+  height: 40rpx;
+}
+.department-name{
+  width:160rpx;
+  height:60rpx;
+  border:1px solid rgba(153,153,153,1); 
+  border-radius:6rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin:14rpx;
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin-right:72rpx;
+}
+.choose-de{
+  border:1px solid rgba(98,172,75,1);
+}
+.department-name:nth-child(3n){
+  margin-right:0;
+}
+.name-box{
+  width:340rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nowrap{
+  overflow: hidden;
+}

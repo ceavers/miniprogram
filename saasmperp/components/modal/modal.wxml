@@ -1,0 +1,8 @@
+<!--components/modal/modal.wxml-->
+<view class="modal-mask {{imageMask?'back':''}}" wx:if='{{show}}' catchtap="hide">
+  <view class='modal-content'>
+    <view  class="main-content {{imageMask?'maheight':''}}">
+      <slot catchtap="returnFalse"></slot>
+    </view>
+  </view>
+</view>

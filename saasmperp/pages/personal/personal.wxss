@@ -1,0 +1,106 @@
+/* pages/personal/personal.wxss */
+.avatar-box{
+  height: 140rpx;
+  background: #fff;
+}
+.item{
+  height: 88rpx;
+  background: #fff;
+  border-top:1rpx solid #F6F6F6
+}
+.item-box{
+  padding: 0 30rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item-des{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.item-content{
+  display: flex;
+  align-items: center;
+}
+.item-value{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.icon-return{
+  color:#D9D9D9;
+  font-size: 26rpx;
+  margin-left: 24rpx;
+}
+.avatar{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 12rpx;
+}
+.weui-demo-dialog{
+  visibility:hidden;
+  opacity:0;
+  transition:all .3s;
+}
+.weui-demo-dialog_show{
+  visibility:visible;
+  opacity:1;
+}
+.weui-demo-dialog_show .weui-half-screen-dialog{
+    transform:translateY(0);
+}
+.weui-mask{
+  position:fixed;
+  z-index:1000;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  background: #000;
+  opacity: 0.2;
+}
+.weui-half-screen-dialog{
+  transition:all .3s;
+  transform:translateY(100%);
+}
+.weui-half-screen-dialog{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:5000;
+  background-color:#fff;
+}
+.choose-btn-box{
+  height: 88rpx;
+  background: #62AC4B;
+  padding: 0 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.choose-btn{
+  font-size:30rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.choose-item-box{
+  height: 212rpx;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 34rpx 0;
+}
+.choose-item{
+  text-align: center;
+  font-size:30rpx;
+  font-weight:bold;
+  color:rgba(199,199,199,1);
+  height: 72rpx;
+  line-height: 72rpx;
+}
+.choose{
+  font-size:40rpx;
+  color:rgba(66,66,66,1);
+}

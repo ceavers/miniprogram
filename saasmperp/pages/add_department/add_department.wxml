@@ -1,0 +1,25 @@
+<!--添加部门-->
+<view class="add-department">
+  <form id="addDepartment" bindsubmit="formSubmit">
+    <view class="input-wrap">
+      <view class="item-name">名称</view>
+      <input class="add-department-input" name="name"></input>
+    </view>
+    <view class="input-wrap">
+      <view class="item-name">电话</view>
+      <input  type="number" maxlength="11" class="add-department-input" name="mobile"></input>
+    </view>
+    <view class="input-wrap">
+      <view class="item-name">负责人</view>
+      <input class="add-department-input"  name="user_id"></input>
+      <!-- <text class="iconfont icon-return"></text> -->
+    </view>
+    <view class="input-wrap">
+      <view class="item-name">排序</view>
+      <input class="add-department-input" type="number" name="sort"></input>
+    </view>
+    <view class="btn-area">
+      <button class="save-btn" form-type="submit">保存</button>
+    </view>
+  </form>
+</view>

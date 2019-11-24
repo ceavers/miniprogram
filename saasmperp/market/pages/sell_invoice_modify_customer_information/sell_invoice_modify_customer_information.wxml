@@ -1,0 +1,23 @@
+<view class="head">客户信息</view>
+<form bindsubmit="editCustomer">
+  <view class="otherInformation1">
+    <view>
+      <text class="wuliu">客户名称</text>
+      <text>{{ orderMes.user_name }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="returnInformation">
+    <text class="phone1">联系人</text>
+    <input name="contact" value="{{ orderMes.contact }}"></input>
+  </view>
+  <view class="returnedInformation">
+    <text class="phone1">手机号</text>
+    <input name="phone" value="{{ orderMes.phone }}"></input>
+  </view>
+  <view class="remarkInformation">
+    <text class="remark">客户地址</text>
+    <textarea name="address" value="{{ orderMes.address }}" auto-height></textarea>
+  </view>
+  <view><button class="button" form-type="submit">确认修改</button></view>
+</form>

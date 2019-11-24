@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bottomView": "/components/bottomModal/bottomModal",
+    "filter": "/components/filter2/filter"
+  },
+  "navigationBarTitleText": "进销存单据"
+}

@@ -1,0 +1,41 @@
+<view class='bus-pay-history-box'>
+  <view class='bus-pay-history-header'>付款流水列表</view>
+  <view class='bus-pay-history-list'>
+    <view>今天</view>
+    <navigator hover-class='none' role="navigator" url="/finance/pages/bus_pay_details/bus_pay_details">
+      <view class='bus-pay-history-item'>
+        <view>
+          <view>付预付款</view>
+          <view style='color:#62AC4B;'>-1200</view>
+        </view>
+        <view style='color:#999;'>现金账户</view>
+      </view>
+    </navigator>
+    <view class='bus-pay-history-item'>
+      <view>
+        <view>付预付款</view>
+        <view style='color:#62AC4B;'>-1200</view>
+      </view>
+      <view style='color:#999;'>现金账户</view>
+    </view>
+  </view>
+  <view class='bus-pay-history-list'>
+    <view>昨天</view>
+    <navigator hover-class='none' role="navigator" url="/finance/pages/bus_pay_details/bus_pay_details">
+    <view class='bus-pay-history-item'>
+      <view>
+        <view>付预付款</view>
+        <view style='color:#62AC4B;'>-1200</view>
+      </view>
+      <view style='color:#999;'>现金账户</view>
+    </view>
+    </navigator>
+    <view class='bus-pay-history-item'>
+      <view>
+        <view>付预付款</view>
+        <view style='color:#62AC4B;'>-1200</view>
+      </view>
+      <view style='color:#999;'>现金账户</view>
+    </view>
+  </view>
+</view>

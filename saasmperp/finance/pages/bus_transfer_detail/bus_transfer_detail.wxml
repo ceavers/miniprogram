@@ -1,0 +1,25 @@
+<view class='transfer-detail-box'>
+  <view class='transfer-detail-header'>转账详情</view>
+  <view class='transfer-detail-container'>
+    <view>
+      <view>转出账户</view>
+      <view>{{transferDetail.out_account.account_name}}</view>
+    </view>
+    <view>
+      <view>转入账户</view>
+      <view>{{transferDetail.in_account.account_name}}</view>
+    </view>
+    <view>
+      <view>金额</view>
+      <view class='transfer-fee'>{{transferDetail.transfer_num}}</view>
+    </view>
+    <view>
+      <view>时间</view>
+      <view>{{transferDetail.record_time}}</view>
+    </view>
+  </view>
+  <view class='beizhu'>
+    <view>备注</view>
+    <view>{{transferDetail.note}}</view>
+  </view>
+</view>

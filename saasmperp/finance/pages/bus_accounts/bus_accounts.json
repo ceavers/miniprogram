@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "acc-modal":"/components/add_record_history/add_record_history"
+  },
+  "navigationBarTitleText": "账户"
+}

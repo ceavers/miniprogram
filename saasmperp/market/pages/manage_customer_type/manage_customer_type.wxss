@@ -1,0 +1,105 @@
+/* market/pages/manage_customer_type/manage_customer_type.wxss */
+.manage-type{
+  height: 100vh;
+  background-color: #F6F6F6;
+}
+.header{
+  padding-left: 32rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+}
+.main{
+  height: calc(100vh - 88rpx - 95rpx);
+}
+.type-mes{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding-left: 32rpx;
+  height: 88rpx;
+  background-color: #fff;
+  line-height: 88rpx;
+  color: #323232;
+  font-size: 28rpx;
+}
+.type-mes image{
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  height: 95rpx;
+  color: #62AC4B;
+  font-size: 28rpx;
+}
+.confirm-del{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36rpx 50rpx;
+  width: 440rpx;
+  height: 228rpx;
+  border-radius:12rpx;
+  background-color: #F6F6F6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.confirm-del .tips{
+  margin-top: 56rpx;
+  width: 100%;
+  flex: 1;
+  text-align: left;
+}
+.confirm-del .btn{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 24rpx;
+}
+.confirm-del .confirm-btn{
+  color: #62AC4B;
+}
+.add-type-modal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  width: 540rpx;
+  height: 300rpx;
+  border-radius:12rpx;
+  background-color: #F6F6F6;
+  color: #323232;
+}
+.add-type-modal .modal-title{
+  height: 98rpx;
+  line-height: 98rpx;
+  font-size: 28rpx;
+}
+.add-type-modal input{
+  width:420rpx;
+  height:60rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 4rpx 12rpx 0rpx rgba(0, 0, 0, 0.1);
+}
+.add-type-modal .btn{
+  display: flex;
+  width: 100%;
+  border-top: 1rpx solid #D9D9D9;
+}
+.add-type-modal .cancel, .add-type-modal .confirm{
+  flex: 1;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.add-type-modal .cancel{
+  border-right: 1rpx solid #D9D9D9;
+}

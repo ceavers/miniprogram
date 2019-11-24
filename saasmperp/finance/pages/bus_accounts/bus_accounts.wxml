@@ -1,0 +1,85 @@
+<view class='accounts-box'>
+  <wxs module='sumMoney'>
+    var getTotalMOney = function(accountsData) {
+      var totalMOney = 0;
+      accountsData.forEach(function(item) {
+        totalMOney += item.money * 100;
+      });
+      return (totalMOney / 100)
+    };
+
+
+    module.exports.getTotalMOney = getTotalMOney;
+  </wxs>
+
+  <view>总余额：{{sumMoney.getTotalMOney(accountsData)}}</view>
+  <view class='accounts-container'>
+    <view class='accounts-item' wx:for='{{accountList}}' wx:key='{{index}}' style='background:{{bgColorArr[index]}};' catchtap='showAccountModal2' data-id='{{item.account_id}}'>
+      <view>{{item.account_name}}</view>
+      <view>{{item.account_sum}}</view>
+    </view>
+  </view>
+  <navigator hover-class='none' url='/finance/pages/bus_addaccount/bus_addaccount?accountType=1'>
+    <view class='accounts-footer' bindtap='addAccount'>
+      <image src='../../images/add-aut.png'></image>
+      <view>新增</view>
+    </view>
+  </navigator>
+
+  <!-- 点击账户的弹框 -->
+  <view class="account-modal2 {{showAccountModal ? 'showAcc':'hiddenAcc'}}">
+    <image src='../../images/account-close-modal.png' catchtap='closeAccountModal'></image>
+    <view class='account-modal2-header'>
+      <image src='../../images/account-card.png'></image>
+      <view>
+        <view>{{accountDetail.account_type}}</view>
+
+      </view>
+    </view>
+
+    <view class='account-modal2-container'>
+      <view>
+        <view>金额</view>
+        <view>{{accountDetail.account_sum}}</view>
+      </view>
+      <view>
+        <view>类别</view>
+        <view>{{accountDetail.account_name}}</view>
+      </view>
+      <view>
+        <view>所属</view>
+        <view>{{accountDetail.dept.dept_name}}</view>
+      </view>
+
+      <view>
+        <navigator hover-class='none' bindtap='closeAccountModal' url="/finance/pages/bus_account_details/bus_account_details?accountDetail={{jsonAccountDetail}}">
+          <view>账户详情</view>
+          <image src='../../images/jiantou2.png' style='width:30rpx;height:30rpx;'></image>
+        </navigator>
+      </view>
+
+    </view>
+
+    <view class='account-icon-box'>
+      <view catchtap="showAccountModal">
+        <image src='../../images/account-1.png'></image>
+        <view>收支记账</view>
+      </view>
+      <view>
+        <navigator hover-class="none" bindtap='closeTransfer' url="/finance/pages/bus_transfer/bus_transfer?account_id={{accountDetail.account_id}}">
+          <image src='../../images/account-2.png'></image>
+          <view>转账</view>
+        </navigator>
+      </view>
+      <view>
+        <navigator hover-class="none" url="/finance/pages/bus_capital_elow/bus_capital_elow?account_id={{accountDetail.account_id}}" bindtap='closeAccountModal'>
+          <image src='../../images/account-3.png'></image>
+          <view>资金流水</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='account-modal2-mask' wx:if='{{showAccountModal}}' bindtap='closeAccountModal'></view>
+  <!-- 收支记账弹框 -->
+  <acc-modal showmodal='{{showmodal}}' modalContent='{{modalContent}}' modalTitle='{{modalTitle}}' bind:close='closeModal2'></acc-modal>
+</view>

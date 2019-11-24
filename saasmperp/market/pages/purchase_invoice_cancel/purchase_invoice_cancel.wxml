@@ -1,0 +1,134 @@
+<view class='head'>
+  <view class="head-head">{{purType == 1 ? '采购单':'采购退货单'}}</view>
+  <view class="head-middle">{{purType == 1 ? '采购单号':'退货单号'}}：{{purchaseInvoiceDetail.order_id}}</view>
+  <view class="head-bottom">
+    <view class="head-bottom-left">
+      <image class="backImg" src="../../images/gray-back.png"></image>
+      <view class="backValue">{{purType == 1 ? '待入库':'待出库'}}</view>
+    </view>
+    <view class="head-bottom-right">
+      <image class="backImg1" src="../../images/gray-back.png"></image>
+      <view class="backValue1">{{purType == 1 ? '待付款':'代收款'}}</view>
+    </view>
+
+  </view>
+</view>
+<view class="clientInformation">
+  <text class="name">供应商</text>
+  <text>{{purchaseInvoiceDetail.supplier_name
+}}</text>
+</view>
+<view class="clientInformation">
+  <text class="phone">联系电话</text>
+  <text>{{purchaseInvoiceDetail.phone}}</text>
+</view>
+<view class="clientInformation">
+  <text class="time">创建时间</text>
+  <text>{{purchaseInvoiceDetail.date}}</text>
+</view>
+<view class='order1' wx:if='{{imageList.length}}'>单据图片</view>
+<view class='order-image-box' wx:if='{{imageList.length}}'>
+  <image class="business-image" 
+      wx:for="{{ imageList }}" 
+      wx:key="{{ index }}" 
+      src="{{ item }}" 
+      data-index="{{ index }}" 
+      bindtap="previewImage"
+    ></image>
+    <image src='../../images/add1.png' bindtap='showAddImgModel'></image>
+</view>
+<view class="goodsInformation {{index == 0 ? 'mgTop':''}}" bindtap="toPurchaseOrderInformation" wx:for='{{purchaseInvoiceDetail.product_img_list}}' wx:key='{{index}}' data-index='{{index}}'>
+
+  <view class="goodsContent">
+    <image class="goodsImg" src="{{item.product_img}}"></image>
+    <view class="goodsContent-left">
+      <view class="sizeL">{{item.product_name}}</view>
+      <view class="sizeM">{{item.product_note}}</view>
+    </view>
+  </view>
+
+  <view class="goodsContent">
+    <view class="goodsContent-right">
+      <view class="sizeL">{{item.product_price}}</view>
+      <view class="sizeM">×{{item.product_count}}</view>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+
+</view>
+<view class="returnInformation">
+  <text class="phone">{{purType == 1 ? '采购金额':'退款金额'}}</text>
+  <text>{{purchaseInvoiceDetail.refund_money}}</text>
+</view>
+<view class="returnedInformation">
+  <text class="phone">{{purType == 1 ? '已付金额':'已退金额'}}</text>
+  <text>{{purchaseInvoiceDetail.already_refund_money}}</text>
+</view>
+<view class="otherInformation">
+  <view>
+    <text class="wuliu">开单人员</text>
+    <text>{{purchaseInvoiceDetail.order_worker}}</text>
+  </view>
+  <!-- <image class="icon-go" src="../../images/jiantou.png"></image> -->
+</view>
+<view class="otherInformation1">
+  <view>
+    <text class="wuliu">外部单号</text>
+    <text>{{purchaseInvoiceDetail.foreign_order_id}}</text>
+  </view>
+  <!-- <image class="icon-go" src="../../images/jiantou.png"></image> -->
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <text>{{purchaseInvoiceDetail.note}}</text>
+</view>
+<view class="footer">
+
+  <view class="footer-content" bindtap="showCancelModel">
+    <image class="iconImg-cancel" src="../../../images/market-preturn.png"></image>
+    <view class="cancel-value">{{purType == 1 ? '付款收货':'退款退货'}}</view>
+  </view>
+  <view class="footer-content">
+    <image class="iconImg-share" src="../../../images/common-share.png"></image>
+    <view class="share-value">分享</view>
+  </view>
+  <view class="footer-content" bindtap="showMoreOperationsModel">
+    <image class="iconImg-more" src="../../images/more-operations.png"></image>
+    <view class="more-value">更多操作</view>
+  </view>
+</view>
+<bottomView show="{{ showCancelModel }}" modalList="{{ cancelList }}"></bottomView>
+<!-- <bottomView show="{{ showAddImgModel }}" modalList="{{ addImgList }}"></bottomView> -->
+<bottomView show="{{ showMoreOperations }}" modalList="{{ oprationsList }}" isWidth='true' bindtap='getEventName'></bottomView>
+
+<!-- 删除弹框 -->
+<del-modal shadow='{{showDelModal}}' bind:close='clsoeDelModal' bind:delData='delData'></del-modal>
+
+<!-- 上传图片弹框 -->
+  <bottomView show="{{ showAddImgModel }}" modalList="{{ addImgList }}" isWidth="true" bindtap="getEventName"></bottomView>
+
+  <!-- 图片预览 -->
+<ModalView show="{{ previewImage }}" imageMask="true">
+  <swiper indicator-dots="true"
+    indicator-color="RGBA(217, 217, 217, 1)"
+    indicator-active-color="RGBA(98, 172, 75, 1)"
+    current="{{ previewImageIndex }}"
+    class="preview-swiper"
+    catchtap="closePreview"
+    bindchange="selectSwiperImageIndex"
+  >
+    <block wx:for="{{imageList}}" wx:key="{{ index }}">
+      <swiper-item data-index="{{ index }}">
+        <image catchtap="returnFalse" src="{{item}}" class="slide-image" width="100%" height="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="del-image" bindtap="delImage" src="/market/images/del-image.png"></image>
+</ModalView>
+<!-- 删除图片 -->
+<ModalView show="{{ delImageFlag }}">
+  <view class="del-modal">
+    <view class="del-image-btn" bindtap="delImageConfirm">删除图片</view>
+    <view class="del-image-cancel" bindtap="delImageCancel">取消</view>
+  </view>
+</ModalView>

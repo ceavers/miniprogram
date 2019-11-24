@@ -1,0 +1,135 @@
+<!--销售单、采购单-->
+<view class="order">
+  <!-- 设置 -->
+  <view class="set-up"><navigator hover-class="none" url="{{ settingUrl }}">设置</navigator></view>
+  <view class="body">
+  <!-- 选择客户、商品 -->
+    <view class="mes-box" style="margin-bottom: 40rpx;">
+      <view class="mes-box-name">{{ name }}</view>
+      <view class="mes-box-input">{{ selectUser.account_name }}</view>
+      <view class="select-customer" bindtap="showSelectCustomerModal"><image src="/market/images/jiantou.png"></image></view>
+    </view>
+    <view class="mes-box" wx:if="{{ mesBoxType }}">
+      <view class="select-thing" bindtap="gotoChoosingGoods">
+        <image src="/market/images/invoice_add.png"></image>
+        <text>选商品</text>
+      </view>
+      <view class="select-thing-border"></view>
+      <view class="select-thing" bindtap="photograph">
+        <image src="/market/images/photo.png"></image>
+        <text>拍商品</text>
+      </view>
+    </view>
+    <view class="mes-box" wx:if="{{ !mesBoxType }}" bindtap="gotoChoosingGoods">
+      <view class="select-thing">
+        <image src="/market/images/invoice_add.png"></image>
+        <text>添加商品</text>
+      </view>
+    </view>
+      <!-- 已选商品列表 -->
+    <view class="storage-box {{listIndex!=0?'mt-20':''}}" 
+      wx:for="{{goodsList}}" 
+      wx:key="index"
+      wx:if="{{item.count>0}}"
+      wx:for-index="listIndex"
+    >
+      <view class="storage-item-box" style="height:148rpx;">
+        <image class="delete-icon" data-id="{{item.product_id}}" catchtap="deleteGoods" src="../../images/delete.png"></image>
+        <view class="goods-info">
+          <image class="goods-img" src="{{item.pic_url}}"></image>
+          <view class="goods-des">
+            <view class="goods-name">{{item.product_name}}</view>
+            <view class="repertory">{{item.price}}</view>
+            <view class="price">小计  {{item.styleSum}}款{{item.count}}件</view>
+          </view>
+        </view>
+      </view>
+      <block wx:for="{{item.results}}" 
+        wx:for-item="skuItem" 
+        wx:key="index"
+        wx:for-index="skuIndex"
+      >
+        <view class="storage-item-box goods-prop" 
+          wx:for="{{skuItem.results}}" 
+          wx:for-item="propItem" 
+          wx:key="index" 
+          wx:for-index="propIndex"
+          wx:if="{{propItem.amount>0}}"
+        >
+          <view class="property-one">{{skuItem.color}}</view>
+          <view class="property-two">{{propItem.size}}</view>
+          <view class="add-sub-box">
+            <image class="add-sub-icon" 
+              data-list-index="{{listIndex}}"
+              data-sku-index="{{skuIndex}}"
+              data-prop-index="{{propIndex}}"
+              catchtap="subtractGoodsNum"
+              src="../../images/subtract.png"
+            ></image>
+            <view class="goods-number" 
+              data-list-index="{{listIndex}}"
+              data-sku-index="{{skuIndex}}"
+              data-prop-index="{{propIndex}}"
+              catchtap="inputNumber"
+            >{{propItem.amount}}</view>
+            <image class="add-sub-icon"
+              data-list-index="{{listIndex}}"
+              data-sku-index="{{skuIndex}}"
+              data-prop-index="{{propIndex}}"
+              catchtap="addGoodsNum"
+              src="../../images/invoice_add.png"
+            ></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 结算 -->
+  <view class="footer">
+    <view class="money"><text>总价{{ comPrice }}</text></view>
+    <view class="settlement">
+      <view class="discount" bindtap="showChooseDiscountModal" wx:if="{{ type == 'sale' && goodsList.length }}">优惠</view>
+      <view class="settlement-btn" bindtap="settlement">结算</view>
+    </view>
+  </view>
+</view>
+<!-- 选择优惠类型弹窗 -->
+<BottomModal show="{{ showChooseDiscountModal }}" modalList="{{ chooseDiscountList }}" bindtap="getEventName" isWidth="true"></BottomModal>
+<BottomModal show="{{ showChoosePhotographModal }}" modalList="{{ choosePhotographList }}" bindtap="getEventName"></BottomModal>
+<ModalView show="{{ showBillDiscountModal }}">
+  <form bindsubmit="confirmDiscount1">
+    <view class="modal">
+      <view class="modal-title">整单折扣</view>
+      <view class="modal-input"><input placeholder="输入折扣百分比" name="discount"></input></view>
+      <view class="modal-footer">
+        <view class="cancel" bindtap="hideModal">取消</view>
+        <view class="modal-border"></view>
+        <button class="confirm" form-type="submit">确认</button>
+      </view>
+    </view>
+  </form>
+</ModalView>
+<ModalView show="{{ showPreferentialWipingoutModal }}">
+  <form bindsubmit="confirmDiscount2">
+    <view class="modal modal2" style="height: 334rpx;">
+      <view class="modal-title">优惠抹零</view>
+      <view style="font-size:24rpx;width: 479rpx;text-align: left;margin: 28rpx 0 24rpx 61rpx;">订单原价：{{ totalPrice }}</view>
+      <view class="modal-input"><input placeholder="抹零后价格" name="discountPrice"></input></view>
+      <view class="modal-footer">
+        <view class="cancel" bindtap="hideModal">取消</view>
+        <view class="modal-border"></view>
+        <button class="confirm" form-type="submit">确认</button>
+      </view>
+    </view>
+  </form>
+</ModalView>
+<BlackModal show="{{ showSelectCustomerModal }}" optionList="{{ optionList }}" bindtap="selectedOption"></BlackModal>
+<!-- 计算器 -->
+<Calculator 
+  show="{{ showCalculator }}" 
+  goodsImage="{{ goodsImage }}"
+  showCalculatorModal="{{ showCalculatorModal }}"
+  bindcancel="cancelAdd"
+  bindsetResult="confirmAdd"
+></Calculator>
+<smallCalculator show="{{calculatorShow}}" bind:setResult="getResult" bind:cancel="cancel"></smallCalculator>

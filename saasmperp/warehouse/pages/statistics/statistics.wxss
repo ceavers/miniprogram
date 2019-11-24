@@ -1,0 +1,33 @@
+/* warehouse/pages/statistics/statistics.wxss */
+.title{
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  text-align: center;
+  margin:50rpx 0 40rpx 0;
+}
+.content-item{
+  height: 116rpx;
+  border-bottom:1px solid #f6f6f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  background: #fff;
+}
+.goods-name{
+  font-size:26rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  margin-bottom: 4rpx;
+}
+.storage-sum{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.number{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}

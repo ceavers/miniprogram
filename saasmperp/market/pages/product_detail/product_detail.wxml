@@ -1,0 +1,33 @@
+<view class='head'>商品明细</view>
+<view class="goods">
+  <view class="goodsInformation">
+    <image class="goodsImg" src="../../images/yifu2.png"></image>
+    <view>
+      <view class="sizeL">T恤上衣</view>
+      <view class="sizeM">txsy</view>
+      <view class="sizeM">白色， s</view>
+    </view>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+
+</view>
+<view class="taxIncludedPrice">
+  <text class="taxIncludedPrice-left">含税价</text>
+  <text>144.00(税率16%)</text>
+</view>
+<view class="price">
+  <text class="price-left">价格</text>
+  <text>70.00</text>
+</view>
+<view class="amount">
+  <text class="amount-left">数量</text>
+  <text>9</text>
+</view>
+<view class="remark">
+  <text class="remark-left">备注</text>
+  <text>备注备注备注备注备注备注备注备注备注备注</text>
+</view>
+<view class="floor">
+<view class="floor-left">删除</view>
+<view class="floor-right">保存</view>
+</view>

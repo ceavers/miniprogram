@@ -1,0 +1,74 @@
+.fixed-assets-operate-box{
+  background: #f6f6f6;
+}
+
+.fixed-assets-operate-header{
+  height: 120rpx;
+  padding-top: 46rpx;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: #323232;
+  text-align: center;
+}
+
+
+.fixed-assets-operate-container{
+    height: 88rpx;
+    background: #fff;
+    line-height: 88rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .fixed-assets-operate-container > view:nth-child(1){
+    color: #666;
+    width: 170rpx;
+  }
+
+  .fixed-assets-operate-container > view:nth-child(2){
+    color: #323232;
+    width: calc(100% - 230rpx);
+  }
+
+  .confirm{
+    background: #62AC4B;
+    width: 690rpx;
+    height: 88rpx;
+    margin: 80rpx auto;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    border-radius: 8rpx;
+    line-height: 88rpx;
+
+  }
+
+  /* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

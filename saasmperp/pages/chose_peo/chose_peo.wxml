@@ -1,0 +1,26 @@
+<view class="chose_peo_box">
+  <view class="chose_peo_title_box" bindtap="bossInfo">
+     <view class="chose_img">
+       <image src="../../images/boss.png"></image>
+     </view>
+      <view class="chose_text">我是老板</view>
+  </view>
+    <view class="chose_peo_title_box chose_box" bindtap="staffInfo">
+     <view class="chose_img">
+       <image src="../../images/caiwu.png"></image>
+     </view>
+      <view class="chose_text">我是财务</view>
+  </view>
+    <view class="chose_peo_title_box chose_box" bindtap="staffInfo">
+     <view class="chose_img">
+       <image src="../../images/jingli.png"></image>
+     </view>
+      <view class="chose_text">我是经理</view>
+  </view>
+    <view class="chose_peo_title_box chose_box" bindtap="staffInfo">
+     <view class="chose_img">
+       <image src="../../images/xiaoshou.png"></image>
+     </view>
+      <view class="chose_text">我是销售</view>
+  </view>
+</view>

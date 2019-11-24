@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/pay_type/pay_type",
+    "v-confige":"/components/confige/confige"
+  },
+  "navigationBarTitleText": "转账"
+}

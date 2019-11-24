@@ -1,0 +1,61 @@
+/**index.wxss**/
+.container{
+  overflow: hidden;
+}
+.nav-box{
+  margin-top:32rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.icon-daohang{
+  color:#62AC4B;
+  font-size: 44rpx;
+  margin-right: 44rpx;
+}
+.swiper-box{
+  margin-top:126rpx;
+  height: 848rpx;
+}
+.swiper-item{
+  width: 400rpx!important;
+  height: 640rpx!important;
+  padding:0 14rpx;
+}
+.item-box{
+  background: #fff;
+  border-radius:16rpx;
+  height: 100%;
+  transform: scale(0.75);
+}
+.item-title{
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  font-size:40rpx;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+}
+.slide-image{
+  width:400rpx;
+  height: 400rpx;
+}
+.item-des{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.item-number{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.des-box{
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.shrink{
+  transform: scale(1);
+}

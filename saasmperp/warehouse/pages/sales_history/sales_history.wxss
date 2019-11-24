@@ -1,0 +1,28 @@
+/* warehouse/pages/sales_history/sales_history.wxss */
+.title{
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+  text-align: center;
+  margin:50rpx 0 40rpx 0;
+}
+.item-box{
+  height: 88rpx;
+  background: #fff;
+  border-bottom:1px solid #f6f6f6;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.content{
+  width: 450rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}

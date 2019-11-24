@@ -1,0 +1,50 @@
+/* pages/setting/setting.wxss */
+.title{
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size:32rpx;
+  font-weight:bold;
+  color:rgba(50,50,50,1);
+}
+.item-box{
+  margin-bottom: 20rpx;
+}
+.item{
+  height: 88rpx;
+  background: #fff;
+  padding: 0 40rpx;
+  border-bottom:1px solid #f6f6f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-box{
+  display: flex;
+  align-items: center;
+}
+.setting-icon{
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 18rpx;
+}
+.setting-des{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.wx-switch-input{
+  width:90rpx !important;
+  height:50rpx !important;
+}
+.wx-switch-input::before{
+  width:90rpx !important;
+  height: 50rpx !important;
+}
+.wx-switch-input::after{
+  width: 48rpx !important;
+  height: 48rpx !important;
+}
+.mr-b{
+  margin-bottom: 20rpx;
+}

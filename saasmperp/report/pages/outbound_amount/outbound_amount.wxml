@@ -1,0 +1,24 @@
+<!--report/pages/outbound_amount/outbound_amount.wxml-->
+<view class="container">
+  <view class="choose-box">
+    <view class="curr {{index==0?'choose':''}}" catchtap="chooseTpye" data-index="0">出库日报</view>
+    <view class="last {{index==1?'choose':''}}" catchtap="chooseTpye" data-index="1">出库月报</view>
+  </view>
+  <scroll-view scroll-y class="res-box">
+    <view style="height:0.5px"></view>
+    <view class="item-box" data-time="{{item.date}}" catchtap="toDetailPage" wx:for="{{billData}}" wx:key="index">
+      <view class="content">
+        <view class="text-box">
+          <view>{{item.date}}</view>
+          <view>{{item.gross}}</view>
+        </view>
+        <view class="chart-box">
+          <view class="out-box">
+            <view class="inner-box" animation="{{item.anmiate}}"></view>
+          </view>
+        </view>
+      </view>
+      <text class="iconfont icon-return"></text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,18 @@
+<!--report/pages/hot_goods/hot_goods.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="{{index == 0 ? 'header-hover':''}}" data-index="0" bindtap="bindNow">本月</view>
+    <view class="{{index == 1 ? 'header-hover':''}}" data-index="1" bindtap="bindNow">上个月</view>
+  </view>
+  <view class="content">
+    <view class="box">
+      <view class="box-line" wx:for="{{goodsList}}" wx:key="{{index}}" data-id="{{item.product_id}}" bindtap="toHotGoodsInfo">
+        <view class="box-title">{{item.product_name}}</view>
+        <view class="box-content">
+          <text>{{item.gross_sale}}</text>
+          <icon class="iconfont icon-return"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

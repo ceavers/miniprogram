@@ -1,0 +1,32 @@
+<view class='head'>商品明细</view>
+<view class="goods">
+  <view class="goodsInformation">
+    <image class="goodsImg" src="{{productDetail.product_img}}"></image>
+    <view>
+      <view class="sizeL">{{productDetail.product_name}}</view>
+      <view class="sizeM">{{productDetail.product_note}}</view>
+      <view class="sizeM">白色， s</view>
+    </view>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+
+</view>
+<view class="price">
+  <text class="price-left">价格</text>
+  <input type='number' value='{{productDetail.product_price}}' bindinput='updatePrice'></input>
+</view>
+<view class="amount">
+  <text class="amount-left">数量</text>
+  <input type='number' value='{{productDetail.product_count}}' bindinput='updateNum'></input>
+</view>
+<view class="remark">
+  <text class="remark-left">备注</text>
+  <textarea value='{{productDetail.product_note}}' bindinput='updateNote'></textarea>
+</view>
+<view class="floor">
+<view class="floor-left" bindtap='deleteproduct'>删除</view>
+<view class="floor-right" bindtap='modifyProduct'>保存</view>
+
+<!-- 删除弹框 -->
+<del-modal shadow='{{shadow}}' bind:close='closeDelModal' bind:delData='delData'></del-modal>
+</view>

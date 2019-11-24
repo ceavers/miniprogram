@@ -1,0 +1,120 @@
+.transfer-inquiry-box{
+  height: 100vh;
+  background: #f6f6f6;
+}
+
+.transfer-inquiry-header{
+  height: 120rpx;
+  padding-top: 50rpx;
+  padding-bottom: 40rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #323232;
+  box-sizing: border-box;
+
+}
+
+.transfer-inquiry-container1{
+  margin-bottom: 20rpx;
+}
+
+.right-view{
+   width: calc(100% - 230rpx);
+}
+
+.transfer-inquiry-container1 > view,.transfer-inquiry-container2 > view{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 88rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #f7f7f7;
+  background: #fff;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+
+.transfer-inquiry-container1 > view view:nth-child(1),.transfer-inquiry-container2 > view view:nth-child(1){
+  width: 170rpx;
+  color: #666;
+}
+
+.transfer-inquiry-container1 > view view:nth-child(2){
+  width: calc(100% - 230rpx);
+  color: #323232;
+}
+
+
+.transfer-inquiry-container2 > view{
+  position: relative;
+}
+
+.transfer-inquiry-container2 > view:nth-child(2) image,.transfer-inquiry-container2 > view:nth-child(3) image{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 26rpx;
+}
+
+
+.pickerdate{
+  line-height: 88rpx;
+  font-size: 28rpx;
+  width: calc(100% - 230rpx);
+}
+
+
+.btn-group{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.btn1,.btn2{
+  width: calc(100% - 60rpx);
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.btn1{
+  margin-top: 80rpx;
+  margin-bottom: 50rpx;
+  background: #62AC4B;
+  color: #fff;
+}
+
+.btn2{
+  background: #fff;
+  color: #424242;
+}
+
+/* 未选中的样式  radio 在组件内不生效 */
+radio .wx-radio-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%; 
+  border: 1px solid #fff;
+  background: transparent;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+  border: 1px solid #62AC4B;
+  background: #444444;
+}
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;   
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 30rpx;     
+  background: #62AC4B;
+}

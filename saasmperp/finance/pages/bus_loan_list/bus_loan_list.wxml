@@ -1,0 +1,91 @@
+<view class='loan-list-box'>
+  <view class='transfer-list-search' wx:if='{{!isSearch && !isSelect}}'>
+    <view>
+      <navigator hover-class='none' url='/finance/pages/bus_loan_query/bus_loan_query'>
+        <image src='../../images/search.png'></image>
+      </navigator>
+      <input placeholder='收支查询' type='text'></input>
+    </view>
+    <image src='../../images/shaixuan.png' bindtap='showSelctModal'></image>
+  </view>
+  <view class='loan-list-header' wx:if='{{!isSearch && !isSelect}}'>借入借出列表</view>
+  <!-- 搜索结果的头部样式 -->
+  <view class='transfer-detail-wrapper-header' wx:if='{{isSearch}}'>
+    <view wx:for='{{searchData}}' wx:key='{{index}}'>
+      {{item}}
+    </view>
+    <view bindtap='cancelSearch' class='cancel-sea'>
+      取消
+    </view>
+  </view>
+  <!-- 点击筛选之后的头部样式 -->
+  <view class='transfer-detail-wrapper-header' wx:if='{{isSelect}}'>
+    <view>
+      {{choiceCtaeName}}
+    </view>
+    <view bindtap='cancelSelect' class='cancel-sea'>
+      取消
+    </view>
+  </view>
+  <view class='zhanwei2' wx:if='{{isSearch || isSelect}}'></view>
+  <view class="loan-list-container {{index == loanList.length -1 ? 'mgBottom':''}}" wx:for='{{loanList}}' wx:key='{{index}}'>
+    <view>{{item.record_time}}</view>
+    <navigator hover-class="none" url="/finance/pages/bus_loan_detail/bus_loan_detail?loan_id={{item.loan_id}}">
+      <view class='loan-list-item'>
+        <view>
+          <view>{{item.loan_sum > 0 ? '借入':'借出'}}</view>
+          <view>{{item.loaner_name}}</view>
+        </view>
+        <view class="{{item.loan_type  == 0 ? 'greText':'redtext'}}">{{item.loan_type == 0 ? '+':'-'}}{{item.loan_sum }}</view>
+      </view>
+    </navigator>
+  
+  </view>
+  
+  <view class='loan-list-footer' bindtap='showAddModal'>
+    <image src='../../images/add-aut.png'></image>
+    <view>新增</view>
+  </view>
+
+  <!-- 新增弹框 -->
+  <add-modal showmodal='{{showmodal}}' modalContent='{{modalContent}}' modalTitle='{{modalTitle}}' bind:close='closeAddModal'></add-modal>
+
+  <!-- 筛选弹框 -->
+  <view class='select-mask' wx:if='{{showSelctModal}}' bindtap='closeSelectModal'></view>
+  <view class="selectCateModal {{showSelctModal ? 'showFir':'hiddenFir'}}">
+    <view wx:if='{{!isSelect}}'>筛选</view>
+    <view wx:if='{{isSelect}}' class='select-rev'>
+      <view>{{choiceCtaeName}}</view>
+      <image src='../../images/close-cate-modal.png' bindtap='cancelAllSelect'></image>
+    </view>
+
+    <view class='select-container'>
+      <view class='selectFirCate'>
+        <view wx:for='{{selectFirCate}}' data-index='{{index}}' wx:key='{{index}}' bindtap='choiceSecSelect' class="{{index == choiceSelectIndex ? 'choosed-fir-cate':''}}">{{item}}</view>
+      </view>
+      <view class='selectSecCate'>
+       <scroll-view scroll-y style='height:440rpx;' enable-flex='{{true}}'>
+        <view bindtap='cancelCondition' class='scroll-item'>
+          <view>不限</view>
+          <view class='icon-container' wx:if='{{showCancel}}'>
+            <icon type='success_no_circle' size='16'></icon>
+          </view>
+        </view>
+
+        <view wx:for='{{selectSecCate}}' wx:key='{{index}}' data-catename='{{item.value}}' bindtap='choiceCondition' class='scroll-item'
+         data-choicesecindex='{{index}}'>
+          <view>{{item.value}}</view>
+          <view class='icon-container' wx:if='{{choiceSecIndex === index }}'>
+            <icon type='success_no_circle' size='16'></icon>
+          </view>
+
+        </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class='select-footer'>
+      <view bindtap='closeSelectModal'>取消</view>
+      <view bindtap='confirmSelect'>确定</view>
+    </view>
+  </view>
+</view>

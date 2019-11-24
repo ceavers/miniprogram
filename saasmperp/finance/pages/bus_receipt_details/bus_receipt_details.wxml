@@ -1,0 +1,55 @@
+<view class='bus-receipt-details-box'>
+<view class='beijing'></view>
+  <view class='bus-receipt-details-header'>
+    储值消费流水列表
+  </view>
+  <view class='bus-receipt-details-container'>
+    <view class='bus-receipt-details-con-item'>
+      <view class='bus-receipt-details-con-item-header'>
+        <view>今天</view>
+      </view>
+      <view class='bus-receipt-details-con-item-desc'>    
+        <view>
+          <view style='color:#62AC4B;'>+190</view>
+          <view>业务员小王</view>
+        </view>
+        <view>充值</view>
+      </view>
+    </view>
+  </view>
+  <view class='bus-receipt-details-container'>
+      <view class='bus-receipt-details-con-item'>
+        <view class='bus-receipt-details-con-item-header'>
+          <view>今天</view>
+        </view>
+        <view class='bus-receipt-details-con-item-desc'>    
+          <view>
+            <view style='color:#62AC4B;'>+190</view>
+            <view>业务员小王</view>
+          </view>
+          <view>充值</view>
+        </view>
+        <view class='bus-receipt-details-con-item-desc'>    
+          <view>
+            <view style='color:#62AC4B;'>+190</view>
+            <view>业务员小王</view>
+          </view>
+          <view>充值</view>
+        </view>
+      </view>
+    </view>
+    <view class='bus-receipt-details-container'>
+    <view class='bus-receipt-details-con-item'>
+      <view class='bus-receipt-details-con-item-header'>
+        <view>今天</view>
+      </view>
+      <view class='bus-receipt-details-con-item-desc'>    
+        <view>
+          <view style='color:#62AC4B;'>+190</view>
+          <view>业务员小王</view>
+        </view>
+        <view>充值</view>
+      </view>
+    </view>
+  </view>
+</view>

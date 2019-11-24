@@ -1,0 +1,29 @@
+.title{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  text-align: center;
+  margin:50rpx 0 40rpx 0
+}
+.item-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 88rpx;
+  background: #fff;
+  padding:10rpx 30rpx;
+  border-bottom: 1px solid #f6f6f6;
+  box-sizing: border-box;
+}
+.item-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  white-space: nowrap;
+}
+.item-content{
+  width: 540rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}

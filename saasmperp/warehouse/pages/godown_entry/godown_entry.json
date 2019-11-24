@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "action": "/components/popup_up/popup_up",
+    "modal": "/components/modal/modal"
+  }
+}

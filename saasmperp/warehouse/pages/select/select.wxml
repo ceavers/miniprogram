@@ -1,0 +1,38 @@
+<!--warehouse/pages/select/select.wxml-->
+<view class="container">
+  <view class="search-wrap">
+    <view class="search-box">
+      <image class="search-icon" src="/images/search.png"></image>
+      <input class="input" placeholder="品名/货号" bindconfirm="searchRepertory"></input>
+    </view>
+    <image class="filter-icon" src="/images/shaixuan.png" catchtap="filterShow"></image>
+  </view>
+  <view class="list-title">库存列表</view>
+  <scroll-view scroll-y class="res-box">
+    <view class="category-box" wx:for="{{goodsData}}" wx:key="index">
+      <view class="category-name">{{item.category_name}}</view>
+      <view>
+        <view class="res-item {{index==0?'mr-t':''}}"  
+        catchtap="toDeatilPage" 
+        data-id="{{goodsItem.product_id}}"
+        wx:for="{{item.data}}" 
+        wx:for-item="goodsItem"
+        wx:key="index">
+          <view class="goods-info">
+            <image class="goods-img" src="{{goodsItem.pic_url}}"></image>
+            <view class="goods-des">
+              <view class="goods-name">{{goodsItem.product_name}}</view>
+              <view class="repertory">库存  {{goodsItem.stock}}</view>
+              <view class="price">{{goodsItem.price}}</view>
+            </view>
+          </view>
+          <text class="iconfont icon-return"></text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="scan" catchtap="scan">
+    <text class="iconfont icon-saomiao1"></text>
+  </view>
+</view>
+<filter show="{{filterShow}}" filterData="{{filterData}}" bind:setFilterItem="getFilterItem"></filter>

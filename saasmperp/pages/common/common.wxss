@@ -1,0 +1,123 @@
+/* pages/common/common.wxss */
+.swiper-box{
+  height: 1120rpx;
+}
+.header-box{
+  width:722rpx;
+  height: 272rpx;
+  margin:18rpx auto;
+  /* margin-top:18rpx; */
+  position: relative;
+}
+.header-img{
+  width: 100%;
+  height: 100%;
+}
+.info-box{
+  position: absolute;
+  height: 140rpx;
+  width: 100%;
+  top:calc(50% - 70rpx);
+  display: flex;
+  align-items: center;
+} 
+.avatar-box{
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 90rpx;
+  position: relative;
+}
+.avatar{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.vip-box{
+  display: inline-block;
+  background: #FFC500;
+  height: 36rpx;
+  width: 60rpx;
+  border-radius: 36rpx;
+  margin-left: 30rpx;
+  text-align: center;
+  line-height: 36rpx;
+  position: absolute;
+  right: 0;
+  bottom:0;
+}
+.vip-grade{
+  color:#fff;
+  font-size: 18rpx;
+  margin-left: -6rpx;
+}
+.icon-vip{
+  font-size: 28rpx;
+  color:#fff;
+}
+.des-box{
+  margin-left: 30rpx;
+}
+.text1{
+  font-size:24rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.text2{
+  font-size:26rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  width: 440rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.number{
+  font-size:40rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  margin-left: 30rpx;
+}
+.item-box{
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.item{
+  width: 230rpx;
+  text-align: center;
+  height: 220rpx;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.item-img-box{
+  width: 120rpx;
+  height:120rpx;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:0 0 5px 2px #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-img{
+  width: 64rpx;
+  height:64rpx;
+}
+.item-des{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin-top:12rpx;
+  white-space: nowrap;
+}
+.setting-img{
+  width:60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 50rpx;
+  bottom:82rpx;
+}

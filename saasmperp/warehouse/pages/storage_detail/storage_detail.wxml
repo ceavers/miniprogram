@@ -1,0 +1,38 @@
+<!--warehouse/pages/storage_detail/storage_detail.wxml-->
+<view class="container">
+  <view class="title">仓库详情</view>
+  <view class="storage-box">
+    <view class="storage-item-box">
+      <view class="item-text">仓库名称</view>
+      <view class="item-content" catchtap="toWarehouseDetail">
+        <view>{{statistics.depo_name}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">库存数量</view>
+      <view class="item-content">
+        <view style="font-weight:bold;">{{statistics.depo_stock}}</view>
+      </view>
+    </view>
+    <view class="storage-item-box">
+      <view class="item-text">库存金额</view>
+      <view class="item-content">
+        <view>{{statistics.depo_money}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="item-title">存货统计</view>
+  <view class="storage-box">
+    <view class="statistics-item-box" wx:for="{{statistics.categories}}" wx:key="index" data-index="{{index}}" catchtap="toStatisticsPage">
+      <view>
+        <view class="type">{{item.category_name}}</view>
+        <view class="pr">{{item.percent}}%</view>
+      </view>
+      <view class="number-box">
+        <view class="number">{{item.money}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </view>
+</view>

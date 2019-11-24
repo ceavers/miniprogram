@@ -1,0 +1,35 @@
+<view class="head">采购退货出库</view>
+<view class="otherInformation1"  bindtap='showModal'>
+  <view>
+    <text class="wuliu">{{purType == 1 ? '入库仓库':'出库仓库'}}</text>
+    <text>{{choiceWarehouseName}}</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <textarea bindinput='warehouseNote'></textarea>
+</view>
+<view class="goodsInformationWrapper">
+  <view class="goodsInformation" wx:for='{{purchaseDetails.product_img_list}}' wx:key='{{index}}'>
+    <view class="goodsContent">
+      <image class="goodsImg" src="{{item.product_img}}"></image>
+      <view class="goodsContent-left">
+        <view class="sizeL">{{item.product_note}}</view>
+        <view class="sizeM">txsy(白色，s)</view>
+      </view>
+    </view>
+    <view class="goodsContent">
+      <view class="goodsContent-right">
+        <view class="sizeL">{{item.product_price}}</view>
+        <view class="sizeM">×{{item.product_count}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view><button class="button" catchtap='confirmRetrieval'>{{purType == 1 ? '确认入库':'确认出库'}}</button></view>
+
+<!-- 选择仓库弹框 -->
+<v-modal shadow='{{shadow}}' bind:close='closeModal' items='{{items}}' bind:radioChange='radioChange'></v-modal>

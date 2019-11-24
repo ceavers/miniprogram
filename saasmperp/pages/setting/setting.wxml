@@ -1,0 +1,13 @@
+<!--pages/setting/setting.wxml-->
+<view class="container">
+  <view class="title">{{manageData.settingTitle}}</view>
+  <view class="item-box">
+    <view class="item {{(index+1)%3==0?'mr-b':''}}" wx:for="{{manageData.modules}}" wx:key="index" wx:if="{{item.edit}}">
+      <view class="icon-box">
+        <image class="setting-icon" src="{{item.src}}"></image>
+        <view class="setting-des">{{item.text}}</view>
+      </view>
+      <switch checked="{{item.checked}}" bindchange="check" data-index="{{index}}"/>
+    </view>
+  </view>
+</view>

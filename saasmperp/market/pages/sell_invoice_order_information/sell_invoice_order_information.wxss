@@ -1,0 +1,125 @@
+.head{
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #323232;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.goods{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 148rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border-bottom: solid 1rpx #f6f6f6;
+  background: #fff;
+}
+.goodsInformation{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24rpx;
+  color: #323232;
+  font-weight: 500;
+}
+.goodsImg{
+  width:104rpx;
+  height:100rpx;
+  margin-right: 27rpx;
+}
+.sizeL{
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+.sizeM{
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.price{
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+  background: #fff;
+  border-bottom: solid 1rpx #f6f6f6;
+  margin-top: 40rpx;
+}
+.price-left{
+  margin-right: 180rpx;
+}
+.amount{
+  display: flex;
+  align-items: center;
+    height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+  background: #fff;
+  border-bottom: solid 1rpx #f6f6f6;
+}
+.amount-left{
+  margin-right: 180rpx;
+}
+.remark{
+  height: 120rpx;
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+  padding-right:30rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #323232;
+  background: #fff;
+  border-bottom: solid 1rpx #f6f6f6;
+  display: flex;
+  flex-direction: row;
+}
+.remark-left{
+  margin-right: 180rpx;
+  white-space: nowrap;
+}
+.floor{
+  height: 88rpx;
+  margin-top: 510rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.floor-left{
+  width: 375rpx;
+  height: 88rpx;
+  background: #C7C7C7;
+  line-height: 88rpx;
+  text-align: center;
+  color: #323232;
+  border-radius: 0;
+  font-size: 28rpx;
+}
+.floor-right{
+  width: 375rpx;
+  height: 88rpx;
+  background: #62AC4B;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 0;
+  font-size: 28rpx;
+}
+.icon-go{
+  width: 35rpx;
+  height: 35rpx;
+}
+.input-box{
+  flex: 1;
+}

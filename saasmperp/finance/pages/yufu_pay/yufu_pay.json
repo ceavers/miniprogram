@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "pay_type": "../../../components/pay_type/pay_type"
+  }
+}

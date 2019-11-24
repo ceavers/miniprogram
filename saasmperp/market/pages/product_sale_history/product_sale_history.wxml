@@ -1,0 +1,27 @@
+<!--客户详情-->
+<view class="customer-detail">
+  <view class="header"><text>{{ goods.customer_name }}</text></view>
+  <view class="body">
+    <view class="mes-box">
+      <view class="mes-box-title">商品规格</view>
+      <view class="mes-box-detail">{{ goods.contact }}</view>
+    </view>
+    <view class="mes-box" bindtap="call">
+      <view class="mes-box-title">累计数量</view>
+      <view class="mes-box-detail">{{ goods.total_count }}</view>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-title">累计金额</view>
+      <view class="mes-box-detail">{{ goods.total_money }}</view>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-title">上次售价</view>
+      <view class="mes-box-detail">{{ goods.last_price }}</view>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-title">最近购买</view>
+      <view class="mes-box-detail">2019-2-36</view>
+    </view>
+  </view>
+</view>
+

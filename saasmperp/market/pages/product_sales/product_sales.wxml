@@ -1,0 +1,10 @@
+<!--产品销售-->
+<view class="product-sales">
+  <view class="header"><text>品名</text><text>累计购买数</text></view>
+  <scroll-view class="body" scroll-y>
+    <view class="product-item" wx:for="{{ productList }}" wx:key="{{ index }}">
+      <view class="product-item-name">{{ item.product_name }}</view>
+      <navigator url="/market/pages/product_sale_history/product_sale_history?productId={{ item.product_id }}" hover-class="none" class="product-item-num"><text>{{ item.count }}</text><image src="../../images/jiantou.png"></image></navigator>
+    </view>
+  </scroll-view>
+</view>

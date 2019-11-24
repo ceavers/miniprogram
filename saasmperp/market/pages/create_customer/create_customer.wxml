@@ -1,0 +1,53 @@
+<!--创建客户-->
+<view class="create-customer">
+  <navigator url="/market/pages/customer/customer" hover-class="none" class="history"><text>历史</text></navigator>
+  <form id="createCustomerForm" class="create-form" bindsubmit="saveForm">
+    <view class="form-title">新建客户</view>
+    <view class="input-wrap"><view class="input-title">客户名称<text>*</text></view><input name="customerName"></input></view>
+    <view class="input-wrap"><view class="input-title">负责人</view><input name="charge"></input></view>
+    <view class="input-wrap"><view class="input-title">手机号</view><input name="tel" type="number"></input></view>
+    <view class="input-wrap" bindtap="showModal"><view class="input-title">客户类别</view><view class="type" name="customerType">{{ customerType }}</view><image class="jiantou" src="../../images/jiantou.png"></image></view>
+    <view class="touxiang">
+      <view class="touxiang-title">头像</view>
+      <view class="add-touxiang">
+        <view class="touxiang-box">
+          <image class="touxiang-image" src="{{ item }}" wx:for="{{ touxiangSrc }}" wx:key="{{ index }}"></image>
+        </view>
+        <image class="add-touxiang-btn" src="../../images/add.png" bindtap="chooseImage"></image>
+      </view>
+    </view>
+    <view class="input-wrap"><view class="input-title">初期欠款</view><input name="arrears" type="number"></input></view>
+    <view class="input-wrap"><view class="input-title">客户地址</view><input name="address"></input></view>
+    <view class="input-wrap remark"><view class="input-title">描述</view><textarea wx:if="{{ !showModal }}" name="remark"></textarea></view>
+    <view class="save-btn"><button form-type="submit">确认新建</button></view>
+  </form>
+</view>
+<modalView show="{{ showModal }}">
+  <view class="type-modal">
+    <view class="close-modal"><image src="../../images/close.png" bindtap="closeModal"></image></view>
+    <view class="type-header">类别选择</view>
+    <view class="type-main">
+      <view class="type-mes {{ customerType == item ? 'select-type' : '' }}" 
+        wx:for="{{ typeList }}" 
+        wx:key="{{ index }}" 
+        data-id="{{ item.user_category_id }}" 
+        data-type="{{ item.user_category }}" 
+        bindtap="chooseType"
+      >{{ item.user_category }}</view>
+    </view>
+    <view class="operation">
+      <view class="manage" bindtap="gotoManageType">管理</view>
+      <view class="add-type" bindtap="addType">新增类别</view>
+    </view>
+  </view>
+</modalView>
+<modalView show="{{ showAddTypeModal }}">
+  <view class="add-type-modal">
+    <view class="modal-title">新增类别</view>
+    <input value="{{ typeValue }}" bindinput="typeValue"></input>
+    <view class="btn">
+      <view class="cancel" bindtap="cancel">取消</view>
+      <view class="confirm" bindtap="addCustomerType">确认</view>
+    </view>
+  </view>
+</modalView>

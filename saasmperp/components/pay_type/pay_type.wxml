@@ -1,0 +1,14 @@
+ <view class='pay_mask' wx:if="{{shadow}}" catchtap='closeModal'>
+  <radio-group class="radio-group"  wx:if="{{shadow}}" bindchange="radioChange" style="width:{{width}};position:{{position}};z-index:{{index}}">
+  <scroll-view scroll-y style="height: 736rpx;">
+    
+    <label class="radio" wx:for="{{items}}"  wx:key="index" style="width:{{width}};">
+      <view class="radio_box" data-userid='{{item.user_id}}' style="background-color:{{backgd}};color:{{color}};font-size:{{fz}};overflow:hidden;border-bottom:{{borderbom}};height:{{height}};line-height:{{height}}"  bindtap="indexInfo" data-id="{{item.id}}" data-recorderid='{{item.recorder_id}}' bindtap='getRecorderId' data-administratorid='{{item.administrator_id}}' data-outid='{{item.out_account_id}}' data-inid='{{item.in_account_id}}'>
+        <view class="radio_value" style="margin-left:{{mleft}}">{{item.value}}</view>
+        
+        <radio class="radio_checked" style="margin-right:{{mright}}" value="{{item.value}}" data-id="index" checked="{{item.checked}}"/>
+      </view>
+    </label>
+    </scroll-view>
+  </radio-group>
+ </view>

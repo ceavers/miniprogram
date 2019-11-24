@@ -1,0 +1,16 @@
+<view class="chose_com_box">
+ <import src ="../../components/public_ball/public_ball.wxml"></import>
+ <template is="yk_public_ball"></template>
+ <view  class="chose_type"  bindtap="chose_type">
+  <text>选择行业</text>
+  <text>{{com_type}}</text>
+  <text class="iconfont icon-return"></text>
+ </view>
+ <view class="com_name">
+  <text>企业名称</text>
+  <input  class="com_name_input" placeholder-style="  color:rgba(153,153,153,1)" placeholder="公司名、商号、店铺工作室等" bindinput="business_name"></input>
+ </view>
+ <view class="next_btn" bindtap="next" disabled="{{disabled}}">下一步</view>
+<import src ="../../components/public_register/public_register.wxml"></import>
+<template is="yk_public_register"></template>
+</view>

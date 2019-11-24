@@ -1,0 +1,16 @@
+<!--pages/changePw/changePw.wxml-->
+<view class="container">
+  <view class="input-box">
+    <text class="input-item">当前密码<text class="mark">*</text></text>
+    <input password='true' class="input-des" bindinput="getOldPW" value="{{oldPw}}" placeholder="请填入当前密码"></input>
+  </view>
+  <view class="input-box">
+    <text class="input-item">新密码<text class="mark">*</text></text>
+    <input password='true' class="input-des" bindinput="getNewPW" value="{{newPw}}" placeholder="字母数字组合并大于6位"></input>
+  </view>
+  <view class="input-box">
+    <text class="input-item">确认新密码<text class="mark">*</text></text>
+    <input password='true' class="input-des" bindinput="getNewPWAgain" value="{{newPwAgain}}" placeholder="请再次输入新密码"></input>
+  </view>
+  <view class="save-btn {{canClick===1?'canclick':''}}" catchtap="changePw">保存</view>
+</view>

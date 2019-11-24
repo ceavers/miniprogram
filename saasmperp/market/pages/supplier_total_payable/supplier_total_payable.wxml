@@ -1,0 +1,13 @@
+<!--应付采购单列表-->
+<view class="order-receivable-list">
+  <view class="header">应付采购单列表</view>
+  <scroll-view class="order-receivable-list-body" scroll-y>
+    <view class="order-receivable-list-item" wx:for="{{ payMoneyList }}" wx:for-index="key" wx:for-item="value" wx:key="{{ key }}">
+      <view class="order-receivable-list-item-time">{{ key }}</view>
+      <view class="order-receivable-list-item-detail" wx:for="{{ value }}" wx:key="{{ index }}">
+        <view class="customer-name">{{ item.supplier_name }}</view>
+        <view class="order-receivable-list-item-detail-money"><text>应收：-{{ item.should_pay_money }}元</text><image src="../../images/jiantou.png"></image></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

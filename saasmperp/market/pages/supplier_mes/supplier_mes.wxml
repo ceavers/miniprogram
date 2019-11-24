@@ -1,0 +1,12 @@
+<!--累计销售-->
+<view class="sales">
+  <view class="sales-item" wx:for="{{ cumulativeSalesList }}" wx:key="{{ index }}">
+    <view class="sales-item-header">
+      <view class="time">{{ item.month }}</view>
+      <view class="money">{{ item.month_sales_money }}</view>
+    </view>
+    <view class="sales-item-body">
+      <view class="line" animation="{{ item.ani }}"></view>
+    </view>
+  </view>
+</view>

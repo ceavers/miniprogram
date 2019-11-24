@@ -1,0 +1,44 @@
+<!--warehouse/pages/stock_check_list/stock_check_list.wxml-->
+<view class="container">
+  <view class="search-wrap">
+    <view class="search-box">
+      <image class="search-icon" src="/images/search.png"></image>
+      <input class="input" placeholder="盘点单号" bindconfirm="searchList"></input>
+    </view>
+    <image class="filter-icon" src="/images/shaixuan.png" catchtap="filterShow"></image>
+  </view>
+  <view class="list-title">库存盘点列表</view>
+  <scroll-view scroll-y class="res-box">
+    <view class="item-box" wx:for="{{checkList}}" wx:key="index">
+      <view class="item-date">{{item.time}}</view>
+      <view class="item-wrap" wx:for="{{item.results}}" wx:for-item="resItem" wx:key="index">
+        <view class="storage-name">
+          <view>{{resItem.depo_name}}</view>
+          <view class="stock-code">（{{resItem.order_code}})</view>
+        </view>
+        <view class="goods-info">
+          <view class="goods-img-box" wx:for="{{resItem.pic_urls}}" wx:for-item="picItem" wx:key="index">
+            <image src="{{picItem}}" mode="aspectFit" class="goods-img"></image>
+          </view>
+        </view>
+        <view class="goods-total-box" catchtap="toDetailPage" data-id="{{resItem.order_id}}">
+          <view class="goods-total">
+            <view>盘盈</view>
+            <view class="number">{{resItem.profit}}</view>
+            <view>盘亏损</view>
+            <view class="text-style">{{resItem.loss}}</view>
+          </view>
+          <view class="icon-box">
+            <view class="text-style" wx:if="{{resItem.order_state==0}}">未调库</view>
+            <text class="iconfont icon-return"></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bottom-btn-box" catchtap="toCreateInvoices">
+    <image src="/warehouse/images/out-add.png" class="bottom-btn-icon"></image>
+    <view class="bottom-text">创建盘点单</view>
+  </view>
+</view>
+<filter show="{{filterShow}}" filterData="{{filterData}}" bind:setFilterItem="getFilterItem"></filter>

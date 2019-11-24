@@ -1,0 +1,122 @@
+/* market/pages/create_new_order/create_new_order.wxss */
+.new-order{
+  height: 100vh;
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.history{
+  padding-top: 12rpx;
+  padding-right: 31rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: right;
+  font-weight: 500;
+}
+.body{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: calc(100vh - 100rpx);
+}
+.form-body{
+  overflow: auto;
+  height: calc(100vh - 100rpx - 88rpx);
+}
+.order-mes{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rpx;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.order-mes-customer{
+  margin: 25rpx 0;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+.order-mes-customer view:nth-child(2){
+  margin-top: 8rpx;
+  font-size: 24rpx;
+}
+.tel{
+  margin-right: 40rpx;
+  margin-top: 25rpx;
+  font-size: 26rpx;
+}
+.jiantou1{
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  margin-top: -18rpx;
+  height: 36rpx;
+  width: 36rpx;
+}
+.order-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.order-box-body{
+  flex: 1;
+}
+.order-box-title{
+  width: 210rpx;
+}
+.order-box image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.form-footer{
+  display: flex;
+  height: 88rpx;
+}
+.edit,.confirm{
+  flex: 1;
+  height: 88rpx;
+  background-color: #C7C7C7;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 28rpx;
+}
+.confirm{
+  padding: 0;
+  border-radius: 0;
+  background-color: #62AC4B;
+  color: #fff;
+}
+.mes-box-photo{
+  display: flex;
+  padding: 24rpx 31rpx;
+  background-color: #fff; 
+}
+.mes-box-photo-select{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  color: #999999;
+}
+.mes-box-photo-select image{
+  margin-right: 18rpx;
+  width: 38rpx;
+  height: 32rpx;
+}
+.photo-image{
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.photo-add{
+  padding: 32rpx;
+  height: 36rpx;
+  width: 36rpx;
+  border: 1rpx dotted #323232;
+}

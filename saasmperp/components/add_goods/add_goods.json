@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "calculator": "/components/calculator/calculator"
+  }
+}

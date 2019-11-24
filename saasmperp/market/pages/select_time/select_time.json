@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "PickerModal": "/components/picker/picker"
+  }
+}

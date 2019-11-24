@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ec-canvas":"../../components/ec-canvas/ec-canvas",
+    "picker":"/report/components/picker/picker"
+  },
+  "navigationBarTitleText": "采购月报"
+}

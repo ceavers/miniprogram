@@ -1,0 +1,135 @@
+<view class='head'>
+  <view class="head-head">销售单</view>
+  <view class="head-middle">订单号：xs109</view>
+  <view class="head-bottom">
+    <view class="head-bottom-left">
+      <image class="backImg" src="../../images/green-back.png"></image>
+      <view class="backValue">已出库</view>
+    </view>
+    <view class="head-bottom-right">
+      <image class="backImg1" src="../../images/gray-back.png"></image>
+      <view class="backValue1">待收款</view>
+    </view>
+  </view>
+</view>
+<view class="otherInformation" bindtap="toViewCustomerInformation">
+  <view>
+    <text class="wuliu">客户名称</text>
+    <text>测试客户</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="otherInformation" bindtap="toShipStyle">
+  <view>
+    <text class="wuliu">发货方式</text>
+    <text>王盼，成都（送货）</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="clientInformation">
+  <text class="phone">联系电话</text>
+  <text></text>
+</view>
+<view class="otherInformation">
+  <view>
+    <text class="wuliu">销售时间</text>
+    <text>2019-07-02</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+
+<view class="imageTitle">单据图片</view>
+<view class="invoiceImg">
+  <image src="../../images/invoiceImg.png"></image>
+  <image src="../../images/invoiceImg.png"></image>
+  <image src="../../images/invoiceImg.png"></image>
+  <image src="../../images/add1.png"></image>
+</view>
+
+<view class="invoiceInfo" bindtap="toSellInvoiceModifyReceivable">
+  <view>
+    <view class="receivables">
+      <text>单据应收款</text>
+      <text>70.00</text>
+    </view>
+    <view>
+      <text>销售员小王</text>
+    </view>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+
+
+<view class="wuliuInformation" bindtap="showDiscountModel">
+  <view>
+    <text class="wuliu">订单金额</text>
+    <text>50.00 (优惠20.00)</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="returnedInformation">
+  <text class="phone">已收金额</text>
+  <text>50.00</text>
+</view>
+<view class="remarkInformation" bindtap="toModifyRemark">
+  <view class="remarkbox">
+    <text class="remark">备注</text>
+    <text class="remarkValue">考虑了尽快回来后即可了和考虑了尽快回来后即可了和和</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="wuliuInformation" bindtap="toModifyWuliuInformation">
+  <view>
+    <text class="wuliu">物流信息</text>
+    <text>采购员小王</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="otherInformation" bindtap="toModifyOtherInformation">
+  <view>
+    <text class="wuliu">其他信息</text>
+    <text>销售员小王，拍照开单</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="footer">
+  <view class="footer-content" bindtap="showCancelModel">
+    <image class="iconImg-cancel" src="../../images/sale.png"></image>
+    <view class="cancel-value">收款发货</view>
+  </view>
+  <view class="footer-content">
+    <image class="iconImg-share" src="../../../images/common-share.png"></image>
+    <view class="share-value">分享</view>
+  </view>
+  <view class="footer-content" bindtap="showMoreOperationsModel">
+    <image class="iconImg-more" src="../../images/more-operations.png"></image>
+    <view class="more-value">更多操作</view>
+  </view>
+</view>
+<bottomView show="{{ showCancelModel }}" modalList="{{ cancelList }}" bindtap='getEventName'></bottomView>
+<bottomView show="{{ showMoreOperations }}" modalList="{{ oprationsList }}" isWidth='true'></bottomView>
+<view class="receiptModel" wx:if='{{isReceiptModel}}'>
+  <view class="receiptContent">
+    <view class="contentValue">收款</view>
+    <view class="contentValue">微信当面付</view>
+    <view class="cancel" bindtap="hideReceiptModel">取消</view>
+  </view>
+</view>
+<view class="discountModel" wx:if='{{isdiscountModel}}'>
+  <view class="content">
+    <view class="content-head">优惠抹零</view>
+    <view class="content-middle">订单原价：150.00</view>
+    <input class="content-input" type='text' placeholder="抹零后价格"></input>
+    <view class="content-floor">
+      <view class="content-button button-left" bindtap="hideDiscountModel">取消</view>
+      <view class="content-button">确定</view>
+    </view>
+  </view>
+</view>
+<view class="haveOutModel"  wx:if='{{ishaveOutModel}}'>
+  <view class="haveOutModel-content">
+    <view class="haveOutModel-content-value">提示</view>
+    <view class="haveOutModel-content-value">商品已全部出库</view>
+    <view class="haveOutModel-content-determine" bindtap="hideHaveOutModel">确定</view>
+  </view>
+</view>

@@ -1,0 +1,77 @@
+<!--report/pages/cash_flow/cash_flow.wxml-->
+<view class="container">
+  <view class="choose-box">
+    <view class="curr-month {{index==0?'choose':''}}" catchtap="chooseMouth" data-index="0">本月</view>
+    <view class="last-month {{index==1?'choose':''}}" catchtap="chooseMouth" data-index="1">上月</view>
+    <view class="all-year {{index==2||index==3?'choose':''}}" catchtap="chooseMouth" data-index="2">全年</view>
+  </view>
+  <view class="detail-box" wx:if="{{index!=2}}">
+    <view class="little-title">现金流入</view>
+    <view class="item-box">
+      <view>销售收入</view>
+      <view>{{detail.cost_inflow.sale}}</view>
+    </view>
+    <view class="item-box">
+      <view>资金收入</view>
+      <view>{{detail.cost_inflow.cash}}</view>
+    </view>
+    <view class="item-box">
+      <view>收回借款</view>
+      <view>{{detail.cost_inflow.refund}}</view>
+    </view>
+    <view class="item-box">
+      <view>记账收入</view>
+      <view>{{detail.cost_inflow.cost}}</view>
+    </view>
+    <view class="item-box">
+      <view>其他收入</view>
+      <view>{{detail.cost_inflow.other}}</view>
+    </view>
+    <view class="item-box mr-b">
+      <view>合计</view>
+      <view>{{detail.cost_inflow.total}}</view>
+    </view>
+    <view class="little-title">现金流出</view>
+    <view class="item-box">
+      <view>采购支出</view>
+      <view>{{detail.cost_outflow.purchase}}</view>
+    </view>
+    <view class="item-box">
+      <view>资金借出</view>
+      <view>{{detail.cost_outflow.cash}}</view>
+    </view>
+    <view class="item-box">
+      <view>归回借款</view>
+      <view>{{detail.cost_outflow.refund}}</view>
+    </view>
+    <view class="item-box">
+      <view>费用支出</view>
+      <view>{{detail.cost_outflow.cost}}</view>
+    </view>
+    <view class="item-box">
+      <view>其他支出</view>
+      <view>{{detail.cost_outflow.other}}</view>
+    </view>
+    <view class="item-box mr-b-t">
+      <view>合计</view>
+      <view>{{detail.cost_outflow.total}}</view>
+    </view>
+    <view class="item-box">
+      <view>资金流入额</view>
+      <view class="total-num">{{detail.income}}</view>
+    </view>
+  </view>
+  <view class="all-box" wx:if="{{index==2}}">
+    <view class="item-box">
+      <view>今年资金流入</view>
+      <view style="margin-right:56rpx">{{cashFlowYear.total_gross}}</view>
+    </view>
+    <view class="item-box" catchtap="toDetail" data-month="{{item.monthly}}" wx:for="{{cashFlowYear.cash_flows}}" wx:key="index">
+      <view>{{item.monthly}}月</view>
+      <view class="item-content">
+        <view>{{item.gross}}</view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </view>
+</view>

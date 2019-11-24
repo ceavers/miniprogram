@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+      "pay_type": "../../../components/pay_type/pay_type",
+      "pay_type1": "../../../components/pay_type/pay_type",
+      "picker": "../../../components/picker/picker",
+      "picker1": "../../../components/picker/picker"
+  }
+}

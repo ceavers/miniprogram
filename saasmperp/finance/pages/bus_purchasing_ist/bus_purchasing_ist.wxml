@@ -1,0 +1,59 @@
+<view class='bus-purchaising-box'>
+  <view class='bus-purchaising-header'>应付采购单列表</view>
+  <view class='bus-purchaising-container'>
+    <view class='bus-purchaising-item'>
+      <view>今天</view>
+      <view>
+        <view class='bus-purchaising-desc'>
+          <view>xs109</view>
+          <view>
+            <view>应付-1.00</view>
+            <image src="../../images/jiantou2.png"></image>
+          </view>
+        </view>
+        <view class='bus-purchaising-desc'>
+          <view>xs109</view>
+          <view>
+            <view>应付+1.00</view>
+            <image src="../../images/jiantou2.png"></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class='bus-purchaising-item'>
+      <view>昨天</view>
+      <view>
+        <view class='bus-purchaising-desc'>
+          <view>xs109</view>
+          <view>
+            <view>应付-1.00</view>
+            <image src="../../images/jiantou2.png"></image>
+          </view>
+        </view>
+        <view class='bus-purchaising-desc'>
+          <view>xs109</view>
+          <view>
+            <view>应付+1.00</view>
+            <image src="../../images/jiantou2.png"></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class='bus-purchaising-item'>
+      <view>前天</view>
+      <view>
+        <view class='bus-purchaising-desc'>
+          <view>xs109</view>
+          <view>
+            <view>应付-1.00</view>
+            <image src="../../images/jiantou2.png"></image>
+          </view>
+        </view>
+    
+
+      </view>
+    </view>
+  </view>
+</view>

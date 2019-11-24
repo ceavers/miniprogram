@@ -1,0 +1,9 @@
+<!--components/popup_up/popup_up.wxml-->
+<view class="weui-demo-dialog {{show ? 'weui-demo-dialog_show' : ''}}">
+  <view class="weui-mask" bindtap="cancle"></view>
+  <view class="weui-half-screen-dialog"> 
+    <view class="weui-half-screen-dialog__bd">
+      <slot></slot>
+    </view>
+  </view>
+</view>

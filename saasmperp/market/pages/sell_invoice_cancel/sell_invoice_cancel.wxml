@@ -1,0 +1,129 @@
+<view class='head'>
+  <view class="head-head">销售退货单</view>
+  <view class="head-middle">退货单号：xs109</view>
+  <view class="head-bottom">
+    <view class="head-bottom-left">
+      <image class="backImg" src="../../images/gray-back.png"></image>
+      <view class="backValue">待入库</view>
+    </view>
+    <view class="head-bottom-right">
+      <image class="backImg1" src="../../images/gray-back.png"></image>
+      <view class="backValue1">待收款</view>
+    </view>
+  </view>
+</view>
+<view class="clientInformation" bindtap="toViewCustomerInformation">
+  <text class="name">客户</text>
+ <text>{{orderMes.user_name}}</text>
+</view>
+<view class="clientInformation" >
+  <text class="phone">联系电话</text>
+  <text>{{ orderMes.phone}}</text>
+</view>
+<view class="clientInformation" bindtap="toEditTime" >
+  <text class="time">销售时间</text>
+  <text>{{ orderMes.cdate }}</text>
+</view>
+<!-- 选择图片，预览 -->
+<view class="business-document" wx:if="{{ imageList.length }}">
+  <view class="select-business-document" bindtap="showPhotoModal" wx:if="{{ !imageList.length }}">
+    <image src="/market/images/photo.png"></image>
+    <text>业务单据</text>
+  </view>
+  <image class="business-image" 
+    wx:for="{{ imageList }}" 
+    wx:key="{{ index }}" 
+    src="{{ item }}" 
+    data-index="{{ index }}" 
+    bindtap="previewImage"
+  ></image>
+  <view class="add-image" wx:if="{{ imageList.length }}" bindtap="showPhotoModal">+</view>
+</view>
+<!--  -->
+<view class="goodsInformation" bindtap="toSellInvoiceOrderInformation" wx:for="{{orderMes.product_img_list }}" wx:key="index">
+  <view class="goodsContent" data-id="{{item.product_id}}">
+    <image class="goodsImg"  src="{{item.product_img}}"></image>
+    <view class="goodsContent-left">
+      <view class="sizeL">{{item.imagetext}}</view>
+      <view class="sizeM">{{item.goods_number}}({{item.product_color}}，{{item.product_size}})</view>
+    </view>
+  </view>
+
+  <view class="goodsContent">
+    <view class="goodsContent-right">
+      <view class="sizeL">{{item.product_price}}</view>
+      <view class="sizeM">{{item.product_count}}</view>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+
+</view>
+<view class="returnInformation">
+  <text class="phone">退款金额</text>
+  <text>{{orderMoney}}</text>
+</view>
+<view class="returnedInformation">
+  <text class="phone">已退金额</text>
+  <text>{{refund_money}}</text>
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <textarea></textarea>
+</view>
+<view class="wuliuInformation" bindtap="toModifyWuliuInformation">
+  <view>
+    <text class="wuliu">物流信息</text>
+    <text>{{ orderMes.courier_name }}</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="otherInformation" bindtap="toModifyOtherInformation">
+  <view>
+    <text class="wuliu">其他信息</text>
+    <text>{{ orderMes.order_worker }}，{{ orderMes.order_method }}</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="footer">
+  <view class="footer-content" bindtap="showCancelModel">
+    <image class="iconImg-cancel" src="../../../images/market-return.png"></image>
+    <view class="cancel-value">退款退货</view>
+  </view>
+  <view class="footer-content">
+    <image class="iconImg-share" src="../../../images/common-share.png"></image>
+    <view class="share-value">分享</view>
+  </view>
+  <view class="footer-content" bindtap="showMoreOperationsModel">
+    <image class="iconImg-more" src="../../images/more-operations.png"></image>
+    <view class="more-value">更多操作</view>
+  </view>
+</view>
+<bottomView show="{{ showCancelModel }}" modalList="{{ cancelList }}"></bottomView>
+<bottomView show="{{ showMoreOperations }}" modalList="{{ oprationsList }}" isWidth='true' bindtap='getMoreEventName'></bottomView>
+<!-- 图片选择方式 -->
+<bottomView show="{{ showPhotoModal }}"  modalList="{{ photoModalList }}" isWidth="true" bindtap="getPhotoMethod"></bottomView>
+<!-- 图片预览 -->
+<ModalView show="{{ previewImage }}" imageMask="true">
+  <swiper indicator-dots="true"
+    indicator-color="RGBA(217, 217, 217, 1)"
+    indicator-active-color="RGBA(98, 172, 75, 1)"
+    current="{{ previewImageIndex }}"
+    class="preview-swiper"
+    catchtap="closePreview"
+    bindchange="selectSwiperImageIndex"
+  >
+    <block wx:for="{{imageList}}" wx:key="{{ index }}">
+      <swiper-item data-index="{{ index }}">
+        <image catchtap="returnFalse" src="{{item}}" class="slide-image" width="100%" height="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="del-image" bindtap="delImage" src="/market/images/del-image.png"></image>
+</ModalView>
+<!-- 删除图片 -->
+<ModalView show="{{ delImageFlag }}">
+  <view class="del-modal">
+    <view class="del-image-btn" bindtap="delImageConfirm">删除图片</view>
+    <view class="del-image-cancel" bindtap="delImageCancel">取消</view>
+  </view>
+</ModalView>

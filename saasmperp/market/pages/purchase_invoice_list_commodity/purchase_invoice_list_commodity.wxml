@@ -1,0 +1,99 @@
+<view class='head'>
+  <view class="head-head">采购单</view>
+  <view class="head-middle">订单号：xs109</view>
+  <view class="head-bottom">
+    <view class="head-bottom-left">
+      <image class="backImg" src="../../images/green-back.png"></image>
+      <view class="backValue">已入库</view>
+    </view>
+    <view class="head-bottom-right">
+      <image class="backImg1" src="../../images/gray-back.png"></image>
+      <view class="backValue1">待付款</view>
+    </view>
+  </view>
+</view>
+<view class="clientInformation">
+  <text class="name">供应商</text>
+  <text>测试供应商</text>
+</view>
+<view class="clientInformation">
+  <text class="phone">联系电话</text>
+  <text></text>
+</view>
+<view class="clientInformation">
+  <text class="time">创建时间</text>
+  <text>2019-07-02</text>
+</view>
+
+<view class="goodsInformationWrapper">
+  <view class="goodsInformation" bindtap="toPurchaseInvoiceInformation">
+    <view class="goodsContent">
+      <image class="goodsImg" src="../../images/yifu2.png"></image>
+      <view class="goodsContent-left">
+        <view class="sizeL">T恤上衣</view>
+        <view class="sizeM">txsy(白色，s)</view>
+      </view>
+    </view>
+    <view class="goodsContent">
+      <view class="goodsContent-right">
+        <view class="sizeL">86.4</view>
+        <view class="sizeM">×2</view>
+      </view>
+      <image class="icon-go" src="../../images/jiantou.png"></image>
+    </view>
+  </view>
+  <view class="goodsInformation" bindtap="toPurchaseInvoiceInformation">
+    <view class="goodsContent">
+      <image class="goodsImg" src="../../images/yifu2.png"></image>
+      <view class="goodsContent-left">
+        <view class="sizeL">T恤上衣</view>
+        <view class="sizeM">txsy(白色，s)</view>
+      </view>
+    </view>
+    <view class="goodsContent">
+      <view class="goodsContent-right">
+        <view class="sizeL">86.4</view>
+        <view class="sizeM">×2</view>
+      </view>
+      <image class="icon-go" src="../../images/jiantou.png"></image>
+    </view>
+  </view>
+</view>
+  
+
+<view class="returnInformation">
+  <text class="phone">采购金额</text>
+  <text>50.00（优惠20.00）</text>
+</view>
+<view class="returnedInformation">
+  <text class="phone">已付金额</text>
+  <text>50.00</text>
+</view>
+<view class="returnInformation">
+  <text class="phone">开单人员</text>
+  <text>采购员小王</text>
+</view>
+<view class="returnedInformation">
+  <text class="phone">外部单号</text>
+  <text></text>
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <text>考虑了尽快回来后即可了和考虑了尽快回来后即可了和考虑了尽快回来后即可了和考虑了尽快回来后即可了和</text>
+</view>
+<view class="footer">
+  <view class="footer-content" bindtap="showCancelModel">
+    <image class="iconImg-cancel" src="../../images/market-pay.png"></image>
+    <view class="cancel-value">付款收货</view>
+  </view>
+  <view class="footer-content">
+    <image class="iconImg-share" src="../../../images/common-share.png"></image>
+    <view class="share-value">分享</view>
+  </view>
+  <view class="footer-content" bindtap="showMoreOperationsModel">
+    <image class="iconImg-more" src="../../images/more-operations.png"></image>
+    <view class="more-value">更多操作</view>
+  </view>
+</view>
+<bottomView show="{{ showCancelModel }}" modalList="{{ cancelList }}"></bottomView>
+<bottomView show="{{ showMoreOperations }}" modalList="{{ oprationsList }}" isWidth='true'></bottomView>

@@ -1,0 +1,50 @@
+<!--pages/permissionSetting/permissionSetting.wxml-->
+<view class="container">
+  <view class="role-wrap">
+    <view class="role-box" style="height:88rpx;align-items: center">
+      <text class="role-item">角色名称<text class="mark">*</text></text>
+      <input class="role-des" value="{{roleName}}" bindinput="getRoleName" placeholder="请输入角色名称"></input>
+    </view>
+    <view class="role-box" style="height:120rpx">
+      <text class="role-item" style="margin-top:30rpx;">备注<text class="mark">*</text></text>
+      <textarea class="role-des" value="{{note}}" bindinput="getNote" placeholder="请输入备注信息"></textarea>
+    </view>
+  </view>
+  <view class="setting-title">角色权限配置</view>
+  <view class="settig-box">
+    <view class="left-box">
+      <view class="hierarchy-one" wx:for="{{authList}}" wx:key="index" data-index="{{index}}" catchtap="chooseModule">
+        <view class="circle">
+          <text class="iconfont icon-gou"></text>
+        </view>
+        <view class="settig-des">{{item.module_name}}</view>
+        <text class="iconfont icon-return {{rankOneIndex===index?'left-arrow':''}}"></text>
+      </view>
+    </view>
+    <view class="right-box">
+      <view wx:for="{{authListTwo.model}}" wx:key="index">
+        <view class="hierarchy-two" data-index="{{index}}" catchtap="chooseModel">
+          <view class="settig-des">{{item.actions_name}}</view>
+          <view class="icon-box">
+            <text class="iconfont icon-return arraw {{rankTwoIndex===index?'up-arrow':''}}"></text>
+            <view class="circle">
+              <text class="iconfont icon-gou"></text>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{rankTwoIndex==index}}">
+          <view class="hierarchy-three" wx:for="{{item.actions}}" wx:key="index" data-authid='{{item.action_id}}' data-index="{{index}}" catchtap="choosePermission">
+              <view class="circle {{item.choose?'choose':''}}">
+                <text class="iconfont icon-gou"></text>
+              </view>
+              <view class="settig-des">{{item.action_name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-box">
+    <view class="reset" bindtap="reset">重置</view>
+    <view class="save" bindtap="save">保存</view>
+  </view>
+</view>

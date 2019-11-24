@@ -1,0 +1,16 @@
+<!--pages/authority/authority.wxml-->
+<view class="container">
+  <view class="authority-item-wrap">
+    <view class="authority-item-box" wx:for="{{authList}}" wx:key="index" data-roleid="{{item.role_id}}" catchtap="toAuthInfo">
+      <view class="item-des-box">
+        <view class="item-title">{{item.role_name}}</view>
+        <view class="item-des">{{item.note}}</view>
+      </view>
+      <text class="iconfont icon-return"></text>
+    </view>
+  </view>
+  <view class="add-btn" catchtap="toPermissionSetting">
+    <image src="/images/add-employ.png" class="add"></image>
+    <text>新增</text>
+  </view>
+</view>

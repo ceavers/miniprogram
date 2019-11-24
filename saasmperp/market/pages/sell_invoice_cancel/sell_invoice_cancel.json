@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "bottomView": "/components/bottomModal/bottomModal",
+    "picker": "../../../components/picker/picker",
+    "ModalView": "/components/modal/modal"
+  },
+  "navigationBarTitleText": "订单列表"
+}

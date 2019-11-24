@@ -1,0 +1,74 @@
+<!--客户详情-->
+<view class="customer-detail">
+  <view class="header"><image src="{{ supplierMes.head_image }}"></image><text>{{ supplierMes.supplier_name }}</text></view>
+  <view class="body">
+    <view class="mes-box">
+      <view class="mes-box-title">联系人</view>
+      <view class="mes-box-detail">{{ supplierMes.contact_inf }}</view>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-title">手机号</view>
+      <view class="mes-box-detail">{{ supplierMes.phone }}</view>
+    </view>
+    <view class="mes-box" style="margin-bottom: 40rpx;">
+      <view class="mes-box-title">地址</view>
+      <view class="mes-box-detail">{{ supplierMes.address }}</view>
+    </view>
+    <navigator hover-class="none" url="/market/pages/supplier_water_list/supplier_water_list?id={{ supplierId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">预付款</view>
+        <view class="mes-box-detail">{{ supplierMes.pre_money }}</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+    <view class="mes-box">
+      <view class="mes-box-title">初期欠款</view>
+      <view class="mes-box-detail">{{ supplierMes.early_arrears }}</view>
+    </view>
+    <navigator url="/market/pages/supplier_total_payable/supplier_total_payable?id={{ supplierId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">应付总额</view>
+        <view class="mes-box-detail">{{ supplierMes.should_pay_money }}</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+    <view class="mes-box" style="margin-bottom: 40rpx;">
+      <view class="mes-box-title">备注</view>
+      <view class="mes-box-detail">{{ supplierMes.note }}</view>
+    </view>
+    <navigator hover-class="none" url="/market/pages/supplier_mes/supplier_mes?id={{ supplierId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">历史采购统计</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator> 
+    <navigator hover-class="none" url="/market/pages/supplier_cash_flow_list/supplier_cash_flow_list?id={{ supplierId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">付款记录</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+  </view>
+  <view class="footer">
+    <view class="footer-item" bindtap="gotoEditSupplierMes">
+      <image src="../../images/xiugai.png"></image>
+      <text>修改</text>
+    </view>
+    <view class="footer-item" bindtap="showReceivablesModal">
+      <image src="/market/images/payment.png"></image>
+      <text>付款</text>
+    </view>
+    <view class="footer-item" bindtap="deleteSupplier">
+      <image src="/market/images/supplier-del.png"></image>
+      <text>删除</text>
+    </view>
+  </view>
+</view>
+<ModalView show="{{ showEditModal }}">
+  <view class="edit-modal">
+    <view class="edit-modal-header">修改编辑</view>
+    <view class="edit-modal-del">删除</view>
+    <view class="edit-modal-cancel" bindtap="hideEditModal">取消</view>
+  </view>
+</ModalView>
+<BottomModal show="{{ showReceivablesModal }}" modalList="{{ receivablesModalList }}"></BottomModal>

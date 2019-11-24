@@ -1,0 +1,22 @@
+/* report/pages/performanceInfo/performanceInfo.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.line-chart{
+  height: 441rpx;
+}
+.box-line{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  padding: 0 32rpx;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+ec-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

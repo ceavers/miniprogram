@@ -1,0 +1,126 @@
+/* pages/add_employ/add_employ.wxss */
+.add-employ{
+  font-size: 28rpx;
+}
+.input-wrap, .input-wrap1{
+  display: flex;
+  align-items: center;
+  margin-top: 2rpx;
+  padding-left: 32rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.input-wrap1{
+  justify-content: space-between;
+  padding-right: 32rpx;
+}
+.input-wrap2{
+  padding-top: 22rpx;
+  padding-left: 32rpx;
+  height: 118rpx;
+  background-color: #fff;
+}
+.input-wrap3-title{
+  padding-left: 32rpx;
+  height: 61rpx;
+  line-height: 61rpx;
+  color: #424242;
+}
+.input-wrap1 .input-title{
+  width: 400rpx;
+}
+.border-top {
+  margin-top: 20rpx;
+}
+.input-title{
+  margin-right: 16rpx;
+  width: 130rpx;
+  color: #999999;
+}
+.icon-return{
+  font-size: 28rpx;
+  color: #666;
+}
+switch{
+  zoom: .8;
+}
+.input-title text{
+  color: #FF3B30;
+}
+.radio{
+  display: flex;
+  align-items: center;
+  margin-top: 2rpx;
+  padding-left: 32rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+radio{
+  margin-right: 21rpx;
+}
+.btn-wrap{
+  display: flex;
+  margin-top: 41rpx;
+}
+.save-btn, .del-btn{
+  flex: 1;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius: 0;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+.edit-save{
+  background-color: #fff;
+  color: #424242;
+}
+.del-btn{
+  background-color: #FF3B30;
+}
+.reset-pwd{
+  flex: 1;
+  padding-right: 32rpx;
+  text-align: right;
+  color: #62AC4B;
+}
+.reset-pwd-box{
+  padding: 0 20rpx;
+  height: 300rpx;
+  width: 420rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.modal-title{
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.pwd-box{
+  width:420rpx;
+  height:70rpx;
+  border:1rpx solid rgba(98,172,75,1);
+  border-radius:8rpx;
+  line-height: 70rpx;
+}
+.pwd-box input {
+  height: 100%;
+  line-height: 70rpx;
+}
+.reset-pwd-btn-wrap{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.confirm, .cancel{
+  width:195rpx;
+  height:70rpx;
+  border-radius:8rpx;
+  background-color: #62AC4B;
+  line-height: 70rpx;
+  color: #fff;
+}
+.cancel{
+  border: 1rpx solid #62AC4B;
+  background-color: #fff;
+  color: #62AC4B;
+}

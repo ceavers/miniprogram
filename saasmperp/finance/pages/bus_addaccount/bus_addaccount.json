@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-modal": "/components/pay_type/pay_type"
+  },
+  "navigationBarTitleText": "账户"
+}

@@ -1,0 +1,219 @@
+.income {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.income_img {
+  width: 100rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 15rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.income_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.income_content_child {
+  overflow: hidden;
+  text-align: center;
+}
+
+.income_content {
+  width: 100%;
+  display: flex;
+  margin-top: 80rpx;
+  align-items: flex-start;
+}
+
+.income_wenzi {
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: rgba(50, 50, 50, 1);
+}
+
+.income_content1 {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: left;
+  overflow: hidden;
+}
+
+.income_content_child1 {
+  margin-left: 80rpx;
+}
+
+.income_content0 {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50rpx;
+}
+
+.contaner {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.contaner_title {
+  width: 100%;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+}
+
+.contaner_content {
+  width: 100%;
+  height: 420rpx;
+  display: flex;
+}
+
+.content_1 view {
+  width: 188.5rpx;
+  height: 105rpx;
+  box-sizing: border-box;
+  border: 1rpx gray solid;
+  background-color: #333;
+}
+
+.content_1 {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  line-height: 105rpx;
+  text-align: center;
+}
+
+.comit {
+  height: 210rpx !important;
+  line-height: 210rpx;
+}
+
+.contaner_title {
+  display: flex;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(50, 50, 50, 1);
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.xianjin {
+  width: 200rpx;
+  height: 60rpx;
+  border: 1px solid rgba(204, 204, 204, 1);
+  border-radius: 8rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.beizhu {
+  width: 120rpx;
+  height: 60rpx;
+  border: 1px solid rgba(204, 204, 204, 1);
+  border-radius: 8rpx;
+  line-height: 60rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-left: 26rpx;
+}
+
+.contaner_btn {
+  display: flex;
+}
+
+.shuzi {
+  margin-right: 30rpx;
+}
+
+.dian {
+  width: 188.5rpx;
+  height: 105rpx;
+  box-sizing: border-box;
+  background-color: #333;
+  color: rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+.data_pick {
+  width: 100%;
+  height: 400rpx;
+}
+
+.picker {
+  position: absolute;
+  width: 100%;
+  height: 400rpx !important;
+  transition: all 0.4s ease-in-out 0;
+  bottom: 0 !important;
+}
+
+.xianjin {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.add {
+  width: 100%;
+  height: 88rpx;
+  background: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 88rpx;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+}
+
+.add image {
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: rgba(66, 66, 66, 1);
+  margin-top: 26rpx;
+  margin-left: 320rpx;
+}
+
+.add view {
+  padding-left: 20rpx;
+}
+.income_content{
+  flex-wrap: wrap;
+}
+.income_content_child{
+  width: 250rpx;
+  margin-top: 45rpx;
+  overflow: hidden;
+}
+.income_content_img {
+  width: 100rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 15rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.income_content_img image {
+  width: 100%;
+  height: 100%;
+}
+.shadow2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  opacity: 0.4
+}

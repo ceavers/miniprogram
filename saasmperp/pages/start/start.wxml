@@ -1,0 +1,26 @@
+<view class="start_box">
+ <view class="start_title">
+  <view class="start_img">
+    <image src="../../images/start_1.png"></image>
+  </view>
+    <view class="start_title_text">某某,欢迎您</view>
+ </view>
+  <view class="new_start ">
+    <view class="public_box">
+     <image src="../../images/start_3.png"></image>
+    </view>
+    <view class="start_text" bindtap="chose_peo">
+      <view class="public_box_text first_text">我是新用户</view>
+      <view class="public_box_text second_text">创建一个新企业，随时体验</view>
+    </view>
+  </view>
+  <view class="new_start old_start">
+    <view class="public_box">
+     <image src="../../images/start_2.png"></image>
+    </view>
+    <view class="start_text" bindtap="login">
+      <view class="public_box_text first_text">我已有帐号</view>
+      <view class="public_box_text second_text">管理员给我开通了账号，我加入</view>
+    </view>
+  </view>
+</view>

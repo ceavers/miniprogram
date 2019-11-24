@@ -1,0 +1,38 @@
+<view class='bus-purchase-history-box'>
+  <view class="bus-purchase-history-item">
+    <view class="bus-purchase-history-item-header">
+      <view class="time">本月</view>
+      <view class="money">70.01万</view>
+    </view>
+    <view class="bus-purchase-history-item-body">
+      <view class="line" animation="{{ lineAni }}"></view>
+    </view>
+  </view>
+  <view class="bus-purchase-history-item">
+    <view class="bus-purchase-history-item-header">
+      <view class="time">上月</view>
+      <view class="money">70.01万</view>
+    </view>
+    <view class="bus-purchase-history-item-body">
+      <view class="line" animation="{{ lineAni }}"></view>
+    </view>
+  </view>
+  <view class="bus-purchase-history-item">
+    <view class="bus-purchase-history-item-header">
+      <view class="time">5月</view>
+      <view class="money">70.01万</view>
+    </view>
+    <view class="bus-purchase-history-item-body">
+      <view class="line" animation="{{ lineAni }}"></view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+

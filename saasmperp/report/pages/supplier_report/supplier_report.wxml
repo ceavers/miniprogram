@@ -1,0 +1,22 @@
+<!--report/pages/supplier_report/supplier_report.wxml-->
+<view class="container">
+  <view class="choose-box">
+    <view class="curr {{index==0?'choose':''}}" catchtap="chooseMouth" data-index="0">本月</view>
+    <view class="last {{index==1?'choose':''}}" catchtap="chooseMouth" data-index="1">上个月</view>
+  </view>
+  <view class="item-box">
+    <view>供应商</view>
+    <view>采购金额</view>
+  </view>
+  <scroll-view scroll-y class="res-box">
+    <view class="item-box" wx:for="{{recordList}}" wx:key="{{index}}">
+      <view class="cus-box">{{item.supplier_name}}</view>
+      <view class="pr">{{item.purchase_gross_rate}}%</view>
+      <view>{{item.purchase_gross}}</view>
+    </view>
+  </scroll-view>
+  <view class="item-box bottom-box">
+      <view>合计收入</view>
+      <view>{{total_purchase_gross}}</view>
+  </view>
+</view>

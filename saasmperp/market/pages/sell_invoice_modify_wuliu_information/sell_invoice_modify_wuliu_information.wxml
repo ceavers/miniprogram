@@ -1,0 +1,24 @@
+<form bindsubmit="editOrder">
+  <view class="head">修改物流信息</view>
+  <view class="returnedInformation">
+    <text class="phone">快递物流</text>
+    <input name="courierName" type="text" value="{{ orderMes.courier_name }}"></input>
+  </view>
+  <view class="otherInformation1">
+    <view class="inputbox">
+      <text class="sellperson">快递单号</text>
+      <input name="orderId" type="text" value="{{ orderMes.courier_id }}" placeholder="输入或者扫码"></input>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="otherInformation1" bindtap="toModifyWuliuCosts">
+    <view>
+      <text class="wuliu">物流费用</text>
+      <text>{{ orderMes.courier_money }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view> 
+    <button class="button" form-type="submit">确认修改</button>
+  </view>
+</form>

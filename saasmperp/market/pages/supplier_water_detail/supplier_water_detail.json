@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "InputWrap": "/market/components/inputWrap1/inputWrap1"
+  },
+  "navigationBarTitleText": "付款流水"
+}

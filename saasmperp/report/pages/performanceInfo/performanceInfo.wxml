@@ -1,0 +1,16 @@
+<!--report/pages/performanceInfo/performanceInfo.wxml-->
+<view class="container">
+  <view class="line-chart">
+    <ec-canvas id="chart-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">月份</view>
+      <view class="line-content">销售额</view>
+    </view>
+    <view class="box-line" wx:for="{{recordList}}" wx:key="{{index}}">
+      <view class="line-title">{{item.date}}</view>
+      <view class="line-content">{{item.gross1}}</view>
+    </view>
+  </view>
+</view>

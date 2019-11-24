@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bottomView": "/components/bottomModal/bottomModal"
+  },
+  "navigationBarTitleText": "采购列表"
+}

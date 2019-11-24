@@ -1,0 +1,17 @@
+<!--report/pages/monthly_purchase/monthly_purchase.wxml-->
+<view class="container">
+  <view class="item-box" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" catchtap="toDetailPage">
+    <view class="content">
+      <view class="text-box">
+        <view>{{item.date}}</view>
+        <view>{{item.number}}</view>
+      </view>
+      <view class="chart-box">
+        <view class="out-box">
+          <view class="inner-box" animation="{{ item.anmiate }}"></view>
+        </view>
+      </view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+</view>

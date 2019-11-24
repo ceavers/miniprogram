@@ -1,0 +1,205 @@
+.accounts-box > view:nth-child(1){
+  height: 160rpx;
+  background: #62AC4B;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 160rpx;
+  text-align: center;
+}
+
+.accounts-container{
+  background: #F6F6F6;
+
+  padding-top: 90rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 150rpx;
+}
+
+.accounts-item{
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #62AC4B;
+  border-radius: 8rpx;
+  margin-bottom: 40rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.accounts-footer{
+  height: 88rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 88rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #424242;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.accounts-footer view{
+  margin-left: 10rpx;
+}
+
+.accounts-footer image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+/* 现金账户弹框 */
+.account-modal2{
+  width: 100%;
+  border-top-left-radius: 16rpx;
+  border-top-right-radius: 16rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999999;
+  background: #fff;
+  padding: 66rpx 50rpx 61rpx 50rpx;
+  box-sizing: border-box;
+
+}
+
+.showAcc{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .3s;
+}
+
+
+.hiddenAcc{
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all .3s;
+}
+
+.account-modal2-mask{
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: rgba(0,0,0,.4);
+
+}
+
+.account-modal2 > image{
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.account-icon-box image{
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.account-modal2-header image{
+  width: 199rpx;
+  height: 124rpx;
+}
+
+.account-modal2-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 37rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.account-modal2-header > view{
+  display: flex;
+  margin-left: 26rpx;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 32rpx;
+  height: 124rpx;
+  color: #323232;
+}
+
+.account-modal2-container{
+  padding-left: 20rpx;
+  padding-top: 46rpx;
+  padding-bottom: 46rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #323232;
+  border-bottom: 1px solid #d9d9d9;
+  margin-bottom: 49rpx;
+}
+
+.account-modal2-container > view{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25rpx;
+}
+
+.account-modal2-container > view view:nth-child(2){
+  margin-left: 42rpx;
+
+}
+
+.account-modal2-container >view:last-of-type navigator{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.account-modal2-container >view:last-of-type view{
+  margin-right: 16rpx;
+}
+
+.account-icon-box{
+  display: flex;
+  align-items: center;
+  padding-left: 57rpx;
+  padding-right: 57rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #323232;
+}
+
+.account-icon-box > view {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.account-icon-box > view navigator{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.account-icon-box > view image{
+  margin-bottom: 36rpx;
+}

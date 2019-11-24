@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "filter": "../../compontes/filter/filter",
+    "tanchuang": "../../compontes/tanchuang/tanchuang"
+  }
+}

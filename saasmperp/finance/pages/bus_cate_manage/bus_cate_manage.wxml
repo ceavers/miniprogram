@@ -1,0 +1,27 @@
+<view class='cate-manage-box'>
+  <view class='cate-manage-header'>资产类别</view>
+  <view class='cate-manage-container' wx:for='{{fixedList}}' wx:key='{{index}}'>
+    <image src='../../images/delete-cate.png' wx:if='{{showDelete}}' bindtap='delCategory' data-id='{{item.fixedcat_id}}'></image>
+    <view >{{item.fixedcat_name}}</view>
+       
+  </view>
+
+  <view class='cate-manage-footer'>
+    <view bindtap='showAddCateModal' wx:if='{{!showDelete}}'>新增</view>
+    <view bindtap='showAddCateModal' wx:if='{{showDelete}}' class='left-view'></view>
+    <view bindtap='showDelete'>{{showDelete ? '确定':'删除'}}</view>
+  </view>
+
+  <!-- 新增分类弹框 -->
+  <view class="add-cate-modal" wx:if='{{showAddCateModal}}'>
+    <view class='add-cate-modal-header'>新增类别</view>
+    <view>
+      <input type='text' bindinput='updateCate'></input>
+    </view>
+    <view>
+      <view bindtap='closeCateModal2'>取消</view>
+      <view bindtap='addCategory'>确定</view>
+    </view>
+  </view>
+  <view class='add-cate-modal-mask' wx:if='{{showAddCateModal}}' bindtap='closeCateModal2'></view>
+</view>

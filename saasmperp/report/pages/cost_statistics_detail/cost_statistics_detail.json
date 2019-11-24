@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ec-canvas": "/report/components/ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "费用统计"
+}

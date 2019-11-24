@@ -1,0 +1,23 @@
+<!--report/pages/personal_performance/personal_performance.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="{{index==0 ? 'header-hover':''}}" data-index='0' bindtap="bindNow">本月</view>
+    <view class="{{index==1 ? 'header-hover':''}}" data-index='1' bindtap="bindNow">上个月</view>
+  </view>
+  <view class="box">
+    <view class="box-line" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" bindtap="toPerformanceInfo">
+      <view>
+        <view class="line-content">
+          <view>{{item.customer_name}}</view>
+          <view>{{item.gross_sale1}}</view>
+        </view>
+        <view class="Total">
+          <view class="line" animation="{{ item.anmiate }}"></view>
+        </view>
+      </view>
+      <view>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+</view>

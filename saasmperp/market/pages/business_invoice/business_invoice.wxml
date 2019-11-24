@@ -1,0 +1,14 @@
+<!--销售业务单据-->
+<view class="head">业务单据</view>
+<view class="middle" bindtap="toSellInvoiceList">
+  <view class="content">
+    <view class='circle-red'></view>销售单
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="middle" bindtap="toPurchaseInvoiceList">
+  <view class="content">
+    <view class='circle-green'></view>采购单
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>

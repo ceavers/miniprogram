@@ -1,0 +1,61 @@
+<!--新建订单-->
+<view class="new-order">
+  <view class="history" bindtap="gotoHistory">历史</view>
+  <form class="body" bindsubmit="createOrder">
+    <view class="form-body">
+      <view class="order-box" style="margin-bottom: 40rpx;" bindtap="showWareHouseModal" wx:if="{{ type }}">
+        <view class="order-box-title">入库仓库</view>
+        <view class="order-box-body">{{ wareHouse.depo_name }}</view>
+        <image src="/market/images/jiantou.png"></image>
+      </view>
+      <view class="order-box">
+        <view class="order-box-title">采购金额</view>
+        <input class="order-box-body" value="{{ orderMoney }}" name="orderMoney"></input>
+      </view>
+      <view class="order-box">
+        <view class="order-box-title">实付金额</view>
+        <input class="order-box-body" value="" name="payMoney"></input>
+      </view>
+      <view class="order-box" style="margin-bottom: 40rpx;" bindtap="showAccountListModal">
+        <view class="order-box-title">付款账户</view>
+        <view class="order-box-body">{{ account.account_name }}</view>
+      </view>
+      <view class="order-box" bindtap="selectDate">
+        <view class="order-box-title">业务时间</view>
+        <view class="order-box-body">{{ dateObj.date }}</view>
+        <image src="/market/images/jiantou.png"></image>
+      </view>     
+      <view class="order-box" style="margin-bottom: 40rpx;">
+        <view class="order-box-title">外部单号</view>
+        <input class="order-box-body" value="" name="orderNum"></input>
+      </view>
+      <view class="order-box">
+        <view class="order-box-title">备注</view>
+        <input class="order-box-body" value="" name="remark"></input>
+      </view>
+      <view class="mes-box-photo" style="margin-top: 40rpx;" bindtap="photograph" wx:if="{{ !imagesList.length && type }}">
+        <view class="mes-box-photo-select">
+          <image src="/market/images/photo.png"></image><text>业务单据</text>
+        </view>
+      </view>
+      <view class="mes-box-photo" style="margin-bottom: 40rpx;flex-flow: wrap;" wx:if="{{ imagesList.length && type }}">
+        <image class="photo-image" wx:for="{{ imagesList }}" wx:key="{{ index }}" src="{{ item }}"></image>
+        <image class="photo-add" bindtap="photograph" src="/market/images/add.png"></image>
+      </view>
+    </view>
+    <view class="form-footer">
+      <view class="edit" bindtap="goBack">返回修改</view>
+      <button class="confirm"  form-type="submit">确认创建</button>
+    </view>
+  </form> 
+</view>
+<!-- 业务时间选择 -->
+<PickerModal show="{{ showSelectDateModal }}" bindsetTime="confirmDate"></PickerModal>
+<!-- 收款账户 -->
+<BlockModal show="{{ showAccountListModal }}" optionList="{{ accountList }}" bindtap="getAccount"></BlockModal>
+<!-- 销售员 -->
+<BlockModal show="{{ showEmployListModal }}" optionList="{{ employList }}" bindtap="getEmploy"></BlockModal>
+<!-- 仓库 -->
+<BlockModal show="{{ showWareHouseModal }}" optionList="{{ wareHouseList }}" bindtap="getWareHouse"></BlockModal>
+<!-- 选择照片 -->
+<BottomModal show="{{ showChoosePhotographModal }}" modalList="{{ choosePhotographList }}" bindtap="getEventName"></BottomModal>

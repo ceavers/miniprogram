@@ -1,0 +1,10 @@
+<!-- 选择用户类型弹窗 -->
+<ModalView show="{{ show }}">
+  <view class="black-modal">
+    <view class="black-modal-item" wx:for="{{ optionList }}" wx:key="{{ index }}" catchtap="selectedOption" data-index="{{ index }}">
+      <text>{{ item.account_name }}</text>
+      <image wx:if="{{ selectedOption == index }}" class="selected" src="/market/images/selected.png"></image>
+      <view wx:if="{{ selectedOption != index }}" class="select"></view>
+    </view>
+  </view>
+</ModalView>

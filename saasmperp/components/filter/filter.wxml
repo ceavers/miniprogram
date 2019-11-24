@@ -1,0 +1,39 @@
+<!--components/filter/filter.wxml-->
+<view class="weui-demo-dialog {{show ? 'weui-demo-dialog_show' : ''}}">
+  <view class="weui-mask" bindtap="cancle"></view>
+  <view class="weui-half-screen-dialog"> 
+    <view class="weui-half-screen-dialog__bd">
+      <view class="filter-box">
+        <view class="filter-title">筛选</view>
+        <view class="filter-wrap">
+          <view class="left-wrap">
+            <view class="left-item {{index==classIndex?'gray':''}}" 
+            data-index="{{index}}" 
+            wx:for="{{filterData}}" 
+            wx:key="index" 
+            catchtap="selectFilterClass">{{item.className}}</view>
+          </view>
+          <view class="right-wrap">
+            <view class="right-item" catchtap="selectFilterNoItem">
+              <view class="text-box">不限</view>
+              <text class="iconfont icon-gou" wx:if="{{itemIndex==-1}}"></text>          
+            </view>
+            <view class="right-item" 
+            wx:for="{{filterData[classIndex].data}}" 
+            wx:key="index"
+            data-index="{{index}}"
+            catchtap="selectFilterItem"
+            >
+              <view class="text-box">{{item}}</view>
+              <text class="iconfont icon-gou" wx:if="{{itemIndex==index}}"></text>
+            </view>
+          </view>
+        </view>
+        <view class="btn-box">
+          <view class="cancel-btn" catchtap="cancle">取消</view>
+          <view class="comfirm-btn" catchtap="comfirm">确定</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

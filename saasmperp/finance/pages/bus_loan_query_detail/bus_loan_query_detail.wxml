@@ -1,0 +1,30 @@
+<view class='loan_detail-box'>
+  <view class='transfer-detail-wrapper-header'>
+    <view>
+      开始日期：2019-01-16
+    </view>
+    <view>
+    <navigator hover-class='none' url='/finance/pages/bus_loan_list/bus_loan_list'>
+    取消
+    </navigator>
+    </view>
+  </view>
+  <view class='zhanwei'></view>
+  <view class='loan_detail-container'>
+    <view>2019-07-07</view>
+    <view class='loan_detail-item'>
+      <view>
+        <view>{{loanMoney[1] > 0 ? '借入':'借出'}}</view>
+        <view>某某</view>
+      </view>
+      <view class="{{loanMoney[1] > 0 ? 'greText':'redText'}}">{{loanMoney[1]}}</view>
+    </view>
+    <view class='loan_detail-item'>
+      <view>
+        <view>{{loanMoney[0] > 0 ? '借入':'借出'}}</view>
+        <view>某某</view>
+      </view>
+      <view class="{{loanMoney[0] > 0 ? 'greText':'redText'}}">{{loanMoney[0]}}</view>
+    </view>
+  </view>
+</view>

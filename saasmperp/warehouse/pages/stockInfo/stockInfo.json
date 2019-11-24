@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "calculator":"/components/calculator/calculator"
+  },
+  "navigationBarTitleText": "库存详情"
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/pay_type/pay_type",
+    "add-modal":"/components/add_record_history/add_record_history",
+    "timePicker":"/components/picker/picker",
+    "timePicker2": "/components/picker/picker"
+  },
+  "navigationBarTitleText": "财务"
+}

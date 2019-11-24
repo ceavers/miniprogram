@@ -1,0 +1,116 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.1",
+	"appid": "wx96f12fb5b8be07d0",
+	"projectname": "saasmperp",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/common/common",
+					"pathName": "pages/common/common",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "report/pages/month_ news/month_ news",
+					"pathName": "report/pages/month_ news/month_ news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "采购单列表",
+					"pathName": "market/pages/purchase_invoice_list/purchase_invoice_list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "明细",
+					"pathName": "finance/pages/bus_definite/bus_definite",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "固定资产",
+					"pathName": "finance/pages/bus_fixed_assets/bus_fixed_assets",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "客户详情",
+					"pathName": "market/pages/customer/customer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "历史",
+					"pathName": "market/pages/product_sale_history/product_sale_history",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "market/pages/product_sale_history/product_sale_history",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

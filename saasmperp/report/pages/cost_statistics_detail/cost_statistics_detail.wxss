@@ -1,0 +1,36 @@
+/* report/pages/cost_statistics_detail/cost_statistics_detail.wxss */
+.title{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  margin-top:50rpx;
+  text-align: center;
+}
+.chart-box{
+  height: 474rpx;
+}
+.item-box{
+  height: 88rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:1px solid #f6f6f6;
+  position: relative;
+}
+.pr{
+  font-size: 24rpx;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

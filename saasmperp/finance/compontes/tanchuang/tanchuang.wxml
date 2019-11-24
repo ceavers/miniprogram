@@ -1,0 +1,14 @@
+<view class="tanchuang_box" wx:if="{{show}}">
+    <view class="tc_title">{{tc_title}}</view>
+    <view class="tc_content">
+      <view catchtap="jiechu">
+        <image src="{{imgurl}}"></image>
+        <view class="tc_text">{{content}}</view>
+      </view>
+      <view catchtap="jieru">
+        <image src="{{imgurl1}}"></image>
+        <view class="tc_text">{{content1}}</view>
+      </view>
+    </view> 
+    <view class="tc_btn" bindtap="quxiao">取消</view>
+  </view>

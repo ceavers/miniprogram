@@ -1,0 +1,97 @@
+<view class='fixed-assets-box1' wx:if='{{hasFixedAssetsData}}'>
+  <view class='transfer-list-search' wx:if='{{!isSearch && !isSelect}}'>
+    <view>
+      <navigator hover-class='none' url='/finance/pages/fixed_assets_query/fixed_assets_query'>
+        <image src='../../images/search.png'></image>
+      </navigator>
+      <input placeholder='固定资产查询' type='text'></input>
+    </view>
+    <image src='../../images/shaixuan.png' bindtap='showSelctModal'></image>
+  </view>
+  <view class='fixed-assets-header' wx:if='{{!isSearch && !isSelect}}'>固定资产</view>
+  <!-- 搜索结果的头部样式 -->
+  <view class='transfer-detail-wrapper-header' wx:if='{{isSearch}}'>
+    <view wx:for='{{searchData}}' wx:key='{{index}}'>
+      {{item}}
+    </view>
+    <view bindtap='cancelSearch' class='cancel-sea'>
+      取消
+    </view>
+  </view>
+  <!-- 点击筛选之后的头部样式 -->
+  <view class='transfer-detail-wrapper-header' wx:if='{{isSelect}}'>
+    <view>
+      {{choiceCtaeName}}
+    </view>
+    <view bindtap='cancelSelect' class='cancel-sea'>
+      取消
+    </view>
+  </view>
+  <view class='zhanwei2' wx:if='{{isSearch || isSelect}}'></view>
+  <view class="fixed-assets-container {{index == fixedList.length -1 ? 'mgBottom':''}}" wx:for='{{fixedList}}' wx:key='{{index}}'>
+    <view>{{item.record_time}}</view>
+    <navigator hover-class='none' url="/finance/pages/fixed_assets_detail/fixed_assets_detail?fixedasset_id={{item.fixedasset_id}}" bindtap='resetDel'>
+      <view class='fixed-assets-item'>
+        <image src='{{item.fixedasset_avatar}}'></image>
+        <view>
+          <view>{{item.fixedasset_name}}</view>
+          <view>{{item.user.name}}</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class='load-more'>加载更多</view>
+
+  <navigator hover-class='none' url='/finance/pages/add_fixed_assets/add_fixed_assets'>
+    <view class='fixed-assets-icon-box'>
+      <image src='../../images/add-aut.png'></image>
+      <view>新增</view>
+    </view>
+  </navigator>
+  <!-- 筛选弹框 -->
+  <view class='select-mask' wx:if='{{showSelctModal}}' bindtap='closeSelectModal'></view>
+  <view class="selectCateModal {{showSelctModal ? 'showFir':'hiddenFir'}}">
+    <view>筛选</view>
+
+    <view class='select-container'>
+      <view class='selectFirCate'>
+        <!-- <view wx:for='{{selectFirCate}}' data-index='{{index}}' wx:key='{{index}}' bindtap='choiceSecSelect' class="{{index == choiceSelectIndex ? 'choosed-fir-cate':''}}">{{item}}</view> -->
+        <view wx:for='{{selectFirCate}}' data-index='{{index}}' wx:key='{{index}}' bindtap='choiceSecSelect' class="{{index == choiceSelectIndex ? 'choosed-fir-cate':''}}">{{item}}</view>
+      </view>
+      <view class='selectSecCate'>
+        <scroll-view scroll-y style='height:440rpx;' enable-flex='{{true}}'>
+        <view catchtap='cancelCondition' class='scroll-item'>
+          <view>不限</view>
+          <view class='icon-container' wx:if='{{showClearIcon}}'>
+            <icon type='success_no_circle' size='16'></icon>
+          </view>
+        </view>
+
+        <view wx:for='{{selectSecCate}}' data-id='{{item.fixedcat_id}}' wx:key='{{index}}' data-catename='{{item.fixedcat_name}}' catchtap='choiceCondition' class='scroll-item' data-index='{{index}}' data-fixedassetstate='{{item.fixedasset_state}}'>
+          <view>{{item.fixedcat_name}}</view>
+          <view class='icon-container' wx:if='{{choiceSecIndex === index}}'>
+            <icon type='success_no_circle' size='16'></icon>
+          </view>
+
+        </view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class='select-footer'>
+      <view bindtap='closeSelectModal'>取消</view>
+      <view bindtap='confirmSelect'>确定</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='fixed-assets-box2' wx:if='{{!hasFixedAssetsData}}'>
+  <image src='../../images/fangwu.png'></image>
+  <view>无数据</view>
+  <view>暂无数据，快去新建吧</view>
+  <view>
+  <navigator hover-class='none' url='/finance/pages/add_fixed_assets/add_fixed_assets'>
+    马上新建
+  </navigator>
+  </view>
+</view>

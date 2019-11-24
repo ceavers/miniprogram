@@ -1,0 +1,117 @@
+/* warehouse/pages/edit_category/edit_category.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.header{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  padding-left: 31rpx;
+}
+.content{
+  width: 100%;
+  height: calc(100% - 188rpx);
+  display: flex;
+}
+.left-content{
+  width: 50%;
+  height: 100%;
+  background: #fff;
+}
+.right-content{
+  width: 50%;
+  height: 100%;
+  background: #F2F2F2;
+}
+.right-hover{
+  background: #F2F2F2;
+}
+.content-list{
+  height: 88rpx;
+  width: calc(100% - 30rpx);
+  line-height: 88rpx;
+  padding-left:30rpx; 
+}
+.content-list>text{
+  margin-left: 21rpx;
+  vertical-align: middle;
+} 
+.content-list>image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.bottom{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+}
+.bottom-left,.bottom-right{
+  width: 50%;
+  height: calc(100% - 10rpx);
+  padding-top: 10rpx;
+  color: #62AC4B;
+  background: #fff;
+}
+.bottom-left>view,.bottom-right>view{
+  display: flex;
+}
+.bottom-right{
+  background: #F2F2F2;
+}
+.addClass{
+  margin-left: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.delClass{
+  margin-left: 64rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.sure-box{
+  justify-content: flex-end;
+}
+.sure{
+  margin-right: 31rpx;
+  line-height: 30rpx;
+}
+/* 新增类别弹窗 */
+.addcategory-box{
+  width: 540rpx;
+  height: 300rpx;
+  border-radius: 12rpx;
+}
+.addcategory-title{
+  height: 30rpx;
+  padding: 30rpx 0 40rpx 0; 
+}
+.addcategory-input>input{
+  display: inline-block;
+  text-align: left;
+  padding: 0 15rpx;
+  margin: 0 auto;
+  width: 420rpx;
+  height: 60rpx;
+  background: #fff;
+  box-shadow:0rpx 4rpx 12rpx 0px rgba(0, 0, 0, 0.1);
+}
+.addcategory-btn{
+  margin-top: 47rpx;
+  border-top: 2rpx solid #D9D9D9;
+}
+.addcategory-btn>view{
+  display: inline-block;
+  width: 268rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  border-right: 2rpx solid #D9D9D9;
+  border-bottom-left-radius: 10rpx;
+}
+.addcategory-btn>button:last-child{
+  border:none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 10rpx;
+}

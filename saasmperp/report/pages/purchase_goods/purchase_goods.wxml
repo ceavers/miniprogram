@@ -1,0 +1,15 @@
+<!--report/pages/purchase_goods/purchase_goods.wxml-->
+<view class="container">
+  <view class="choose-box">
+    <view class="curr {{index==0?'choose':''}}" catchtap="chooseMouth" data-index="0">本月</view>
+    <view class="last {{index==1?'choose':''}}" catchtap="chooseMouth" data-index="1">上个月</view>
+  </view>
+  <view class="item-box">
+    <view>品名</view>
+    <view class="mr-r">金额</view>
+  </view>
+  <view class="item-box" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" catchtap="toDetail">
+    <view>{{item.name}}</view>
+    <view>{{item.money}}<text class="iconfont icon-return"></text></view>
+  </view>
+</view>

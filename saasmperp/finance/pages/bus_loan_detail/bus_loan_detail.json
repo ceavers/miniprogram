@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "del-modal": "/components/del_modal/del_modal"
+  },
+  "navigationBarTitleText": "借入借出列表"
+}

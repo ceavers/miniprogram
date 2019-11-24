@@ -1,0 +1,31 @@
+<view class="register_box">
+    <import src="../../components/public_ball/public_ball.wxml"></import>
+    <template is="yk_public_ball"></template>
+    <view class="input_public username_box">
+      <image src="../../images/username_icon.png"></image>
+      <input class="username_input " placeholder="姓名 " bindinput="nikename"></input>
+    </view>
+    <view class="phone_box">
+      <image src="../../images/phone.png"></image>
+      <input class="phone_input " placeholder="手机号 " bindinput="phone" type="number" bindblur="tel"></input>
+    </view>
+    <view class="code_box">
+      <input class="code_input" placeholder="验证码 " bindinput="code"></input>
+      <button bindtap="codeInfo" disabled="{{disabled1}}">{{code_ma}}</button>
+    </view>
+      <button disabled="{{disabled}}" class="login_btn" bindtap="register1">注册开通</button>
+    <import src="../../components/public_register/public_register.wxml"></import>
+    <template is="yk_public_register"></template>
+    <view class="shodw" wx:if="{{display}}"></view>
+  <view class="dialog" wx:if="{{display}}">
+    <view class="iconfont icon-gou gou"></view>
+    <view class="dialog_title">您已注册成功</view>
+    <view class="dialog_text">欢迎加入进销存小程序</view>
+    <view class="dialog_pwd">
+      <text>您的默认登录密码为:</text>
+      <text class="pwd">0000</text>
+    </view>
+    <view class="dialog_btn" bindtap="dialog_btn">点我复制</view>
+    <button class="login_btn" bindtap="login_btn">马上登录</button>
+  </view>
+</view>

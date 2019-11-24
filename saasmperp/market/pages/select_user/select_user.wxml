@@ -1,0 +1,53 @@
+<!--客户-->
+<view class="customer">
+  <view class="header">
+    <view class="input-wrap">
+      <image src="/images/search.png"></image>
+      <input placeholder="客户名/手机号" 
+        bindinput="screenInput" 
+        value="{{ screenInput }}" 
+        bindconfirm="getCustomerList"
+        placeholder-style="color: #999;"
+      ></input>
+    </view>
+    <image class="screen" src="../../images/screen.png" bindtap="showScreen"></image>
+  </view>
+  <view class="main">
+    <view class="create-customer" wx:if="{{ !showList }}">
+      <image class="create-customer-image" src="../../images/customer.png"></image>
+      <view>客户</view>
+      <view>对客户进行管理、历史销售进行管理</view>
+      <view class="create-customer-btn" bindtap="gotoCreateCustomer">马上创建</view>
+    </view>
+    <scroll-view class="customer-list" wx:if="{{ showList }}" scroll-y>
+      <view class="customer-list-box" wx:for="{{ customerList }}"  wx:for-index="key"  wx:for-item="value" wx:key="{{ key }}">
+        <view class="customer-list-title">{{ value[0].user_category }}</view>
+        <view class="customer-list-item" wx:for="{{ value }}" 
+          wx:key="{{ index }}" 
+          data-id="{{ item.user_id }}" 
+          data-index="{{ index }}"
+          data-name="{{ item.name }}"
+          data-money="{{ item.order_receivable }}" 
+          bindtap="selectedUser"
+        >
+          <view class="customer-name">{{ item.name }}</view>
+          <view class="customer-business">应收 {{ item.order_receivable }}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <navigator hover-class="none" url="/market/pages/create_customer/create_customer">
+    <view class="footer" wx:if="{{ showList }}">
+      <image src="../../images/add-aut.png"></image>
+      <text>新增客户</text>
+    </view>
+  </navigator>
+</view>
+<!--筛选弹窗-->
+<ScreenModal 
+  showScreen="{{ showScreen }}" 
+  selectClassificationIList="{{ firstClassificationList }}"
+  screenOptionList="{{ firstClassificationList[0] ? firstClassificationList[0].condition.condition_second : [] }}"
+  selectedScreenList="{{ selectedScreenList }}"
+  bindconfirmScreen="getScreenMes"
+></ScreenModal>

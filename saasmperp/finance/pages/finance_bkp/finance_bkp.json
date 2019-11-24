@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "财务进账",
+  "usingComponents": {
+      "filter1": "../../compontes/filter1/filter1"
+  }
+}

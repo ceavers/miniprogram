@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "BottomModal": "/components/bottomModal/bottomModal",
+    "ModalView": "/components/modal/modal",
+    "Calculator": "/market/components/calculator/calculator"
+  },
+  "navigationBarTitleText": "销售单"
+}

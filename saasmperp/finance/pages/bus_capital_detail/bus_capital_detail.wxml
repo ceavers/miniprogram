@@ -1,0 +1,37 @@
+<view class='capital-detail-box'>
+  <view class="capital-detail-header">流水详情
+  </view>
+  <view class="capital-detail-container1">
+    <view>
+      <view>流水类型</view>
+      <view>{{tourDetail.journal_type.journal_type_name}}</view>
+    </view>
+    <view>
+      <view>发生金额</view>
+      <view>{{tourDetail.inout.inout_num}}</view>
+    </view>
+    <view>
+      <view>时间</view>
+      <view>{{tourDetail.record_time}}</view>
+    </view>
+    <view>
+      <view>资金账户</view>
+      <view>{{tourDetail.account.account_name}}</view>
+    </view>
+  </view>
+
+  <view class="capital-detail-container2">
+    <view>
+      <view>经手人</view>
+      <view>{{tourDetail.user.user_name}}</view>
+    </view>
+    <view>
+      <view>相关单号</view>
+      <view>{{tourDetail.voucher_no}}</view>
+    </view>
+    <view class="beizhu">
+      <view>备注</view>
+      <view>{{tourDetail.note}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<!--新建退货-->
+<view class="new-return">
+  <view class="setting">设置</view>
+  <form bindsubmit="confirmOrder">
+    <view class="mes-box">
+      <view class="mes-box-name">退货金额</view>
+      <view class="mes-box-detail">{{ orderMoney }}</view>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-name">退款金额</view>
+      <input class="mes-box-detail" name="returnMoney" bindinput="already_refund_money" type="number"></input>
+    </view>
+    <view class="mes-box" style="margin-bottom: 40rpx;" bindtap="showAccountListModal">
+      <view class="mes-box-name">退款账户</view>
+      <view class="mes-box-detail">{{ account.account_name }}</view>
+      <image class="jiantou" src="/market/images/jiantou.png"></image>
+    </view>
+    <view class="mes-box" bindtap="showWareHouseModal">
+      <view class="mes-box-name">退货仓库</view>
+      <view class="mes-box-detail">{{ wareHouse.depo_name }}</view>
+      <image class="jiantou" src="/market/images/jiantou.png"></image>
+    </view>
+    <view class="mes-box" bindtap="selectDate">
+      <view class="mes-box-name">业务时间</view>
+      <view class="mes-box-detail" >{{ dateObj.date }}</view>
+      <image class="jiantou" src="/market/images/jiantou.png"></image>
+    </view>
+    <view class="mes-box-remark" style="margin-bottom: 40rpx;">
+      <view class="mes-box-name" >备注</view>
+      <textarea value="品质一级" name="remark"></textarea>
+    </view>
+    <view class="mes-box-photo" style="margin-bottom: 40rpx;" bindtap="photograph" wx:if="{{ !imagesList.length }}">
+      <view class="mes-box-photo-select">
+        <image src="/market/images/photo.png"></image><text>业务单据</text>
+      </view>
+    </view>
+    <view class="mes-box-photo" style="margin-bottom: 40rpx;flex-flow: wrap;" wx:if="{{ imagesList.length }}">
+      <image class="photo-image" wx:for="{{ imagesList }}" wx:key="{{ index }}" src="{{ item }}"></image>
+      <image class="photo-add" bindtap="photograph" src="/market/images/add.png"></image>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-name">外部单号</view>
+      <input class="mes-box-detail" name="orderNum"></input>
+    </view>
+    <view class="mes-box" bindtap="showEmployListModal">
+      <view class="mes-box-name">销售员</view>
+      <view class="mes-box-detail">{{ employ.user_name }}</view>
+      <image class="jiantou" src="/market/images/jiantou.png"></image>
+    </view>
+    <view class="btn">
+      <view class="return-edit">返回修改</view>
+      <button class="confirm" form-type="submit" bindtap="submit">确认创建</button>
+    </view>
+  </form>
+</view>
+<!-- 业务时间选择 -->
+<PickerModal show="{{ showSelectDateModal }}" bindsetTime="confirmDate"></PickerModal>
+<!-- 收款账户 -->
+<BlockModal show="{{ showAccountListModal }}" optionList="{{ accountList }}" bindtap="getAccount"></BlockModal>
+<!-- 销售员 -->
+<BlockModal show="{{ showEmployListModal }}" optionList="{{ employList }}" bindtap="getEmploy"></BlockModal>
+<!-- 仓库 -->
+<BlockModal show="{{ showWareHouseModal }}" optionList="{{ wareHouseList }}" bindtap="getWareHouse"></BlockModal>
+<!-- 选择照片 -->
+<BottomModal show="{{ showChoosePhotographModal }}" modalList="{{ choosePhotographList }}" bindtap="getEventName"></BottomModal>

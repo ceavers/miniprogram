@@ -1,0 +1,45 @@
+.head{
+  width: 100%;
+  height: 119rpx;
+  line-height: 119rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #323232;
+}
+.middle{
+  width: 100%;
+  height: 88rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size:28rpx;
+  font-weight: 500;
+  border-bottom: solid 1rpx #f6f6f6;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.circle-red{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #FF3B30;
+  margin:0 40rpx;
+}
+.circle-green{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #62AC4B;
+  margin:0 40rpx;
+}
+.icon-go{
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 30rpx;
+}

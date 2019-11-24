@@ -1,0 +1,96 @@
+<!--warehouse/pages/goodsInfo/goodsInfo.wxml-->
+<view class="container">
+  <view wx:if="{{sourceState}}" class="goods-img-box">
+    <my-swiper source="{{source}}" direction="left" delay="{{1000000}}" bind:touch="touch"></my-swiper>
+  </view>
+  <view wx:if="{{!sourceState}}" class="goods-noimg-box">
+    <view class="container-header">产品详情</view>
+    <view class="choice-box">
+      <view class="choice-img" bindtap="toEdit">
+        <image src="../../images/Choice-img.png"></image>
+        <text>商品图片</text>
+      </view>
+    </view>
+  </view>
+  <view class="box box-name">
+    <view class="box-line goods-name-box" bindtap="toEdit">
+      <view class="goods-name">
+        <view>{{product_name}} ({{product_code}})</view>
+        <view>{{selling_price}}</view>
+      </view>
+      <icon class="iconfont icon-return"></icon>
+    </view>
+    <view class="box-line">
+      <view class="line-title">描述</view>
+      <view class="line-content">{{note}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">条码</view>
+      <view class="line-content">{{barcode}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">颜色</view>
+      <view class="line-content">{{colorStr}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">尺码</view>
+      <view class="line-content">{{sizeStr}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">类别</view>
+      <view class="line-content">{{category_detail}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">进货价</view>
+      <view class="line-content">{{buying_price}}</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">库存数量</view>
+      <view class="line-content" bindtap="toStockInfo">
+        <text>{{stock}}</text>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">历史销售</view>
+      <view class="line-content" bindtap="toSalesHistory">
+        <text></text>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">月度销售</view>
+      <view class="line-content" bindtap="toMonthlySales">
+        <text></text>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">客户销售</view>
+      <view class="line-content" bindtap="toClientSales">
+        <text></text>
+        <icon class="iconfont icon-return"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="btn-box">
+    <view class="edit-btn" bindtap="toEdit">
+      <image src="../../images/edit2.png"></image>
+      <text>修改</text>
+    </view>
+    <view class="share-btn">
+      <image src="../../../images/common-share.png"></image>
+      <text>分享</text>
+    </view>
+    <view class="delete-btn" bindtap="deleteGoods">
+      <image src="../../images/p-delete.png"></image>
+      <text>删除</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "BottomModal": "/components/bottomModal/bottomModal",
+    "ModalView": "/components/modal/modal",
+    "BlackModal": "/market/components/blackModal/blackModal",
+    "Calculator": "/market/components/calculator/calculator",
+    "smallCalculator": "/components/calculator/calculator"
+  }
+}

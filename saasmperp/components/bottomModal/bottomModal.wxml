@@ -1,0 +1,32 @@
+<!--market/components/bottomModal/bottomModal.wxml-->
+<modalView show="{{ show }}" catchtap="hideBottomModal">
+  <view class="bottom-modal" style="{{ isWidth ? 'width: 100vw;left: 0' : '' }}" catchtap="returnFalse">
+    <view class="bottom-modal-header">{{ modalList.title }}</view>
+    <view class="{{ modalList.detail.length <= 2 ? 'bottom-modal-body1' : 'bottom-modal-body2' }}">
+      <navigator 
+        wx:if="{{ item.url }}"
+        class="{{ modalList.detail.length > 2 && index % 3 == 1 ? 'bottom-modal-navigator' : ''}} "       
+        hover-class="none" 
+        url="{{ item.url }}" 
+        wx:for="{{ modalList.detail }}" 
+        wx:key="{{ index }}"
+      >
+        <view class="bottom-modal-item"><image src="{{ item.imageSrc }}"></image><text>{{ item.cname }}</text></view>
+      </navigator>
+      <view 
+        wx:if="{{ !item.url }}"
+        class="{{ modalList.detail.length > 2 && index % 3 == 1 ? 'bottom-modal-navigator' : ''}} "
+        hover-class="none" 
+        url="{{ item.url }}" 
+        wx:for="{{ modalList.detail }}" 
+        wx:key="{{ index }}"
+        data-event_name="{{ item.eventName }}"
+        catchtap="returnEventName"
+      >
+        <view class="bottom-modal-item"><image src="{{ item.imageSrc }}"></image><text>{{ item.cname }}</text></view>
+      </view>
+      <view class="empty-box" wx:if="{{ modalList.detail.length > 2 }}" wx:for="{{ 3 - modalList.detail.length % 3 }}" wx:key="{{ index }}"></view>
+    </view>
+    <view class="bottom-modal-footer" bindtap="hideBottomModal">取消</view>
+  </view>
+</modalView>

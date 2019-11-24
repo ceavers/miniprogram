@@ -1,0 +1,164 @@
+<!--warehouse/pages/inventory_list/inventory_list.wxml-->
+<view class="container">
+  <view class="order-wrapper">
+    <view class="order-title">盘点单</view>
+    <view class="order-code">单号：{{checkBillDetail.order_code}}</view>
+    <view class="status-box">
+      <view class="arrow-box">      
+        <image src="/warehouse/images/arrow.png" class="arrow"></image>
+        <view class="order-status">盘点</view>
+      </view>
+      <view class="arrow-box" style="margin-left:-18rpx;" wx:if="{{checkBillDetail.order_state==0}}">
+        <image src="/warehouse/images/gray-back.png" class="arrow"></image>
+        <view class="order-status">未调库</view>
+      </view>
+      <view class="arrow-box" style="margin-left:-18rpx;" wx:elif="{{checkBillDetail.order_state==1}}">
+        <image src="/warehouse/images/arrow.png" class="arrow"></image>
+        <view class="order-status">已调库</view>
+      </view>
+    </view>
+  </view>
+  <view class="storage-box">
+    <view class="storage-item-box">
+      <view class="storage-item-text">盘点仓库</view>
+      <view class="storage-item-content">{{checkBillDetail.depo_name}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">调库状态</view>
+      <view wx:if="{{checkBillDetail.order_state==1}}" class="storage-item-content">已调库</view>
+      <view wx:elif="{{checkBillDetail.order_state==0}}" class="storage-item-content">未调库</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">盘点人</view>
+      <view class="storage-item-content">{{checkBillDetail.manager}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">创建时间</view>
+      <view class="storage-item-content">{{checkBillDetail.time}}</view>
+    </view>
+    <view class="storage-note-box" style="margin:14rpx 0 40rpx 0;">
+      <view class="storage-note-text">备注</view>
+      <view class="storage-note-content" catchtap="toEditNote">{{note}}<text class="iconfont icon-return edit-note-icon"></text></view>
+    </view>
+  </view>
+  <block wx:for="{{units}}" wx:key="index">
+    <view class="goods-info-box" 
+    catchtap="toDetail" 
+    wx:for="{{item.skus_info}}" 
+    wx:for-item="skuItem" 
+    wx:key="index"
+    data-code="{{skuItem.sku_code}}"
+    >
+      <view class="goods-img-box">
+        <image src="{{item.pic_url}}" class="goods-img"></image>
+        <view>
+          <view class="goods-name">{{item.product_name}}</view>
+          <view class="goods-prop">{{skuItem.sku_detail}}</view>
+        </view>
+      </view>
+      <view class="goods-img-box">
+        <view>
+          <view class="goods-name align-r" wx:if="{{skuItem.profit<0}}">盘亏</view> 
+          <view class="goods-name align-r" wx:elif="{{skuItem.profit>0}}">盘盈</view> 
+          <view class="goods-prop align-r">{{skuItem.profit}}</view>
+        </view>
+        <text class="iconfont icon-return"></text>
+      </view>
+    </view>
+  </block>
+  <view class="storage-box" style="margin-top:40rpx;">
+    <view class="storage-item-box">
+      <view class="storage-item-text">整体盘盈</view>
+      <view class="storage-item-content profit">{{checkBillDetail.total_profit_amount}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">销售盘盈</view>
+      <view class="storage-item-content profit">{{checkBillDetail.total_profit_money}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">成本盘盈</view>
+      <view class="storage-item-content profit">{{checkBillDetail.total_profit_cost}}</view>
+    </view>
+  </view>
+  <view class="storage-box" style="margin-top:40rpx;">
+    <view class="storage-item-box">
+      <view class="storage-item-text">整体盘亏</view>
+      <view class="storage-item-content loss">{{checkBillDetail.total_loss_amount}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">销售盘亏</view>
+      <view class="storage-item-content loss">{{checkBillDetail.total_loss_money}}</view>
+    </view>
+    <view class="storage-item-box">
+      <view class="storage-item-text">成本盘亏</view>
+      <view class="storage-item-content loss">{{checkBillDetail.total_loss_cost}}</view>
+    </view>
+  </view>
+  <view class="icon-box">
+    <view class="icon-wrap" catchtap="adjustStock">
+      <image src="/images/kc-check.png" class="popup-icon"></image>
+      <view class="popup-icon-text">调整库存</view>
+    </view>
+    <view class="icon-wrap">
+      <image src="/images/common-share.png" class="popup-icon"></image>
+      <view class="popup-icon-text">分享</view>
+    </view>
+    <view class="icon-wrap" catchtap="moreAction">
+      <image src="/warehouse/images/more-action.png" class="popup-icon"></image>
+      <view class="popup-icon-text">更多操作</view>
+    </view>
+  </view>
+</view>
+<modal show="{{modalShow}}">
+  <view class="modal-box">
+    <view class="modal-title">提示</view>
+    <view class="modal-body">此盘点单已完成调库</view>
+    <view class="modal-comfirm" catchtap="comfirm">确定</view>
+  </view>
+</modal>
+<action show="{{moreActionShow}}">
+  <view class="more-action-box">
+    <view class="more-action-wrap">
+      <view class="more-action-title">更多操作</view>
+      <view class="more-action-body">
+        <view class="more-action-icon-box">
+          <image src="/warehouse/images/p-copy.png" class="more-action-icon" catchtap="copyOrder"></image>
+          <view class="more-action-icon-text" catchtap="copyOrder">复制订单</view>
+        </view>
+        <view class="more-action-icon-box">
+          <image src="/warehouse/images/p-add.png" class="more-action-icon" catchtap="addGoods"></image>
+          <view class="more-action-icon-text" catchtap="addGoods">添加商品</view>
+        </view>
+        <view class="more-action-icon-box">
+          <image src="/warehouse/images/p-print.png" class="more-action-icon"></image>
+          <view class="more-action-icon-text">蓝牙打印</view>
+        </view>
+        <view class="more-action-icon-box" style="margin-top:40rpx;">
+          <image src="/warehouse/images/p-delete.png" class="more-action-icon" catchtap="deleteList"></image>
+          <view class="more-action-icon-text" catchtap="deleteList">删除</view>
+        </view>
+      </view>
+    </view>
+    <view class="more-action-cancel" catchtap="moreActionCancel">取消</view>
+  </view>
+</action>
+<modal show="{{adjustShow}}">
+  <view class="modal-box-s">
+    <view class="modal-title-s">确认</view>
+    <view class="modal-body-s">执行调拨将会做出入库操作，确定要执行调拨吗？</view>
+    <view class="modal-footer-s">
+      <view class="cancel-btn-s" catchtap="cancelAdjust">取消</view>
+      <view class="comfirm-btn-s" catchtap="adjust">确定</view>
+    </view>
+  </view>
+</modal>
+<modal show="{{deleteShow}}">
+  <view class="modal-box1">
+    <view class="modal-title1">确认</view>
+    <view class="modal-body1">删除后数据将不能恢复，请确认是否继续？</view>
+    <view class="modal-footer1">
+      <view class="cancel-btn1" catchtap="delCancel">取消</view>
+      <view class="comfirm-btn1" catchtap="delComfirm">确定</view>
+    </view>
+  </view>
+</modal>

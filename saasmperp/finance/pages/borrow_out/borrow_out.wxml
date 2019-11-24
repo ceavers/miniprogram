@@ -1,0 +1,33 @@
+<view>
+     <view class="new_title" bindtap="lit">历史</view>
+     <view class="borrow_title">新建借出</view>
+     <view class="borrow_content1">
+        <view>债权人</view>
+        <input bindinput="loaner_name"></input>
+     </view>
+     <view class="borrow_content1 borrow_content2">
+        <view>金额</view>
+        <input bindinput="loan_sum"></input>
+     </view>
+     <view class="borrow_content1 borrow_content2  borrow_content3" bindtap="xianjinInfo">
+        <view>
+          <text class="borrow_content3_title">账户</text>
+          <text class="borrow_content3_type">{{cp_type}}</text>
+        </view>
+        <image src="../../images/jiantou.png"></image>
+     </view>
+     <view class="borrow_content1 borrow_content2  borrow_content3" bindtap="starttime">
+        <view>
+          <text class="borrow_content3_title">时间</text>
+          <text class="borrow_content3_type">{{startTime}}</text>
+        </view>
+        <image src="../../images/jiantou.png"></image>
+     </view>
+     <view class="borrow_content_ta">
+       <view>备注</view>
+       <textarea></textarea>
+     </view>
+     <pay_type shadow="{{shadow}}" bindradioChange="radioChange" bindindexInfo="indexInfo"  items="{{items}}"></pay_type>
+      <picker show="{{show}}" bindsetTime="setTime"></picker>
+     <view class="borrow_btn" bindtap="new_borrow">确认新建</view>
+</view>

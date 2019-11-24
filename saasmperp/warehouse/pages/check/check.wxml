@@ -1,0 +1,84 @@
+<!--warehouse/pages/check/check.wxml-->
+<view class="container">
+  <view class="history" catchtap="toHistoryList">历史</view>
+  <view class="stock-box">
+    <view class="stock-text">仓库<text class="point">*</text></view>
+    <view class="stock-name-box" catchtap="selectStock">
+      <view class="stock-name">{{stockName}}</view>
+      <text class="iconfont icon-return"></text>
+    </view>
+  </view>
+  <view class="storage-item-box note-box">
+    <view class="item-text note-text">备注</view>
+    <view class="item-content">
+      <textarea wx:if="{{!penetrateShow}}" class="note-area" value="{{note}}" bindinput="getNote"></textarea>
+      <view wx:if="{{penetrateShow}}" class="note-area nowrap">{{note}}</view>
+    </view>
+  </view>
+  <view class="storage-box">
+    <view class="storage-item-box pd-20">
+      <view class="choose-goods" catchtap="toAddGoods">
+        <image src="../../images/add.png" class="choose-icon"></image>
+        <view class="icon-text">选商品</view>
+      </view>
+      <view class="scan-box" catchtap="scan">
+        <image src="../../images/scan.png" class="scan-icon"></image>
+        <view class="icon-text">扫条码</view>
+      </view>
+    </view>
+  </view>
+  <view class="storage-box {{listIndex!=0?'mt-20':''}}" 
+  wx:for="{{goodsList}}" 
+  wx:key="index"
+  wx:if="{{item.count>0}}"
+  wx:for-index="listIndex">
+    <view class="storage-item-box" style="height:148rpx;">
+      <image class="delete-icon" data-id="{{item.product_id}}" catchtap="deleteGoods" src="../../images/delete.png"></image>
+      <view class="goods-info">
+        <image class="goods-img" src="{{item.pic_url}}"></image>
+        <view class="goods-des">
+          <view class="goods-name">{{item.product_name}}</view>
+          <view class="repertory">{{item.price}}</view>
+          <view class="price">小计  {{item.styleSum}}款{{item.count}}件</view>
+        </view>
+      </view>
+    </view>
+    <block wx:for="{{item.results}}" 
+    wx:for-item="skuItem" 
+    wx:key="index"
+    wx:for-index="skuIndex">
+      <view class="storage-item-box goods-prop" 
+      wx:for="{{skuItem.results}}" 
+      wx:for-item="propItem" 
+      wx:key="index" 
+      wx:for-index="propIndex"
+      wx:if="{{propItem.amount>0}}">
+        <view class="property-one">{{skuItem.color}}</view>
+        <view class="property-two">{{propItem.size}}</view>
+        <view class="add-sub-box">
+          <image class="add-sub-icon" 
+          data-list-index="{{listIndex}}"
+          data-sku-index="{{skuIndex}}"
+          data-prop-index="{{propIndex}}"
+          catchtap="subtractGoodsNum"
+          src="../../images/subtract.png"></image>
+          <view class="goods-number" 
+          data-list-index="{{listIndex}}"
+          data-sku-index="{{skuIndex}}"
+          data-prop-index="{{propIndex}}"
+          catchtap="inputNumber">{{propItem.amount}}</view>
+          <image class="add-sub-icon"
+          data-list-index="{{listIndex}}"
+          data-sku-index="{{skuIndex}}"
+          data-prop-index="{{propIndex}}"
+          catchtap="addGoodsNum"
+          src="../../images/add.png"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="create-btn" catchtap="createInOkPage">创建盘点单</view>
+</view>
+<select show="{{selectShow}}" selectData="{{selectData}}" bind:setRadioValue="getRadioValue" bind:cancel="selectCancel"></select>
+<calculator show="{{calculatorShow}}" bind:setResult="getResult" bind:cancel="cancel"></calculator>
+

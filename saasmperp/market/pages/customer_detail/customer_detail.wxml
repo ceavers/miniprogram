@@ -1,0 +1,94 @@
+<!--客户详情-->
+<view class="customer-detail">
+  <view class="header"><image src="{{ customerDetailMes.user_image }}"></image><text>{{ customerDetailMes.user_name }}</text></view>
+  <view class="body">
+    <view class="mes-box">
+      <view class="mes-box-title">联系人</view>
+      <view class="mes-box-detail">{{ customerDetailMes.contact }}</view>
+    </view>
+    <view class="mes-box" bindtap="call">
+      <view class="mes-box-title">手机号</view>
+      <view class="mes-box-detail">{{ customerDetailMes.phone }}</view>
+      <image src="../../images/jiantou.png"></image>
+    </view>
+    <view class="mes-box">
+      <view class="mes-box-title">客户地址</view>
+      <view class="mes-box-detail">{{ customerDetailMes.address }}</view>
+    </view>
+    <navigator  hover-class="none" url="/market/pages/customer_mes/customer_mes?userId={{ userId }}">
+      <view class="mes-box" style="margin-bottom: 40rpx;">
+        <view class="mes-box-title">累计销售</view>
+        <view class="mes-box-detail">{{ customerDetailMes.total_sale }}</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+    <view class="mes-box">
+      <view class="mes-box-title">初期欠款</view>
+      <view class="mes-box-detail">{{ customerDetailMes.early_arrears }}</view>
+    </view>
+    <navigator hover-class="none" url="/market/pages/advance_charge_pipeline_list/advance_charge_pipeline_list?userId={{ userId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">预付款</view>
+        <view class="mes-box-detail">{{ customerDetailMes.pre_money }}</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+    <navigator url="/market/pages/order_receivable_list/order_receivable_list?userId={{ userId }}" hover-class="none">
+      <view class="mes-box">
+        <view class="mes-box-title">订单应收</view>
+        <view class="mes-box-detail">{{ customerDetailMes.order_receivable }}</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>   
+    <view class="mes-box" style="margin-bottom: 40rpx;">
+      <view class="mes-box-title">客户类别</view>
+      <view class="mes-box-detail">{{ customerDetailMes.user_type }}</view>
+    </view>
+    <view class="mes-box" style="margin-bottom: 40rpx;">
+      <view class="mes-box-title">备注说明</view>
+      <view class="mes-box-detail">{{ customerDetailMes.note }}</view>
+    </view>
+    <navigator hover-class="none" url="/market/pages/product_sales/product_sales?userId={{ userId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">产品销售</view>
+        <view class="mes-box-detail">{{ customerDetailMes.count }}</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+    <navigator hover-class="none" url="/market/pages/historical_orders/historical_orders?userId={{ userId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">历史订单</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator> 
+    <navigator hover-class="none" url="/market/pages/cash_flow_list/cash_flow_list?userId={{ userId }}">
+      <view class="mes-box">
+        <view class="mes-box-title">收款流水</view>
+        <image src="../../images/jiantou.png"></image>
+      </view>
+    </navigator>
+  </view>
+  <view class="footer">
+    <view class="footer-item" bindtap="showEditModal">
+      <image src="../../images/xiugai.png"></image>
+      <text>修改</text>
+    </view>
+    <view class="footer-item" bindtap="showReceivablesModal">
+      <image src="../../images/sale.png"></image>
+      <text>收款</text>
+    </view>
+    <view class="footer-item">
+      <image src="/images/common-share.png"></image>
+      <text>对账单</text>
+      <button open-type="share"></button>
+    </view>
+  </view>
+</view>
+<ModalView show="{{ showEditModal }}">
+  <view class="edit-modal">
+    <view class="edit-modal-header" bindtap="editCustomer">修改编辑</view>
+    <view class="edit-modal-del" bindtap="delCustomer">删除</view>
+    <view class="edit-modal-cancel" bindtap="hideEditModal">取消</view>
+  </view>
+</ModalView>
+<BottomModal show="{{ showReceivablesModal }}" modalList="{{ receivablesModalList }}"></BottomModal>

@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="total-box">
+    <view>库存总额</view>
+    <view class="mr-r">{{total_stock}}</view>
+  </view>
+  <view class="item-box" wx:for="{{recordList}}" wx:key="{{index}}" data-index="{{index}}" catchtap="toDetailPage">
+    <view class="content">
+      <view class="text-box">
+        <view>{{item.depo_name}}</view>
+        <view class="box-scale">{{item.gross_rate}}%</view>
+        <view>{{item.stock_gross}}</view>
+      </view>
+      <view class="chart-box">
+        <view class="out-box">
+          <view class="inner-box" animation="{{ item.anmiate }}"></view>
+        </view>
+      </view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+</view>

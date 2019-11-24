@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "category": "/components/category/category",
+    "add-goods": "/components/add_goods/add_goods"
+  },
+  "navigationBarTitleText": "商品"
+}

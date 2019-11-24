@@ -1,0 +1,5 @@
+<!--pages/accredit/accredit.wxml-->
+<view class="authorize">
+  <image src="../../images/bg.png"></image>
+  <button open-type='getUserInfo' bindgetuserinfo="onGotUserInfo">微信授权</button>
+</view>

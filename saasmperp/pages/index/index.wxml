@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+<view class="nav-box">
+  <text class="iconfont icon-daohang" catchtap="toCenterPage"></text>
+</view>
+<swiper class="swiper-box" 
+  previous-margin="160rpx"
+  next-margin="160rpx"
+  indicator-dots="{{true}}"
+  indicator-color="#D9D9D9"
+  indicator-active-color="#62AC4B"
+  bindchange="swiperChange"
+  current="{{currentIndex}}"
+  >
+  <block wx:for="{{bannerImages}}" wx:key="index">
+    <swiper-item class="swiper-item">
+      <view class="item-box {{currentIndex==index?'shrink':''}}" data-index="{{index}}" catchtap="toCommonPage">
+        <view class="item-title">{{item.title}}</view>
+        <image src="{{item.src}}" class="slide-image"/>
+        <view class="des-box">
+          <view class="item-des">{{item.des}}</view>
+          <view class="item-number">{{item.number}}</view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>

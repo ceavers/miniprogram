@@ -1,0 +1,73 @@
+<view class='account-detail-box'>
+  <view class='account-detail-detail'>账户详情</view>
+  <view class='account-detail-container1'>
+    <view>
+      <view>账户名称</view>
+      <view>{{accountDetail.account_name}}</view>
+    </view>
+    <view>
+      <view>账户余额</view>
+      <view>{{accountDetail.account_sum}}</view>
+    </view>
+    <view>
+      <view>账户类型</view>
+      <view>{{accountDetail.account_type}}</view>
+    </view>
+  </view>
+  <view class='account-detail-container2'>
+     <view>
+      <view>账号</view>
+      <view>{{accountDetail.account_num}}</view>
+    </view>
+     <view>
+      <view>开户人</view>
+      <view>{{accountDetail.account_holder}}</view>
+    </view>
+     <view class="beizhu">
+      <view>备注</view>
+      <view>{{accountDetail.note}}</view>
+    </view>
+  </view>
+  <navigator hover-class='none' url="/finance/pages/bus_capital_elow/bus_capital_elow?account_id={{accountDetail.account_id}}">
+    <view  class="watch-money">
+      <view>查看资金流水</view>
+      <image src="../../images/jiantou2.png"></image>
+    </view>
+  </navigator>
+
+  <view class="icon-box">
+    <view>
+      <navigator hover-class="none" url="/finance/pages/bus_addaccount/bus_addaccount?accountType=2&accountDetail={{jsonAccountDetail}}" bindtap='resetModify'>
+        <image src="../../images/account-detail3.png"></image>
+
+        <view>修改</view>
+      </navigator>
+    </view>
+    <view bindtap="showTransfer">
+      <image src="../../images/account-detail2.png"></image>
+      <view>记账转账</view>
+    </view>
+    <view bindtap='showDelModal'>
+      <image src="../../images/account-detail1.png"></image>
+      <view>删除</view>
+    </view>
+  </view>
+
+  <!-- 记账转账弹框 -->
+  <view class="transfer-modal {{showTransfer ? 'showTra':'hiddenTra'}}" >
+    <view bindtap="showAccountModal">记账</view>
+    <view>
+      <navigator hover-class="none" bindtap='closeTransfer' url="/finance/pages/bus_transfer/bus_transfer?account_id={{accountDetail.account_id}}">
+      转账
+      </navigator>
+    </view>
+    <view></view>
+    <view bindtap="closeTransfer">取消</view>
+  </view>
+  <view class="transfer-mask" wx:if='{{showTransfer}}' bindtap="closeTransfer"></view>
+<!-- 收支记账弹框 -->
+  <acc-modal showmodal='{{showmodal}}' modalContent='{{modalContent}}' modalTitle='{{modalTitle}}' bind:close='closeModal2' ></acc-modal>
+
+  <!-- 删除弹框 -->
+  <del-modal shadow='{{shadow}}' bind:delData='delData' bind:close='closeDelModal'></del-modal>
+</view>

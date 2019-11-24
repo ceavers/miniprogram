@@ -1,0 +1,169 @@
+<!--pages/common/common.wxml-->
+<view class="container">
+  <swiper class="swiper-box"
+    indicator-dots="{{true}}"
+    indicator-color="#D9D9D9"
+    indicator-active-color="#62AC4B"
+    bindchange="changeSwiperIndex"
+    current="{{selectIndex}}"
+  >
+    <block wx-if="{{manageModule[0].checked}}">
+      <swiper-item>
+        <view class="header-box">
+          <view class="info-box">
+            <view class="avatar-box">
+              <text class="vip-box">
+                <text class="iconfont icon-vip">
+                  <text class="vip-grade">1</text>
+                </text>
+              </text>
+              <image class="avatar" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="des-box">
+              <view class="text1">欢迎回来,{{userInfo.name}}！</view>
+              <view class="text2">您今日的收入为<text class="number">100.00</text></view>
+            </view> 
+          </view>
+          <image class="header-img" src="/images/common-bg.png "></image>
+        </view>
+        <view class="module-box">
+          <view class="item-box">
+            <block wx:for="{{manageModule[0].modules}}" wx:key="index" wx:if="{{item.checked}}">
+              <navigator wx:if="{{ item.url }}" url="{{item.url}}" hover-class="none">
+                <view class="item">
+                  <view class="center">
+                    <view class="item-img-box">
+                      <image class="item-img" src="{{item.src}}"></image>
+                    </view>
+                  </view>
+                  <view class="item-des">{{item.text}}</view>
+                </view>
+              </navigator>
+              <view class="item" wx:if="{{ !item.url }}" bindtap="showPhotoModal">
+                <view class="center">
+                  <view class="item-img-box">
+                    <image class="item-img" src="{{item.src}}"></image>
+                  </view>
+                </view>
+                <view class="item-des">{{item.text}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <block wx-if="{{manageModule[1].checked}}">
+      <swiper-item>
+        <view class="header-box">
+          <view class="info-box">
+            <view class="avatar-box">
+              <text class="vip-box">
+                <text class="iconfont icon-vip">
+                  <text class="vip-grade">1</text>
+                </text>
+              </text>
+              <image class="avatar" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="des-box">
+              <view class="text1">欢迎回来,{{userInfo.name}}！</view>
+              <view class="text2">您今日的收入为<text class="number">100.00</text></view>
+            </view> 
+          </view>
+          <image class="header-img" src="/images/common-bg.png "></image>
+        </view>
+        <view class="module-box">
+          <view class="item-box">
+            <block wx:for="{{manageModule[1].modules}}" wx:key="index" wx:if="{{item.checked}}">
+              <navigator url="{{item.url}}" hover-class="none">
+                <view class="item">
+                  <view class="center">
+                    <view class="item-img-box">
+                      <image class="item-img" src="{{item.src}}"></image>
+                    </view>
+                  </view>
+                  <view class="item-des">{{item.text}}</view>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <block wx-if="{{manageModule[2].checked}}">
+      <swiper-item>
+        <view class="header-box">
+          <view class="info-box">
+            <view class="avatar-box">
+              <text class="vip-box">
+                <text class="iconfont icon-vip">
+                  <text class="vip-grade">1</text>
+                </text>
+              </text>
+              <image class="avatar" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="des-box">
+              <view class="text1">欢迎回来,{{userInfo.name}}！</view>
+              <view class="text2">您今日的收入为<text class="number">100.00</text></view>
+            </view> 
+          </view>
+          <image class="header-img" src="/images/common-bg.png "></image>
+        </view>
+        <view class="module-box">
+          <view class="item-box">
+            <block wx:for="{{manageModule[2].modules}}" wx:key="index" wx:if="{{item.checked}}">
+              <navigator url="{{item.url}}" hover-class="none">
+                <view class="item">
+                  <view class="center">
+                    <view class="item-img-box">
+                      <image class="item-img" src="{{item.src}}"></image>
+                    </view>
+                  </view>
+                  <view class="item-des">{{item.text}}</view>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+    <block wx-if="{{manageModule[3].checked}}">
+      <swiper-item>
+        <view class="header-box">
+          <view class="info-box">
+            <view class="avatar-box">
+              <text class="vip-box">
+                <text class="iconfont icon-vip">
+                  <text class="vip-grade">1</text>
+                </text>
+              </text>
+              <image class="avatar" src="{{userInfo.avatar}}"></image>
+            </view>
+            <view class="des-box">
+              <view class="text1">欢迎回来,{{userInfo.name}}！</view>
+              <view class="text2">您的今日出库为<text class="number">100</text></view>
+            </view> 
+          </view>
+          <image class="header-img" src="/images/common-bg.png "></image>
+        </view>
+        <view class="module-box">
+          <view class="item-box">
+            <block wx:for="{{manageModule[3].modules}}" wx:key="index" wx:if="{{item.checked}}">
+              <navigator url="{{item.url}}" hover-class="none">
+                <view class="item">
+                  <view class="center">
+                    <view class="item-img-box">
+                      <image class="item-img" src="{{item.src}}"></image>
+                    </view>
+                  </view>
+                  <view class="item-des">{{item.text}}</view>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image src="/images/common-setting.png" class="setting-img" catchtap="toSettingPage"></image>
+</view>
+<BottomModal show="{{ showPhotoModal }}" modalList="{{ photoModalList }}"></BottomModal>

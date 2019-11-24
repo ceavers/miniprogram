@@ -1,0 +1,60 @@
+<view class='setting-modify-box'>
+  <view>{{recordType == 1 ? '收入类别':'支出类别'}}</view>
+  <view class='setting-modify-container'>
+    <view class='first-category'>
+      <view wx:for='{{recordType == 1 ? firstCategory:expenditureFirCate}}' wx:key='{{index}}' data-index='{{index}}' data-id="{{item.class_id}}" bindtap='showSecondCate' class="{{index == choiceIndex ? 'activeFir':''}}">
+          <image src='../../images/delete-cate.png' catchtap="remove" data-id="{{item.class_id}}" style='width:40rpx;height:40rpx;margin-right:18rpx;' wx:if='{{isDeleteFirCate}}'></image>
+         <view>{{item.class_name}}</view>
+        </view>
+      </view>
+     
+    <view class='second-category'>
+      <!-- <view wx:for='{{recordType == 1 ? secondCategory[choiceIndex] : expenditureSecCate[choiceIndex]}}' wx:key='{{index}}' class="{{index == choiceIndex ? 'activeSec':''}}"> -->
+        <view wx:for='{{recordType == 1 ? secondCategory : expenditureSecCate}}' wx:key='{{index}}' data-id="{{item.class_id}}"   class="{{index == choiceIndex ? 'activeSec':''}}">
+        <image src='../../images/delete-cate.png' catchtap="remove1" data-id="{{item.class_id}}" style='width:40rpx;height:40rpx;margin-right:18rpx;' wx:if='{{isDeleteSecCate}}'></image>
+        <view>{{item.class_name}}</view> 
+        </view>
+      </view>
+  </view>
+
+  <!-- 新增小类弹框 -->
+  <view class='second-cate-modal' wx:if='{{showSecondCateModal}}'>
+    <view class='second-cate-modal-title'>新增小类</view>
+    <input class='second-cate-modal-content' bindinput="smName"></input>
+    <view class='second-cate-modal-footer'>
+      <view bindtap='clsoeMask'>取消</view>
+      <view bindtap="trueMask">确定</view>
+    </view>
+  </view>
+  <view class='mask' wx:if='{{showmask}}' bindtap='clsoeMask'></view>
+
+
+  <view class='firmask' wx:if='{{showFirCateModal}}' catchtap='closeFirmask'></view>
+
+  <view class='setting-footer'>
+    <view>
+      <view catchtap='showFirCateModal'>{{!isDeleteFirCate ? '新增大类':''}}</view>
+      <view bindtap='deleteFirCate'>{{isDeleteFirCate ? '确定':'删除'}}</view>
+    </view>
+    <view>
+      <view bindtap='showSecCateModal'>{{!isDeleteSecCate ? '新增小类':''}}</view>
+      <view bindtap='deleteSecCate'>{{isDeleteSecCate ? '确定':'删除'}}</view>
+    </view>
+  </view>
+
+  <!-- 新增大类弹框 -->
+  <view class="first-cate-modal {{showFirCateModal ? 'showFir':'hiddenFir'}}">
+    <image src='../../images/close-cate-modal.png' catchtap='closeFirmask'></image>
+    <view class='first-cate-modal-header'>
+      <view>类别名称</view>
+      <input id='addFirCate' type='text' style='border:1px solid #ccc;' bindinput='getFirstName'></input>
+      
+    </view>
+    <view class='fircate-icon'>
+      <image src="{{!bgActive[index] ? item.src:iconActiveArr[bgActiveIndex].src}}" wx:for='{{iconArr}}' wx:key='{{index}}' data-src='{{item.src}}' class="{{(index + 1) % 3 == 0 ? '':'marRight'}}" data-index='{{index}}' bindtap='changeIcon'></image>
+
+    </view>
+    <view class='confirm' bindtap='confirmAddFirstCate'>确认</view>
+
+  </view>
+</view>

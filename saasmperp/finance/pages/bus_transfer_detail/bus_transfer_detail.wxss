@@ -1,0 +1,62 @@
+.transfer-detail-box{
+  height: 100vh;
+  background: #f6f6f6;
+}
+
+.transfer-detail-header{
+  height: 120rpx;
+  text-align: center;
+  padding-top: 50rpx;
+  padding-bottom: 40rpx;
+  font-size: 32rpx;
+  color: #323232;
+  box-sizing: border-box;
+}
+
+.transfer-detail-container > view{
+  background: #fff;
+  height: 88rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #f7f7f7;
+  
+}
+
+.transfer-detail-container > view view:nth-child(1){
+  color: #666;
+  width: 170rpx;
+}
+
+.transfer-detail-container > view view:nth-child(2){
+  color: #323232;
+  width: calc(100% - 230rpx);
+}
+
+.transfer-fee{
+  color: #FF3B30 !important;
+}
+
+.beizhu{
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  height: auto;
+  font-size: 28rpx;
+  color: #323232;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #fff;
+}
+
+.beizhu view:nth-child(1){
+  width: 170rpx;
+
+}
+
+.beizhu view:nth-child(2){
+  width: calc(100% - 230rpx);
+}

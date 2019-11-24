@@ -1,0 +1,44 @@
+.bus-purchaising-header{
+  height: 88rpx;
+  text-align: center;
+  padding-top: 50rpx;
+  padding-bottom: 15rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: #323232;
+
+}
+
+.bus-purchaising-box{
+  background: #f6f6f6;
+}
+
+.bus-purchaising-desc{
+  background: #fff;
+  border-bottom: 1px solid #f7f7f7;
+  height: 88rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+
+}
+
+.bus-purchaising-desc > view:nth-child(2){
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bus-purchaising-item > view:nth-child(1){
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.bus-purchaising-item image{
+  width: 36rpx;
+  height: 35rpx;
+}

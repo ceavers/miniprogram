@@ -1,0 +1,9 @@
+<view class="xiaolei_box" wx:if="{{show}}">
+  <view class="xiaolei_title">
+    <text class="xiaolei_title_wenzi">{{xl_title}}</text><text class="remove" bindtap="remove">x</text>
+  </view>
+  <view class="xiaolei_content">
+      <view wx:for="{{items}}" wx:key="{{index}}" catchtap="dataInfo">{{item.class_name}}</view>
+  </view>
+</view>
+<view class="shadow" wx:if="{{show}}" ></view>

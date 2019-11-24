@@ -1,0 +1,79 @@
+<!--warehouse/pages/enable_barCode/enable_barCode.wxml-->
+<view class="container">
+  <view class="header">设置库存</view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">
+        启用单品条码
+      </view>
+      <view class="line-content switch">
+        <switch wx:if="{{state==1}}" bindchange="switch"></switch>
+        <switch wx:if="{{state==3}}" bindchange="switch" checked="true"></switch>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{enable}}" class="box">
+    <view class="box-title">条码</view>
+    <!-- <view class="box-line">
+      <view class="line-title">
+        白色
+      </view>
+      <view class="line-content">
+        <text>S</text>
+        <input type="text" value="{{sweepCode}}" placeholder="输入或扫码"></input>
+        <icon class="iconfont icon-saomiao1" bindtap="sweepCode"></icon>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+        
+      </view>
+      <view class="line-content">
+        <text>L</text>
+        <input type="text" value="" placeholder="输入或扫码"></input>
+        <icon class="iconfont icon-saomiao1"></icon>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+        黑色
+      </view>
+      <view class="line-content">
+        <text>S</text>
+        <input type="text" value="" placeholder="输入或扫码"></input>
+        <icon class="iconfont icon-saomiao1"></icon>
+      </view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">
+        
+      </view>
+      <view class="line-content">
+        <text>L</text>
+        <input type="text" value="" placeholder="输入或扫码"></input>
+        <icon class="iconfont icon-saomiao1"></icon>
+      </view>
+    </view> -->
+    <view class="box-line single-line" wx:for="{{colorList}}" wx:for-item="colorItem" wx:key="">
+      <view class="line-title single-title">{{colorItem.color}}</view>
+      <view class="line-content single-content" wx:for="{{sizeList}}" wx:key="">
+        <view style="width:264rpx"></view>
+        <text class="size-tilte">{{item.size}}</text>
+        <input type="text" value="" bindinput="getInput" data-color="{{colorItem.color_id}}" data-size="{{item.size_id}}" placeholder="输入或扫码"></input>
+        <icon class="iconfont icon-saomiao1" bindtap="sweepCode"></icon>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="box Prohibit">
+    <view class="box-line">
+      <view class="line-title">
+        条码
+      </view>
+      <view class="line-content">
+        <input type="text" value="" bindinput="getProhibitInput" placeholder="输入或扫码"></input>
+        <icon class="iconfont icon-saomiao1"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="btn" bindtap="submit">确定</view>
+</view>

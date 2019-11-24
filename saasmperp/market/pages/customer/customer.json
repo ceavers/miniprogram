@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modalView": "/components/modal/modal",
+    "bottomView": "/components/bottomModal/bottomModal",
+    "ScreenModal": "../../components/screen/screen"
+  }
+}

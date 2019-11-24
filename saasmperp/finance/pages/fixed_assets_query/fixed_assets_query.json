@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/pay_type/pay_type"
+  },
+  "navigationBarTitleText": "查询"
+}

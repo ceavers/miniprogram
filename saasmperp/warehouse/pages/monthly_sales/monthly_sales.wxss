@@ -1,0 +1,35 @@
+/* warehouse/pages/monthly_sales/monthly_sales.wxss */
+.bus-purchase-history-box{ 
+  height: 100%;
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #323232;
+}
+.bus-purchase-history-item{
+  margin-bottom: 20rpx;
+  height: 120rpx;
+  background-color: #fff;
+}
+.bus-purchase-history-item-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx 50rpx 0 30rpx;
+}
+.bus-purchase-history-item-body{
+  position: relative;
+  margin: 31rpx 50rpx 0;
+  height:8rpx;
+  background:rgba(240,240,240,1);
+  border-radius:4rpx;
+}
+.line{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rpx;
+  height:8rpx;
+  background:#62AC4B;
+  border-radius:4rpx; 
+  animation: line 1s 1;
+  animation-fill-mode: forwards;
+}

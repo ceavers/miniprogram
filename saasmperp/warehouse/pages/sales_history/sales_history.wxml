@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="title">碎花连衣裙</view>
+  <view class="item-box">
+    <view class="item-text">销售日期</view>
+    <view class="content">{{goods_detail.date}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">客户</view>
+    <view class="content">{{goods_detail.customer}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">产品规格</view>
+    <view class="content">{{goods_detail.sku_detail}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">销售数量</view>
+    <view class="content">{{goods_detail.selling_count}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">销售单价</view>
+    <view class="content">{{goods_detail.selling_price}}</view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+/* report/pages/inventory_statistics_detail/inventory_statistics_detail.wxss */
+.item-box{
+  height: 88rpx;
+  border-bottom:1px solid #f6f6f6;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  background: #fff;
+}
+.item-content{
+  width: 540rpx;
+}

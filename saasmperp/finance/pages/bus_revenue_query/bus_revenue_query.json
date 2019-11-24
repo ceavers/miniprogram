@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/pay_type/pay_type",
+    "timePicker": "/components/picker/picker",
+    "timePicker2": "/components/picker/picker"
+  },
+  "navigationBarTitleText": "查询"
+}

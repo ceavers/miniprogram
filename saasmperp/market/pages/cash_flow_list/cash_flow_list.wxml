@@ -1,0 +1,18 @@
+<!--收款流水-->
+<view class="cash-flow">
+  <view class="header">收款流水列表</view>
+  <view class="body">
+    <view class="cash-flow-item" wx:for="{{ cashFlowList }}" wx:for-index="key" wx:for-item="value" wx:key="{{ key }}">
+      <view class="cash-flow-time">{{ key }}</view>
+      <navigator hover-class="none" url="/market/pages/water_details/water_details?userId={{ userId }}&waterId={{ item.water_id }}">
+        <view class="cash-flow-detail" wx:for="{{ value }}" wx:key="{{ index }}">
+          <view class="cash-flow-detail-mes">
+            <view class="cash-flow-detail-mes-option">{{ item.get_type }}</view>
+            <view class="cash-flow-detail-mes-zhanghu">{{ item.account_type }}</view>
+          </view>
+          <view class="cash-flow-detail-money">+{{ item.already_pay_money }}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

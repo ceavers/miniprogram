@@ -1,0 +1,4 @@
+<!--pages/changePhoneNext/changePhoneNext.wxml-->
+<input placeholder="请输入您收到的短信验证码" class="change-phone" value="{{code}}" bindinput="getCode"></input>
+<view class="des">请输入{{oldTel}}收到的短信验证码</view>
+<view class="next-btn" catchtap="nextAction">下一步</view>

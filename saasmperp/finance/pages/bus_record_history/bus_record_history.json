@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "add-modal":"/components/add_record_history/add_record_history"
+  },
+  "navigationBarTitleText": "收支历史"
+}

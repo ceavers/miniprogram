@@ -1,0 +1,72 @@
+<!--components/add_goods/add_goods.wxml-->
+<view class="weui-demo-dialog {{show ? 'weui-demo-dialog_show' : ''}}">
+  <view class="weui-mask" bindtap="cancle"></view>
+  <view class="weui-half-screen-dialog"> 
+    <view class="weui-half-screen-dialog__bd">
+      <view class="storage-box">
+          <view class="close-box">
+            <image src="/images/close.png" class="detail-close" catchtap="cancle"></image>
+          </view>
+          <view class="prop-wrapper">
+            <view class="goods-popup-info" style="height:146rpx;border:none" catchtap="toGoodsDetail">
+              <view class="goods-img-wrap">
+                <image class="goods-img" src="{{goodsStock.pic_url}}"></image>
+                <view class="goods-img-box">
+                  <view class="popup-goods-name">{{goodsStock.product_name}}</view>
+                  <view class="popup-kc">
+                    <text class="popup-goods-des" space="emsp">货号 {{goodsStock.product_code}}</text>
+                    <text class="iconfont icon-return storage-back"></text>
+                  </view>
+                  <view class="popup-kc">
+                    <view>{{goodsStock.price}}<text class="change-price" catchtap="changePurchase">点击修改采购价</text></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="prop-box">
+              <view class="prop">颜色</view>
+              <view class="prop-item-box">
+                <view class="pd {{colorIndex==index?'choose-goods':''}}" 
+                wx:for="{{goodsStock.results}}" 
+                wx:key="index"               
+                catchtap="selectColor" 
+                data-index="{{index}}">
+                <view class="choose-num" wx:if="{{item.sum!==0}}">{{item.sum}}</view>{{item.color}}</view>
+              </view>
+            </view>
+            <view class="prop-box" style="padding-bottom:0">
+              <view class="prop-item-wrap">
+                <view class="prop-title-box">
+                  <view class="porp-item">尺码</view>
+                  <view class="porp-item mr-l">库存</view>
+                  <view></view>
+                  <view></view>
+                  <view></view>
+                </view>
+                <view class="prop-item-box" wx:for="{{goodsStock.results[colorIndex].results}}" wx:key="index">
+                  <view class="porp-item f-s">{{item.size}}</view>
+                  <view class="porp-item f-s mr-l">{{item.stock}}</view>
+                  <view>
+                    <image class="prop-icon" data-index="{{index}}" catchtap="subtract" src="/images/subtract.png"></image>
+                  </view>
+                  <view class="porp-item f-s number" data-index="{{index}}" catchtap="inputAmount">{{item.amount}}</view>
+                  <view>
+                    <image class="prop-icon" data-index="{{index}}" catchtap="add" src="/images/add.png"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="bottom-box">
+          <view class="left-bottom-box">
+            <view>已选</view>
+            <view class="total-text">{{styleSum}}款{{count}}件</view>
+          </view>
+          <view class="right-bottom-box" catchtap="toCreatePage">添加</view>
+        </view>
+    </view>
+  </view>
+</view>
+<calculator show="{{calculatorShow}}" bind:setResult="getResult"></calculator>
+

@@ -1,0 +1,12 @@
+<!--warehouse/pages/client_sales/client_sales.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="text">客户</view>
+    <view class="text">累计金额</view>
+  </view>
+  <view class="item-box" wx:for="{{salesData}}" wx:key="index" catchtap="toSalesDetailPage">
+    <view class="text">{{item.customer_name}}</view>
+    <view class="text">{{item.money}}</view>
+  </view>
+</view>
+

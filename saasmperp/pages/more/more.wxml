@@ -1,0 +1,11 @@
+<!--pages/more/more.wxml-->
+<view class="container">
+  <view class="item-box" wx:for="{{manageModule}}" wx:key="index">
+    <image class="image" src="{{moduleDes[index].src}}"></image>
+    <view class="title">{{moduleDes[index].moreTitle}}</view>
+    <view class="des">功能：{{moduleDes[index].functionDes}}</view>
+    <view class="des">适用：{{moduleDes[index].applyDes}}</view>
+    <view class="use-btn" data-index="{{index}}" wx:if="{{!item.checked}}" catchtap="checked">开通试用</view>
+    <view class="use-btn block-btn" data-index="{{index}}" wx:if="{{item.checked}}" catchtap="checked">已开通，停用</view>
+  </view>
+</view>

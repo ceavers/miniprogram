@@ -1,0 +1,123 @@
+/* warehouse/pages/stockInfo/stockInfo.wxss */
+.container{
+  background: #F6F6F6;
+  color: #323232;
+  font-size: 28rpx;
+}
+.goods-img{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  padding: 50rpx 30rpx 22rpx 30rpx;
+  position: relative;
+}
+.goods-img>image{
+  width: 104rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 30rpx;
+}
+.goods-img>view{
+  margin: 0 auto;
+  font-size: 32rpx;
+  color:rgba(50,50,50,1);
+}
+.goods-info>view{
+  height: 88rpx;
+  background: #fff;
+  margin-bottom: 2rpx;
+  display: flex;
+}
+.goods-info>view:last-child{
+  margin: 0;
+}
+.goods-info>view>view{
+  height: 100%;
+  line-height: 88rpx;
+}
+.goods-info>view>view:first-child{
+  width: 228rpx;
+  padding-left: 32rpx;
+}
+.switch{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 32rpx;
+  margin-top: 40rpx;
+  background: #fff;
+}
+.switch>switch{
+  float: right;
+}
+.wx-switch-input{
+  width:91rpx !important; 
+  height: 54rpx !important;
+}
+.wx-switch-input::before{
+  width:91rpx !important;
+  height: 54rpx !important;
+}
+.wx-switch-input::after{
+  width: 46rpx !important;
+  height: 50rpx !important;
+}
+.hidden{
+  display: none;
+}
+.Stock-title{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 32rpx;
+}
+
+.Stock-box>view:last-child{
+  margin: 0;
+}
+.Stock-line{
+  /* height: 88rpx; */
+  line-height: 88rpx;
+  /* display: flex; */
+  /* background: #fff; */
+  /* margin-bottom: 2rpx; */
+  position: relative;
+}
+.Stock-color{
+  width: 228rpx;
+  padding-left: 32rpx;
+  position: absolute;
+}
+.Stock-content{
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  padding-left: 260rpx;
+  margin-bottom: 2rpx;
+  background: #fff;
+}
+.Stock-num{
+  margin-left: auto;
+  padding: 23rpx 60rpx 23rpx 0;
+  line-height: 42rpx;
+}
+.Stock-num>text{
+  vertical-align: middle;
+}
+.Stock-num>image{
+  width: 39rpx;
+  height: 42rpx;
+  margin-left: 30rpx;
+  vertical-align: middle;
+}
+.container>view:last-child{
+  margin-bottom: 60rpx;
+}
+.total-size{
+  width: 200rpx;
+}
+.total-num{
+  margin-left: 0;
+  padding: 0;
+  line-height: 88rpx;
+}
+
+

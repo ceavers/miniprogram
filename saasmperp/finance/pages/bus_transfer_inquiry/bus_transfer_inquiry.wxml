@@ -1,0 +1,48 @@
+<view class='transfer-inquiry-box'>
+  <view class='transfer-inquiry-header'>转账查询</view>
+  <view class='transfer-inquiry-container1'>
+    <view>
+      <view>转出账户</view>
+      <view bindtap='showRolloutModal'>{{rolloutContent}}</view>
+    </view>
+    <view>
+      <view>转入账户</view>
+      <view bindtap='showRollinModal'>{{rollinContent}}</view>
+    </view>
+  </view>
+
+  <view class='transfer-inquiry-container2'>
+    <view>
+      <view>操作人</view>
+      <view bindtap='showPersonModal' class='right-view'>{{personContent}}</view>
+    </view>
+    <view>
+      <view>开始日期</view>
+      <view bindtap='showPicker'>{{startDate}}</view>  
+      <image src='../../images/jiantou2.png' bindtap='showPicker'></image>
+    </view>
+
+    <view>
+      <view>结束日期</view>
+      <view bindtap='showPicker2'>{{endDate}}</view>  
+      <image src='../../images/jiantou2.png' bindtap='showPicker2'></image>
+    </view>
+  </view>
+  <view class='btn-group'>
+
+    <view class='btn1' bindtap='queryTransferInquiry'>
+     查询    
+    </view>
+    <view class='btn2' bindtap='clearContent'>清空</view>
+  </view>
+
+   <!-- 开始日期弹框 -->
+  <timePicker show='{{showPicker}}' bind:setTime='setTime' bind:cancel='cancel'></timePicker>
+  <!-- 结束日期弹框 -->
+  <timePicker2 show='{{showPicker2}}' bind:setTime='setTime2' bind:cancel='cancel2'></timePicker2>
+
+  <!-- 选择账户弹框 -->
+  <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 1}}'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items2}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 2}}'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items3}}' bind:close='closeAccModal' bind:getId='getId' bind:radioChange='choiceContent' wx:if='{{selectModal == 3}}'></acc-modal>
+</view>

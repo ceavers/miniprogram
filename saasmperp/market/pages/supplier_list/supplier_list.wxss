@@ -1,0 +1,16 @@
+/* market/pages/supplier_list/supplier_list.wxss */
+.advance-charge{
+  height: 100vh;
+  background-color: #F6F6F6;
+}
+.header{
+  height: 119rpx;
+  line-height: 119rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #323232;
+  font-weight: bold;
+}
+.advance-charge-form{
+  height: 100vh;
+}

@@ -1,0 +1,15 @@
+<!--report/pages/inventory_statistics_detail/inventory_statistics_detail.wxml-->
+<view class="container">
+  <view class="item-box">
+    <view>品名</view>
+    <view class="item-content">{{recordList.goods_name}}</view>
+  </view>
+  <view class="item-box">
+    <view>库存数量</view>
+    <view class="item-content">{{recordList.stock_num}}</view>
+  </view>
+  <view class="item-box">
+    <view>库存金额</view>
+    <view class="item-content">{{recordList.stock_money}}</view>
+  </view>
+</view>

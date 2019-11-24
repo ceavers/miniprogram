@@ -1,0 +1,50 @@
+<view class='revenue-query-box'>
+  <view class='revenue-query-header'>收支查询</view>
+  <view class='revenue-query-container1'>
+    <view>
+      <view>收入支出</view>
+      <view bindtap='showRolloutModal'>{{rolloutContent}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showRolloutModal'></image>
+    </view>
+    <view>
+    
+      <view>账户</view>
+      <view bindtap='showRollinModal'>{{rollinContent}}</view>
+    </view>
+  </view>
+  <view class='revenue-query-container2'>
+    <view>
+      <view>经手人</view>
+      <view bindtap='showPersonModal'>{{personContent}}</view>
+    </view>
+    <view>
+      <view>开始日期</view>
+      <view bindtap='showPicker'>{{startDate}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPicker'></image>
+
+    </view>
+
+    <view>
+      <view>结束日期</view>
+      <view bindtap='showPicker2'>{{endDate}}</view>
+      <image src='../../images/jiantou2.png' bindtap='showPicker2'></image>
+    </view>
+  </view>
+  <view class='btn-group'>
+
+      <view class='btn1' bindtap='queryRevenue'>    
+          查询
+      </view>
+      <view class='btn2' bindtap='clearContent'>清空</view>
+    </view>
+
+    <!-- 开始日期弹框 -->
+  <timePicker show='{{showPicker}}' bind:setTime='setTime' bind:cancel='cancel'></timePicker>
+  <!-- 结束日期弹框 -->
+  <timePicker2 show='{{showPicker2}}' bind:setTime='setTime2' bind:cancel='cancel2'></timePicker2>
+
+    <!-- 选择账户弹框 -->
+  <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 1}}'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items2}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 2}}'></acc-modal>
+  <acc-modal shadow='{{shadow}}' items='{{items3}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 3}}'></acc-modal>
+</view>

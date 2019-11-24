@@ -1,0 +1,35 @@
+<view class="head">销售出库</view>
+<view class="otherInformation1" bindtap='showModal'>
+  <view>
+    <text class="wuliu">出库仓库</text>
+    <text>{{choiceWarehouseName}}</text>
+  </view>
+  <image class="icon-go" src="../../images/jiantou.png"></image>
+</view>
+<view class="remarkInformation">
+  <text class="remark">备注</text>
+  <textarea bindinput='inputNote'></textarea>
+</view>
+<view class="isAll">
+  <text wx:if='{{!isSelectAll}}'>全部出库</text><text wx:if='{{isSelectAll}}'>部分入库</text>
+  <switch checked bindchange="selectAll"></switch>
+</view>
+<view class="goodsInfo" wx:if='{{isSelectAll}}'>
+  <view class="goodsContent" wx:for='{{purchaseDetail.product_img_list}}' wx:key='{{index}}'>
+    <view class="goodsContent-left">
+      <view class="sizeM">{{item.product_name}}</view>
+      <view class="sizeS">部分出库：{{item.product_count}}</view>
+    </view>
+    <view class="goodsContent-right">
+      <image class="reduceImg" src="../../images/invoice_reduce.png" bindtap='lowNum' data-index='{{index}}'></image>
+      <text class="sizeL">{{item.product_count}}</text>
+      <image class="addImg" src="../../images/invoice_add.png" bindtap='upNum' data-index='{{index}}'></image>
+    </view>
+  </view>
+  
+</view>
+<view>
+  <button class="button" bindtap='confirmWarehouse'>确认入库</button>
+  <!-- 选择仓库的弹框 -->
+<v-modal shadow='{{shadow}}' bind:close='closeModal' items='{{items}}' bind:radioChange='radioChange'></v-modal>
+</view>

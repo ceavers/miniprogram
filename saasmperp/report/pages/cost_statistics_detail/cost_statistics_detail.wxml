@@ -1,0 +1,13 @@
+<!--report/pages/cost_statistics_detail/cost_statistics_detail.wxml-->
+<view class="container">
+  <view class="title" wx:if="{{month}}">{{month}}月费用</view>
+  <view class="title" wx:if="{{!month}}">今年费用</view>
+  <view class="chart-box">
+    <ec-canvas id="chart-pie" canvas-id="mychart-pei" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view class="item-box" wx:for="{{dataList}}" wx:key="index">
+    <view>{{item.name}}</view>
+    <view class="pr">{{item.rate}}%</view>
+    <view>{{item.gross_p}}</view>
+  </view>
+</view>

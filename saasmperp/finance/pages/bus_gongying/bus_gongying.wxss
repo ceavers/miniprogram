@@ -1,0 +1,97 @@
+/* finance/pages/bus_gongying/bus_gongying.wxss */
+
+.bus_gongying_img {
+  width: 118rpx;
+  height: 178rpx;
+  margin: auto;
+  margin-top: 114rpx;
+}
+
+.bus_gongying_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.bkp_title {
+  width: 100%;
+  height: 88rpx;
+  background: rgba(199, 199, 199, 1);
+  overflow: hidden;
+  display: flex;
+}
+
+.input_box {
+  width: 624rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 12rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  margin-left: 30rpx;
+  margin-top: 14rpx;
+  overflow: hidden;
+  display: flex;
+}
+
+.input_img {
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 20rpx;
+  margin-top: 12rpx;
+}
+
+.input_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.input_box input {
+  height: 100%;
+  line-height: 60rpx;
+  margin-left: 16rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.bkp_img {
+  width: 36rpx;
+  height: 40rpx;
+  margin-left: 30rpx;
+  margin-top: 24rpx;
+}
+
+.bkp_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.input_box {
+  margin: auto;
+}
+
+.bus_title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(50, 50, 50, 1);
+  text-align: center;
+  margin-top: 48rpx;
+}
+
+.bus_wenzi {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  margin-top: 28rpx;
+}
+.bus_button{
+  width:200rpx;
+  height:88rpx;
+  background:rgba(98,172,75,1);
+  border-radius:8rpx;
+  margin-top: 100rpx;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  line-height: 88rpx;
+}

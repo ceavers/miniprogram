@@ -1,0 +1,40 @@
+<!--员工管理-->
+<view class="manage">
+  <view class="header">
+    <view class="search-wrap">
+      <input placeholder="搜索员工工号及姓名" bindinput="inputModel" bindconfirm="search"></input>
+      <view class="search-img" bindtap="search">
+        <image src="/images/search.png"></image>
+      </view>
+    </view>
+    <view class="search-type">
+      <view bindtap="toggle" class="{{ activeIndex == 0 ? 'enabled checked' : 'enabled' }}" data-index="0" >已启用</view>
+      <view bindtap="toggle" class="{{ activeIndex == 1 ? 'deactivated checked' : 'deactivated' }}" data-index="1">已停用</view>
+    </view>
+  </view>
+  <!-- <view class="main"></view> -->
+  <scroll-view class="main" scroll-y>
+    <view class="touch-item {{ index == domIndex ? directionClass : ''}}" 
+      data-index="{{index}}" 
+      bindtouchstart="touchstart" 
+      bindtouchmove="touchmove" 
+      bindtouchend="touchend"
+      wx:for="{{items}}" 
+      wx:key="{{ index }}"
+    >
+        <view class="edit" bindtap="edit" data-id="{{item.user_id}}" data-name="{{ item.serviceName }}">编辑</view>
+        <view class='content' bindtap='showDetail' data-index="{{index}}">
+          <view class="message-wrap1">
+            <view class="name">{{item.user_name}}</view>
+            <view class="role">所属角色:<view>{{ item.role_name}}</view></view>
+            <view class="sign-in-date" wx:if="{{item.last_login_time}}">最近登录日期:<view>{{item.last_login_time}}</view></view>
+            <view class="set-up-date" wx:if="{{item.add_time}}">创建日期:<view>{{item.add_time}}</view></view>
+          </view>
+        </view>
+        <view class="del" catchtap="del" data-id="{{ item.user_id }}" data-index="{{index}}">删除</view>
+    </view>
+  </scroll-view>
+  <view class="footer" bindtap="gotoAddemploy">
+    <image class="add-employ" src="/images/add-employ.png"></image>新增
+  </view>
+</view>

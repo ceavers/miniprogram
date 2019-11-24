@@ -1,0 +1,22 @@
+<!--修改供应商-->
+<view class="create-customer">
+  <form id="createCustomerForm" class="create-form" bindsubmit="saveForm">
+    <view class="form-title">修改供应商</view>
+    <view class="input-wrap"><view class="input-title">供应商名称<text>*</text></view><input name="supplierName" value="{{ supplierMes.supplier_name }}"></input></view>
+    <view class="input-wrap"><view class="input-title">联系人</view><input name="charge" value="{{ supplierMes.contact_inf }}"></input></view>
+    <view class="input-wrap"><view class="input-title">手机号</view><input name="tel" type="number" value="{{ supplierMes.phone }}"></input></view>
+    <view class="input-wrap"><view class="input-title">地址</view><input name="address" value="{{ supplierMes.address }}"></input></view>
+    <view class="touxiang">
+      <view class="touxiang-title">头像</view>
+      <view class="add-touxiang">
+        <view class="touxiang-box">
+          <image class="touxiang-image" src="{{ item }}" wx:for="{{ touxiangSrc }}" wx:key="{{ index }}"></image>
+        </view>
+        <image class="add-touxiang-btn" src="../../images/add.png" bindtap="chooseImage"></image>
+      </view>
+    </view>
+    <view class="input-wrap"><view class="input-title">初期欠款</view><input name="arrears" value="{{ supplierMes.early_arrears }}"></input></view>
+    <view class="input-wrap remark"><view class="input-title">描述</view><textarea name="remark" value="{{ supplierMes.note }}"></textarea></view>
+    <view class="save-btn"><button form-type="submit">确认新建</button></view>
+  </form>
+</view>

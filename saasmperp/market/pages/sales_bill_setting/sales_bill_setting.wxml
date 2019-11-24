@@ -1,0 +1,15 @@
+<!--销售开单设置-->
+<view class="setting">
+  <view class="title">税</view>
+  <form bindsubmit="saveSetting">
+    <view class="mes-box">
+      <view class="mes-box-name">启用税金</view>
+      <view class="mes-box-body"><switch name="enablingTaxes" bindchange="setting" checked="{{ setting }}"></switch></view>
+    </view>
+    <view class="mes-box" wx:if="{{ setting }}">
+      <view class="mes-box-name">税率</view>
+      <input class="mes-box-detail" value="{{ tax }}" name="tax" type="number"></input><text>%</text>
+    </view>
+    <view class="btn"><button form-type="submit">确认修改</button></view>
+  </form>
+</view>

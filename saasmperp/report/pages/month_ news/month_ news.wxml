@@ -1,0 +1,45 @@
+<!--report/pages/month_ news/month_ news.wxml-->
+<view wx:if="{{no_data}}" class="container">
+  <view class="choice-month-box">
+    <view class="choice-month" catchtap="selectMouth">
+    <text>{{monthly}}月采购</text> 
+    <icon class="iconfont icon-return"></icon>
+    </view>
+  </view>
+  <view class="ring">
+    <ec-canvas id="echart-ring" ec="{{ echart_ring }}"></ec-canvas>
+  </view>
+  <view class="sale-Proportion">
+    <view>
+      <view class="month">
+        <view>{{monthly}}月</view>
+        <view>{{newsList.total_gross}}</view>
+      </view>
+      <view class="Total">
+        <view class="line" animation="{{ lineAni }}"></view>
+      </view>
+    </view>
+    <view>
+      <icon class="iconfont icon-return"></icon>
+    </view>
+  </view>
+  <view class="box">
+    <view class="box-line">
+      <view class="line-title">销售总额</view>
+      <view class="line-scale">{{newsList.sale_scale}}</view>
+      <view class="line-num">{{newsList.sales_gross}}</view>
+    </view>
+    <view class="box-line">
+      <view class="line-title">出库金额</view>
+      <view class="line-scale">{{newsList.outStock_scale}}</view>
+      <view class="line-num">{{newsList.outbound_gross}}</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!no_data}}" class="container no-data">
+    <image class="no-img" src="../../images/no_data.png"></image>
+    <view class="no-title">采购月报</view>
+    <view class="no-content">暂无数据快去新建吧</view>
+    <view class="no-btn" bindtap="toAddPurchase">马上新建</view>
+</view>
+<picker show="{{selectTimeShow}}" bind:setTime="getTime"></picker>

@@ -1,0 +1,32 @@
+/* report/pages/sale_newsInfo/sale_newsInfo.wxss */
+.container{
+  font-size: 28rpx;
+  color: #323232;
+}
+.header{
+  padding: 40rpx 0;
+  text-align: center;
+  font-size: 32rpx;
+}
+.ring{
+  height: 310rpx;
+  margin: 10rpx 0 110rpx 0;
+}
+.box-line{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  margin-bottom: 1px;
+}
+.box-line:last-child{
+  margin: 0;
+}
+.title-line{
+  margin-bottom: 20rpx;
+}
+.line-scale{
+  font-size: 24rpx;
+}

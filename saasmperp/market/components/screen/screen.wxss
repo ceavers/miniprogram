@@ -1,0 +1,81 @@
+/* 筛选 */
+.screen-modal{
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: -581rpx;
+  left: 0;
+  width: 100vw;
+  height: 581rpx;
+  border-radius:0px 0px 16rpx 16rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  color: #323232;
+  animation: showmodal .5s 1;
+  animation-fill-mode: forwards;
+}
+@keyframes showmodal{
+  form { top: -581rpx; }
+  to { top: 0rpx; }
+}
+.srceen-header{
+  padding-left: 50rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: left;
+  font-weight: bold;
+}
+.screen-body{
+  flex: 1;
+  display: flex;
+}
+.screen-option view{
+  padding-left: 50rpx;
+  height: 88rpx;
+  width: 290rpx;
+  line-height: 88rpx;
+  text-align: left;
+}
+.screen-option-body{
+  flex: 1;
+  padding-left: 60rpx;
+  height: 100%;
+  background-color: #F2F2F2;
+}
+.screen-option-body-option{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding-right: 30rpx;
+  width: calc(100% - 30rpx);
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: left;
+}
+.screen-option-body-option image{
+  width: 24rpx;
+  height: 17rpx;
+}
+.screen-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50rpx;
+  height: 86rpx;
+  border-top: 2rpx solid #F2F2F2;
+  line-height: 86rpx;
+  color: #62AC4B;
+}
+.select-i{
+  background-color: #F2F2F2;
+}
+.select-screen{
+  display: inline-block;
+  margin-left: 30rpx;
+  padding: 15rpx 20rpx;
+  height: 30rpx;
+  border-radius: 6rpx;
+  background-color: #A0C6FE;
+  line-height: 30rpx;
+  color: #fff;
+  font-weight: normal;
+}

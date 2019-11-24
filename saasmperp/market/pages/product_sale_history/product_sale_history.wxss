@@ -1,0 +1,90 @@
+/* market/pages/customer_detail/customer_detail.wxss */
+.customer-detail{
+  height: 100vh;
+  background-color: #f6f6f6;
+  color: #323232;
+  font-size: 28rpx;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30rpx;
+  height: 174rpx;
+  line-height: 174rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.header image{
+  margin-right: 151rpx;
+  height: 84rpx;
+  width: 84rpx;
+  border-radius: 50%; 
+}
+.mes-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rpx;
+  padding: 0 30rpx;
+  height: 88rpx;
+  background-color: #fff;
+}
+.mes-box-title{
+  width: 235rpx;
+}
+.mes-box-detail{
+  flex: 1;
+}
+.mes-box image{
+  width: 36rpx;
+  height: 36rpx;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 127rpx;
+  height: 240rpx;
+}
+.footer image{
+  margin-bottom: 44rpx;
+  width: 50rpx;
+  height: 54rpx;
+}
+.footer-item{
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  font-size: 24rpx;
+}
+.footer-item button{
+  position: absolute;
+  z-index: 22;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.edit-modal{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.edit-modal-header, .edit-modal-del, .edit-modal-cancel{
+  margin-bottom: 2rpx;
+  height: 88rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 30rpx;
+}
+.edit-modal-del{
+  margin-bottom: 0;
+  border-bottom: 10rpx solid #949494;
+  color: #424242;
+}
+.edit-modal-cancel{
+  color: #62AC4B;
+}

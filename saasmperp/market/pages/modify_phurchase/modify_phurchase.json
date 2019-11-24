@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "bottomView": "/components/bottomModal/bottomModal",
+    "del-modal": "/components/del_modal/del_modal",
+    "BottomModal": "/components/bottomModal/bottomModal",
+    "ModalView": "/components/modal/modal",
+    "Calculator": "/market/components/calculator/calculator"
+  },
+  "navigationBarTitleText": "采购单信息"
+}

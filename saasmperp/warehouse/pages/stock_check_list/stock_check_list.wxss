@@ -1,0 +1,156 @@
+/* warehouse/pages/stock_check_list/stock_check_list.wxss */
+.search-wrap{
+  height: 88rpx;
+  background: #C7C7C7;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text{
+  font-size:26rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.category .icon-return{
+  transform: rotate(90deg);
+  font-size: 28rpx;
+  color:#555;
+  margin-left: 4rpx;
+}
+.search-box{
+  width: 634rpx;
+  height: 60rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+}
+.search-icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin:0 20rpx;
+}
+.input{
+  font-size:26rpx;
+  width:520rpx;
+}
+.filter-icon{
+  width: 36rpx;
+  height: 40rpx;
+}
+.list-title{
+  margin: 50rpx 0 28rpx 0;
+  text-align: center;
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.res-box{
+  height: calc(100% - 296rpx);
+  box-sizing: border-box;
+}
+.bottom-btn-box{
+  height:88rpx;
+  background:rgba(255,255,255,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.bottom-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(66,66,66,1);
+}
+.bottom-btn-icon{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+.item-date{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+.item-wrap{
+  margin-bottom:20rpx;
+  background: #fff;
+}
+.storage-name{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f6f6f6;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+  display: flex;
+  align-items: center;
+}
+.goods-info{
+  height: 148rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  line-height: 148rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f6f6f6;
+  overflow-x: auto;
+}
+.goods-img-box{
+  width: 104rpx;
+  height: 100rpx;
+  background: #D9D9D9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goods-img{
+  height: 100rpx;
+}
+.goods-total-box{
+  height: 88rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+.number{
+  margin:0 34rpx 0 20rpx;
+  color: #62AC4B;
+}
+.text-style{
+  margin-left: 20rpx;
+  color:#FF3B30;
+}
+.icon-box{
+  display: flex;
+  align-items: center;
+}
+.goods-total{
+  display: flex;
+}
+.icon-return{
+  color:#D9D9D9;
+  margin-left: 40rpx;
+}
+.arrow{
+  margin:0 20rpx;
+  width: 28rpx;
+  height: 16rpx;
+}
+.stock-code{
+  margin-left: 20rpx;
+}

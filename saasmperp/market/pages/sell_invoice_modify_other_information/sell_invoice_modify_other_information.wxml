@@ -1,0 +1,32 @@
+<form bindsubmit="confirmEdit">
+  <view class="head">发货方式</view>
+  <view class="returnedInformation">
+    <text class="phone">订单来源</text>
+    <text>{{ otherMes.order_method }}</text>
+  </view>
+  <view class="otherInformation" bindtap="showEmployListModal">
+    <view>
+      <text class="sellperson">销售员</text>
+      <text>{{ employ.user_name }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="otherInformation1" bindtap="showDepartmentList">
+    <view>
+      <text class="wuliu">销售部门</text>
+      <text>{{ department.dept_name }}</text>
+    </view>
+    <image class="icon-go" src="../../images/jiantou.png"></image>
+  </view>
+  <view class="returnInformation">
+    <text class="phone">外部单号</text>
+    <input name="orderNum" type="text" value="{{ otherMes.foreign_order_id }}"></input>
+  </view>
+  <view>
+    <button class="button" form-type="submit">确认修改</button>
+  </view>
+</form>
+<!-- 销售员 -->
+<BlockModal show="{{ showEmployListModal }}" optionList="{{ employList }}" bindtap="getEmploy"></BlockModal>
+<!-- 部门 -->
+<BlockModal show="{{ showDepartmentList }}" optionList="{{ departmentList }}" bindtap="getDepartment"></BlockModal>

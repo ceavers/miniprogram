@@ -1,0 +1,16 @@
+<!--report/pages/sales_outbound_detail/sales_outbound_detail.wxml-->
+<view class="container">
+  <view class="title">销售出库</view>
+  <view class="item-box">
+    <view class="item-text">商品名称</view>
+    <view class="item-content">{{recordList.product_name}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">出库数量</view>
+    <view class="item-content">{{recordList.depo_num}}</view>
+  </view>
+  <view class="item-box">
+    <view class="item-text">出库金额</view>
+    <view class="item-content">{{recordList.depo_gross}}</view>
+  </view>
+</view>

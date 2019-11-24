@@ -1,0 +1,54 @@
+<!--warehouse/pages/edit_category/edit_category.wxml-->
+<view class="container">
+  <view class="header">
+    商品类别
+  </view>
+  <view class="content">
+    <view class="left-content">
+      <view wx:for="{{bigClassList}}" wx:key="" class="content-list {{index==bigId?'right-hover':''}}" bindtap="getBigId" data-Id="{{index}}">
+        <image wx:if="{{bigDelShow}}" bindtap="delBigClass" data-Id="{{index}}" data-Size="1" src="../../images/red-del.png"></image>
+        <text>{{item.category_name}}</text>
+      </view>
+    </view>
+    <view class="right-content">
+      <view wx:for="{{smClassList}}" wx:key="" class="content-list {{index==smId?'':''}}" bindtap="getSmId" data-Id="{{index}}">
+        <image wx:if="{{smDelShow}}" bindtap="delBigClass" data-Id="{{index}}" data-Size="0" src="../../images/red-del.png"></image>
+        <text>{{item.class_name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+      <view class="bottom-left">
+        <view wx:if="{{!bigDelShow}}">
+          <view class="addClass"  bindtap="addClass" data-Size="1">新增大类</view>
+          <view class="delClass" bindtap="delBigbtn">删除</view>
+        </view>
+        <view wx:else class="sure-box">
+          <view class="sure" bindtap="sureBigbtn">确定</view>
+        </view>
+      </view>
+      <view class="bottom-right">
+        <view wx:if="{{!smDelShow}}">
+          <view class="addClass" bindtap="addClass" data-Size="0">新增小类</view>
+          <view class="delClass" bindtap="delSmbtn">删除</view>
+        </view>
+        <view wx:else class="sure-box">
+          <view class="sure" bindtap="sureSm">确定</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 新增类别 弹窗 -->
+  <modal show="{{modalShow}}">
+    <view class="addcategory-box">
+      <view class="addcategory-title">新增类别</view>
+      <view class="addcategory-input">
+        <input type="text" bindinput="addCategoryInput" value="{{addCategoryInput}}"></input>
+      </view>
+      <view class="addcategory-btn">
+        <view bindtap="closeAddCategory">取消</view>
+        <view bindtap="addcategory">确定</view>
+      </view>
+    </view>
+  </modal>
+</view>

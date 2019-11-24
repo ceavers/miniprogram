@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "BlackModal": "/market/components/blackModal/blackModal"
+  },
+  "navigationBarTitleText": "拍照开单"
+}

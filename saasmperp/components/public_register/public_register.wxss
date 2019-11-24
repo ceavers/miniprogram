@@ -1,0 +1,12 @@
+.login_bottom{
+  position: absolute;
+  width: 241rpx;
+  bottom: 52rpx;
+  left: 255rpx;
+  font-size: 22rpx;
+  white-space: nowrap;
+  color: #999999;
+}
+.login_bottom text{
+  color: #323232;
+}

@@ -1,0 +1,89 @@
+<!--客户-->
+<view class="customer">
+  <view class="header">
+    <view class="input-wrap">
+      <image src="/images/search.png"></image>
+      <input placeholder="客户名/手机号" 
+        bindinput="screenInput" 
+        value="{{ screenInput }}" 
+        bindconfirm="getCustomerList"
+        placeholder-style="color: #999;"
+      ></input>
+    </view>
+    <image class="screen" src="../../images/screen.png" bindtap="showScreen"></image>
+  </view>
+  <view class="main">
+    <view class="create-customer" wx:if="{{ !showList }}">
+      <image class="create-customer-image" src="../../images/customer.png"></image>
+      <view>客户</view>
+      <view>对客户进行管理、历史销售进行管理</view>
+      <view class="create-customer-btn" bindtap="gotoCreateCustomer">马上创建</view>
+    </view>
+    <scroll-view class="customer-list" wx:if="{{ showList }}" scroll-y>
+      <view class="customer-list-box" wx:for="{{ customerList }}"  wx:for-index="key"  wx:for-item="value" wx:key="{{ index }}">
+        <view class="customer-list-title">{{ value[0].user_category }}</view>
+        <view class="customer-list-item" wx:for="{{ value }}" 
+          wx:key="{{ index }}" 
+          data-id="{{ item.user_id }}" 
+          data-name="{{ item.name }}"
+          data-money="{{ item.order_receivable }}" 
+          bindtap="showCustomerMes"
+        >
+          <image class="customer-touxiang" src="{{ item.head_image }}" ></image>
+          <view class="customer-mes">
+            <view class="customer-name">{{ item.name }}</view>
+            <view class="customer-business">应收 {{ item.order_receivable }}</view>
+          </view>
+          <image class="jiantou" src="../../images/jiantou.png"></image>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <navigator hover-class="none" url="/market/pages/create_customer/create_customer?userId={{  }}">
+    <view class="footer" wx:if="{{ showList }}">
+      <image src="../../images/add-aut.png"></image>
+      <text>新增客户</text>
+    </view>
+  </navigator>
+</view>
+<!--筛选弹窗-->
+<ScreenModal 
+  showScreen="{{ showScreen }}" 
+  selectClassificationIList="{{ firstClassificationList }}"
+  screenOptionList="{{ firstClassificationList[0] ? firstClassificationList[0].condition.condition_second : [] }}"
+  selectedScreenList="{{ selectedScreenList }}"
+  bindconfirmScreen="getScreenMes"
+></ScreenModal>
+<!--用户信息详情-->
+<modalView show="{{ showCustomerMes }}">
+  <view class="customer-mes-box">
+    <view class="close-customter-mes"><image src="../../images/close.png" bindtap="closeCustomerMes"></image></view>
+    <view class="customer-mes-wrap">
+      <image src="{{ customerDetailMes.user_image }}"></image>
+      <view class="customer-business-mes" style="text-align: left;">
+        <view>{{ customerDetailMes.username }}</view>
+        <view>订单应收 {{ customerDetailMes.order_receivable }}</view>
+        <view>初期欠款 {{ customerDetailMes.early_arrears }}</view>
+      </view>
+    </view>
+    <view class="customer-mes-body">
+      <view class="customer-mes-body-business">
+        <view>预付金额 <text>{{ customerDetailMes.pre_money }}</text> </view>
+        <view>累计销售 <text>{{ customerDetailMes.total_sale }}</text></view>
+        <view>联系信息 <text>{{ customerDetailMes.contact }}{{ customerDetailMes.phone }}</text></view>
+      </view>
+      <navigator class="customer-detail" url="/market/pages/customer_detail/customer_detail?userId={{ customerDetailMes.user_id }}" hover-class="none">
+          <text>客户详情</text>
+          <image src="../../images/jiantou.png"></image>
+      </navigator>      
+    </view>
+    <view class="customer-footer">
+      <view class="customer-footer-item" bindtap="showSaleModal"><image src="/images/market-ticket.png"></image><text>销售</text></view>
+      <view class="customer-footer-item" bindtap="showReceivablesModal"><image src="../../images/sale.png"></image><text>收款</text></view>
+      <view class="customer-footer-item"><button open-type="share" class="share-btn"></button><image src="/images/common-share.png"></image><text>对账单</text></view>
+    </view>
+  </view>
+  
+</modalView>
+<bottomView show="{{ showSaleModal }}" modalList="{{ salesBillList }}"></bottomView>
+<bottomView show="{{ showReceivablesModal }}" modalList="{{ customerReceiptList }}"></bottomView>

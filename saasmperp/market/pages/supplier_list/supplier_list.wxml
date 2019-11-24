@@ -1,0 +1,11 @@
+<!--供应商列表付预付款-->
+<view class="advance-charge">
+    <view class="header">付预付款</view>
+    <form id="advanceChargeForm" class="advance-charge-form" bindsubmit="confirmCharge">
+      <InputWrap cinputName="供应商名称" inputStyle="margin-bottom:40rpx;"><input name="supplierName"></input></InputWrap>
+      <InputWrap cinputName="预付金额"><input name="advanceAmount"></input></InputWrap>
+      <InputWrap cinputName="资金账户"><input name="fundsAccount"></input></InputWrap>
+      <InputWrap cinputName="备注" inputType="inputRemark" inputStyle="margin-bottom:81rpx;"><textarea name="remark"></textarea></InputWrap>
+      <InputWrap inputType="inputButton"><button form-type="submit">确认付款</button></InputWrap>
+    </form>
+</view>

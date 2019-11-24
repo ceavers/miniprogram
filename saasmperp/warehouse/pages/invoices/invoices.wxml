@@ -1,0 +1,32 @@
+<!--warehouse/pages/invoices/invoices.wxml-->
+<view class="container">
+  <view class="title">业务单据</view>
+  <view class="item" catchtap="toStoragePageOut">
+    <view class="text-box">
+      <view class="circle red"></view>
+      <view class="item-text">出库列表</view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+  <view class="item" catchtap="toStoragePageIn">
+    <view class="text-box">
+      <view class="circle green"></view>
+      <view class="item-text">入库列表</view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+  <view class="item" style="margin-top:40rpx;" catchtap="toAllotPage">
+    <view class="text-box">
+      <view class="circle yellow"></view>
+      <view class="item-text">库存调拨</view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+  <view class="item" catchtap="toCheckListPage">
+    <view class="text-box">
+      <view class="circle blue"></view>
+      <view class="item-text">库存盘点</view>
+    </view>
+    <text class="iconfont icon-return"></text>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<view class='transfer-box'>
+  <view class="transfer-container">
+    <view bindtap='showRolloutModal'>
+      <view>{{choiceOutName}}</view>
+      <view></view>
+    </view>
+    <image src='../../images/yuanquan.png'></image>
+    <view bindtap='showRollinModal'>
+
+      <view>{{choiceInName}}</view>
+      <image src="../../images/whitejiantou.png"></image>
+    </view>
+  </view>
+
+  <!-- 选择账户弹框 -->
+  <acc-modal shadow='{{shadow}}' items='{{items1}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 1}}' bind:getOutId='getOutId'></acc-modal>
+  <acc-modal shadow='{{shadow}}' bind:getInId='getInId' items='{{items2}}' bind:close='closeAccModal' bind:radioChange='choiceContent' wx:if='{{selectModal == 2}}'></acc-modal>
+
+  <!-- 键盘弹框 -->
+  <v-confige bind:comit='comit' showAccount='{{showAccount66}}' bind:remove1='remove1' bind:remove='remove' bind:dian='dian' 
+  bind:one='one' bind:two='two' bind:three='three' bind:four='four' bind:five='five' bind:six='six' bind:seven='seven' bind:eight='eight' bind:nine='nine' bind:zero='zero' sum='{{transfersMoney}}'></v-confige>
+</view>

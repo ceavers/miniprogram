@@ -1,0 +1,18 @@
+<!--储值消费流水列表-->
+<view class="pipeline-list">
+  <view class="header">储值消费流水列表</view>
+  <view class="body">
+    <view class="pipeline-item" wx:for="{{ payMoneyList }}" wx:for-index="key" wx:for-item="value" wx:key="{{ key }}">
+      <view class="pipeline-item-title">{{ key }}</view>
+      <view class="pipeline-item-body" wx:for="{{ value }}" wx:key="{{ index }}">
+        <view class="pipeline-item-body-detail">
+          <view class="pipeline-item-body-detail-money">
+            <view class="money">+{{ item.pre_money }}</view>
+            <view class="operation">充值</view>
+          </view>
+          <view class="pipeline-item-body-detail-name">{{ item.user_name }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

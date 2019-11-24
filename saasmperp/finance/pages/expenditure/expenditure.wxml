@@ -1,0 +1,30 @@
+<view class="income">
+  <v-modal shadow='{{shadow}}' items='{{items}}'>
+  </v-modal>
+  <view class="income_content">
+    <view class="income_content_child" data-name="{{item.class_name}}"  wx:for="{{list}}" data-id="{{item.class_id}}" wx:key="{{index}}" bindtap="shadow1">
+         <view class="income_content_img">
+            <image src="{{item.class_ico}}"></image>
+         </view>
+         <view class="income_wenzi">{{item.class_name}}</view>
+    </view>
+    <navigator hover-class='none' role='navigator' url='/finance/pages/setting_modify/setting_modify?recordType=2'>
+        <view class="income_content_child">
+          <view class="income_img">
+            <image src="../../images/shezhi.png"></image>
+          </view>
+          <view class="income_wenzi">设置</view>
+        </view>
+    </navigator>
+  </view>
+  <view class="add" bindtap="add">
+    <image src="../../images/lishi.png"></image>
+    <view>历史</view>
+  </view>
+
+  <confige seven="{{seven}}" six="{{six}}" five="{{five}}" four="{{four}}" three="{{three}}" two="{{two}}" one="{{one}}" dian="{{dian}}" eight="{{eight}}" nine="{{nine}}" zero="{{0}}" sum="{{sum}}" sum1="{{sum1}}" shadow1="{{shadow1}}" bindseven="seven"
+    bindsix="six" bindfive="five" bindfour="four" bindthree="three" bindtwo="two" bindone="one" binddian="dian" bindeight="eight" bindnine="nine" bindzero="zero" bindremove="remove" bindremove1="remove1" bindday="day" bindcomit="comit" starttime="{{starttime}}"></confige>
+  <picker show="{{show}}" bindsetTime="setTime"></picker>
+  <xiaolei xl_title="{{xl_title}}" show="{{shadow2}}" items="{{datalist}}" bindremove="{{remove2}}" binddataInfo="dataInfo" ></xiaolei>
+  <!-- 日期选择器 -->
+</view>

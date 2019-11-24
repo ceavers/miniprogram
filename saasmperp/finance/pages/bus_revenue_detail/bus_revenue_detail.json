@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "acc-modal": "/components/pay_type/pay_type",
+    "del-modal": "/components/del_modal/del_modal"
+  },
+  "navigationBarTitleText": "收支列表"
+}

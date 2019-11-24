@@ -1,0 +1,36 @@
+<view class="bus-pay-details-box">
+  <view class='bus-pay-details-header'>流水详情</view>
+  <view class='bus-pay-details-container'>
+    
+    <view>
+      <view>流水类型</view>
+      <view>采购支出</view>  
+    </view>
+    <view>
+      <view>发生金额</view>
+      <view>120.00</view>  
+    </view>
+    <view>
+      <view>发生时间</view>
+      <view>2019-07-14</view>  
+    </view>
+    <view>
+      <view>资金账户</view>
+      <view>现金账户</view>  
+    </view>
+  </view>
+  <view class='bus-pay-details-info'>
+    <view>
+      <view>经手人</view>
+      <view>销售员小王</view>  
+    </view>
+    <view>
+      <view>相关单号</view>
+      <view>dhdsda3213</view>  
+    </view>
+    <view>
+      <view>备注说明</view>
+      <view></view>  
+    </view>
+  </view>
+</view>

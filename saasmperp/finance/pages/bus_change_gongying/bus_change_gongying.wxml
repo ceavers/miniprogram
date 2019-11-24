@@ -1,0 +1,58 @@
+<view class="bus-change-gongying-box">
+<view class='beijing'></view>
+  <view class='bus-change-gongying-header'>
+    修改供应商
+  </view>
+  <view class='bus-change-gongying-info'>
+    <view>
+      <view>供应商名称</view>
+      <input type='text' value='{{nickName}}'></input>
+    </view>
+    <view>
+      <view>联系人</view>
+      <input type='text' value='田斌'></input>
+    </view>
+    <view>
+      <view>手机号</view>
+      <input type='text' value='18281587563'></input>
+    </view>
+    <view>
+      <view>地址</view>
+      <input type='text' value='成都'></input>
+    </view>
+  </view>
+  
+  <view class='bus-change-gongying-headimg'>
+    <view>头像</view>
+    <view>
+      <view>
+        <image src='../../images/busChangeImg.png'></image>
+        <image src='../../images/busChangeImg.png'></image>
+      </view>
+      <image src='../../images/add.png'></image>
+    </view>
+  </view>
+
+  <view class='bus-change-gongying-desc'>
+    <view>
+      <view>初期欠款</view>
+      <input type='text' value='1000'></input>
+    </view>
+    <view>
+      <view>描述</view>
+      <textarea value='单子很大'></textarea>
+    </view>
+  </view>
+  <button class='confirm-btn'>确认修改</button>
+</view>
+
+
+
+
+
+
+
+
+
+
+

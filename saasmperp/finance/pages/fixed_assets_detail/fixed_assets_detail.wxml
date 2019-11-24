@@ -1,0 +1,148 @@
+<view class='fixed-detail-box'>
+  <view class='fixed-detail-header'>{{fixedDeatil.fixedasset_name}}</view>
+   <view class='add-fixed-assets-image-box'>
+    
+    <image class="business-image" 
+      wx:for="{{ imageList }}" 
+      wx:key="{{ index }}" 
+      src="{{ item }}" 
+      data-index="{{ index }}" 
+      bindtap="previewImage"
+    ></image>
+    <image src='../../images/add.png' bindtap='showAddImgModel'></image>
+  </view>
+  <view class='fixed-detail-container'>
+    <view>
+      <view>资产类别</view>
+      <view>{{fixedDeatil.fixedasset_cat.fixedcat_name}}</view>
+    </view>
+    <view>
+      <view >规格描述</view>
+      <view>{{fixedDeatil.fixedasset_specification}}</view>
+    </view>
+    <view>
+      <view>序列号</view>
+      <view>{{fixedDeatil.serial_number}}</view>
+    </view>
+    <view class='zhanwei'></view>
+    <view>
+      <view>购买时间</view>
+      <view>{{fixedDeatil.buy_time}}</view>
+    </view>
+    <view>
+      <view>资产价格</view>
+      <view>{{fixedDeatil.fixedasset_price}}</view>
+    </view>
+    <view>
+      <view>折旧期限</view>
+      <view>{{fixedDeatil.depreciable_period+'个月'}}</view>
+    </view>
+    <view>
+      <view>资产残值</view>
+      <view>{{fixedDeatil.fixedasset_salvage}}</view>
+    </view>
+    <view class='zhanwei'></view>
+    <view>
+      <view>状态</view>
+      <view>{{fixedDeatil.fixedasset_state == 0 ? '使用中': fixedDeatil.fixedasset_state == 1 ? '闲置':'已报废'}}</view>
+    </view>
+    <view>
+      <view>使用人</view>
+      <view>{{fixedDeatil.user.name}}</view>
+    </view>
+    <view>
+      <view>管理员</view>
+      <view>{{fixedDeatil.administrator.name}}</view>
+    </view>
+    <view class='zhanwei'></view>
+    <view>
+      <view>录入人</view>
+      <view>{{fixedDeatil.recorder.name}}</view>
+    </view>
+    <view>
+      <view>录入时间</view>
+      <view>{{fixedDeatil.record_time}}</view>
+    </view>
+    <view class='beizhu'>
+      <view>备注</view>
+      <view>{{fixedDeatil.note}}</view>
+    </view>
+  </view>
+  <view class='icon-box'>
+    <view bindtap='showOperateModal'>
+      <image src='../../images/fixed-detail1.png'></image>
+      <view>操作</view>
+    </view>
+    <view bindtap='updateStatus'>
+    <navigator hover-class='none' url="/finance/pages/fixed_assets_modify/fixed_assets_modify?fixedDeatil={{jsonFixedDeatil}}">
+      <image src='../../images/fixed-detail2.png'></image>
+      <view>修改</view>
+      </navigator>
+    </view>
+    <view bindtap='showDelModal'>
+      <image src='../../images/fixed-detail3.png'></image>
+      <view>删除</view>
+    </view>
+  </view>
+
+  <!-- 删除的弹框 -->
+  <del_modal shadow='{{shadow2}}' bind:close='closeDelModal' bind:delData='delData'></del_modal>
+
+  <!-- 删除弹框 -->
+<del-modal shadow='{{showDelModal}}' bind:close='clsoeDelModal' bind:delData='delData'></del-modal>
+
+<!-- 上传图片弹框 -->
+  <bottomView show="{{ showAddImgModel }}" modalList="{{ addImgList }}" isWidth="true" bindtap="getEventName"></bottomView>
+
+  <!-- 图片预览 -->
+<ModalView show="{{ previewImage }}" imageMask="true">
+  <swiper indicator-dots="true"
+    indicator-color="RGBA(217, 217, 217, 1)"
+    indicator-active-color="RGBA(98, 172, 75, 1)"
+    current="{{ previewImageIndex }}"
+    class="preview-swiper"
+    catchtap="closePreview"
+    bindchange="selectSwiperImageIndex"
+  >
+    <block wx:for="{{imageList}}" wx:key="{{ index }}">
+      <swiper-item data-index="{{ index }}">
+        <image catchtap="returnFalse" src="{{item}}" class="slide-image" width="100%" height="100%"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <image class="del-image" bindtap="delImage" src="/finance/images/del-image.png"></image>
+</ModalView>
+<!-- 删除图片 -->
+<ModalView show="{{ delImageFlag }}">
+  <view class="del-modal">
+    <view class="del-image-btn" bindtap="delImageConfirm">删除图片</view>
+    <view class="del-image-cancel" bindtap="delImageCancel">取消</view>
+  </view>
+</ModalView>
+
+  <!-- 操作弹框 -->
+  <view class="operate-modal {{showOperateModal ? 'showOperate':'hiddenOperate'}}" wx:if='{{showOperateModal}}'>
+    <view>操作</view>
+    <view class='operate-modal-content'>
+      <view>
+      <!-- 将资产ID和使用人ID传递过去 -->
+      <navigator hover-class='none' url="/finance/pages/fixed_assets_operate/fixed_assets_operate?operateType=1&fixedasset_id={{fixedDeatil.fixedasset_id}}&user_id={{fixedDeatil.user.id}}&userName={{fixedDeatil.user.name}}">
+        <image src='../../images/caozuo1.png'></image>
+        <view>移交</view>
+      </navigator>
+      </view>
+      <view>
+        <navigator hover-class='none' url="/finance/pages/fixed_assets_operate/fixed_assets_operate?operateType=2&fixedasset_id={{fixedDeatil.fixedasset_id}}&administrator_id={{fixedDeatil.administrator.id}}&fixedasset_state={{fixedDeatil.fixedasset_state}}&administratorName={{fixedDeatil.administrator.name}}">
+        <image src='../../images/caozuo2.png'></image>
+        <view>闲置</view>
+        </navigator>
+      </view>
+      <view>
+        <image src='../../images/caozuo3.png'></image>
+        <view>报废</view>
+      </view>
+    </view>
+    <view class='operate-cancel' bindtap='closeOperateModal'>取消</view>
+  </view>
+  <view class='operate-modal-mask' wx:if='{{showOperateModal}}' bindtap='closeOperateModal'></view>
+</view>
