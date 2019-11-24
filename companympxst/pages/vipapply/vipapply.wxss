@@ -1,0 +1,79 @@
+/* pages/vipapply/vipapply.wxss */
+.main{
+  height: 100vh;
+  background-color: RGBA(246, 246, 246, 1);
+  overflow: hidden;
+}
+.vip-apply-message{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+  padding-right: 40rpx;
+  background-color: #fff;
+}
+.touxiang{
+  padding-left: 30rpx;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  padding-right: 40rpx;
+}
+.touxiang image{
+  width: 119rpx;
+  height: 120rpx;
+}
+.message{
+  flex: 1;
+  padding-left: 30rpx;
+  padding-top: 42rpx;
+}
+.tel view,.date view{
+  display: inline-block;
+  font-size: 24rpx;
+}
+.name{
+  color: rgba(66, 66, 66, 1);
+  font-size: 30rpx;
+}
+.tel,.date{
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+.tel{
+  margin-top: 23rpx;
+  margin-bottom: 19rpx;
+}
+.tel view{
+  color: rgba(66, 66, 66, 1);
+}
+.date view{
+  color: rgba(247, 118, 32, 1);
+}
+.operation{
+  padding-top: 40rpx;
+  font-size: 26rpx;
+}
+.pass,.refuse{
+  width:120rpx;
+  height:50rpx;
+  border-radius:25rpx;
+  background:rgba(251,156,119,1);
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+}
+.refuse{
+  margin-top: 20rpx;
+  border:1px solid rgba(217,217,217,1);
+  border-radius:25px;
+  background-color: #fff;
+  color: rgba(153, 153, 153, 1);
+}
+.passed{
+  background:rgba(251,156,119,.5);
+  color: #fff;
+}
+
+.scroll-box{
+  height: 100vh;
+  
+}

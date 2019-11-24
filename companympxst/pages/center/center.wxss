@@ -1,0 +1,156 @@
+/* pages/center/center.wxss */
+page{
+  background: #F6F6F6;
+}
+.container{
+  width: 100%;
+}
+.userInfo-box{
+  height: 350rpx;
+  overflow: hidden;
+  position: relative;
+}
+.center-back{
+  position: absolute;
+  z-index: -9999;
+  height: 350rpx;
+  width:754rpx;
+  top:0;
+}
+.code{
+  width:42rpx;
+  height:42rpx;
+  margin-left: 586rpx;
+}
+.message{
+  width:42rpx;
+  height:50rpx;
+  margin-left: 40rpx;
+}
+.knews{
+  width: 18px;
+  height: 18px;
+  margin-left: -12px;
+  margin-bottom: 10px;
+}
+.userInfo-wrapper{
+  height: 150rpx;
+  margin-top:10rpx;
+}
+.avatar-box{
+  width:150rpx;
+  height: 150rpx;
+  border:1rpx solid #FACCB9;
+  border-radius: 50%;
+  margin-left:30rpx;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0px 0px 1rpx 2rpx #FBCEBC;
+}
+.avatar{
+  position: absolute;
+  top: 0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width:134rpx;
+  height: 134rpx;
+  border-radius: 50%;
+}
+.info-box{
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+  margin-left: 20rpx;
+  /* background: red; */
+}
+.info-item{
+  font-size:24rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  margin-top:10rpx;
+}
+.info-nichen{
+  font-size:34rpx;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  margin-top:10rpx;
+}
+.item1{
+  font-size:34rpx;
+}
+.grade{
+  width:60rpx;
+  height:36rpx;
+  display:inline-block;
+  background:#FFC500;
+  border-radius:18rpx;
+  vertical-align:middle;
+  margin-left:30rpx;
+}
+.grade-box{
+  width:60rpx;
+  height:36rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grade-image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.number{
+  font-size: 18rpx;
+  margin-top:8rpx;
+  margin-left: -6rpx;
+}
+.nav{
+  height: 90rpx;
+  background: #fff;
+  margin-top:1px;
+  overflow: hidden;
+}
+.nav1{
+  margin-top:20rpx;
+}
+.nav-item{
+  height:90rpx;
+  overflow: hidden;
+}
+.nav-box{
+  height: 70rpx;
+  margin-top:10rpx;
+}
+.nav-img{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin:0 46rpx 0 40rpx;
+  vertical-align:middle;
+}
+.item-text{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(50,50,50,1);
+}
+
+.modal-view{
+  position: absolute;
+  left:40rpx;
+  top: 123rpx;
+  width: 670rpx;
+  height: 860rpx;
+  z-index: -9999;
+}
+.closed{
+  width:30rpx;
+  height:31rpx;
+  position: absolute;
+  left: 645rpx;
+  top:155rpx;
+}
+.code-img{
+  width:381rpx;
+  height:384rpx;
+}

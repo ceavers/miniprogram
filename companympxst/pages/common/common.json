@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "modalView": "/components/Popup/Popup"
+  },
+  "navigationBarTitleText": "常用语"
+}

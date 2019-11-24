@@ -1,0 +1,47 @@
+<!--pages/chatRecords/chatRecords.wxml-->
+<view class="container">
+  <view class="search-box">
+    <view class='input-box'>
+      <image class='search-icon' src='/images/search-icon.png' bindtap="searchChat"></image>
+      <input value="{{ input }}" class="search-input" placeholder="搜索聊天记录" bindinput="inputModel" bindconfirm="searchChat"/>
+    </view>
+    <view class='cancel' bindtap="cancel">取消</view>
+  </view>
+  <view class='hint' wx:if="{{isShow}}">快速搜索聊天记录</view>
+  <view class='result-box' wx:if="{{isShow}}">
+    <view class='result-item' bindtap="searchMember">群成员</view>
+    <view class='result-item' bindtap="searchPicture">图片</view>
+    <view class='result-item' bindtap="searchUrl">网址</view>
+  </view>
+    <scroll-view scroll-y style="height: calc(100% - 150rpx)" 
+      bindscrolltolower="searchLoadMes" wx:if="{{ !isShow }}"> 
+      <view style='height:1rpx'></view>
+      <view class='search-result-item' wx:for="{{ items }}" wx:key="index" wx:if="{{item.contentTypes!=='image'}}" data-logId="{{item.chatLogid}}" catchtap='toChat'>
+        <image class='avatar' src='{{ item.senderInfo.senderAvater }}'></image>
+        <view class='record-box'>
+          <view class='name-time-box'>
+            <view calss="name-box">{{ item.senderInfo.senderName }}</view>
+            <view calss="time-box">{{ item.sendTime }}</view>
+          </view>
+          <view class='record'>{{ item.content }}</view>
+        </view>
+      </view>
+      <view wx:for="{{ items }}" wx:key="index" wx:if="{{item.contentTypes==='image'}}" class="{{item.type==='image'?'messBox':''}}">
+        <view wx:if="{{item.type==='time'}}" class='messTime'>{{item.content}}</view>
+        <image wx:if="{{item.type==='image'}}" src='{{item.content}}' data-content="{{ item.content }}" mode="aspectFit" class='messimgae' bindtap="previewImage"></image>
+      </view>
+    </scroll-view>
+</view>
+<modalView show="{{selectMebShow}}">
+  <view class="pup-title">选择成员<image src="/images/closed.png" class="closeBtn" catchtap="close"></image></view>
+  <view class="pup-search">
+    <image class="pup-icon-search" src="/images/search.png"></image> 
+    <input class="pup-search-value" value='{{name}}' type="text" name="" placeholder="搜索" bindinput='searchMemberByName' confirm-type="search"></input>
+  </view>
+  <view class="members-box">
+    <view class="members-item-box" wx:for="{{persons}}" wx:key="index" data-id="{{item.uid}}" data-type="{{item.type}}" catchtap='searchChatByMember'>
+      <image class="member-img" src="{{item.avatar||defaultAvatar}}"></image>
+      <view class="member-name">{{item.name}}</view>
+    </view>
+  </view>
+</modalView>

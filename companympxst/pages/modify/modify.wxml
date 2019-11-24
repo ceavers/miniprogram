@@ -1,0 +1,30 @@
+<!--pages/modify/modify.wxml-->
+<view class="modify">
+  <form class="modify-form">
+    <view class="name-wrap input-wrap">
+      <view class="input-name">姓名：<view class="green">*</view></view>
+      <input disabled value="{{ name }}"></input>
+    </view>
+    <view class="which-role">
+      <view class="role">所属角色</view>
+      <radio-group bindchange="listenRadio">
+        <radio value="3" checked="{{ role == 3 }}">
+            <view class="role-name">
+              <view class="super">超级管理员</view>
+              <view class="super-mes">可以作查看会员电话及删除会员等操作</view>
+            </view>
+        </radio>
+        <radio value="2" checked="{{ role == 2 }}">
+            <view class="role-name">管理员</view>
+        </radio>
+        <radio value="1" checked="{{ role == 1 }}">
+            <view class="role-name">医生</view>
+        </radio>
+        <radio value="0" checked="{{ role == 0 }}">
+            <view class="role-name">客服</view>
+        </radio>
+      </radio-group>
+    </view>
+    <view class="save-btn" bindtap="saveMes">保存</view>
+  </form>
+</view>

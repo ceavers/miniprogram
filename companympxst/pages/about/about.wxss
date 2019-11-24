@@ -1,0 +1,5 @@
+/* pages/about/about.wxss */
+.hr{
+  height: 1px;
+  background: #F6F6F6;
+}

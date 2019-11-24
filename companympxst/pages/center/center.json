@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tab-bar": "/components/tab-bar/tab-bar",
+    "modalView": "/components/code/code"
+  },
+  "navigationBarTitleText": "个人中心",
+  "navigationBarBackgroundColor": "#F7A584",
+  "navigationBarTextStyle": "white"
+}

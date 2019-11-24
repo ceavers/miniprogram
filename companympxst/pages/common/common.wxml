@@ -1,0 +1,36 @@
+<!--pages/common/common.wxml-->
+<view class='container'>
+  <view class='search-box'>
+    <view class='input-box'>
+      <image class='search-icon' src='/images/search-icon.png'></image>
+      <input class='search-input' placeholder='搜索常用语'></input>
+    </view>
+    <view class='cancel'>取消</view>
+  </view>
+  <view class='problem-box'>
+    <view class='text-box' wx:for='{{Lists}}' wx:key='index'>
+      <image class='del-icon' data-id="{{index}}" src='/images/result-icon.png' wx-if="{{EditShow}}" bindtap="Delect_Com"></image>
+      <text class='problem-text' bindtap='chooseCommonLanguage' data-id="{{index}}">{{item.text}}</text>
+      <image class='edit-icon' data-id="{{index}}" src='/images/result-edit.png' wx-if="{{EditShow}}" bindtap="Edit_Com"></image>
+    </view>
+  </view>
+  <view class='foot' wx-if="{{!EditShow}}">
+    <view class='addCommon' bindtap="CommonPopShow">+新增常用语</view>
+    <image class='foot-icon' src='/images/add-setting.png' bindtap="Edittype"></image>
+  </view>
+  <view class='foot' wx-if="{{EditShow}}">
+    <view class='addCommon' bindtap="complete">完成</view>
+  </view>
+
+
+  <modalView show="{{addCommonPop}}">
+    <view class="pup-title">{{title}}</view>
+    <view class='pup-box'>
+        <textarea class="addCom-textarea" value="{{concent}}" bindinput="Text_content" maxlength='-1' placeholder="请输入你的常用语"></textarea>
+    </view>
+    <view class='modal-footer'>
+      <view class='cancel-btn' bindtap='cancel'>取消</view>
+      <view form-type="submit" class='confirm-btn' bindtap='confirm'>确定</view>
+    </view>
+  </modalView>
+</view>

@@ -1,0 +1,35 @@
+<view class="group">
+  <view class="group-header">
+    <span class="person">群聊成员</span>
+    <span class="more" bindtap="btnPopups">查看更多群成员</span>
+    <image class="group-header-img" bindtap="btnPopups" src="/images/more.png"></image>
+  </view>
+  <view class="group-picture">
+    <view class="people" bindtap="btnPerson" wx:for="{{persons}}" data-id="{{item.userId}}">
+      <view class="group-picture-head">
+        <image class="img" src="{{item.userAvatar}}"></image>
+      </view>
+      <view class="group-picture-name">
+        <span class="name" >{{item.userNike}}</span>
+      </view>
+    </view>
+    <view class="people">
+      <view class="group-picture-head">
+        <image class="icon-img" bindtap="btnDelete" src="/images/jianshao.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+<!-- <view class="notice" bindtap="btnNotice">
+  <span class="notice-text">群公告</span>
+  <image class="notice-img" src="/images/more.png"></image>
+</view> -->
+<view class="notice" bindtap="btnRecords">
+  <span class="notice-text">聊天记录</span>
+  <image class="history-img" src="/images/more.png"></image>
+</view>
+<view class="notice" bindtap="btnBlock">
+  <span class="notice-text">黑名单</span>
+  <image class="history-img" src="/images/more.png"></image>
+</view>

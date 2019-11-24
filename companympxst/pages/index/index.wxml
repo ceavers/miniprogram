@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class='hr'></view>
+<view style='margin-bottom:100rpx'>
+  <swiper class="swiper" indicator-dots="{{true}}" indicator-color="rgba(255, 255, 255, .6)" indicator-active-color='rgba(255,96,34,0.8)' previous-margin="70rpx"
+    autoplay="{{autoplay}}" circular="{{circular}}">  
+    <block wx:for="{{backImages}}" wx:key="index">
+      <swiper-item>  
+        <image src='{{item}}' class='bannerImg'></image>
+      </swiper-item>  
+    </block>
+  </swiper> 
+  <view class="hospDesc">
+    <navigator url="/pages/about/about">
+      <view class="hostTitle">
+        <view class="bg"></view>
+        <view class="desc">新生堂介绍</view>
+      </view>
+    </navigator>
+    <view class="hospBr"></view>
+    <view class="hospModule">
+      <view class="about">
+        <view class="aboutHosp">关于医院</view>
+        <view class="aboutDesc">成都新生堂妇产医院是一家提供高端服务的私立妇产医院，推崇并践行“自然分娩”理念。</view>
+        <image class='aboutBg' src='/images/aboutH.png'></image>
+      </view>
+      <view class="service">
+        <view class="serviceDesc">
+          <view class="aboutHosp">一站式孕育服务</view>
+          <view class="science">
+            <view><text>见证宝贝的\n成长足迹</text></view>
+            <image class="serviceBg serviceOne" src='/images/serviceOne.png'></image>
+          </view>
+        </view>
+        <view  class="serviceDesc">
+          <view class="aboutHosp">快乐孕育 享受顺产</view>
+          <view class="science">
+            <view><text>让分娩成为一辈子幸福的记忆</text></view>
+            <image class="serviceBg serviceTwo" src='/images/serviceTwo.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="accessChannel">
+    <view class="hostTitle">
+      <view class="bg"></view>
+      <view class="desc">问诊快速通道</view>
+    </view>
+    <view class="customer">
+      <view class="onlineService" bindtap="visitorChat">
+        <view class="head">
+          <view class="onlineheadBg"></view>
+        </view>
+        <view class="desc">
+          <view>在线客服</view>
+          <view style="color:rgba(254,182,46,1);">游客咨询</view>
+        </view>
+      </view>
+      <view class="vipService" bindtap="btnPopups">
+        <view class="head">
+          <view class="vipBg"></view>
+        </view>
+        <view class="desc">
+          <view>VIP客服群</view>
+          <view style="color:rgba(255,122,71,1);">专属客服</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottomBr"></view>
+  <tab-bar tabbar="{{tabbar}}"/>
+</view>
+

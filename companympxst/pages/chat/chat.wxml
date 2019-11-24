@@ -1,0 +1,96 @@
+<!--pages/chat/chat.wxml-->
+<view class="container">
+  <scroll-view scroll-y class='chat-box' scroll-into-view="{{toScrollId}}" upper-threshold="{{20}}" bindscrolltoupper="updataMessages">
+    <image src='/images/chat-back.png' class="chat-back"></image>
+    <video id='myVideo' src='{{videoSrc}}' style='width:0;height:0;display:none'></video>
+    <!-- <view class="time">
+      <view class="value">昨天 18:00</view>
+    </view> -->
+    <view style='height:4rpx'></view>
+    <view wx:for="{{records}}" wx:key="index" id="scrollId{{index}}">
+      <view class="time" wx:if="{{item.userOrServiceId == 'sysMsg'}}"> 
+        <view class="value">{{item.message}}</view>
+      </view>
+      <view class="others" wx:elif="{{item.userOrServiceId !== userOrServiceId || item.type == 0}}">
+        <view class="info">
+          <image class="avatar" src="{{item.avatarUrl}}" data-name='{{item.nickName}}' data-userid="{{item.userOrServiceId}}" catchlongpress='longTap'></image>
+          <view class="classify-box">
+            <view class="classify" wx:if="{{item.role == 0||item.role == 1}}">客服</view>
+          </view>
+        </view>
+        <view class="message-box">
+          <view class="name">{{item.nickName}}</view>
+          <view class="text" wx:if="{{item.msgType == 'text'}}">
+            <view style='display:inline' wx:for="{{item.message}}" wx:key="index" wx:for-item="itemText">
+              <text selectable wx:if="{{itemText.textType == 'text'}}">{{itemText.text}}</text>
+              <text selectable class='url-text' wx:elif="{{itemText.textType == 'url'}}" data-text="{{itemText.text}}" catchtap="toLink">{{itemText.text}}</text>
+            </view>
+          </view>
+          <image src='{{item.message}}' bindtap="previewImage" data-content="{{ item.message }}" wx:elif="{{item.msgType == 'image'}}" mode="widthFix" style='width:200rpx;border-radius:4px'></image>
+          <view wx:elif="{{item.msgType == 'video'}}" class='myVideoView-box'>
+            <!-- <video src="{{item.message}}" custom-cache="{{false}}" style='width:150rpx;height:240rpx;border-radius:6rpx'></video> -->
+            <text class='iconfont icon-bofang1'></text>
+            <image data-src='{{item.message}}' class="myVideoView" src="{{item.message}}?x-oss-process=video/snapshot,t_1000,f_jpg,w_100,h_160,m_fast" catchtap='playVideo'>
+            </image>
+          </view>
+          <view class="text" wx:elif="{{item.msgType == 'voice'}}">
+            <image class='ico' src='/images/yuyin-ico-de.png' data-audiosrc="{{item.message}}" catchtap='audioPlay'></image>
+            <!-- <text class='voice-time'>{{item.time}}s</text> -->
+          </view>
+        </view>
+      </view>
+      <view class="self" wx:else>
+        <view class="message-box">
+          <view class="name self-name">我</view>
+          <view class="text self-text" wx:if="{{item.msgType == 'text'}}">
+            <view style='display:inline' wx:for="{{item.message}}" wx:key="index" wx:for-item="itemText">
+              <text wx:if="{{itemText.textType == 'text'}}" selectable>{{itemText.text}}</text>
+              <text class='url-text' wx:elif="{{itemText.textType == 'url'}}" selectable data-text="{{itemText.text}}" catchtap="toLink">{{itemText.text}}</text>
+            </view>
+          </view>
+          <image src='{{item.message}}' bindtap="previewImage" data-content="{{ item.message }}" wx:elif="{{item.msgType == 'image'}}" mode="widthFix" style='width:200rpx;border-radius:4px'></image>
+          <view wx:elif="{{item.msgType == 'video'}}" class='myVideoView-box'>
+            <!-- <video src="{{item.message}}" custom-cache="{{false}}" style='width:150rpx;height:240rpx;border-radius:6rpx'></video> -->
+            <text class='iconfont icon-bofang1'></text>
+            <image data-src='{{item.message}}' class="myVideoView" src="{{item.message}}?x-oss-process=video/snapshot,t_1000,f_jpg,w_100,h_160,m_fast" catchtap='playVideo'>
+            </image>
+          </view>
+          <view class="text self-text" wx:elif="{{item.msgType == 'voice'}}">
+            <!-- <text class='voice-time-self'>{{item.time}}s</text> -->
+            <image class='ico ico-self' src='/images/yuyin-ico-de.png' data-audiosrc="{{item.message}}" catchtap='audioPlay'></image>
+          </view>
+        </view>
+        <view class="info self-info">
+          <image class="avatar" src="{{item.avatarUrl}}"></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="input-box">
+    <view class="input-margin">
+      <view class="action" catchtap='gotoCommon'>常用语</view>
+      <textarea wx:if="{{ isShow }}" class="textarea" value="{{tav}}" bindinput="getTextareaValue" placeholder="想说点什么呢" auto-height="{{true}}" cursor-spacing="14" show-confirm-bar="{{false}}" ></textarea>
+      <view class="textarea" style="text-align: center;" wx:if="{{ !isShow }}"  bindtouchstart="start" bindtouchend="end" cursor-spacing="14">按住录音</view>
+      <view class="action" catchtap='sendMessage'>发送</view>
+    </view>
+    <view class="message-type" style='margin:0 24rpx;'>
+      <image bindtap="startRecord" src="/images/send-voice.png" style="width:36rpx;height:48rpx"></image>
+      <image src="/images/send-picture.png" style="width:48rpx;height:37rpx" bindtap="selectPicture"></image>
+      <image src="/images/send-camera.png" style="width:45rpx;height:40rpx" bindtap="film"></image>
+      <image src="/images/send-video.png" style="width:54rpx;height:29rpx" bindtap="video"></image>
+      <!-- <image src="/images/send-face.png" style="width:44rpx;height:44rpx"></image> -->
+      <image bindtap="btnSetting" src="/images/send-setting.png" style="width:48rpx;height:45rpx"></image>
+    </view>
+  </view>
+</view>
+<view  class="voice-style"  wx:if="{{ isSpeaking }}">
+<image class="bg-style" src="../../images/voice_icon_speaking_bg_normal.png" ></image>
+<image class="bg-style" animation="{{spreakingAnimation}}" src="../../images/voice_video_loading_0.png"></image>
+<image class="bg-style" animation="{{spreakingAnimation_1}}" src="../../images/voice_video_loading_0.png"></image>
+<image class="bg-style" animation="{{spreakingAnimation_2}}" src="../../images/voice_video_loading_0.png"></image>
+<image class="sound-style" src="../../images/voice_icon_speech_sound_1.png" ></image>
+<image wx:if="{{j==2}}" class="sound-style" src="../../images/voice_icon_speech_sound_2.png" ></image>
+<image wx:if="{{j==3}}" class="sound-style" src="../../images/voice_icon_speech_sound_3.png" ></image>
+<image wx:if="{{j==4}}" class="sound-style" src="../../images/voice_icon_speech_sound_4.png" ></image>
+<image wx:if="{{j==5}}"class="sound-style" src="../../images/voice_icon_speech_sound_5.png" ></image>
+</view>

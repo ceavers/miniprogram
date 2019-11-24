@@ -1,0 +1,66 @@
+/* pages/grouppersoninformation/grouppersoninformation.wxss */
+
+.group {
+  width: 100%;
+  background: #fff;
+  border-top: 2rpx solid #f6f6f6;
+  margin-bottom:44rpx;
+}
+.picture {
+  float: left;
+  margin-top: 44rpx;
+  margin-left: 42rpx;
+  
+}
+.img {
+  width: 114rpx;
+  height: 114rpx;
+}
+.ifo {
+  margin-top:44rpx;
+  margin-left: 180rpx;
+}
+.ifo-chen {
+  font-size: 36rpx;
+  
+}
+.ifo-sex {
+  font-size: 28rpx;
+
+}
+.hr {
+  height: 20rpx;
+  background: #f6f6f6;
+}
+.customer {
+  height: 88rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border-bottom: 2.67rpx solid #f6f6f6;
+  font-size: 28rpx;
+}
+.customer-only {
+  margin-left: 42rpx;
+}
+.customer-value {
+  margin-left: 38rpx;
+}
+.history-img {
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 520rpx;
+}
+.icon-bianji{
+  font-size: 32rpx;
+  margin-left:20rpx;
+}
+.icon-queding1{
+  font-size: 36rpx;
+  margin-left:20rpx; 
+}
+.beizhu{
+  border-bottom: 1rpx solid #999;
+  width: 200rpx;
+  margin-left: 38rpx;
+}

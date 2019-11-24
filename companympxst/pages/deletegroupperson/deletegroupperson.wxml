@@ -1,0 +1,15 @@
+<!--pages/deletegroupperson/deletegroupperson.wxml-->
+<view class="group">
+  <view class="search">
+   <image class="icon-search" src="/images/search.png" bindtap="searchGroupPerson"></image> 
+    <input class="search-value" type="text" name="" bindinput="searchGroupPerson" confirm-type="search" placeholder="搜索"></input>
+    <button bindtap="deleteGroupPerson" class="head-delete">拉黑</button>
+  </view>
+  <checkbox-group bindchange="checkboxChange">
+  <view class="people-list" wx:for="{{persons}}" wx:key="userId">
+      <image class="people-img" src="{{item.userAvatar}}"></image>
+      <span class="people-name">{{item.userNike}}</span>
+      <checkbox class="people-check" value="{{item.userId}}"></checkbox>
+  </view>
+ </checkbox-group>
+</view>

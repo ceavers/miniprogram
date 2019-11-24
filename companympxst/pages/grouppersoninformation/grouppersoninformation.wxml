@@ -1,0 +1,41 @@
+<!--pages/grouppersoninformation/grouppersoninformation.wxml-->
+
+<view class="hr"></view>
+<view class="group">
+  <view class="picture">
+    <image class="img" src="{{imageUrl}}"></image>
+  </view>
+  <view class="ifo">
+    <view class="ifo-chen">
+      <span class="chen-value">{{nickname}}</span>
+    </view>
+    <view class="ifo-sex">
+      <span class="sex">性别：</span>
+      <span class="sex-calue">{{gender}}</span>
+    </view>
+    <view class="ifo-sex">
+      <span class="area">地区：</span>
+      <span class="area-value">{{city||''}}</span>
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="customer">
+  <span class="customer-only">备注</span>
+  <span class="customer-value" wx:if="{{!inputShow}}">{{note||'无'}}</span>
+  <text class="iconfont icon-bianji" wx:if="{{!inputShow}}" catchtap="editNote"></text>
+  <input class="beizhu" wx:if="{{inputShow}}" value="{{editNote}}" bindinput="getNote"></input>
+  <text class="iconfont .icon-queding1" wx:if="{{inputShow}}" catchtap="editNoteOK"></text>
+</view>
+<view class="customer">
+  <span class="customer-only">专属客服</span>
+  <span class="customer-value">{{serviceName}}</span>
+</view>
+<view class="customer">
+  <span class="customer-only">电话号码</span>
+  <span class="customer-value">{{telephone||''}}</span>
+</view>
+<!-- <view class="customer"  bindtap="btnRecords">
+  <span class="customer-only">聊天记录</span>
+  <image class="history-img" src="/images/more.png"></image>
+</view> -->

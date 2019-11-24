@@ -1,0 +1,101 @@
+/* pages/chatsetting/chatsetting.wxss */
+page{
+  background: #F5F5F5;
+  height: 100%;
+}
+.group {
+  background: #fff;
+  border-top: 2rpx solid #f6f6f6;
+}
+.group::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.group-header {
+  padding-top: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.person {
+  font-size: 30rpx;
+  color: #323232;
+  margin-left: 30rpx;
+}
+.more {
+  font-size: 28rpx;
+  color: #999;
+  margin-left: 346rpx;
+}
+.group-header-img {
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 3rpx;
+}
+.group-picture {
+  margin-top: 24rpx;
+}
+.people {
+  float: left;
+  margin-bottom:20rpx;
+}
+.img {
+  margin-left: 30rpx;
+  margin-right: 18rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+
+.icon-img {
+  width: 117rpx;
+  height: 117rpx;
+  margin-left: 18rpx;
+}
+
+.group-picture-name {
+  display:block;
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;  
+  margin-left: 40rpx;
+  margin-right: 24rpx;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  text-align:center;
+}
+
+.name { 
+  
+  font-size: 24rpx; 
+  color: #323232;
+}
+.hr {
+  height: 20rpx;
+  background: #f6f6f6;
+}
+.notice {
+  height: 88rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border-bottom: 2.67rpx solid #f6f6f6;
+  justify-content: space-between;
+}
+.notice-text {
+  font-size: 28rpx;
+  color: #323232;
+  margin-left: 30rpx;
+}
+
+.notice-img {
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 570rpx;
+}
+.history-img {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 32rpx;
+}

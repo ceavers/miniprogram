@@ -1,0 +1,46 @@
+<!--pages/center/center.wxml-->
+<view class='container'>
+  <view class='userInfo-box'>
+    <view class='userInfo-wrapper'>
+      <image class="center-back" src="/images/center-back.png"></image>
+      <view style='display:flex;justify-content:flex-end;margin-right:40rpx;'>
+        <image class="code" bindtap="CommonPopShow" src="/images/code.png"></image>
+        <image wx:if="{{ role === 3 && !userInfo.serviceSate }}" data-id="{{ role }}" class="message" bindtap="btnVipApply" src="/images/message.png"></image>
+        <image class="knews" bindtap="btnVipApply" wx:if="{{haveKnews}}" src="/images/knews.png"></image>
+      </view>
+      <view class='avatar-box'>
+        <image src="{{avatarUrl}}" class='avatar'></image>
+      </view>
+      <view class='info-box'>      
+        <view class='info-nichen'>{{ userInfo.serviceName }}</view>
+        <!-- <view class='info-item'>地区: 成都</view>  -->
+        <view class='info-item'>角色: {{ roleCN }}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{ role == 3 }}" class="nav nav1">
+    <navigator  class='nav-item' url='/pages/manage/manage'>
+      <view class="nav-box">
+        <image class='nav-img' src="/images/employee-manage.png"></image>
+        <text  class="item-text">员工管理</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="nav">
+    <navigator class='nav-item' url='/pages/about/about'>
+      <view class="nav-box">
+        <image class='nav-img' src="/images/center-about.png"></image>
+        <text class="item-text">关于医院</text>
+      </view>
+    </navigator>
+  </view>
+  <tab-bar tabbar="{{tabbar}}"/>
+  <modalView show="{{addCommonPop}}">
+    <view class="code-box">
+      <image class="modal-view" src="/images/codeback.png"></image>
+      <image class="closed" bindtap="btnClosed" src="/images/closed.png"></image>
+      <image class="code-img" src="{{ imgurl }}"></image>
+    </view>
+  </modalView>
+</view>
+

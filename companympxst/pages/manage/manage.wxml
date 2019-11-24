@@ -1,0 +1,56 @@
+<!--pages/manage/manage.wxml-->
+<view class="manage">
+  <view class="header">
+    <view class="search-wrap">
+      <input placeholder="搜索员工工号及姓名" bindinput="inputModel" bindconfirm="search"></input>
+      <view class="search-img">
+        <image src="/images/search.png"></image>
+      </view>
+    </view>
+    <!-- <view class="search-type">
+      <view bindtap="toggle" class="{{ activeIndex == 0 ? 'enabled checked' : 'enabled' }}" data-index="0" >已启用</view>
+      <view bindtap="toggle" class="{{ activeIndex == 1 ? 'deactivated checked' : 'deactivated' }}" data-index="1">已停用</view>
+    </view> -->
+  </view>
+  <!-- <view class="main"></view> -->
+  <view class="main">
+    <view class="touch-item {{ index == domIndex ? directionClass : ''}}" 
+      data-index="{{index}}" 
+      bindtouchstart="touchstart" 
+      bindtouchmove="touchmove" 
+      bindtouchend="touchend"
+      wx:for="{{items}}" 
+      wx:key=""
+    >
+        <view class="edit" bindtap="edit" data-role='{{item.role}}' data-id="{{item.serviceId}}" data-name="{{ item.serviceName }}">编辑</view>
+        <view class='content' bindtap='showDetail' data-index="{{index}}">
+          <view class="message-wrap1">
+            <view class="name" wx:if="{{ item.serviceName }}">{{ item.serviceName }}</view>
+            <view class="role">所属角色:<view>{{ item.crole }}</view></view>
+            <!-- <view class="sign-in-date">最近登录日期:<view>{{ item.sginInDate }}</view></view>
+            <view class="set-up-date">创建日期:<view>{{ item.setUpDate }}</view></view> -->
+          </view>
+        </view>
+        <view class="del" catchtap="del" data-role="{{ item.role }}" data-id="{{ item.serviceId }}" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <!-- <view class="footer" bindtap="gotoAddemploy">
+    <image class="add-employ" src="/images/add-employ.png"></image>新增
+  </view> -->
+</view>
+<modalView show="{{deleShow}}">
+  <view class='dele-header'>请为绑定的用户选择专属客服</view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class='service-box' wx:for="{{service}}" wx:key="index">
+    <view class='serviceName'>
+      <image class='serviceAvatar' src='{{item.serviceAvatar||defaultAvatar}}'></image>
+      <view class='serviceName-box'>{{item.serviceName}}</view>
+    </view>
+    <view><radio color="#F7A584" value="{{item.serviceId}}" checked="{{item.serviceId==replaceServiceId}}"/></view>
+    </label>
+  </radio-group>
+  <view class='modal-footer'>
+    <view catchtap='cancle' class='cancel-btn'>取消</view>
+    <view catchtap='deleteService' class='confirm-btn'>确认</view>
+  </view>
+</modalView>

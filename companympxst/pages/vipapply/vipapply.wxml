@@ -1,0 +1,23 @@
+<!--pages/vipapply/vipapply.wxml-->
+<view class="main">
+  <scroll-view class="scroll-box">
+    <view class="vip-apply-message" 
+      wx:for='{{ mes }}'
+      wx:key='index'
+    >
+      <view class="touxiang">
+        <image src="{{ item.userAvatar }}" alt="头像"></image>
+      </view>
+      <view class="message">
+        <view class="name">{{ item.userName }}</view>
+        <view class="tel">联系电话：<view>{{ item.tel }}</view></view>
+        <view class="date" wx:if="{{ item.regTime }}">申请时间：<view>{{ item.regTime }}</view></view>
+        <view class="tel">卡号：<view>{{ item.cardNo }}</view></view>
+      </view>
+      <view class="operation">
+        <view class="pass" bindtap="pass" data-id="{{ item.userId }}">通过</view>
+        <view class="refuse" data-id="{{ item.userId }}" bindtap="refuse">拒绝</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

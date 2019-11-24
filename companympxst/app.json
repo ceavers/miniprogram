@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/center/center",
+    "pages/chatRecords/chatRecords",
+    "pages/common/common",
+    "pages/modify/modify",
+    "pages/chatsetting/chatsetting",
+    "pages/deletegroupperson/deletegroupperson",
+    "pages/grouppersoninformation/grouppersoninformation",
+    "pages/chatperson/chatperson",
+    "pages/updatenotice/updatenotice",
+    "pages/addemploy/addemploy",
+    "pages/visitorChat/visitorChat",
+    "pages/chat/chat",
+    "pages/vipapply/vipapply",
+    "pages/manage/manage",
+    "components/code/code",
+    "pages/link/link",
+    "pages/block/block"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "新生堂",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#FF6022",
+    "selectedColor": "#FF6022",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的",
+        "iconPath": "/images/center.png",
+        "selectedIconPath": "/images/center-active.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

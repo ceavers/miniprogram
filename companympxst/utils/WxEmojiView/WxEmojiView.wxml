@@ -1,0 +1,23 @@
+
+<template name="WxEmojiView">
+  <view class="WxEmojiView">
+    <block wx:for="{{WxEmojiObjs.WxEmojiTextArray}}" wx:key="">
+      <block wx:if="{{item.node == 'text'}}">{{item.text}}</block>
+      <block wx:elif="{{item.node == 'element'}}">
+        <image class="wxEmoji" src="../../utils/WxEmojiView/emojis/{{item.text}}" />
+      </block>
+    </block>
+  </view>
+</template>
+
+<template name="WxEmojiTextarea">
+  <view class="WxEmojiViewContainer">
+
+      <view class="WxEmojiChooseChooseView" style="display:{{WxEmojiObjs.showWxEmojiChooseView == 1 ? 'block' : 'none'  }};">
+          <block wx:for="{{WxEmojiObjs.emojiArray}}" wx:key="">
+            <image bindtap="wxPreEmojiTap" data-text="[{{item}}]" class="wxPreEmoji" src="../../utils/WxEmojiView/emojis/{{item}}.gif"/>
+          </block>
+      </view>
+  </view>
+</template>
+

@@ -1,0 +1,42 @@
+<!--pages/addemploy/addemploy.wxml-->
+<!--pages/modify/modify.wxml-->
+<view class="add-employ">
+  <form class="add-form">
+    <view class="tel-wrap input-wrap">
+      <view class="input-name">手机号：<view class="green">*</view></view>
+      <input placeholder="请输入手机号"></input>
+    </view>
+    <view class="name-wrap input-wrap">
+      <view class="input-name">姓名：<view class="green">*</view></view>
+      <input placeholder="请输入姓名"></input>
+    </view>
+    <view class="password-wrap input-wrap">
+      <view class="input-name">密码：<view class="green">*</view></view>
+      <input placeholder="字母和数字大于6位"></input>
+    </view>
+    <view class="input-wrap">
+      <view class="input-name">确认密码：<view class="green">*</view></view>
+      <input placeholder="再次确认密码"></input>
+    </view>
+    <view class="remark input-wrap">
+      <view>备注</view>
+      <textarea class="remark-textarea"></textarea>
+    </view>
+    <view class="which-role">
+      <view class="role">所属角色</view>
+      <radio-group>
+        <radio value="super" checked>
+            <view class="role-name">
+              <view class="super">超级管理员</view>
+              <view class="super-mes">可以作查看会员电话及删除会员等操作</view>
+            </view>
+        </radio>
+        <radio value="kefu">
+            <view class="role-name">客服</view>
+        </radio>
+      </radio-group>
+    </view>
+    <view class="save-btn">保存</view>
+  </form>
+</view>
+

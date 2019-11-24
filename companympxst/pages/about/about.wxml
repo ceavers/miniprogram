@@ -1,0 +1,5 @@
+<!--pages/about/about.wxml-->
+<view class='hr'></view>
+<view class='container'>
+  <web-view src="https://mp.weixin.qq.com/s?__biz=MjM5MjE4OTQxNg==&mid=200102642&idx=1&sn=f3a1bcac863e8a4b18622424ef1a5fd8&chksm=28b3ec751fc4656347ba7996cfaf303dc92298c6d885333c75d960aba5a958b0fe7b4efb113e&mpshare=1&scene=1&srcid=0812RpH8OXaPLgMvL0daGe0x&sharer_sharetime=1565576019401&sharer_shareid=407773cf36dba82e09907b6bf204e373&key=61ef29305a83159b87fe09582802206b45a83797fa3799eb3847f84b76d3dc612730e02c89c4db650218394f553c72808597d8b8f717780e36cf543659a2b39d86171bb4173ccb554b113df8cc8b1fa7&ascene=1&uin=MTM1NTAxOTc2OQ%3D%3D&devicetype=Windows+10&version=62060833&lang=zh_CN&pass_ticket=7Bd3M78GXj9N2twn9Ja3TwnOqCnjkajk5QwUaMeHh5r3l4oTw%2FqGrwx4qnM3o2Ti"></web-view>
+</view>
